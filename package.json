@@ -1,0 +1,31 @@
+{
+  "name": "apkg-browser-builder",
+  "version": "1.0.0",
+  "description": "npm package for creating .apkg anki files in browser",
+  "keywords": [
+    "anki",
+    "apkg",
+    "anki2",
+    "anki21"
+  ],
+  "author": {
+    "name": "Daniel Stasiak",
+    "url": "https://digitibox.pl"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/apk-browser-builder.js",
+  "types": "dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/nadamai/apkg-browser-builder/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadamai/apkg-browser-builder.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
