@@ -1,9 +1,8 @@
 export const File = {
-	save(filename: string, uri: string): void
-	{
+	save(filename: string, uri: string): void {
 		const link = document.createElement('a');
 
-		if (typeof link.download !== "string") {
+		if (typeof link.download !== 'string') {
 			window.open(uri);
 
 			return;
@@ -18,4 +17,4 @@ export const File = {
 
 		document.body.removeChild(link);
 	}
-}
+};
