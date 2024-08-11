@@ -2,10 +2,11 @@
   "compilerOptions": {
     "target": "es6",
     "module": "es6",
+	"allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true,
     "outDir": "./dist",
+    "sourceMap": true,
     "strict": true,
-  }
+  },
 }
