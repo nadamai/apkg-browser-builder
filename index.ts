@@ -1,3 +1,3 @@
-import ApkgBuilder from "./src/builder.js";
+import ApkgBuilder from './src/builder.js';
 
 ApkgBuilder.init();
