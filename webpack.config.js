@@ -13,7 +13,7 @@ module.exports = {
 			{
 				loader: 'file-loader',
 				test: /\.sqlite$/i,
-			}
+			},
         ],
     },
     output: {
