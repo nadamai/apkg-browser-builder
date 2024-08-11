@@ -1,3 +1,3 @@
 import ApkgBuilder from './src/module/builder';
 
-ApkgBuilder.init();
+const apkg = new ApkgBuilder();
