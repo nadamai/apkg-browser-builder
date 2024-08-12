@@ -1,5 +1,4 @@
 const path = require('path');
-const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: './index.ts',
@@ -20,13 +19,6 @@ module.exports = {
 		filename: 'apkg-browser-builder.min.js',
         path: path.resolve(__dirname, 'dist'),
     },
-	plugins: [
-		new CopyPlugin({
-		  	patterns: [
-				{ from: "src/db", to: "src/db" },
-		  	],
-		}),
-	],
 	resolve: {
 		extensions: ['.ts'],
 		fallback: {
