@@ -1,7 +1,7 @@
 {
-  "name": "my-webpack-project",
+  "name": "apkg-browser-builder",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "npm package for creating .apkg anki files in browser",
   "keywords": [
     "anki",
     "apkg",
