@@ -1,38 +1,46 @@
 import initSqlJs, { Database, SqlJsConfig, SqlJsStatic } from 'sql.js';
 
-export const Schema = {
-	async init(config?: SqlJsConfig): Promise<Database | null> {
-		const db = await initSqlJs({
+export class Schema {
+	private config?: SqlJsConfig;
+	private db: Database | null = null;
+
+	constructor(config?: SqlJsConfig) {
+		this.config = config;
+
+		this.init();
+	}
+
+	init(): void {
+		initSqlJs({
 			locateFile: (file: string) => `https://sql.js.org/dist/${file}`,
-			...config
+			...this.config
 		})
-			.then(async (SQL: SqlJsStatic): Promise<Database | null> => {
+			.then((SQL: SqlJsStatic) => {
 				const { default: AnkiSqliteSchemaScriptUrl } = require('./../db/anki.sqlite');
 
-				const db = await fetch(AnkiSqliteSchemaScriptUrl)
+				fetch(AnkiSqliteSchemaScriptUrl)
 					.then((response: Response) => {
 						return response.text();
 					})
-					.then((script: string): Database => {
-						const db = new SQL.Database();
+					.then((script: string) => {
+						this.db = new SQL.Database();
 
-						db.exec(script);
-
-						return db;
+						this.db.exec(script);
 					})
 					.catch((error: Error) => {
 						console.error('Error on reading Anki sqlite schema script', error);
 					});
-				if (!db) return null;
-
-				return db;
 			})
 			.catch((error: Error) => {
 				console.error('Error on initializing sql.js with the given .wasm file', error);
 			});
-
-		if (!db) return null;
-
-		return db;
 	}
-};
+
+	dump(): Uint8Array {
+		if (!this.db) {
+			throw new Error('The Anki sqlite database is not initialized');
+		}
+
+		return this.db.export();
+	}
+}

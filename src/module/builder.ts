@@ -9,24 +9,30 @@ export type ApkgBuilderConfig = Partial<{
 }>;
 
 export default class ApkgBuilder {
-	private config: ApkgBuilderConfig = {};
-	private db: Database | null = null;
+	private config?: ApkgBuilderConfig;
+	private schema: Schema;
 
 	constructor(config?: ApkgBuilderConfig) {
-		this.config = config || {};
+		this.schema = new Schema(config?.sqljs);
 	}
 
-	async init(): Promise<Database | null> {
-		return Schema.init(this.config.sqljs);
+	init(): void {
+		this.schema.init();
 	}
 
 	save(): void {
 		const zip = new JSZip();
 
-		zip.file('test.txt', 'test');
+		try {
+			const sqlite = this.schema.dump();
 
-		zip.generateAsync({ type: 'blob' }).then((content: Blob) => {
-			FileSaver.saveAs(content, `${this.config.filename ?? 'anki'}.apkg`);
-		});
+			zip.file('collection.anki2', sqlite);
+
+			zip.generateAsync({ type: 'blob' }).then((content: Blob) => {
+				FileSaver.saveAs(content, `${this.config?.filename ?? 'anki'}.apkg`);
+			});
+		} catch (error) {
+			console.error(error);
+		}
 	}
 }
