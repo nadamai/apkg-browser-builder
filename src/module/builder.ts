@@ -1,39 +1,23 @@
 import * as FileSaver from 'file-saver';
-import initSqlJs, { SqlJsStatic, Database } from 'sql.js';
+import { SqlJsConfig, Database } from 'sql.js';
+import { Schema } from './schema';
+
+export type ApkgBuilderConfig = {
+	sqljs?: SqlJsConfig;
+};
 
 export default class ApkgBuilder {
+	private config: ApkgBuilderConfig = {};
 	private db: Database | null = null;
 
-	constructor() {
-		initSqlJs({
-			locateFile: (file: string) => `https://sql.js.org/dist/${file}`
-		})
-			.then((SQL: SqlJsStatic) => {
-				const { default: AnkiSqliteSchemaUrl } = require('./../db/anki.sqlite');
+	constructor(config?: ApkgBuilderConfig) {
+		this.config = config || {};
+	}
 
-				fetch(AnkiSqliteSchemaUrl)
-					.then((response: Response) => {
-						return response.text();
-					})
-					.then((script: string) => {
-						this.db = new SQL.Database();
-
-						this.db.exec(script);
-
-						const stmt = this.db.prepare('SELECT * FROM notes');
-						const result = stmt.getAsObject();
-
-						console.log(result);
-					})
-					.catch((error: Error) => {
-						console.error('Error on reading Anki sqlite schema script', error);
-					});
-			})
-			.catch((error: Error) => {
-				console.error('Error on initializing sql.js with the given .wasm file', error);
-			});
-
+	async init(): Promise<Database | null> {
 		// const uri = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 		// FileSaver.saveAs(uri, 'apkg.gif');
+
+		return Schema.init(this.config.sqljs);
 	}
 }
