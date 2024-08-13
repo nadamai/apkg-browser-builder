@@ -1,8 +1,8 @@
-import initSqlJs, { Database, SqlJsConfig, SqlJsStatic } from 'sql.js';
+import initSqlJs, { Database as SqlJsDatabase, SqlJsConfig, SqlJsStatic } from 'sql.js';
 
-export class Schema {
+export class Database {
 	private config?: SqlJsConfig;
-	private db: Database | null = null;
+	private db: SqlJsDatabase | null = null;
 
 	constructor(config?: SqlJsConfig) {
 		this.config = config;
@@ -24,7 +24,6 @@ export class Schema {
 					})
 					.then((script: string) => {
 						this.db = new SQL.Database();
-
 						this.db.exec(script);
 					})
 					.catch((error: Error) => {

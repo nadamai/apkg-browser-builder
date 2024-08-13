@@ -1,6 +1,6 @@
 import * as FileSaver from 'file-saver';
 import { SqlJsConfig } from 'sql.js';
-import { Schema } from './schema';
+import { Database } from './database';
 import JSZip from 'jszip';
 
 export type ApkgBuilderConfig = Partial<{
@@ -8,21 +8,21 @@ export type ApkgBuilderConfig = Partial<{
 }>;
 
 export default class ApkgBuilder {
-	private schema: Schema;
+	private db: Database;
 
 	constructor(config?: ApkgBuilderConfig) {
-		this.schema = new Schema(config?.sqljs);
+		this.db = new Database(config?.sqljs);
 	}
 
 	init(): void {
-		this.schema.init();
+		this.db.init();
 	}
 
 	save(filename: string): void {
 		const zip = new JSZip();
 
 		try {
-			const sqlite = this.schema.dump();
+			const sqlite = this.db.dump();
 
 			zip.file('collection.anki2', sqlite);
 

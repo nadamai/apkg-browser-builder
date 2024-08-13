@@ -1,5 +1,2 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 echo "\nFixing code style on pre-commit..."
 npm run precommit
