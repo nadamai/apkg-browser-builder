@@ -1,15 +1,13 @@
 import * as FileSaver from 'file-saver';
-import { SqlJsConfig, Database } from 'sql.js';
+import { SqlJsConfig } from 'sql.js';
 import { Schema } from './schema';
 import JSZip from 'jszip';
 
 export type ApkgBuilderConfig = Partial<{
-	filename: string;
 	sqljs: SqlJsConfig;
 }>;
 
 export default class ApkgBuilder {
-	private config?: ApkgBuilderConfig;
 	private schema: Schema;
 
 	constructor(config?: ApkgBuilderConfig) {
@@ -20,7 +18,7 @@ export default class ApkgBuilder {
 		this.schema.init();
 	}
 
-	save(): void {
+	save(filename: string): void {
 		const zip = new JSZip();
 
 		try {
@@ -29,7 +27,7 @@ export default class ApkgBuilder {
 			zip.file('collection.anki2', sqlite);
 
 			zip.generateAsync({ type: 'blob' }).then((content: Blob) => {
-				FileSaver.saveAs(content, `${this.config?.filename ?? 'anki'}.apkg`);
+				FileSaver.saveAs(content, filename);
 			});
 		} catch (error) {
 			console.error(error);
