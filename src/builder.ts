@@ -1,6 +1,6 @@
 import * as FileSaver from 'file-saver';
 import { SqlJsConfig } from 'sql.js';
-import { Database } from './database';
+import { Database } from './module/database';
 import JSZip from 'jszip';
 
 export type ApkgBuilderConfig = Partial<{
