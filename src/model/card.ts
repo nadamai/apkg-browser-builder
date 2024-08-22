@@ -5,8 +5,8 @@ export type Card = {
 	ord: number;
 	mod: number;
 	usn: number;
-	type: number;
-	queue: number;
+	type: 0 | 1 | 2 | 3;
+	queue: -3 | -2 | -1 | 0 | 1 | 2 | 3;
 	due: number;
 	ivl: number;
 	factor: number;

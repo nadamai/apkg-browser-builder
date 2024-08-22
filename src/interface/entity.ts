@@ -1,3 +1,1 @@
-export interface Entity {
-	mapping: (model: any) => string;
-}
+export interface Entity {}
