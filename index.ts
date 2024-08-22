@@ -4,8 +4,13 @@ import { Card, Deck } from './src/entity';
 const apkg = new ApkgBuilder();
 
 setTimeout(() => {
-	const card = new Deck();
+	
+	const deck = new Deck();
+	const card = new Card();
+
+	// deck.add(card);
 
 
-	apkg.save('anki.apkg');
+
+	apkg.save(deck, 'anki.apkg');
 }, 1000);
