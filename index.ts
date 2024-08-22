@@ -4,13 +4,11 @@ import { Card, Deck } from './src/entity';
 const apkg = new ApkgBuilder();
 
 setTimeout(() => {
-	
 	const deck = new Deck();
-	const card = new Card();
+
+	const card = new Card().setFront('front').setBack('test back');
 
 	// deck.add(card);
-
-
 
 	apkg.save(deck, 'anki.apkg');
 }, 1000);

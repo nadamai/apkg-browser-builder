@@ -1,5 +1,3 @@
-import initSqlJs, { Database as SqlJsDatabase, SqlJsConfig, SqlJsStatic } from 'sql.js';
-
 export type QueryBuilderResult = {
 	query: string;
 	params: Record<string, any>;
