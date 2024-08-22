@@ -1,10 +1,10 @@
 import ApkgBuilder from './src/builder';
-import { Card, Deck } from './src/entity';
+import { Card } from './src/entity';
 
 const apkg = new ApkgBuilder();
 
 setTimeout(() => {
-	const deck = new Deck();
+	const deck = ''; // new Deck();
 
 	const card = new Card().setFront('front').setBack('test back');
 
