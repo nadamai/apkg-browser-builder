@@ -1,11 +1,12 @@
-import { Entity } from '../interface/entity';
-import { Card as Model } from '../model/card';
+import { Entity } from '../abstract/entity';
+import { Card as CardModel } from '../model/card';
 
-export class Card implements Entity {
-	private name: string = '';
+export class Card extends Entity<CardModel> {
+	protected entity: CardModel = {} as CardModel; // TODO: temporary
 
 	public getFront(front: string): string {
-		return this.name;
+		return '';
+		// return this.name;
 	}
 
 	public setFront(front: string): Card {
