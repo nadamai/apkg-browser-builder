@@ -1,4 +1,6 @@
 import initSqlJs, { Database as SqlJsDatabase, SqlJsConfig, SqlJsStatic } from 'sql.js';
+import { Card } from '../entity';
+import { QueryBuilder } from './query-builder';
 
 export class Database {
 	private config?: SqlJsConfig;
@@ -16,7 +18,7 @@ export class Database {
 			...this.config
 		})
 			.then((SQL: SqlJsStatic) => {
-				const { default: AnkiSqliteSchemaScriptUrl } = require('./../db/anki.sqlite');
+				const { default: AnkiSqliteSchemaScriptUrl } = require('./../anki.sqlite');
 
 				fetch(AnkiSqliteSchemaScriptUrl)
 					.then((response: Response) => {
@@ -33,6 +35,20 @@ export class Database {
 			.catch((error: Error) => {
 				console.error('Error on initializing sql.js with the given .wasm file', error);
 			});
+	}
+
+	insert(table: string, data: Record<string, any>): void {
+		if (!this.db) {
+			throw new Error('The Anki sqlite database is not initialized');
+		}
+
+		const { query, params } = QueryBuilder.insert(table, data);
+		const statement = this.db.prepare(query);
+		console.log(query, params);
+
+		statement.bind(params);
+		statement.step();
+		statement.free();
 	}
 
 	dump(): Uint8Array {

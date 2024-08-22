@@ -1,4 +1,4 @@
--- The Anki database schema is taken from:
+-- The Anki database schema:
 -- https://github.com/ankidroid/Anki-Android/wiki/Database-Structure
 
 BEGIN TRANSACTION;
