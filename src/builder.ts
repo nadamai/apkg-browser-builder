@@ -2,7 +2,6 @@ import * as FileSaver from 'file-saver';
 import { SqlJsConfig } from 'sql.js';
 import { Database } from './service/database';
 import JSZip from 'jszip';
-import { Deck } from './entity';
 import { QueryBuilder } from './service/query-builder';
 import { Card, Collection, Note } from './model';
 
@@ -21,7 +20,8 @@ export default class ApkgBuilder {
 		this.db.init();
 	}
 
-	save(deck: Deck, filename: string): void {
+	save(deck: any, filename: string): void {
+		// TODO: any is temporary
 		const zip = new JSZip();
 
 		const card: Card = {
