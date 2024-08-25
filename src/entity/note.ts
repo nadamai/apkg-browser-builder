@@ -9,7 +9,7 @@ export class Note extends Entity<NoteModel> {
 		guid: 0,
 		mid: 0,
 		mod: 0,
-		usn: 0,
+		usn: -1,
 		tags: '',
 		flds: '',
 		sfld: 0,
