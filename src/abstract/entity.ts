@@ -9,4 +9,11 @@ export abstract class Entity<Model = {}> {
 	public getEntity(): Model {
 		return this.entity;
 	}
+
+	protected getDictionaryKey<DictionaryKey extends string | number | symbol>(
+		dictionary: Record<DictionaryKey, number>,
+		value: number
+	): DictionaryKey | undefined {
+		return (Object.keys(dictionary) as DictionaryKey[]).find((key: DictionaryKey) => dictionary[key] === value);
+	}
 }

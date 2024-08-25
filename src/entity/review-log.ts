@@ -2,6 +2,16 @@ import { ReviewLog as ReviewLogModel } from '../model/review-log';
 import { Entity } from '../abstract/entity';
 import { Card } from '../model';
 import { ReviewLogType, ReviewLogTypeKey } from '../dictionary/review-log-type';
+import {
+	LearnLogEase,
+	RelearnLogEase,
+	ReviewLogEase,
+	ReviewLogEaseKey,
+	ReviewLogEaseValue,
+	ReviewLogLearnEaseKey,
+	ReviewLogRelearnEaseKey,
+	ReviewLogReviewEaseKey
+} from '../dictionary/review-log-ease';
 
 export class ReviewLog extends Entity<ReviewLogModel> {
 	protected table: string = 'revlog';
@@ -58,17 +68,32 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 		return this;
 	}
 
-	// TODO: ease argument
-	public getEase(): number {
-		return this.entity.ease;
+	public getEase(): ReviewLogEaseKey {
+		switch (this.entity.type) {
+			case ReviewLogType.learn:
+				return this.getDictionaryKey(LearnLogEase, this.entity.ease) ?? 'wrong';
+			case ReviewLogType.relearn:
+				return this.getDictionaryKey(RelearnLogEase, this.entity.ease) ?? 'wrong';
+			default:
+				return this.getDictionaryKey(ReviewLogEase, this.entity.ease) ?? 'wrong';
+		}
 	}
 
-	public setEase(ease: 1 | 2 | 3 | 4): ReviewLog {
-		this.entity.ease = ease;
+	public setEase(ease: ReviewLogEaseKey): ReviewLog {
+		switch (this.entity.type) {
+			case ReviewLogType.learn:
+				this.entity.ease = LearnLogEase[ease as ReviewLogLearnEaseKey] ?? LearnLogEase.wrong;
+				break;
+			case ReviewLogType.relearn:
+				this.entity.ease = RelearnLogEase[ease as ReviewLogRelearnEaseKey] ?? LearnLogEase.wrong;
+				break;
+			default:
+				this.entity.ease = ReviewLogEase[ease as ReviewLogReviewEaseKey] ?? LearnLogEase.wrong;
+				break;
+		}
 
 		return this;
 	}
-	// TODO: ease argument end
 
 	public getInterval(): number {
 		return this.entity.ivl;
@@ -111,11 +136,7 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 	}
 
 	public getType(): ReviewLogTypeKey {
-		return (
-			(Object.keys(ReviewLogType) as ReviewLogTypeKey[]).find(
-				(type: ReviewLogTypeKey) => ReviewLogType[type] === this.entity.type
-			) || 'learn'
-		);
+		return this.getDictionaryKey(ReviewLogType, this.entity.type) || 'learn';
 	}
 
 	public setType(type: ReviewLogTypeKey): ReviewLog {

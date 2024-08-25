@@ -22,11 +22,7 @@ export class Grave extends Entity<GraveModel> {
 	}
 
 	public getType(): GraveTypeKey {
-		return (
-			(Object.keys(GraveType) as GraveTypeKey[]).find(
-				(type: GraveTypeKey) => GraveType[type] === this.entity.type
-			) || 'card'
-		);
+		return this.getDictionaryKey(GraveType, this.entity.type) || 'card';
 	}
 
 	public setType(type: GraveTypeKey): Grave {
