@@ -2,6 +2,8 @@ import { ReviewLog as ReviewLogModel } from '../model/review-log';
 import { Entity } from '../abstract/entity';
 
 export class ReviewLog extends Entity<ReviewLogModel> {
+	protected table: string = 'revlog';
+
 	protected entity: ReviewLogModel = {
 		id: 0,
 		cid: 0,

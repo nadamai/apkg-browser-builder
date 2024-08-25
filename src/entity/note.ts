@@ -2,6 +2,8 @@ import { Entity } from '../abstract/entity';
 import { Note as NoteModel } from '../model/note';
 
 export class Note extends Entity<NoteModel> {
+	protected table: string = 'notes';
+
 	protected entity: NoteModel = {
 		id: 0,
 		guid: 0,
