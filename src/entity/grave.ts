@@ -3,6 +3,8 @@ import { GraveType, GraveTypeKey } from '../dictionary/grave-type';
 import { Entity } from '../abstract/entity';
 
 export class Grave extends Entity<GraveModel> {
+	protected table: string = 'graves';
+
 	protected entity: GraveModel = {
 		usn: -1,
 		oid: 0,

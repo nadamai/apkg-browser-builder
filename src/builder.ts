@@ -20,8 +20,8 @@ export default class ApkgBuilder {
 		this.db.init();
 	}
 
+	// TODO: any is temporary
 	save(deck: any, filename: string): void {
-		// TODO: any is temporary
 		const zip = new JSZip();
 
 		const card: Card = {

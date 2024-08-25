@@ -2,6 +2,8 @@ import { Entity } from '../abstract/entity';
 import { Collection as CollectionModel } from '../model/collection';
 
 export class Collection extends Entity<CollectionModel> {
+	protected table: string = 'col';
+
 	protected entity: CollectionModel = {
 		id: 0,
 		crt: 0,

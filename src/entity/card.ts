@@ -2,6 +2,8 @@ import { Entity } from '../abstract/entity';
 import { Card as CardModel } from '../model/card';
 
 export class Card extends Entity<CardModel> {
+	protected table: string = 'cards';
+
 	protected entity: CardModel = {
 		id: 0,
 		nid: 0,
