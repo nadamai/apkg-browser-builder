@@ -15,8 +15,8 @@ export class Grave extends Entity<GraveModel> {
 		return this.entity.oid;
 	}
 
-	public setOriginalId(oid: number): Grave {
-		this.entity.oid = oid;
+	public setOriginalId(originalId: number): Grave {
+		this.entity.oid = originalId;
 
 		return this;
 	}

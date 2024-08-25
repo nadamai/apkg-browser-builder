@@ -1,9 +1,10 @@
 import { ValueOf } from '../type';
 
 export const CardType = {
-	card: 0,
-	note: 1,
-	deck: 2
+	new: 0,
+	learning: 1,
+	review: 2,
+	relearning: 3
 } as const;
 
 export type CardTypeKey = keyof typeof CardType;
