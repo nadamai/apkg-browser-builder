@@ -1,17 +1,16 @@
-import { ReviewLog as ReviewLogModel } from '../model/review-log';
-import { Entity } from '../abstract/entity';
-import { Card } from '../model';
-import { ReviewLogType, ReviewLogTypeKey } from '../dictionary/review-log-type';
+import { ReviewLog as ReviewLogModel, Card } from '../model';
+import { Entity } from '../abstract';
 import {
+	ReviewLogType,
+	ReviewLogTypeKey,
 	LearnLogEase,
 	RelearnLogEase,
 	ReviewLogEase,
 	ReviewLogEaseKey,
-	ReviewLogEaseValue,
 	ReviewLogLearnEaseKey,
 	ReviewLogRelearnEaseKey,
 	ReviewLogReviewEaseKey
-} from '../dictionary/review-log-ease';
+} from '../dictionary';
 
 export class ReviewLog extends Entity<ReviewLogModel> {
 	protected table: string = 'revlog';

@@ -1,4 +1,4 @@
-import { GraveTypeValue } from '../dictionary/grave-type';
+import { GraveTypeValue } from '../dictionary';
 
 export type Grave = {
 	usn: -1;

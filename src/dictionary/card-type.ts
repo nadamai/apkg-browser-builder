@@ -1,4 +1,4 @@
-import { ValueOf } from '../type/value-of';
+import { ValueOf } from '../type';
 
 export const CardType = {
 	card: 0,

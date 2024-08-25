@@ -1,5 +1,4 @@
-import { CardQueueValue } from '../dictionary/card-queue';
-import { CardTypeValue } from '../dictionary/card-type';
+import { CardQueueValue, CardTypeValue } from '../dictionary';
 
 export type Card = {
 	id: number;

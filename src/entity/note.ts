@@ -1,5 +1,5 @@
-import { Entity } from '../abstract/entity';
-import { Note as NoteModel } from '../model/note';
+import { Entity } from '../abstract';
+import { Note as NoteModel } from '../model';
 
 export class Note extends Entity<NoteModel> {
 	protected table: string = 'notes';
