@@ -24,13 +24,13 @@ export class Grave extends Entity<GraveModel> {
 	public getType(): GraveTypeKey {
 		return (
 			(Object.keys(GraveType) as GraveTypeKey[]).find(
-				(type: GraveTypeKey) => GraveType[type] === this.entity.oid
+				(type: GraveTypeKey) => GraveType[type] === this.entity.type
 			) || 'card'
 		);
 	}
 
-	public setType(oid: GraveTypeKey): Grave {
-		this.entity.oid = GraveType[oid];
+	public setType(type: GraveTypeKey): Grave {
+		this.entity.type = GraveType[type];
 
 		return this;
 	}
