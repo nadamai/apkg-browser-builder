@@ -33,6 +33,12 @@ export class Grave extends Entity<GraveModel> {
 		return this;
 	}
 
+	// public setDeck(deck: Deck): Grave {
+	// 	this.entity.oid = deck.id;
+
+	// 	return this;
+	// }
+
 	public getType(): GraveTypeKey {
 		return this.getDictionaryKey(GraveType, this.entity.type) || 'card';
 	}
