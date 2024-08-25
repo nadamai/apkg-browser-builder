@@ -1,3 +1,6 @@
+import { CardQueueValue } from '../dictionary/card-queue';
+import { CardTypeValue } from '../dictionary/card-type';
+
 export type Card = {
 	id: number;
 	nid: number;
@@ -5,8 +8,8 @@ export type Card = {
 	ord: number;
 	mod: number;
 	usn: number;
-	type: 0 | 1 | 2 | 3;
-	queue: -3 | -2 | -1 | 0 | 1 | 2 | 3;
+	type: CardTypeValue;
+	queue: CardQueueValue;
 	due: number;
 	ivl: number;
 	factor: number;

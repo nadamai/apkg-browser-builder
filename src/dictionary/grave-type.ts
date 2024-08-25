@@ -1,3 +1,5 @@
+import { ValueOf } from '../type/value-of';
+
 export const GraveType = {
 	card: 0,
 	note: 1,
@@ -5,3 +7,4 @@ export const GraveType = {
 } as const;
 
 export type GraveTypeKey = keyof typeof GraveType;
+export type GraveTypeValue = ValueOf<typeof GraveType>;
