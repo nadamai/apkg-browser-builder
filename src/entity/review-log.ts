@@ -1,6 +1,7 @@
 import { ReviewLog as ReviewLogModel } from '../model/review-log';
 import { Entity } from '../abstract/entity';
 import { Card } from '../model';
+import { ReviewLogType, ReviewLogTypeKey } from '../dictionary/review-log-type';
 
 export class ReviewLog extends Entity<ReviewLogModel> {
 	protected table: string = 'revlog';
@@ -105,6 +106,20 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 
 	public setTime(time: number): ReviewLog {
 		this.entity.time = time;
+
+		return this;
+	}
+
+	public getType(): ReviewLogTypeKey {
+		return (
+			(Object.keys(ReviewLogType) as ReviewLogTypeKey[]).find(
+				(type: ReviewLogTypeKey) => ReviewLogType[type] === this.entity.type
+			) || 'learn'
+		);
+	}
+
+	public setType(type: ReviewLogTypeKey): ReviewLog {
+		this.entity.type = ReviewLogType[type];
 
 		return this;
 	}
