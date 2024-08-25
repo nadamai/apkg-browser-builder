@@ -1,5 +1,5 @@
-import { Entity } from '../abstract/entity';
-import { Collection as CollectionModel } from '../model/collection';
+import { Entity } from '../abstract';
+import { Collection as CollectionModel } from '../model';
 
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';

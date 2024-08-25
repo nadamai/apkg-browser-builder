@@ -1,5 +1,4 @@
 import initSqlJs, { Database as SqlJsDatabase, SqlJsConfig, SqlJsStatic } from 'sql.js';
-import { Card } from '../entity';
 import { QueryBuilder } from './query-builder';
 
 export class Database {

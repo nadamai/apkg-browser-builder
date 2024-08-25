@@ -1,5 +1,4 @@
-import { ReviewLogEaseValue } from '../dictionary/review-log-ease';
-import { ReviewLogTypeValue } from '../dictionary/review-log-type';
+import { ReviewLogEaseValue, ReviewLogTypeValue } from '../dictionary';
 
 export type ReviewLog = {
 	id: number;

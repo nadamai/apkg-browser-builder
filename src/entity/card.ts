@@ -1,5 +1,5 @@
-import { Entity } from '../abstract/entity';
-import { Card as CardModel } from '../model/card';
+import { Entity } from '../abstract';
+import { Card as CardModel } from '../model';
 
 export class Card extends Entity<CardModel> {
 	protected table: string = 'cards';

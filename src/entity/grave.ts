@@ -1,6 +1,6 @@
-import { Grave as GraveModel } from '../model/grave';
-import { GraveType, GraveTypeKey } from '../dictionary/grave-type';
-import { Entity } from '../abstract/entity';
+import { Grave as GraveModel, Card, Note } from '../model';
+import { GraveType, GraveTypeKey } from '../dictionary';
+import { Entity } from '../abstract';
 
 export class Grave extends Entity<GraveModel> {
 	protected table: string = 'graves';
@@ -17,6 +17,18 @@ export class Grave extends Entity<GraveModel> {
 
 	public setOriginalId(oid: number): Grave {
 		this.entity.oid = oid;
+
+		return this;
+	}
+
+	public setCard(card: Card): Grave {
+		this.entity.oid = card.id;
+
+		return this;
+	}
+
+	public setNote(note: Note): Grave {
+		this.entity.oid = note.id;
 
 		return this;
 	}
