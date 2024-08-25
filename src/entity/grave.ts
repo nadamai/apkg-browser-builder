@@ -24,17 +24,23 @@ export class Grave extends Entity<GraveModel> {
 	public setCard(card: Card): Grave {
 		this.entity.oid = card.id;
 
+		this.setType('card');
+
 		return this;
 	}
 
 	public setNote(note: Note): Grave {
 		this.entity.oid = note.id;
 
+		this.setType('note');
+
 		return this;
 	}
 
 	// public setDeck(deck: Deck): Grave {
 	// 	this.entity.oid = deck.id;
+	//
+	//  this.setType('deck');
 
 	// 	return this;
 	// }
@@ -44,6 +50,10 @@ export class Grave extends Entity<GraveModel> {
 	}
 
 	public setType(type: GraveTypeKey): Grave {
+		if (this.entity.type !== GraveType[type]) {
+			this.entity.oid = 0;
+		}
+
 		this.entity.type = GraveType[type];
 
 		return this;
