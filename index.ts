@@ -1,14 +1,15 @@
 import ApkgBuilder from './src/builder';
-import { Card } from './src/entity';
+import { Card, Collection, Note } from './src/entity';
 
 const apkg = new ApkgBuilder();
 
 setTimeout(() => {
-	const deck = ''; // new Deck();
-
 	const card = new Card().setFront('front').setBack('test back');
+	const col = new Collection();
+	const note = new Note();
 
-	// deck.add(card);
+	const entities = [card, col, note];
 
-	apkg.save(deck, 'anki.apkg');
+	// TODO: different method of attaching entities to the apkg
+	apkg.save(entities, 'anki.apkg');
 }, 1000);
