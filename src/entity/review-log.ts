@@ -32,11 +32,7 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 	}
 
 	public setId(id?: number): ReviewLog {
-		this.entity.id = Date.now();
-
-		if (id) {
-			this.entity.id = id;
-		}
+		this.entity.id = id ?? Date.now();
 
 		return this;
 	}
