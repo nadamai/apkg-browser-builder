@@ -11,7 +11,7 @@ export class Collection extends Entity<CollectionModel> {
 		scm: 0,
 		ver: 0,
 		dty: 0,
-		usn: 0,
+		usn: -1,
 		ls: 0,
 		conf: '{}',
 		models: '{}',
