@@ -19,12 +19,8 @@ export default class ApkgBuilder {
 		this.db.init();
 	}
 
-	save(entities: Entity[], filename: string): void {
+	save(filename: string): void {
 		const zip = new JSZip();
-
-		for (let entity of entities) {
-			this.db.insert(entity.getTable(), entity.getEntity());
-		}
 
 		try {
 			const sqlite = this.db.dump();
