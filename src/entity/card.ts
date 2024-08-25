@@ -31,11 +31,7 @@ export class Card extends Entity<CardModel> {
 	}
 
 	public setId(id?: number): Card {
-		this.entity.id = Date.now();
-
-		if (id) {
-			this.entity.id = id;
-		}
+		this.entity.id = id ?? Date.now();
 
 		return this;
 	}
