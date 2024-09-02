@@ -5,13 +5,11 @@ import { Deck } from './src/object/deck';
 const apkg = new ApkgBuilder();
 
 setTimeout(() => {
-	// const card = new Card();
-	// const col = new Collection();
-	// const note = new Note();
+	// This is not needed but possible
+	const collection = new Collection();
 
-	// const entities = [card, col, note];
-
-	const deck = new Deck();
+	apkg.setCollection(collection);
+	// End
 
 	
 
