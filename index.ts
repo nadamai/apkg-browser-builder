@@ -9,7 +9,7 @@ setTimeout(() => {
 
 	// This is not needed but possible
 	const collection = new Collection();
-	const config = new DeckConfig();
+	const config = new DeckConfig('Default deck config');
 
 	collection.addDeckConfig(config);
 
@@ -18,11 +18,7 @@ setTimeout(() => {
 
 	apkg.addDeck(deck);
 
-	// apkg.addDeck(deck);
 
-	// for (let entity of entities) {
-	// 	this.db.insert(entity.getTable(), entity.getEntity());
-	// }
 
 	apkg.save('anki.apkg');
 }, 1000);

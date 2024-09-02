@@ -6,7 +6,7 @@ export class Deck extends Object<DeckObject> {
 	protected object: DeckObject = {
 		name: '',
 		extendRev: null,
-		usn: 0,
+		usn: -1,
 		collapsed: false,
 		browserCollapsed: false,
 		newToday: [0, 0],
