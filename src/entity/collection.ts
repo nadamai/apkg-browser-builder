@@ -1,5 +1,6 @@
 import { Entity } from '../abstract';
 import { Collection as CollectionModel } from '../model';
+import { Deck } from '../object';
 
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
@@ -14,8 +15,8 @@ export class Collection extends Entity<CollectionModel> {
 		usn: -1,
 		ls: 0,
 		conf: '{}',
-		models: '{}',
-		decks: '{}',
+		models: '[]',
+		decks: '[]',
 		dconf: '{}',
 		tags: ''
 	};
@@ -110,15 +111,35 @@ export class Collection extends Entity<CollectionModel> {
 	// 	return this;
 	// }
 
-	// public getDecks(): Decks {
-	// 	return JSON.parse(this.entity.conf);
-	// }
+	public getDecks(): Deck[] {
+		return JSON.parse(this.entity.decks) as Deck[];
+	}
 
-	// public setDecks(decks: Decks): Collection {
-	// 	this.entity.conf = JSON.stringify(decks);
+	public setDecks(decks: Deck[]): Collection {
+		this.entity.decks = JSON.stringify(decks);
 
-	// 	return this;
-	// }
+		return this;
+	}
+
+	public addDeck(deck: Deck): Collection {
+		const decks = this.getDecks();
+
+		decks.push(deck);
+
+		this.setDecks(decks);
+
+		return this;
+	}
+
+	public removeDeck(deck: Deck): Collection {
+		const decks = this.getDecks();
+
+		decks.splice(decks.indexOf(deck), 1);
+
+		this.setDecks(decks);
+
+		return this;
+	}
 
 	// public getDeckOptions(): DeckOptions {
 	// 	return JSON.parse(this.entity.dconf);
