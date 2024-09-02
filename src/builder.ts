@@ -3,6 +3,7 @@ import { SqlJsConfig } from 'sql.js';
 import { Database } from './service/database';
 import JSZip from 'jszip';
 import { Entity } from './abstract/entity';
+import { Collection } from './entity';
 
 export type ApkgBuilderConfig = Partial<{
 	sqljs: SqlJsConfig;
@@ -10,13 +11,25 @@ export type ApkgBuilderConfig = Partial<{
 
 export default class ApkgBuilder {
 	private db: Database;
+	private collection: Collection;
 
 	constructor(config?: ApkgBuilderConfig) {
 		this.db = new Database(config?.sqljs);
+		this.collection = new Collection();
 	}
 
 	init(): void {
 		this.db.init();
+	}
+
+	getCollection(): Collection {
+		return this.collection;
+	}
+
+	setCollection(collection: Collection): ApkgBuilder {
+		this.collection = collection;
+
+		return this;
 	}
 
 	save(filename: string): void {
