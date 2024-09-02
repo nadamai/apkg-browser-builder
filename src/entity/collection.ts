@@ -1,5 +1,5 @@
 import { Entity } from '../abstract';
-import { Collection as CollectionModel } from '../model';
+import { Collection as CollectionModel, Deck as DeckModel } from '../model';
 import { Deck } from '../object';
 
 export class Collection extends Entity<CollectionModel> {
@@ -15,8 +15,8 @@ export class Collection extends Entity<CollectionModel> {
 		usn: -1,
 		ls: 0,
 		conf: '{}',
-		models: '[]',
-		decks: '[]',
+		models: '{}',
+		decks: '{}',
 		dconf: '{}',
 		tags: ''
 	};
@@ -112,11 +112,17 @@ export class Collection extends Entity<CollectionModel> {
 	// }
 
 	public getDecks(): Deck[] {
-		return JSON.parse(this.entity.decks) as Deck[];
+		return Object.values(JSON.parse(this.entity.decks));
 	}
 
 	public setDecks(decks: Deck[]): Collection {
-		this.entity.decks = JSON.stringify(decks);
+		const value = decks.reduce((acc: Record<number, DeckModel>, deck: Deck) => {
+			acc[deck.getId()] = deck.getObject();
+
+			return acc;
+		}, {});
+
+		this.entity.decks = JSON.stringify(value);
 
 		return this;
 	}
