@@ -5,7 +5,7 @@ import { Deck } from './src/object';
 const apkg = new ApkgBuilder();
 
 setTimeout(() => {
-	const deck = new Deck('My deck');
+	const deck = new Deck('My deck', 'description of my deck');
 
 	// This is not needed but possible
 	const collection = new Collection();

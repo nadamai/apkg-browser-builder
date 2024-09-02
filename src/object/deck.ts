@@ -15,7 +15,7 @@ export class Deck extends Object<DeckObject> {
 		dyn: false,
 		extendNew: null,
 		conf: 0,
-		id: 0,
+		id: Date.now(),
 		mod: 0,
 		desc: ''
 	};
@@ -30,6 +30,16 @@ export class Deck extends Object<DeckObject> {
 		}
 
 		this.object.desc = description;
+	}
+
+	public getId(): number {
+		return this.object.id;
+	}
+
+	public setId(id?: number): Deck {
+		this.object.id = id ?? Date.now();
+
+		return this;
 	}
 
 	public getName(): string {
