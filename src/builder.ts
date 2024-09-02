@@ -2,8 +2,8 @@ import * as FileSaver from 'file-saver';
 import { SqlJsConfig } from 'sql.js';
 import { Database } from './service/database';
 import JSZip from 'jszip';
-import { Entity } from './abstract/entity';
 import { Collection } from './entity';
+import { Deck } from './object/deck';
 
 export type ApkgBuilderConfig = Partial<{
 	sqljs: SqlJsConfig;
@@ -28,6 +28,28 @@ export default class ApkgBuilder {
 
 	setCollection(collection: Collection): ApkgBuilder {
 		this.collection = collection;
+
+		return this;
+	}
+
+	public getDecks(): Deck[] {
+		return this.collection.getDecks();
+	}
+
+	public setDecks(decks: Deck[]): ApkgBuilder {
+		this.collection.setDecks(decks);
+
+		return this;
+	}
+
+	addDeck(deck: Deck): ApkgBuilder {
+		this.collection.addDeck(deck);
+
+		return this;
+	}
+
+	removeDeck(deck: Deck): ApkgBuilder {
+		this.collection.removeDeck(deck);
 
 		return this;
 	}
