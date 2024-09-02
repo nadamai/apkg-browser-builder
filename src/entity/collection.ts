@@ -1,6 +1,6 @@
 import { Entity } from '../abstract';
-import { Collection as CollectionModel, Deck as DeckModel } from '../model';
-import { Deck } from '../object';
+import { Collection as CollectionModel, Deck as DeckModel, DeckConfig as DeckConfigModel } from '../model';
+import { Deck, DeckConfig } from '../object';
 
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
@@ -14,8 +14,8 @@ export class Collection extends Entity<CollectionModel> {
 		dty: 0,
 		usn: -1,
 		ls: 0,
-		conf: '{}',
-		models: '{}',
+		conf: '{}', // TODO: add getters & setters
+		models: '{}', // TODO: add getters & setters
 		decks: '{}',
 		dconf: '{}',
 		tags: ''
@@ -91,26 +91,6 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
-	// public getConfiguration(): Configuration {
-	// 	return JSON.parse(this.entity.conf);
-	// }
-
-	// public setConfiguration(configuration: Configuration): Collection {
-	// 	this.entity.conf = JSON.stringify(configuration);
-
-	// 	return this;
-	// }
-
-	// public getConfiguration(): Models {
-	// 	return JSON.parse(this.entity.models);
-	// }
-
-	// public setConfiguration(models: Models): Collection {
-	// 	this.entity.models = JSON.stringify(models);
-
-	// 	return this;
-	// }
-
 	public getDecks(): Deck[] {
 		return Object.values(JSON.parse(this.entity.decks));
 	}
@@ -147,23 +127,39 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
-	// public getDeckOptions(): DeckOptions {
-	// 	return JSON.parse(this.entity.dconf);
-	// }
+	public getDeckConfigs(): DeckConfig[] {
+		return Object.values(JSON.parse(this.entity.dconf));
+	}
 
-	// public setDecks(options: DeckOptions): Collection {
-	// 	this.entity.dconf = JSON.stringify(options);
+	public setDeckConfigs(configs: DeckConfig[]): Collection {
+		const value = configs.reduce((acc: Record<number, DeckConfigModel>, config: DeckConfig) => {
+			acc[config.getId()] = config.getObject();
 
-	// 	return this;
-	// }
+			return acc;
+		}, {});
 
-	// public getTags(): Tags {
-	// 	return JSON.parse(this.entity.tags);
-	// }
+		this.entity.dconf = JSON.stringify(value);
 
-	// public setTags(tags: Tags): Collection {
-	// 	this.entity.tags = JSON.stringify(tags);
+		return this;
+	}
 
-	// 	return this;
-	// }
+	public addDeckConfig(config: DeckConfig): Collection {
+		const configs = this.getDeckConfigs();
+
+		configs.push(config);
+
+		this.setDeckConfigs(configs);
+
+		return this;
+	}
+
+	public removeDeckConfig(config: DeckConfig): Collection {
+		const configs = this.getDeckConfigs();
+
+		configs.splice(configs.indexOf(config), 1);
+
+		this.setDeckConfigs(configs);
+
+		return this;
+	}
 }

@@ -1,6 +1,6 @@
 import ApkgBuilder from './src/builder';
 import { Collection } from './src/entity';
-import { Deck } from './src/object';
+import { Deck, DeckConfig } from './src/object';
 
 const apkg = new ApkgBuilder();
 
@@ -9,6 +9,9 @@ setTimeout(() => {
 
 	// This is not needed but possible
 	const collection = new Collection();
+	const config = new DeckConfig();
+
+	collection.addDeckConfig(config);
 
 	apkg.setCollection(collection);
 	// End
