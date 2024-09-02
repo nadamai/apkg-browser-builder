@@ -74,16 +74,15 @@ export class Note extends Entity<NoteModel> {
 		return this;
 	}
 
-	// TODO: proper tags parser
-	// public getTags(): string[] {
-	// 	return JSON.parse(this.entity.tags);
-	// }
+	public getTags(): string {
+		return this.entity.tags;
+	}
 
-	// public setTags(tags: string[]): Note {
-	// 	this.entity.tags = JSON.stringify(tags);
+	public setTags(tags: string): Note {
+		this.entity.tags = tags;
 
-	// 	return this;
-	// }
+		return this;
+	}
 
 	public getFields(): string[] {
 		return this.entity.flds.split('\x1f');
