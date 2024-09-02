@@ -37,8 +37,18 @@ export class DeckConfig extends Object<DeckConfigObject> {
 			perDay: 0
 		},
 		timer: false,
-		usn: 0
+		usn: -1
 	};
+
+	constructor(name?: string) {
+		super();
+
+		if (!name) {
+			return;
+		}
+
+		this.object.name = name;
+	}
 
 	public getId(): number {
 		return this.object.id;
@@ -46,6 +56,16 @@ export class DeckConfig extends Object<DeckConfigObject> {
 
 	public setId(id?: number): DeckConfig {
 		this.object.id = id ?? Date.now();
+
+		return this;
+	}
+
+	public getName(): string {
+		return this.object.name;
+	}
+
+	public setName(name: string): DeckConfig {
+		this.object.name = name;
 
 		return this;
 	}

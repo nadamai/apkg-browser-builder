@@ -4,6 +4,7 @@ import { Database } from './service/database';
 import JSZip from 'jszip';
 import { Collection } from './entity';
 import { Deck } from './object/deck';
+import { Entity } from './abstract';
 
 export type ApkgBuilderConfig = Partial<{
 	sqljs: SqlJsConfig;
@@ -15,18 +16,19 @@ export default class ApkgBuilder {
 
 	constructor(config?: ApkgBuilderConfig) {
 		this.db = new Database(config?.sqljs);
+
 		this.collection = new Collection();
 	}
 
-	init(): void {
+	public init(): void {
 		this.db.init();
 	}
 
-	getCollection(): Collection {
+	public getCollection(): Collection {
 		return this.collection;
 	}
 
-	setCollection(collection: Collection): ApkgBuilder {
+	public setCollection(collection: Collection): ApkgBuilder {
 		this.collection = collection;
 
 		return this;
@@ -42,20 +44,26 @@ export default class ApkgBuilder {
 		return this;
 	}
 
-	addDeck(deck: Deck): ApkgBuilder {
+	public addDeck(deck: Deck): ApkgBuilder {
 		this.collection.addDeck(deck);
 
 		return this;
 	}
 
-	removeDeck(deck: Deck): ApkgBuilder {
+	public removeDeck(deck: Deck): ApkgBuilder {
 		this.collection.removeDeck(deck);
 
 		return this;
 	}
 
-	save(filename: string): void {
+	public save(filename: string): void {
 		const zip = new JSZip();
+
+		const entities: Entity[] = [this.collection];
+
+		for (let entity of entities) {
+			this.db.insert(entity.getTable(), entity.getEntity());
+		}
 
 		try {
 			const sqlite = this.db.dump();
