@@ -74,12 +74,12 @@ export class Note extends Entity<NoteModel> {
 		return this;
 	}
 
-	public getTags(): string {
-		return this.entity.tags;
+	public getTags(): string[] {
+		return this.entity.tags.trim().split(' ');
 	}
 
-	public setTags(tags: string): Note {
-		this.entity.tags = tags;
+	public setTags(tags: string[]): Note {
+		this.entity.tags = ` ${tags.join(' ')} `;
 
 		return this;
 	}
