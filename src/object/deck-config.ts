@@ -69,4 +69,74 @@ export class DeckConfig extends Object<DeckConfigObject> {
 
 		return this;
 	}
+
+	public getAutoplay(): boolean {
+		return this.object.autoplay;
+	}
+
+	public setAutoplay(autoplay: boolean): Deck {
+		this.object.autoplay = autoplay;
+
+		return this;
+	}
+
+	public getDynamic(): boolean {
+		return this.object.dyn;
+	}
+
+	public setDynamic(dynamic: boolean): Deck {
+		this.object.dyn = dynamic;
+
+		return this;
+	}
+
+	public getMaxTaken(): number {
+		return this.object.maxTaken;
+	}
+
+	public setMaxTaken(maxTaken: number): DeckConfig {
+		this.object.maxTaken = maxTaken;
+
+		return this;
+	}
+
+	public getModificationTime(): number {
+		return this.object.mod;
+	}
+
+	public setModificationTime(time: number): DeckConfig {
+		this.object.mod = time;
+
+		return this;
+	}
+
+	public getReplay(): boolean {
+		return this.object.replayq;
+	}
+
+	public setReplay(replay: boolean): DeckConfig {
+		this.object.replayq = replay;
+
+		return this;
+	}
+
+	public getTimer(): boolean {
+		return this.object.timer;
+	}
+
+	public setTimer(timer: boolean): DeckConfig {
+		this.object.timer = timer;
+
+		return this;
+	}
+
+	public getUpdateSequenceNumber(): number {
+		return this.object.usn;
+	}
+
+	public setUpdateSequenceNumber(updateSequenceNumber: number): DeckConfig {
+		this.object.usn = updateSequenceNumber;
+
+		return this;
+	}
 }
