@@ -3,7 +3,7 @@ import { OrderValue } from '../dictionary/order';
 
 export type DeckConfig = {
 	autoplay: boolean;
-	dyn: false;
+	dyn: boolean;
 	id: number;
 	lapse: {
 		delays: number[];
@@ -24,7 +24,7 @@ export type DeckConfig = {
 		perDay: number;
 		separate: number;
 	};
-	replayq: false;
+	replayq: boolean;
 	rev: {
 		bury: boolean;
 		ease4: number;
@@ -34,6 +34,6 @@ export type DeckConfig = {
 		minSpace: number;
 		perDay: number;
 	};
-	timer: false;
+	timer: boolean;
 	usn: number;
 };

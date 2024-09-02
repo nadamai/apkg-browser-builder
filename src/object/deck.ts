@@ -16,7 +16,7 @@ export class Deck extends Object<DeckObject> {
 		dyn: false,
 		extendNew: null,
 		conf: 0,
-		id: Date.now(),
+		id: 1,
 		mod: 0,
 		desc: ''
 	};
