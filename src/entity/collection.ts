@@ -162,4 +162,14 @@ export class Collection extends Entity<CollectionModel> {
 
 		return this;
 	}
+
+	public getTags(): string[] {
+		return JSON.parse(this.entity.tags);
+	}
+
+	public setTags(tags: string[]): Collection {
+		this.entity.tags = JSON.stringify(tags);
+
+		return this;
+	}
 }
