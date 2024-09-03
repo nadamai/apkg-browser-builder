@@ -1,19 +1,16 @@
 import { Object } from '../abstract';
 import { Order } from '../dictionary/order';
 import { DeckConfig as DeckConfigObject } from '../model';
+import { LapseConfig } from './lapse-config';
 
 export class DeckConfig extends Object<DeckConfigObject> {
+	protected lapse: LapseConfig = new LapseConfig();
+
 	protected object: DeckConfigObject = {
 		autoplay: false,
 		dyn: false,
 		id: 1,
-		lapse: {
-			delays: [],
-			leechAction: 0,
-			leechFails: 0,
-			minInt: 0,
-			mult: 0
-		},
+		lapse: this.lapse.getObject(),
 		maxTaken: 0,
 		mod: 0,
 		name: '',
@@ -74,7 +71,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.autoplay;
 	}
 
-	public setAutoplay(autoplay: boolean): Deck {
+	public setAutoplay(autoplay: boolean): DeckConfig {
 		this.object.autoplay = autoplay;
 
 		return this;
@@ -84,7 +81,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.dyn;
 	}
 
-	public setDynamic(dynamic: boolean): Deck {
+	public setDynamic(dynamic: boolean): DeckConfig {
 		this.object.dyn = dynamic;
 
 		return this;
@@ -136,6 +133,17 @@ export class DeckConfig extends Object<DeckConfigObject> {
 
 	public setUpdateSequenceNumber(updateSequenceNumber: number): DeckConfig {
 		this.object.usn = updateSequenceNumber;
+
+		return this;
+	}
+
+	public getLapseConfig(): LapseConfig {
+		return this.lapse;
+	}
+
+	public setLapseConfig(lapse: LapseConfig): DeckConfig {
+		this.lapse = lapse;
+		this.object.lapse = this.lapse.getObject();
 
 		return this;
 	}
