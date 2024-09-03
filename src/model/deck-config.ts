@@ -1,5 +1,6 @@
 import { LapseCardConfig } from './lapse-card-config';
 import { NewCardConfig } from './new-card-config';
+import { ReviewCardConfig } from './review-card-config';
 
 export type DeckConfig = {
 	autoplay: boolean;
@@ -11,15 +12,7 @@ export type DeckConfig = {
 	name: string;
 	new: NewCardConfig;
 	replayq: boolean;
-	rev: {
-		bury: boolean;
-		ease4: number;
-		fuzz: number;
-		ivlFct: number;
-		maxIvl: number;
-		minSpace: number;
-		perDay: number;
-	};
+	rev: ReviewCardConfig;
 	timer: boolean;
 	usn: number;
 };

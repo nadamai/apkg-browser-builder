@@ -6,4 +6,5 @@ export * from './grave';
 export * from './lapse-card-config';
 export * from './new-card-config';
 export * from './note';
+export * from './review-card-config';
 export * from './review-log';
