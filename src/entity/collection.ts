@@ -18,7 +18,7 @@ export class Collection extends Entity<CollectionModel> {
 		models: '{}', // TODO: add getters & setters
 		decks: '{}',
 		dconf: '{}',
-		tags: '[]'
+		tags: '{}'
 	};
 
 	public getId(): number {
