@@ -1,9 +1,9 @@
 import { Object } from '../abstract';
-import { LapseConfig as LapseConfigObject } from '../model';
+import { LapseCardConfig as LapseCardConfigObject } from '../model';
 import { LeechAction, LeechActionKey } from '../dictionary/leech-action';
 
-export class LapseConfig extends Object<LapseConfigObject> {
-	protected object: LapseConfigObject = {
+export class LapseCardConfig extends Object<LapseCardConfigObject> {
+	protected object: LapseCardConfigObject = {
 		delays: [],
 		leechAction: LeechAction.suspend,
 		leechFails: 0,
@@ -15,7 +15,7 @@ export class LapseConfig extends Object<LapseConfigObject> {
 		return this.object.delays;
 	}
 
-	public setDelays(delays: number[]): LapseConfig {
+	public setDelays(delays: number[]): LapseCardConfig {
 		this.object.delays = delays;
 
 		return this;
@@ -25,7 +25,7 @@ export class LapseConfig extends Object<LapseConfigObject> {
 		return this.getDictionaryKey(LeechAction, this.object.leechAction) || 'suspend';
 	}
 
-	public setLechAction(action: LeechActionKey): LapseConfig {
+	public setLechAction(action: LeechActionKey): LapseCardConfig {
 		this.object.leechAction = LeechAction[action] || 0;
 
 		return this;
@@ -35,7 +35,7 @@ export class LapseConfig extends Object<LapseConfigObject> {
 		return this.object.leechFails;
 	}
 
-	public setLechFails(fails: number): LapseConfig {
+	public setLechFails(fails: number): LapseCardConfig {
 		this.object.leechFails = fails;
 
 		return this;
@@ -45,7 +45,7 @@ export class LapseConfig extends Object<LapseConfigObject> {
 		return this.object.minInt;
 	}
 
-	public setMinimumInterval(interval: number): LapseConfig {
+	public setMinimumInterval(interval: number): LapseCardConfig {
 		this.object.minInt = interval;
 
 		return this;
@@ -55,7 +55,7 @@ export class LapseConfig extends Object<LapseConfigObject> {
 		return this.object.mult;
 	}
 
-	public setMultiplier(multiplier: number): LapseConfig {
+	public setMultiplier(multiplier: number): LapseCardConfig {
 		this.object.mult = multiplier;
 
 		return this;

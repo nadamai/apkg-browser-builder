@@ -1,6 +1,6 @@
 import { LeechActionValue } from '../dictionary/leech-action';
 
-export type LapseConfig = {
+export type LapseCardConfig = {
 	delays: number[];
 	leechAction: LeechActionValue;
 	leechFails: number;

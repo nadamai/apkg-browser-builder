@@ -1,11 +1,11 @@
 import { OrderValue } from '../dictionary/order';
-import { LapseConfig } from './lapse-config';
+import { LapseCardConfig } from './lapse-card-config';
 
 export type DeckConfig = {
 	autoplay: boolean;
 	dyn: boolean;
 	id: number;
-	lapse: LapseConfig;
+	lapse: LapseCardConfig;
 	maxTaken: number;
 	mod: number;
 	name: string;
