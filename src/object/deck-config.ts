@@ -1,29 +1,21 @@
 import { Object } from '../abstract';
-import { Order } from '../dictionary/order';
 import { DeckConfig as DeckConfigObject } from '../model';
 import { LapseCardConfig } from './lapse-card-config';
+import { NewCardConfig } from './new-card-config';
 
 export class DeckConfig extends Object<DeckConfigObject> {
-	protected lapse: LapseCardConfig = new LapseCardConfig();
-	// protected new: NewCardConfig = new NewCardConfig();
+	protected lapseCardConfig: LapseCardConfig = new LapseCardConfig();
+	protected newCardConfig: NewCardConfig = new NewCardConfig();
 
 	protected object: DeckConfigObject = {
 		autoplay: false,
 		dyn: false,
 		id: 1,
-		lapse: this.lapse.getObject(),
+		lapse: this.lapseCardConfig.getObject(),
 		maxTaken: 0,
 		mod: 0,
 		name: '',
-		new: {
-			bury: false,
-			delays: [],
-			initialFactor: 0,
-			ints: [],
-			order: Order.new_cards_random,
-			perDay: 0,
-			separate: 0
-		},
+		new: this.newCardConfig.getObject(),
 		replayq: false,
 		rev: {
 			bury: false,
@@ -139,12 +131,23 @@ export class DeckConfig extends Object<DeckConfigObject> {
 	}
 
 	public getLapseCardConfig(): LapseCardConfig {
-		return this.lapse;
+		return this.lapseCardConfig;
 	}
 
-	public setLapseCardConfig(lapse: LapseCardConfig): DeckConfig {
-		this.lapse = lapse;
-		this.object.lapse = this.lapse.getObject();
+	public setLapseCardConfig(config: LapseCardConfig): DeckConfig {
+		this.lapseCardConfig = config;
+		this.object.lapse = this.lapseCardConfig.getObject();
+
+		return this;
+	}
+
+	public getNewCardConfig(): NewCardConfig {
+		return this.newCardConfig;
+	}
+
+	public setNewCardConfig(config: NewCardConfig): DeckConfig {
+		this.newCardConfig = config;
+		this.object.new = this.newCardConfig.getObject();
 
 		return this;
 	}
