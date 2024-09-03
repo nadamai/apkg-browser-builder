@@ -2,10 +2,12 @@ import { Object } from '../abstract';
 import { DeckConfig as DeckConfigObject } from '../model';
 import { LapseCardConfig } from './lapse-card-config';
 import { NewCardConfig } from './new-card-config';
+import { ReviewCardConfig } from './review-card-config';
 
 export class DeckConfig extends Object<DeckConfigObject> {
 	protected lapseCardConfig: LapseCardConfig = new LapseCardConfig();
 	protected newCardConfig: NewCardConfig = new NewCardConfig();
+	protected reviewCardConfig: ReviewCardConfig = new ReviewCardConfig();
 
 	protected object: DeckConfigObject = {
 		autoplay: false,
@@ -17,15 +19,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		name: '',
 		new: this.newCardConfig.getObject(),
 		replayq: false,
-		rev: {
-			bury: false,
-			ease4: 0,
-			fuzz: 0,
-			ivlFct: 0,
-			maxIvl: 0,
-			minSpace: 0,
-			perDay: 0
-		},
+		rev: this.reviewCardConfig.getObject(),
 		timer: false,
 		usn: -1
 	};
@@ -148,6 +142,17 @@ export class DeckConfig extends Object<DeckConfigObject> {
 	public setNewCardConfig(config: NewCardConfig): DeckConfig {
 		this.newCardConfig = config;
 		this.object.new = this.newCardConfig.getObject();
+
+		return this;
+	}
+
+	public getReviewCardConfig(): ReviewCardConfig {
+		return this.reviewCardConfig;
+	}
+
+	public setReviewCardConfig(config: ReviewCardConfig): DeckConfig {
+		this.reviewCardConfig = config;
+		this.object.rev = this.reviewCardConfig.getObject();
 
 		return this;
 	}
