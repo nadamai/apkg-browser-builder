@@ -1,10 +1,11 @@
 import { Object } from '../abstract';
 import { Order } from '../dictionary/order';
 import { DeckConfig as DeckConfigObject } from '../model';
-import { LapseConfig } from './lapse-config';
+import { LapseCardConfig } from './lapse-card-config';
 
 export class DeckConfig extends Object<DeckConfigObject> {
-	protected lapse: LapseConfig = new LapseConfig();
+	protected lapse: LapseCardConfig = new LapseCardConfig();
+	// protected new: NewCardConfig = new NewCardConfig();
 
 	protected object: DeckConfigObject = {
 		autoplay: false,
@@ -137,11 +138,11 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this;
 	}
 
-	public getLapseConfig(): LapseConfig {
+	public getLapseCardConfig(): LapseCardConfig {
 		return this.lapse;
 	}
 
-	public setLapseConfig(lapse: LapseConfig): DeckConfig {
+	public setLapseCardConfig(lapse: LapseCardConfig): DeckConfig {
 		this.lapse = lapse;
 		this.object.lapse = this.lapse.getObject();
 
