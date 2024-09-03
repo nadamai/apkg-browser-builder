@@ -1,5 +1,10 @@
 import { Entity } from '../abstract';
-import { Collection as CollectionModel, Deck as DeckModel, DeckConfig as DeckConfigModel } from '../model';
+import {
+	Collection as CollectionModel,
+	Deck as DeckModel,
+	DeckConfig as DeckConfigModel,
+	Configuration
+} from '../model';
 import { Deck, DeckConfig } from '../object';
 
 export class Collection extends Entity<CollectionModel> {
@@ -14,7 +19,7 @@ export class Collection extends Entity<CollectionModel> {
 		dty: 0,
 		usn: -1,
 		ls: 0,
-		conf: '{}', // TODO: add getters & setters
+		conf: '{}',
 		models: '{}', // TODO: add getters & setters
 		decks: '{}',
 		dconf: '{}',
@@ -87,6 +92,16 @@ export class Collection extends Entity<CollectionModel> {
 
 	public setLastSyncTime(time: number): Collection {
 		this.entity.ls = time;
+
+		return this;
+	}
+
+	public getConfiguration(): Configuration {
+		return JSON.parse(this.entity.conf);
+	}
+
+	public setConfiguration(configuration: Configuration): Collection {
+		this.entity.conf = JSON.stringify(configuration);
 
 		return this;
 	}
