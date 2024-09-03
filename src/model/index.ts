@@ -1,5 +1,6 @@
 export * from './card';
 export * from './collection';
+export * from './configuration';
 export * from './deck';
 export * from './deck-config';
 export * from './grave';
