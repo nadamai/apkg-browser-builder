@@ -3,9 +3,10 @@ import {
 	Collection as CollectionModel,
 	Deck as DeckModel,
 	DeckConfig as DeckConfigModel,
-	Configuration
+	Configuration as ConfigurationModel,
+	Model as ModelModel
 } from '../model';
-import { Deck, DeckConfig } from '../object';
+import { Deck, DeckConfig, Model } from '../object';
 
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
@@ -20,7 +21,7 @@ export class Collection extends Entity<CollectionModel> {
 		usn: -1,
 		ls: 0,
 		conf: '{}',
-		models: '{}', // TODO: add getters & setters
+		models: '{}',
 		decks: '{}',
 		dconf: '{}',
 		tags: '{}'
@@ -96,12 +97,48 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
-	public getConfiguration(): Configuration {
+	public getConfiguration(): ConfigurationModel {
 		return JSON.parse(this.entity.conf);
 	}
 
-	public setConfiguration(configuration: Configuration): Collection {
+	public setConfiguration(configuration: ConfigurationModel): Collection {
 		this.entity.conf = JSON.stringify(configuration);
+
+		return this;
+	}
+
+	public getModels(): Model[] {
+		return Object.values(JSON.parse(this.entity.models));
+	}
+
+	public setModels(models: Model[]): Collection {
+		const value = models.reduce((acc: Record<number, ModelModel>, model: Model) => {
+			acc[model.getId()] = model.getObject();
+
+			return acc;
+		}, {});
+
+		this.entity.models = JSON.stringify(value);
+
+		return this;
+	}
+
+	public addModel(model: Model): Collection {
+		const models = this.getModels();
+
+		models.push(model);
+
+		this.setModels(models);
+
+		return this;
+	}
+
+	public removeModel(model: Model): Collection {
+		const models = this.getModels();
+
+		models.splice(models.indexOf(model), 1);
+
+		this.setModels(models);
 
 		return this;
 	}
