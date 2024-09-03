@@ -1,17 +1,11 @@
-import { LeechActionValue } from '../dictionary/leech-action';
 import { OrderValue } from '../dictionary/order';
+import { LapseConfig } from './lapse-config';
 
 export type DeckConfig = {
 	autoplay: boolean;
 	dyn: boolean;
 	id: number;
-	lapse: {
-		delays: number[];
-		leechAction: LeechActionValue;
-		leechFails: number;
-		minInt: number;
-		mult: number;
-	};
+	lapse: LapseConfig;
 	maxTaken: number;
 	mod: number;
 	name: string;

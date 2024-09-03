@@ -19,7 +19,7 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 		id: Date.now(),
 		cid: 0,
 		usn: -1,
-		ease: 1,
+		ease: ReviewLogEase.wrong,
 		ivl: 0,
 		lastIvl: 0,
 		factor: 0,

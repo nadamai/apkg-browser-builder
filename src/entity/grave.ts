@@ -8,7 +8,7 @@ export class Grave extends Entity<GraveModel> {
 	protected entity: GraveModel = {
 		usn: -1,
 		oid: 0,
-		type: 0
+		type: GraveType.card
 	};
 
 	public getOriginalId(): number {
