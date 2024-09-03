@@ -1,5 +1,5 @@
-import { OrderValue } from '../dictionary/order';
 import { LapseCardConfig } from './lapse-card-config';
+import { NewCardConfig } from './new-card-config';
 
 export type DeckConfig = {
 	autoplay: boolean;
@@ -9,15 +9,7 @@ export type DeckConfig = {
 	maxTaken: number;
 	mod: number;
 	name: string;
-	new: {
-		bury: boolean;
-		delays: number[];
-		initialFactor: number;
-		ints: number[];
-		order: OrderValue;
-		perDay: number;
-		separate: number;
-	};
+	new: NewCardConfig;
 	replayq: boolean;
 	rev: {
 		bury: boolean;
