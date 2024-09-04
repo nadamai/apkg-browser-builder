@@ -12,11 +12,6 @@ import { Deck, DeckConfiguration, Model } from '../object';
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
 
-	protected conf: Configuration = {};
-	protected models: Model[] = [];
-	protected decks: Deck[] = [];
-	protected deckConfigurations: DeckConfiguration[] = [];
-
 	protected entity: CollectionModel = {
 		id: 0,
 		crt: 0,
@@ -32,6 +27,11 @@ export class Collection extends Entity<CollectionModel> {
 		dconf: '{}',
 		tags: '{}'
 	};
+
+	protected conf: Configuration = {};
+	protected models: Model[] = [];
+	protected decks: Deck[] = [];
+	protected deckConfigurations: DeckConfiguration[] = [];
 
 	public getId(): number {
 		return this.entity.id;
