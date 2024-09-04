@@ -2,7 +2,7 @@ import * as FileSaver from 'file-saver';
 import { SqlJsConfig } from 'sql.js';
 import { Database } from './service/database';
 import JSZip from 'jszip';
-import { Collection } from './entity';
+import { Card, Collection, Note } from './entity';
 import { Deck } from './object/deck';
 import { Entity } from './abstract';
 
@@ -12,7 +12,10 @@ export type ApkgBuilderConfig = Partial<{
 
 export default class ApkgBuilder {
 	private db: Database;
+
 	private collection: Collection;
+	public cards: Card[] = []; // TODO: tmp
+	public notes: Note[] = []; // TODO: tmp
 
 	constructor(config?: ApkgBuilderConfig) {
 		this.db = new Database(config?.sqljs);
@@ -59,7 +62,7 @@ export default class ApkgBuilder {
 	public save(filename: string): void {
 		const zip = new JSZip();
 
-		const entities: Entity[] = [this.collection];
+		const entities: Entity[] = [this.collection, ...this.notes, ...this.cards];
 
 		for (let entity of entities) {
 			this.db.insert(entity.getTable(), entity.getEntity());

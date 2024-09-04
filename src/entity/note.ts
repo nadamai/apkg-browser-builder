@@ -1,5 +1,6 @@
 import { Entity } from '../abstract';
 import { Note as NoteModel } from '../model';
+import { Model } from '../object';
 
 export class Note extends Entity<NoteModel> {
 	protected table: string = 'notes';
@@ -48,11 +49,11 @@ export class Note extends Entity<NoteModel> {
 		return this;
 	}
 
-	// public setModel(model: Model): Note {
-	// 	this.entity.mid = model.id;
+	public setModel(model: Model): Note {
+		this.entity.mid = model.getObject().id;
 
-	// 	return this;
-	// }
+		return this;
+	}
 
 	public getModificationTime(): number {
 		return this.entity.mod;
