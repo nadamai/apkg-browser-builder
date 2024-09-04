@@ -1,7 +1,8 @@
 import { Entity } from '../abstract';
 import { CardQueue, CardQueueKey, CardType, CardTypeKey } from '../dictionary';
-import { Card as CardModel, Note } from '../model';
+import { Card as CardModel } from '../model';
 import { Deck } from '../object';
+import { Note } from './note';
 
 export class Card extends Entity<CardModel> {
 	protected table: string = 'cards';
@@ -48,7 +49,7 @@ export class Card extends Entity<CardModel> {
 	}
 
 	public setNote(note: Note): Card {
-		this.entity.nid = note.id;
+		this.entity.nid = note.getEntity().id;
 
 		return this;
 	}
