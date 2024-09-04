@@ -1,6 +1,7 @@
 import { Grave as GraveModel, Card, Note } from '../model';
 import { GraveType, GraveTypeKey } from '../dictionary';
 import { Entity } from '../abstract';
+import { Deck } from '../object';
 
 export class Grave extends Entity<GraveModel> {
 	protected table: string = 'graves';
@@ -37,13 +38,13 @@ export class Grave extends Entity<GraveModel> {
 		return this;
 	}
 
-	// public setDeck(deck: Deck): Grave {
-	// 	this.entity.oid = deck.id;
-	//
-	//  this.setType('deck');
+	public setDeck(deck: Deck): Grave {
+		this.entity.oid = deck.getObject().id;
 
-	// 	return this;
-	// }
+		this.setType('deck');
+
+		return this;
+	}
 
 	public getType(): GraveTypeKey {
 		return this.getDictionaryKey(GraveType, this.entity.type) || 'card';

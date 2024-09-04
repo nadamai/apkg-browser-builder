@@ -94,11 +94,11 @@ export class Note extends Entity<NoteModel> {
 		return this;
 	}
 
-	public getSortFields(): number {
+	public getSortField(): number {
 		return this.entity.sfld;
 	}
 
-	public setSortFields(sort: number): Note {
+	public setSortField(sort: number): Note {
 		this.entity.sfld = sort;
 
 		return this;
