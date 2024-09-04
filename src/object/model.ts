@@ -1,9 +1,14 @@
 import { Object } from '../abstract';
 import { ModelType, ModelTypeKey } from '../dictionary/model-type';
-import { Model as ModelObject, Field } from '../model';
+import { Model as ModelObject } from '../model';
 import { Deck } from '../object';
+import { Field } from './field';
+import { CardTemplate } from './card-template';
 
 export class Model extends Object<ModelObject> {
+	protected fields: Field[] = [];
+	protected templates: CardTemplate[] = [];
+
 	protected object: ModelObject = {
 		id: 1,
 		name: '',
@@ -76,40 +81,80 @@ export class Model extends Object<ModelObject> {
 	}
 
 	public getFields(): Field[] {
-		return this.object.flds;
+		return this.fields;
 	}
 
-	// public setFields(models: Field[]): Collection {
-	// 	const value = models.reduce((acc: Record<number, FieldModel>, model: Model) => {
-	// 		acc[model.getId()] = model.getObject();
+	public setFields(fields: Field[]): Model {
+		this.fields = fields;
 
-	// 		return acc;
-	// 	}, {});
+		const value = this.fields.map((field: Field) => {
+			return field.getObject();
+		});
 
-	// 	this.entity.models = JSON.stringify(value);
+		this.object.flds = value;
 
-	// 	return this;
-	// }
+		return this;
+	}
 
-	// public addField(model: Field): Collection {
-	// 	const models = this.getFields();
+	public updateFields(): Model {
+		this.setFields(this.fields);
 
-	// 	models.push(model);
+		return this;
+	}
 
-	// 	this.setFields(models);
+	public addField(field: Field): Model {
+		this.fields.push(field);
 
-	// 	return this;
-	// }
+		this.updateFields();
 
-	// public removeField(model: Field): Collection {
-	// 	const models = this.getFields();
+		return this;
+	}
 
-	// 	models.splice(models.indexOf(model), 1);
+	public removeField(field: Field): Model {
+		this.fields.splice(this.fields.indexOf(field), 1);
 
-	// 	this.setFields(models);
+		this.updateFields();
 
-	// 	return this;
-	// }
+		return this;
+	}
+
+	public getTemplates(): CardTemplate[] {
+		return this.templates;
+	}
+
+	public setTemplates(templates: CardTemplate[]): Model {
+		this.templates = templates;
+
+		const value = this.templates.map((template: CardTemplate) => {
+			return template.getObject();
+		});
+
+		this.object.tmpls = value;
+
+		return this;
+	}
+
+	public updateTemplates(): Model {
+		this.setTemplates(this.templates);
+
+		return this;
+	}
+
+	public addTemplate(template: CardTemplate): Model {
+		this.templates.push(template);
+
+		this.updateFields();
+
+		return this;
+	}
+
+	public removeTemplate(template: CardTemplate): Model {
+		this.templates.splice(this.templates.indexOf(template), 1);
+
+		this.updateFields();
+
+		return this;
+	}
 
 	public getLatexPreamble(): string {
 		return this.object.latexPre;
