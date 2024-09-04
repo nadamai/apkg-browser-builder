@@ -1,6 +1,7 @@
 import { Entity } from '../abstract';
 import { CardQueue, CardQueueKey, CardType, CardTypeKey } from '../dictionary';
 import { Card as CardModel, Note } from '../model';
+import { Deck } from '../object';
 
 export class Card extends Entity<CardModel> {
 	protected table: string = 'cards';
@@ -62,11 +63,11 @@ export class Card extends Entity<CardModel> {
 		return this;
 	}
 
-	// public setDeck(deck: Deck): Card {
-	// 	this.entity.did = deck.id;
+	public setDeck(deck: Deck): Card {
+		this.entity.did = deck.getObject().id;
 
-	// 	return this;
-	// }
+		return this;
+	}
 
 	public getOrdinal(): number {
 		return this.entity.ord;
