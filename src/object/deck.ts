@@ -1,6 +1,6 @@
 import { Object } from '../abstract';
 import { Deck as DeckObject } from '../model';
-import { DeckConfig } from './deck-config';
+import { DeckConfiguration } from './deck-config';
 
 export class Deck extends Object<DeckObject> {
 	protected object: DeckObject = {
@@ -153,17 +153,17 @@ export class Deck extends Object<DeckObject> {
 		return this;
 	}
 
-	public getDeckConfigId(): number | null {
+	public getDeckConfigurationId(): number | null {
 		return this.object.conf;
 	}
 
-	public setDeckConfigId(id: number): Deck {
+	public setDeckConfigurationId(id: number): Deck {
 		this.object.conf = id;
 
 		return this;
 	}
 
-	public setDeckConfig(config: DeckConfig): Deck {
+	public setDeckConfiguration(config: DeckConfiguration): Deck {
 		this.object.conf = config.getId();
 
 		return this;

@@ -2,14 +2,20 @@ import { Entity } from '../abstract';
 import {
 	Collection as CollectionModel,
 	Deck as DeckModel,
-	DeckConfig as DeckConfigModel,
+	DeckConfiguration as DeckConfigurationModel,
 	Configuration as ConfigurationModel,
-	Model as ModelModel
+	Model as ModelModel,
+	Configuration
 } from '../model';
-import { Deck, DeckConfig, Model } from '../object';
+import { Deck, DeckConfiguration, Model } from '../object';
 
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
+
+	protected conf: Configuration = {};
+	protected models: Model[] = [];
+	protected decks: Deck[] = [];
+	protected deckConfigurations: DeckConfiguration[] = [];
 
 	protected entity: CollectionModel = {
 		id: 0,
@@ -108,11 +114,13 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	public getModels(): Model[] {
-		return Object.values(JSON.parse(this.entity.models));
+		return this.models;
 	}
 
 	public setModels(models: Model[]): Collection {
-		const value = models.reduce((acc: Record<number, ModelModel>, model: Model) => {
+		this.models = models;
+
+		const value = this.models.reduce((acc: Record<number, ModelModel>, model: Model) => {
 			acc[model.getId()] = model.getObject();
 
 			return acc;
@@ -123,32 +131,36 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
+	public updateModels(): Collection {
+		this.setModels(this.models);
+
+		return this;
+	}
+
 	public addModel(model: Model): Collection {
-		const models = this.getModels();
+		this.models.push(model);
 
-		models.push(model);
-
-		this.setModels(models);
+		this.updateModels();
 
 		return this;
 	}
 
 	public removeModel(model: Model): Collection {
-		const models = this.getModels();
+		this.models.splice(this.models.indexOf(model), 1);
 
-		models.splice(models.indexOf(model), 1);
-
-		this.setModels(models);
+		this.updateModels();
 
 		return this;
 	}
 
 	public getDecks(): Deck[] {
-		return Object.values(JSON.parse(this.entity.decks));
+		return this.decks;
 	}
 
 	public setDecks(decks: Deck[]): Collection {
-		const value = decks.reduce((acc: Record<number, DeckModel>, deck: Deck) => {
+		this.decks = decks;
+
+		const value = this.decks.reduce((acc: Record<number, DeckModel>, deck: Deck) => {
 			acc[deck.getId()] = deck.getObject();
 
 			return acc;
@@ -159,58 +171,66 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
+	public updateDecks(): Collection {
+		this.setDecks(this.decks);
+
+		return this;
+	}
+
 	public addDeck(deck: Deck): Collection {
-		const decks = this.getDecks();
+		this.decks.push(deck);
 
-		decks.push(deck);
-
-		this.setDecks(decks);
-
+		this.updateDecks();
 		return this;
 	}
 
 	public removeDeck(deck: Deck): Collection {
-		const decks = this.getDecks();
+		this.decks.splice(this.decks.indexOf(deck), 1);
 
-		decks.splice(decks.indexOf(deck), 1);
-
-		this.setDecks(decks);
+		this.updateDecks();
 
 		return this;
 	}
 
-	public getDeckConfigs(): DeckConfig[] {
-		return Object.values(JSON.parse(this.entity.dconf));
+	public getDeckConfigurations(): DeckConfiguration[] {
+		return this.deckConfigurations;
 	}
 
-	public setDeckConfigs(configs: DeckConfig[]): Collection {
-		const value = configs.reduce((acc: Record<number, DeckConfigModel>, config: DeckConfig) => {
-			acc[config.getId()] = config.getObject();
+	public setDeckConfigurations(configs: DeckConfiguration[]): Collection {
+		this.deckConfigurations = configs;
 
-			return acc;
-		}, {});
+		const value = this.deckConfigurations.reduce(
+			(acc: Record<number, DeckConfigurationModel>, config: DeckConfiguration) => {
+				acc[config.getId()] = config.getObject();
+
+				return acc;
+			},
+			{}
+		);
 
 		this.entity.dconf = JSON.stringify(value);
 
 		return this;
 	}
 
-	public addDeckConfig(config: DeckConfig): Collection {
-		const configs = this.getDeckConfigs();
-
-		configs.push(config);
-
-		this.setDeckConfigs(configs);
+	public updateDeckConfigurations(): Collection {
+		this.setDeckConfigurations(this.deckConfigurations);
 
 		return this;
 	}
 
-	public removeDeckConfig(config: DeckConfig): Collection {
-		const configs = this.getDeckConfigs();
+	public addDeckConfiguration(config: DeckConfiguration): Collection {
+		this.deckConfigurations.push(config);
 
-		configs.splice(configs.indexOf(config), 1);
+		this.updateDeckConfigurations();
 
-		this.setDeckConfigs(configs);
+		return this;
+	}
+
+	public removeDeckConfiguration(config: DeckConfiguration): Collection {
+		this.deckConfigurations.splice(this.deckConfigurations.indexOf(config), 1);
+
+		this.updateDeckConfigurations();
 
 		return this;
 	}

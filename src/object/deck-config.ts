@@ -1,15 +1,15 @@
 import { Object } from '../abstract';
-import { DeckConfig as DeckConfigObject } from '../model';
+import { DeckConfiguration as DeckConfigurationObject } from '../model';
 import { LapseCardConfig } from './lapse-card-config';
 import { NewCardConfig } from './new-card-config';
 import { ReviewCardConfig } from './review-card-config';
 
-export class DeckConfig extends Object<DeckConfigObject> {
+export class DeckConfiguration extends Object<DeckConfigurationObject> {
 	protected lapseCardConfig: LapseCardConfig = new LapseCardConfig();
 	protected newCardConfig: NewCardConfig = new NewCardConfig();
 	protected reviewCardConfig: ReviewCardConfig = new ReviewCardConfig();
 
-	protected object: DeckConfigObject = {
+	protected object: DeckConfigurationObject = {
 		autoplay: false,
 		dyn: false,
 		id: 1,
@@ -38,7 +38,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.id;
 	}
 
-	public setId(id?: number): DeckConfig {
+	public setId(id?: number): DeckConfiguration {
 		this.object.id = id ?? Date.now();
 
 		return this;
@@ -48,7 +48,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.name;
 	}
 
-	public setName(name: string): DeckConfig {
+	public setName(name: string): DeckConfiguration {
 		this.object.name = name;
 
 		return this;
@@ -58,7 +58,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.autoplay;
 	}
 
-	public setAutoplay(autoplay: boolean): DeckConfig {
+	public setAutoplay(autoplay: boolean): DeckConfiguration {
 		this.object.autoplay = autoplay;
 
 		return this;
@@ -68,7 +68,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.dyn;
 	}
 
-	public setDynamic(dynamic: boolean): DeckConfig {
+	public setDynamic(dynamic: boolean): DeckConfiguration {
 		this.object.dyn = dynamic;
 
 		return this;
@@ -78,7 +78,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.maxTaken;
 	}
 
-	public setMaxTaken(maxTaken: number): DeckConfig {
+	public setMaxTaken(maxTaken: number): DeckConfiguration {
 		this.object.maxTaken = maxTaken;
 
 		return this;
@@ -88,7 +88,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.mod;
 	}
 
-	public setModificationTime(time: number): DeckConfig {
+	public setModificationTime(time: number): DeckConfiguration {
 		this.object.mod = time;
 
 		return this;
@@ -98,7 +98,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.replayq;
 	}
 
-	public setReplay(replay: boolean): DeckConfig {
+	public setReplay(replay: boolean): DeckConfiguration {
 		this.object.replayq = replay;
 
 		return this;
@@ -108,7 +108,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.timer;
 	}
 
-	public setTimer(timer: boolean): DeckConfig {
+	public setTimer(timer: boolean): DeckConfiguration {
 		this.object.timer = timer;
 
 		return this;
@@ -118,7 +118,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.object.usn;
 	}
 
-	public setUpdateSequenceNumber(updateSequenceNumber: number): DeckConfig {
+	public setUpdateSequenceNumber(updateSequenceNumber: number): DeckConfiguration {
 		this.object.usn = updateSequenceNumber;
 
 		return this;
@@ -128,7 +128,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.lapseCardConfig;
 	}
 
-	public setLapseCardConfig(config: LapseCardConfig): DeckConfig {
+	public setLapseCardConfig(config: LapseCardConfig): DeckConfiguration {
 		this.lapseCardConfig = config;
 		this.object.lapse = this.lapseCardConfig.getObject();
 
@@ -139,7 +139,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.newCardConfig;
 	}
 
-	public setNewCardConfig(config: NewCardConfig): DeckConfig {
+	public setNewCardConfig(config: NewCardConfig): DeckConfiguration {
 		this.newCardConfig = config;
 		this.object.new = this.newCardConfig.getObject();
 
@@ -150,7 +150,7 @@ export class DeckConfig extends Object<DeckConfigObject> {
 		return this.reviewCardConfig;
 	}
 
-	public setReviewCardConfig(config: ReviewCardConfig): DeckConfig {
+	public setReviewCardConfig(config: ReviewCardConfig): DeckConfiguration {
 		this.reviewCardConfig = config;
 		this.object.rev = this.reviewCardConfig.getObject();
 
