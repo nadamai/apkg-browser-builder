@@ -2,7 +2,7 @@ import { LapseCardConfig } from './lapse-card-config';
 import { NewCardConfig } from './new-card-config';
 import { ReviewCardConfig } from './review-card-config';
 
-export type DeckConfig = {
+export type DeckConfiguration = {
 	autoplay: boolean;
 	dyn: boolean;
 	id: number;

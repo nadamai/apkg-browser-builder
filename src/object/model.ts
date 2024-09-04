@@ -1,6 +1,6 @@
 import { Object } from '../abstract';
 import { ModelType, ModelTypeKey } from '../dictionary/model-type';
-import { Model as ModelObject } from '../model';
+import { Model as ModelObject, Field } from '../model';
 import { Deck } from '../object';
 
 export class Model extends Object<ModelObject> {
@@ -74,6 +74,42 @@ export class Model extends Object<ModelObject> {
 
 		return this;
 	}
+
+	public getFields(): Field[] {
+		return this.object.flds;
+	}
+
+	// public setFields(models: Field[]): Collection {
+	// 	const value = models.reduce((acc: Record<number, FieldModel>, model: Model) => {
+	// 		acc[model.getId()] = model.getObject();
+
+	// 		return acc;
+	// 	}, {});
+
+	// 	this.entity.models = JSON.stringify(value);
+
+	// 	return this;
+	// }
+
+	// public addField(model: Field): Collection {
+	// 	const models = this.getFields();
+
+	// 	models.push(model);
+
+	// 	this.setFields(models);
+
+	// 	return this;
+	// }
+
+	// public removeField(model: Field): Collection {
+	// 	const models = this.getFields();
+
+	// 	models.splice(models.indexOf(model), 1);
+
+	// 	this.setFields(models);
+
+	// 	return this;
+	// }
 
 	public getLatexPreamble(): string {
 		return this.object.latexPre;
