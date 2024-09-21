@@ -7,12 +7,12 @@ export class Note extends Entity<NoteModel> {
 
 	protected entity: NoteModel = {
 		id: Date.now(),
-		guid: 0,
+		guid: Date.now(),
 		mid: 0,
 		mod: 0,
 		usn: -1,
 		tags: '',
-		flds: '',
+		flds: ['aaa', 'bbb'].join('\x1f'),
 		sfld: 0,
 		csum: 0,
 		flags: 0,

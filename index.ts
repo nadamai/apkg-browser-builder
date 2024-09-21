@@ -7,20 +7,28 @@ const apkg = new ApkgBuilder();
 setTimeout(() => {
 	const deck = new Deck('My deck', 'description of my deck');
 
-	// This is not needed but possible
+	const model = new Model();
+	model.setDeck(deck);
+
+	
+	
+
+
 	const collection = new Collection();
 	const config = new DeckConfiguration('Default deck config');
 
 	collection.addDeckConfiguration(config);
+	collection.addModel(model);
 
 	apkg.setCollection(collection);
-	// End
+	
+	
+
+
+	
 
 	apkg.addDeck(deck);
 
-
-	const model = new Model();
-	model.setDeck(deck);
 
 
 
@@ -29,13 +37,12 @@ setTimeout(() => {
 
 	const note = new Note();
 	note.setModel(model)
-	note.setFields(["Front aaa", "Back bbb"]);
 
 
 
 	const card = new Card();
 	card.setDeck(deck);
-	card.setNote(note);
+	// card.setNote(note);
 
 
 

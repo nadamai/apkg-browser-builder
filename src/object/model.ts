@@ -10,25 +10,48 @@ export class Model extends Object<ModelObject> {
 	protected templates: CardTemplate[] = [];
 
 	protected object: ModelObject = {
-		id: 1,
-		name: '',
-		css: '',
+		id: Date.now(),
+		name: 'test',
+		css: '.card { font-family: Arial; font-size: 10px; }',
 		did: 1,
-		flds: [],
+		flds: [
+			{
+				name: 'Front',
+				ord: 0,
+				media: [],
+				font: 'Arial',
+				rtl: false,
+				size: 10,
+				sticky: false
+			},
+			{
+				name: 'Back',
+				ord: 1,
+				media: [],
+				font: 'Arial',
+				rtl: false,
+				size: 10,
+				sticky: false
+			}
+		],
 		latexPre:
-			'\\documentclass[12pt]{article}' +
-			'\\special{papersize=3in,5in}' +
-			'\\usepackage[utf8]{inputenc}' +
-			'\\usepackage{amssymb,amsmath}' +
-			'\\pagestyle{empty}' +
-			'\\setlength{\\parindent}{0in}' +
-			'\\begin{document}',
-		latexPost: '\\end{document}',
+			'\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n',
+		latexPost: '',
 		mod: 0,
 		req: [],
 		sortf: 0,
 		tags: [],
-		tmpls: [],
+		tmpls: [
+			{
+				name: 'Card 1',
+				qfmt: '{{Front}}',
+				afmt: '{{Front}}\n\n<hr id=answer>\n\n{{Back}}',
+				bafmt: '',
+				bqfmt: '',
+				ord: 0,
+				did: null
+			}
+		],
 		type: ModelType.standard,
 		usn: 0,
 		vers: []
