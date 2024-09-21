@@ -12,12 +12,18 @@ export class Note extends Entity<NoteModel> {
 		mod: 0,
 		usn: -1,
 		tags: '',
-		flds: ['aaa', 'bbb'].join('\x1f'),
+		flds: '',
 		sfld: 0,
 		csum: 0,
 		flags: 0,
 		data: ''
 	};
+
+	constructor(...fields: string[]) {
+		super();
+
+		this.entity.flds = fields.join('\x1f');
+	}
 
 	public getId(): number {
 		return this.entity.id;
