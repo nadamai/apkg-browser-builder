@@ -11,10 +11,6 @@ export class QueryBuilder {
 		const query = `INSERT INTO ${table} (${columns.join(', ')}) VALUES (${values.join(', ')})`;
 
 		const params = columns.reduce((output: Record<string, any>, column: string) => {
-			if (column === 'models') {
-				console.log(JSON.parse(data['models']));
-			}
-
 			return {
 				...output,
 				[`:${column}`]: data[column]

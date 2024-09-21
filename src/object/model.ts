@@ -12,7 +12,7 @@ export class Model extends Object<ModelObject> {
 	protected object: ModelObject = {
 		id: Date.now(),
 		name: 'test',
-		css: '.card { font-family: Arial; font-size: 10px; }',
+		css: '.card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n',
 		did: 1,
 		flds: [
 			{
@@ -45,7 +45,7 @@ export class Model extends Object<ModelObject> {
 			{
 				name: 'Card 1',
 				qfmt: '{{Front}}',
-				afmt: '{{Front}}\n\n<hr id=answer>\n\n{{Back}}',
+				afmt: '{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}',
 				bafmt: '',
 				bqfmt: '',
 				ord: 0,

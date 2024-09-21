@@ -35,7 +35,7 @@ setTimeout(() => {
 
 
 
-	const note = new Note();
+	const note = new Note('This is front', 'This is back');
 	note.setModel(model)
 
 
