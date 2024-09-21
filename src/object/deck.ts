@@ -4,6 +4,7 @@ import { DeckConfiguration } from './deck-config';
 
 export class Deck extends Object<DeckObject> {
 	protected object: DeckObject = {
+		id: Date.now(),
 		name: '',
 		extendRev: null,
 		usn: -1,
@@ -16,7 +17,6 @@ export class Deck extends Object<DeckObject> {
 		dyn: false,
 		extendNew: null,
 		conf: 0,
-		id: 1,
 		mod: 0,
 		desc: ''
 	};

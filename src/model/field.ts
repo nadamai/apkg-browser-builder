@@ -4,6 +4,6 @@ export type Field = {
 	name: string;
 	ord: number;
 	rtl: boolean;
-	size: string;
+	size: number;
 	sticky: boolean;
 };

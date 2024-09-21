@@ -4,11 +4,11 @@ import { Field as FieldObject } from '../model';
 export class Field extends Object<FieldObject> {
 	protected object: FieldObject = {
 		name: '',
-		font: '',
+		font: 'Arial',
 		media: [],
 		ord: 0,
 		rtl: false,
-		size: '',
+		size: 10,
 		sticky: false
 	};
 
@@ -62,11 +62,11 @@ export class Field extends Object<FieldObject> {
 		return this;
 	}
 
-	public getSize(): string {
+	public getSize(): number {
 		return this.object.size;
 	}
 
-	public setSize(size: string): Field {
+	public setSize(size: number): Field {
 		this.object.size = size;
 
 		return this;
