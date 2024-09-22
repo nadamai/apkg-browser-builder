@@ -5,17 +5,14 @@ import { Deck, DeckConfiguration, Model } from './src/object';
 const apkg = new ApkgBuilder();
 
 setTimeout(() => {
-	const deck = new Deck('My deck', 'description of my deck');
-
-	const model = new Model();
-	model.setDeck(deck);
-
-	
-	
-
 
 	const collection = new Collection();
 	const config = new DeckConfiguration('Default deck config');
+	const deck = new Deck('My deck', 'description of my deck');
+	const model = new Model();
+
+	deck.setDeckConfiguration(config);
+	model.setDeck(deck);
 
 	collection.addDeckConfiguration(config);
 	collection.addModel(model);
@@ -46,7 +43,7 @@ setTimeout(() => {
 
 
 
-	// apkg.cards.push(card);
+	apkg.cards.push(card);
 	apkg.notes.push(note);
 
 
