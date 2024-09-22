@@ -10,9 +10,9 @@ export class DeckConfiguration extends Object<DeckConfigurationObject> {
 	protected reviewCardConfig: ReviewCardConfig = new ReviewCardConfig();
 
 	protected object: DeckConfigurationObject = {
+		id: Date.now(),
 		autoplay: false,
 		dyn: false,
-		id: 1,
 		lapse: this.lapseCardConfig.getObject(),
 		maxTaken: 0,
 		mod: Math.floor(Date.now() / 1000),
