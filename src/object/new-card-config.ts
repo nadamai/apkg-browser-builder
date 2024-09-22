@@ -9,7 +9,7 @@ export class NewCardConfig extends Object<NewCardConfigObject> {
 		initialFactor: 0,
 		ints: [],
 		order: CardsOrder.new_cards_random,
-		perDay: 0,
+		perDay: 20,
 		separate: 0
 	};
 
