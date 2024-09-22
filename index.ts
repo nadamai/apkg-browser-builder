@@ -46,7 +46,7 @@ setTimeout(() => {
 
 
 
-	apkg.cards.push(card);
+	// apkg.cards.push(card);
 	apkg.notes.push(note);
 
 

@@ -14,26 +14,7 @@ export class Model extends Object<ModelObject> {
 		name: 'test',
 		css: '.card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n',
 		did: 1,
-		flds: [
-			{
-				name: 'Front',
-				ord: 0,
-				media: [],
-				font: 'Arial',
-				rtl: false,
-				size: 10,
-				sticky: false
-			},
-			{
-				name: 'Back',
-				ord: 1,
-				media: [],
-				font: 'Arial',
-				rtl: false,
-				size: 10,
-				sticky: false
-			}
-		],
+		flds: [],
 		latexPre:
 			'\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n',
 		latexPost: '',
@@ -41,17 +22,7 @@ export class Model extends Object<ModelObject> {
 		req: [],
 		sortf: 0,
 		tags: [],
-		tmpls: [
-			{
-				name: 'Card 1',
-				qfmt: '{{Front}}',
-				afmt: '{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}',
-				bafmt: '',
-				bqfmt: '',
-				ord: 0,
-				did: null
-			}
-		],
+		tmpls: [],
 		type: ModelType.standard,
 		usn: 0,
 		vers: []
@@ -59,6 +30,17 @@ export class Model extends Object<ModelObject> {
 
 	constructor(name?: string) {
 		super();
+
+		const front = new Field('Front');
+		const back = new Field('Back');
+		const template = new CardTemplate();
+
+		front.setOrdinal(0);
+		back.setOrdinal(1);
+
+		this.addField(front);
+		this.addField(back);
+		this.addTemplate(template);
 
 		if (!name) {
 			return;
@@ -121,6 +103,7 @@ export class Model extends Object<ModelObject> {
 
 	public updateFields(): Model {
 		this.setFields(this.fields);
+		this.setTemplates(this.templates);
 
 		return this;
 	}

@@ -4,11 +4,11 @@ import { Deck } from './deck';
 
 export class CardTemplate extends Object<CardTemplateObject> {
 	protected object: CardTemplateObject = {
-		name: '',
-		afmt: '',
-		bafmt: '',
-		qfmt: '',
+		name: 'Card 1',
+		qfmt: '{{Front}}',
+		afmt: '{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}',
 		bqfmt: '',
+		bafmt: '',
 		did: null,
 		ord: 0
 	};
