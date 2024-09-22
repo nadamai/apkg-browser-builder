@@ -8,7 +8,7 @@ export class Field extends Object<FieldObject> {
 		media: [],
 		ord: 0,
 		rtl: false,
-		size: 10,
+		size: 20,
 		sticky: false
 	};
 
