@@ -15,7 +15,7 @@ export class DeckConfiguration extends Object<DeckConfigurationObject> {
 		id: 1,
 		lapse: this.lapseCardConfig.getObject(),
 		maxTaken: 0,
-		mod: 0,
+		mod: Math.floor(Date.now() / 1000),
 		name: '',
 		new: this.newCardConfig.getObject(),
 		replayq: false,

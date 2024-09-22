@@ -17,7 +17,7 @@ export class Deck extends Object<DeckObject> {
 		dyn: false,
 		extendNew: null,
 		conf: 0,
-		mod: 0,
+		mod: Math.floor(Date.now() / 1000),
 		desc: ''
 	};
 

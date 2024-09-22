@@ -15,7 +15,7 @@ export class Collection extends Entity<CollectionModel> {
 	protected entity: CollectionModel = {
 		id: 0,
 		crt: 0,
-		mod: 0,
+		mod: Math.floor(Date.now() / 1000),
 		scm: 0,
 		ver: 11,
 		dty: 0,

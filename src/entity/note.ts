@@ -9,7 +9,7 @@ export class Note extends Entity<NoteModel> {
 		id: Date.now(),
 		guid: Date.now(),
 		mid: 0,
-		mod: 0,
+		mod: Math.floor(Date.now() / 1000),
 		usn: -1,
 		tags: '',
 		flds: '',
