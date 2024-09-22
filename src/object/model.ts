@@ -37,7 +37,7 @@ export class Model extends Object<ModelObject> {
 		latexPre:
 			'\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n',
 		latexPost: '',
-		mod: 0,
+		mod: Math.floor(Date.now() / 1000),
 		req: [],
 		sortf: 0,
 		tags: [],

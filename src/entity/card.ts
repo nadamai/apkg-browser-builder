@@ -8,17 +8,17 @@ export class Card extends Entity<CardModel> {
 	protected table: string = 'cards';
 
 	protected entity: CardModel = {
-		id: 0,
+		id: Date.now(),
 		nid: 0,
 		did: 0,
 		ord: 0,
-		mod: 0,
+		mod: Math.floor(Date.now() / 1000),
 		usn: -1,
 		type: CardType.new,
 		queue: CardQueue.new,
 		due: 1,
 		ivl: 0,
-		factor: 0,
+		factor: 2500,
 		reps: 0,
 		lapses: 0,
 		left: 0,

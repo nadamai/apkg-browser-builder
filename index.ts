@@ -42,7 +42,7 @@ setTimeout(() => {
 
 	const card = new Card();
 	card.setDeck(deck);
-	// card.setNote(note);
+	card.setNote(note);
 
 
 
