@@ -9,7 +9,7 @@ export class ReviewCardConfig extends Object<ReviewCardConfigObject> {
 		ivlFct: 0,
 		maxIvl: 0,
 		minSpace: 0,
-		perDay: 0
+		perDay: 20
 	};
 
 	public getBury(): boolean {
