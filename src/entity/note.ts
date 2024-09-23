@@ -1,15 +1,16 @@
 import { Entity } from '../abstract';
 import { Note as NoteModel } from '../model';
 import { Model } from '../object';
+import { Generator } from '../service/generator';
 
 export class Note extends Entity<NoteModel> {
 	protected table: string = 'notes';
 
 	protected entity: NoteModel = {
-		id: Date.now(),
-		guid: Date.now(),
+		id: Generator.id(),
+		guid: Generator.guid(),
 		mid: 0,
-		mod: Math.floor(Date.now() / 1000),
+		mod: Generator.now(),
 		usn: -1,
 		tags: '',
 		flds: '',

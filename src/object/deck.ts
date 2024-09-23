@@ -1,10 +1,11 @@
 import { Object } from '../abstract';
 import { Deck as DeckObject } from '../model';
+import { Generator } from '../service/generator';
 import { DeckConfiguration } from './deck-config';
 
 export class Deck extends Object<DeckObject> {
 	protected object: DeckObject = {
-		id: Date.now(),
+		id: Generator.id(),
 		name: '',
 		extendRev: null,
 		usn: -1,
@@ -17,7 +18,7 @@ export class Deck extends Object<DeckObject> {
 		dyn: false,
 		extendNew: null,
 		conf: 0,
-		mod: Math.floor(Date.now() / 1000),
+		mod: Generator.now(),
 		desc: ''
 	};
 
