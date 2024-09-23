@@ -2,17 +2,18 @@ import { Entity } from '../abstract';
 import { CardQueue, CardQueueKey, CardType, CardTypeKey } from '../dictionary';
 import { Card as CardModel } from '../model';
 import { Deck } from '../object';
+import { Generator } from '../service/generator';
 import { Note } from './note';
 
 export class Card extends Entity<CardModel> {
 	protected table: string = 'cards';
 
 	protected entity: CardModel = {
-		id: Date.now(),
+		id: Generator.id(),
 		nid: 0,
 		did: 0,
 		ord: 0,
-		mod: Math.floor(Date.now() / 1000),
+		mod: Generator.now(),
 		usn: -1,
 		type: CardType.new,
 		queue: CardQueue.new,

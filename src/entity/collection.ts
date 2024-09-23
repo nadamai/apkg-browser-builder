@@ -8,6 +8,7 @@ import {
 	Configuration
 } from '../model';
 import { Deck, DeckConfiguration, Model } from '../object';
+import { Generator } from '../service/generator';
 
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
@@ -15,7 +16,7 @@ export class Collection extends Entity<CollectionModel> {
 	protected entity: CollectionModel = {
 		id: 0,
 		crt: 0,
-		mod: Math.floor(Date.now() / 1000),
+		mod: Generator.now(),
 		scm: 0,
 		ver: 11,
 		dty: 0,

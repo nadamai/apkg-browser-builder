@@ -4,13 +4,14 @@ import { Model as ModelObject } from '../model';
 import { Deck } from '../object';
 import { Field } from './field';
 import { CardTemplate } from './card-template';
+import { Generator } from '../service/generator';
 
 export class Model extends Object<ModelObject> {
 	protected fields: Field[] = [];
 	protected templates: CardTemplate[] = [];
 
 	protected object: ModelObject = {
-		id: Date.now(),
+		id: Generator.id(),
 		name: 'test',
 		css: '.card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n',
 		did: 1,
@@ -18,7 +19,7 @@ export class Model extends Object<ModelObject> {
 		latexPre:
 			'\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n',
 		latexPost: '',
-		mod: Math.floor(Date.now() / 1000),
+		mod: Generator.now(),
 		req: [],
 		sortf: 0,
 		tags: [],

@@ -43,6 +43,7 @@ export class Database {
 
 		const { query, params } = QueryBuilder.insert(table, data);
 		const statement = this.db.prepare(query);
+
 		console.log(query, params);
 
 		statement.bind(params);

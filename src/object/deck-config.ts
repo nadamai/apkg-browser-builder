@@ -1,5 +1,6 @@
 import { Object } from '../abstract';
 import { DeckConfiguration as DeckConfigurationObject } from '../model';
+import { Generator } from '../service/generator';
 import { LapseCardConfig } from './lapse-card-config';
 import { NewCardConfig } from './new-card-config';
 import { ReviewCardConfig } from './review-card-config';
@@ -10,12 +11,12 @@ export class DeckConfiguration extends Object<DeckConfigurationObject> {
 	protected reviewCardConfig: ReviewCardConfig = new ReviewCardConfig();
 
 	protected object: DeckConfigurationObject = {
-		id: Date.now(),
+		id: Generator.id(),
 		autoplay: false,
 		dyn: false,
 		lapse: this.lapseCardConfig.getObject(),
 		maxTaken: 0,
-		mod: Math.floor(Date.now() / 1000),
+		mod: Generator.now(),
 		name: '',
 		new: this.newCardConfig.getObject(),
 		replayq: false,

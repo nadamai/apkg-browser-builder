@@ -35,11 +35,9 @@ setTimeout(() => {
 
 
 	const note2 = new Note('This is another card', 'This is another back');
-	note2.setId(note.getId() + 1);
 	note2.setModel(model)
 
 	const card2 = new Card();
-	card2.setId(card.getId() + 1);
 	card2.setDeck(deck);
 	card2.setNote(note2);
 

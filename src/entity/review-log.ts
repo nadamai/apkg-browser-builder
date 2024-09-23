@@ -11,12 +11,13 @@ import {
 	ReviewLogRelearnEaseKey,
 	ReviewLogReviewEaseKey
 } from '../dictionary';
+import { Generator } from '../service/generator';
 
 export class ReviewLog extends Entity<ReviewLogModel> {
 	protected table: string = 'revlog';
 
 	protected entity: ReviewLogModel = {
-		id: Date.now(),
+		id: Generator.id(),
 		cid: 0,
 		usn: -1,
 		ease: ReviewLogEase.wrong,
