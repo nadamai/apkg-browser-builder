@@ -3,7 +3,8 @@ import { Card, Collection, Note } from './src/entity';
 import { Deck, DeckConfiguration, Model } from './src/object';
 import { Configuration } from './src/object/configuration';
 
-
+const collection = new Collection();
+const config = new Configuration();
 const deck = new Deck('Mój imported deck', 'description of my deck');
 const deckConfig = new DeckConfiguration('Default deck config');
 const model = new Model();
@@ -19,11 +20,7 @@ card.setNote(note);
 
 deck.addCard(card);
 
-const collection = new Collection();
-const config = new Configuration();
-
 collection.setConfiguration(config);
-collection.addDeckConfiguration(deckConfig);
 collection.addDeck(deck);
 
 // Creating apkg from the given collection

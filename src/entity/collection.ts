@@ -185,9 +185,14 @@ export class Collection extends Entity<CollectionModel> {
 		this.updateDecks();
 
 		const model = deck.getModel();
+		const deckConfiguration = deck.getDeckConfiguration();
 
 		if (model) {
 			this.addModel(model);
+		}
+
+		if (deckConfiguration) {
+			this.addDeckConfiguration(deckConfiguration);
 		}
 
 		for (const card of deck.getCards()) {
