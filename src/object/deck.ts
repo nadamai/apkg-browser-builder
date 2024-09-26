@@ -1,7 +1,9 @@
 import { Object } from '../abstract';
+import { Card } from '../entity';
 import { Deck as DeckObject } from '../model';
 import { Generator } from '../service/generator';
 import { DeckConfiguration } from './deck-config';
+import { Model } from './model';
 
 export class Deck extends Object<DeckObject> {
 	protected object: DeckObject = {
@@ -21,6 +23,10 @@ export class Deck extends Object<DeckObject> {
 		mod: Generator.now(),
 		desc: ''
 	};
+
+	protected cards: Card[] = [];
+	protected deckConfiguration: DeckConfiguration | null = null;
+	protected model: Model | null = null;
 
 	constructor(name: string, description?: string) {
 		super();
@@ -154,18 +160,24 @@ export class Deck extends Object<DeckObject> {
 		return this;
 	}
 
-	public getDeckConfigurationId(): number | null {
-		return this.object.conf;
+	public getDeckConfiguration(): DeckConfiguration | null {
+		return this.deckConfiguration;
 	}
 
-	public setDeckConfigurationId(id: number): Deck {
-		this.object.conf = id;
+	public setDeckConfiguration(config: DeckConfiguration): Deck {
+		this.deckConfiguration = config;
+		this.object.conf = config.getId();
 
 		return this;
 	}
 
-	public setDeckConfiguration(config: DeckConfiguration): Deck {
-		this.object.conf = config.getId();
+	public getModel(): Model | null {
+		return this.model;
+	}
+
+	public setModel(model: Model): Deck {
+		this.model = model;
+		model.setDeck(this);
 
 		return this;
 	}
@@ -178,5 +190,29 @@ export class Deck extends Object<DeckObject> {
 		this.object.mod = time;
 
 		return this;
+	}
+
+	public addCard(card: Card): Deck {
+		card.setDeck(this);
+
+		this.cards.push(card);
+
+		return this;
+	}
+
+	public removeCard(card: Card): Deck {
+		card.setDeck(null);
+
+		const index = this.cards.indexOf(card);
+
+		if (index > -1) {
+			this.cards.splice(index, 1);
+		}
+
+		return this;
+	}
+
+	public getCards(): Card[] {
+		return this.cards;
 	}
 }

@@ -12,15 +12,11 @@ export type ApkgBuilderConfig = Partial<{
 
 export default class ApkgBuilder {
 	private db: Database;
-
 	private collection: Collection;
-	public cards: Card[] = []; // TODO: tmp
-	public notes: Note[] = []; // TODO: tmp
 
-	constructor(config?: ApkgBuilderConfig) {
+	constructor(collection?: Collection, config?: ApkgBuilderConfig) {
 		this.db = new Database(config?.sqljs);
-
-		this.collection = new Collection();
+		this.collection = collection ?? new Collection();
 	}
 
 	public init(): void {
@@ -37,32 +33,29 @@ export default class ApkgBuilder {
 		return this;
 	}
 
-	public getDecks(): Deck[] {
-		return this.collection.getDecks();
-	}
+	private getCollectionEntities(): Entity[] {
+		const decks = this.collection.getDecks();
 
-	public setDecks(decks: Deck[]): ApkgBuilder {
-		this.collection.setDecks(decks);
+		const cards = decks.flatMap((deck: Deck) => {
+			return deck.getCards();
+		});
 
-		return this;
-	}
+		const notes = cards.flatMap((card: Card) => {
+			const note = card.getNote();
 
-	public addDeck(deck: Deck): ApkgBuilder {
-		this.collection.addDeck(deck);
+			if (!note) {
+				return [];
+			}
 
-		return this;
-	}
+			return [note];
+		});
 
-	public removeDeck(deck: Deck): ApkgBuilder {
-		this.collection.removeDeck(deck);
-
-		return this;
+		return [this.collection, ...cards, ...notes];
 	}
 
 	public save(filename: string): void {
 		const zip = new JSZip();
-
-		const entities: Entity[] = [this.collection, ...this.notes, ...this.cards];
+		const entities = this.getCollectionEntities();
 
 		for (let entity of entities) {
 			this.db.insert(entity.getTable(), entity.getEntity());

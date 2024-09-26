@@ -20,6 +20,8 @@ export class Note extends Entity<NoteModel> {
 		data: ''
 	};
 
+	protected model: Model | null = null;
+
 	constructor(...fields: string[]) {
 		super();
 
@@ -46,17 +48,12 @@ export class Note extends Entity<NoteModel> {
 		return this;
 	}
 
-	public getModelId(): number {
-		return this.entity.mid;
-	}
-
-	public setModelId(modelId: number): Note {
-		this.entity.mid = modelId;
-
-		return this;
+	public getModel(): Model | null {
+		return this.model;
 	}
 
 	public setModel(model: Model): Note {
+		this.model = model;
 		this.entity.mid = model.getObject().id;
 
 		return this;

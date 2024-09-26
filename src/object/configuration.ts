@@ -3,4 +3,6 @@ import { Configuration as ConfigurationObject } from '../model';
 
 export class Configuration extends Object<ConfigurationObject> {
 	protected object: ConfigurationObject = {};
+
+	// TODO: getters and setters + custom values
 }
