@@ -132,10 +132,8 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
-	public updateModels(): Collection {
+	private updateModels(): void {
 		this.setModels(this.models);
-
-		return this;
 	}
 
 	public addModel(model: Model): Collection {
@@ -152,12 +150,10 @@ export class Collection extends Entity<CollectionModel> {
 	public removeModel(model: Model): Collection {
 		const index = this.models.indexOf(model);
 
-		if (index < 0) {
-			return this;
+		if (index > -1) {
+			this.models.splice(index, 1);
+			this.updateModels();
 		}
-
-		this.models.splice(index, 1);
-		this.updateModels();
 
 		return this;
 	}
@@ -180,10 +176,8 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
-	public updateDecks(): Collection {
+	private updateDecks(): void {
 		this.setDecks(this.decks);
-
-		return this;
 	}
 
 	public addDeck(deck: Deck): Collection {
@@ -208,8 +202,12 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	public removeDeck(deck: Deck): Collection {
-		this.decks.splice(this.decks.indexOf(deck), 1);
-		this.updateDecks();
+		const index = this.decks.indexOf(deck);
+
+		if (index < 0) {
+			this.decks.splice(index, 1);
+			this.updateDecks();
+		}
 
 		return this;
 	}
@@ -235,10 +233,8 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
-	public updateDeckConfigurations(): Collection {
+	private updateDeckConfigurations(): void {
 		this.setDeckConfigurations(this.deckConfigurations);
-
-		return this;
 	}
 
 	public addDeckConfiguration(config: DeckConfiguration): Collection {
@@ -249,8 +245,12 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	public removeDeckConfiguration(config: DeckConfiguration): Collection {
-		this.deckConfigurations.splice(this.deckConfigurations.indexOf(config), 1);
-		this.updateDeckConfigurations();
+		const index = this.deckConfigurations.indexOf(config);
+
+		if (index > -1) {
+			this.deckConfigurations.splice(index, 1);
+			this.updateDeckConfigurations();
+		}
 
 		return this;
 	}

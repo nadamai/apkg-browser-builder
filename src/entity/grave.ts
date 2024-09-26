@@ -39,7 +39,7 @@ export class Grave extends Entity<GraveModel> {
 	}
 
 	public setDeck(deck: Deck): Grave {
-		this.entity.oid = deck.getObject().id;
+		this.entity.oid = deck.getId();
 
 		this.setType('deck');
 

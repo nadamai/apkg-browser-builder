@@ -54,7 +54,7 @@ export class Note extends Entity<NoteModel> {
 
 	public setModel(model: Model): Note {
 		this.model = model;
-		this.entity.mid = model.getObject().id;
+		this.entity.mid = model.getId();
 
 		return this;
 	}

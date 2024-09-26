@@ -78,7 +78,7 @@ export class Model extends Object<ModelObject> {
 
 	public setDeck(deck: Deck): Model {
 		this.deck = deck;
-		this.object.did = deck.getObject().id;
+		this.object.did = deck.getId();
 
 		return this;
 	}
@@ -99,11 +99,9 @@ export class Model extends Object<ModelObject> {
 		return this;
 	}
 
-	public updateFields(): Model {
+	private updateFields(): void {
 		this.setFields(this.fields);
 		this.setTemplates(this.templates);
-
-		return this;
 	}
 
 	public addField(field: Field): Model {
@@ -114,8 +112,12 @@ export class Model extends Object<ModelObject> {
 	}
 
 	public removeField(field: Field): Model {
-		this.fields.splice(this.fields.indexOf(field), 1);
-		this.updateFields();
+		const index = this.fields.indexOf(field);
+
+		if (index > -1) {
+			this.fields.splice(index, 1);
+			this.updateFields();
+		}
 
 		return this;
 	}
@@ -136,22 +138,24 @@ export class Model extends Object<ModelObject> {
 		return this;
 	}
 
-	public updateTemplates(): Model {
+	private updateTemplates(): void {
 		this.setTemplates(this.templates);
-
-		return this;
 	}
 
 	public addTemplate(template: CardTemplate): Model {
 		this.templates.push(template);
-		this.updateFields();
+		this.updateTemplates();
 
 		return this;
 	}
 
 	public removeTemplate(template: CardTemplate): Model {
-		this.templates.splice(this.templates.indexOf(template), 1);
-		this.updateFields();
+		const index = this.templates.indexOf(template);
+
+		if (index > -1) {
+			this.templates.splice(index, 1);
+			this.updateTemplates();
+		}
 
 		return this;
 	}
