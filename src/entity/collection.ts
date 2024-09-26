@@ -203,6 +203,14 @@ export class Collection extends Entity<CollectionModel> {
 			if (!note) {
 				continue;
 			}
+
+			const model = note.getModel();
+
+			if (!model) {
+				continue;
+			}
+
+			this.addModel(model);
 		}
 
 		return this;
