@@ -13,7 +13,7 @@ export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
 
 	protected entity: CollectionModel = {
-		id: 0,
+		id: Generator.id(),
 		crt: 0,
 		mod: Generator.now(),
 		scm: 0,
@@ -181,11 +181,13 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	public addDeck(deck: Deck): Collection {
+		deck.setCollection(this);
+
 		this.decks.push(deck);
 		this.updateDecks();
 
 		const model = deck.getModel();
-		const deckConfiguration = deck.getDeckConfiguration();
+		const deckConfiguration = deck.getConfiguration();
 
 		if (model) {
 			this.addModel(model);
@@ -245,6 +247,7 @@ export class Collection extends Entity<CollectionModel> {
 	public addDeckConfiguration(config: DeckConfiguration): Collection {
 		this.deckConfigurations.push(config);
 		this.updateDeckConfigurations();
+		this.updateDecks();
 
 		return this;
 	}
@@ -255,6 +258,7 @@ export class Collection extends Entity<CollectionModel> {
 		if (index > -1) {
 			this.deckConfigurations.splice(index, 1);
 			this.updateDeckConfigurations();
+			this.updateDecks();
 		}
 
 		return this;

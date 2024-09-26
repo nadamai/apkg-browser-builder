@@ -1,5 +1,5 @@
 import { Object } from '../abstract';
-import { Card } from '../entity';
+import { Card, Collection } from '../entity';
 import { Deck as DeckObject } from '../model';
 import { Generator } from '../service/generator';
 import { DeckConfiguration } from './deck-config';
@@ -24,8 +24,9 @@ export class Deck extends Object<DeckObject> {
 		desc: ''
 	};
 
+	protected collection: Collection | null = null;
 	protected cards: Card[] = [];
-	protected deckConfiguration: DeckConfiguration | null = null;
+	protected configuration: DeckConfiguration | null = null;
 	protected model: Model | null = null;
 
 	constructor(name: string, description?: string) {
@@ -160,13 +161,17 @@ export class Deck extends Object<DeckObject> {
 		return this;
 	}
 
-	public getDeckConfiguration(): DeckConfiguration | null {
-		return this.deckConfiguration;
+	public getConfiguration(): DeckConfiguration | null {
+		return this.configuration;
 	}
 
-	public setDeckConfiguration(config: DeckConfiguration): Deck {
-		this.deckConfiguration = config;
+	public setConfiguration(config: DeckConfiguration): Deck {
+		this.configuration = config;
 		this.object.conf = config.getId();
+
+		if (this.collection) {
+			this.collection.addDeckConfiguration(config);
+		}
 
 		return this;
 	}
@@ -178,6 +183,10 @@ export class Deck extends Object<DeckObject> {
 	public setModel(model: Model): Deck {
 		this.model = model;
 		model.setDeck(this);
+
+		if (this.collection) {
+			this.collection.addModel(model);
+		}
 
 		return this;
 	}
@@ -214,5 +223,15 @@ export class Deck extends Object<DeckObject> {
 
 	public getCards(): Card[] {
 		return this.cards;
+	}
+
+	public getCollection(): Collection | null {
+		return this.collection;
+	}
+
+	public setCollection(collection: Collection): Deck {
+		this.collection = collection;
+
+		return this;
 	}
 }
