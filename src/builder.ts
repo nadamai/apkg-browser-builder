@@ -19,8 +19,8 @@ export default class ApkgBuilder {
 		this.collection = collection ?? new Collection();
 	}
 
-	public init(): void {
-		this.db.init();
+	public async init(): Promise<void> {
+		await this.db.init();
 	}
 
 	public getCollection(): Collection {
