@@ -208,6 +208,24 @@ export class Deck extends Object<DeckObject> {
 
 		this.cards.push(card);
 
+		if (!this.collection) {
+			return this;
+		}
+
+		const note = card.getNote();
+
+		if (!note) {
+			return this;
+		}
+
+		const model = note.getModel();
+
+		if (!model) {
+			return this;
+		}
+
+		this.collection.addModel(model);
+
 		return this;
 	}
 
