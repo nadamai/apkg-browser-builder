@@ -33,6 +33,12 @@ export class Card extends Entity<CardModel> {
 	protected deck: Deck | null = null;
 	protected originalDeck: Deck | null = null;
 
+	constructor(...fields: string[]) {
+		super();
+
+		this.setNote(new Note(...fields));
+	}
+
 	public getId(): number {
 		return this.entity.id;
 	}
