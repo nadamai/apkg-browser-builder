@@ -12,12 +12,12 @@ export class DeckConfiguration extends Object<DeckConfigurationObject> {
 
 	protected object: DeckConfigurationObject = {
 		id: Generator.id(),
+		name: 'Default',
 		autoplay: false,
 		dyn: false,
 		lapse: this.lapseCardConfig.getObject(),
 		maxTaken: 0,
 		mod: Generator.now(),
-		name: '',
 		new: this.newCardConfig.getObject(),
 		replayq: false,
 		rev: this.reviewCardConfig.getObject(),

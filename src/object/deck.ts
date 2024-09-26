@@ -33,6 +33,7 @@ export class Deck extends Object<DeckObject> {
 		super();
 
 		this.object.name = name;
+		this.setConfiguration(new DeckConfiguration());
 
 		if (!description) {
 			return;
