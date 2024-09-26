@@ -1,7 +1,8 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-    entry: './index.ts',
+    entry: './src/builder.ts',
     module: {
         rules: [
             {
@@ -15,8 +16,18 @@ module.exports = {
 			},
         ],
     },
+	optimization: {
+		minimizer: [new TerserPlugin({
+		  	extractComments: false,
+			terserOptions: {
+				format: {
+					comments: false,
+				},
+			},
+		})],
+	},
     output: {
-		filename: 'apkg-browser-builder.min.js',
+		filename: 'index.min.js',
         path: path.resolve(__dirname, 'dist'),
     },
 	resolve: {
