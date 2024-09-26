@@ -25,7 +25,8 @@ export class Note extends Entity<NoteModel> {
 	constructor(...fields: string[]) {
 		super();
 
-		this.entity.flds = fields.join('\x1f');
+		this.setModel(new Model());
+		this.setFields(fields);
 	}
 
 	public getId(): number {

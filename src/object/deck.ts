@@ -34,6 +34,7 @@ export class Deck extends Object<DeckObject> {
 
 		this.object.name = name;
 		this.setConfiguration(new DeckConfiguration());
+		this.setModel(new Model());
 
 		if (!description) {
 			return;

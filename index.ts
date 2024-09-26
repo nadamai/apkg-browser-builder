@@ -27,22 +27,18 @@ import { Configuration } from './src/object/configuration';
 
 
 // Simple example
-const collection = new Collection();
+
 const deck = new Deck('My imported deck', 'description of my deck');
-const model = new Model();
-
-collection.addDeck(deck);
-
-deck.setModel(model);
 
 const note = new Note('This is front', 'This is back');
-note.setModel(model)
 
 const card = new Card();
 card.setNote(note);
 
 deck.addCard(card);
 
+const collection = new Collection();
+collection.addDeck(deck);
 
 // Creating apkg from the given collection
 const apkg = new ApkgBuilder(collection);
