@@ -7,36 +7,30 @@ export class Database {
 
 	constructor(config?: SqlJsConfig) {
 		this.config = config;
-
-		this.init();
 	}
 
-	init(): void {
-		initSqlJs({
-			locateFile: (file: string) => `https://sql.js.org/dist/${file}`,
-			...this.config
-		})
-			.then((SQL: SqlJsStatic) => {
-				const { default: AnkiSqliteSchemaScriptUrl } = require('./../anki.sqlite');
-
-				fetch(AnkiSqliteSchemaScriptUrl)
-					.then((response: Response) => {
-						return response.text();
-					})
-					.then((script: string) => {
-						this.db = new SQL.Database();
-						this.db.exec(script);
-					})
-					.catch((error: Error) => {
-						console.error('Error on reading Anki sqlite schema script', error);
-					});
-			})
-			.catch((error: Error) => {
-				console.error('Error on initializing sql.js with the given .wasm file', error);
+	public async init(): Promise<void> {
+		try {
+			const SQL: SqlJsStatic = await initSqlJs({
+				locateFile: (file: string) => `https://sql.js.org/dist/${file}`,
+				...this.config
 			});
+
+			const { default: AnkiSqliteSchemaScriptUrl } = require('./../anki.sqlite');
+
+			const response = await fetch(AnkiSqliteSchemaScriptUrl);
+			const script = await response.text();
+
+			this.db = new SQL.Database();
+			this.db.exec(script);
+		} catch (error) {
+			console.error('Error on initializing sql.js or setting up the database', error);
+
+			throw error;
+		}
 	}
 
-	insert(table: string, data: Record<string, any>): void {
+	public insert(table: string, data: Record<string, any>): void {
 		if (!this.db) {
 			throw new Error('The Anki sqlite database is not initialized');
 		}
@@ -44,14 +38,12 @@ export class Database {
 		const { query, params } = QueryBuilder.insert(table, data);
 		const statement = this.db.prepare(query);
 
-		console.log(query, params);
-
 		statement.bind(params);
 		statement.step();
 		statement.free();
 	}
 
-	dump(): Uint8Array {
+	public dump(): Uint8Array {
 		if (!this.db) {
 			throw new Error('The Anki sqlite database is not initialized');
 		}

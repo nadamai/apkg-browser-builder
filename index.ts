@@ -29,7 +29,6 @@ collection.addDeck(deck);
 // Creating apkg from the given collection
 const apkg = new ApkgBuilder(collection);
 
-// TODO: async
-setTimeout(() => {
+apkg.init().then(() => {
 	apkg.save('anki.apkg');
-}, 1000);
+});
