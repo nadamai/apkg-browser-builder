@@ -55,7 +55,7 @@ export class Card extends Entity<CardModel> {
 	}
 
 	public setDeck(deck: Deck | null): Card {
-		this.entity.did = deck?.getObject().id ?? 0;
+		this.entity.did = deck?.getId() ?? 0;
 
 		return this;
 	}
@@ -189,7 +189,7 @@ export class Card extends Entity<CardModel> {
 	}
 
 	public setOriginalDeck(deck: Deck): Card {
-		this.entity.odid = deck.getObject().id;
+		this.entity.odid = deck.getId();
 		this.originalDeck = deck;
 
 		return this;

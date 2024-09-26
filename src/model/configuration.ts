@@ -1,4 +1,5 @@
 import { NewSpreadValue } from '../dictionary/new-spread';
+import { ColumnValue } from '../type';
 
 export type Configuration = Partial<{
 	curDeck: number;
@@ -16,20 +17,6 @@ export type Configuration = Partial<{
 	dayLearnFirst: boolean;
 	newBury: boolean;
 	lastUnburied: number;
-	activeCols: string[];
-	question: string;
-	answer: string;
-	template: string;
-	deck: string;
-	noteFld: string;
-	noteCrt: string;
-	noteMod: string;
-	cardMod: string;
-	cardDue: string;
-	cardIvl: string;
-	cardEase: string;
-	cardReps: string;
-	cardLapses: string;
-	noteTags: string;
-	note: string;
-}>;
+	activeCols: ColumnValue[];
+}> &
+	Record<string, any>;
