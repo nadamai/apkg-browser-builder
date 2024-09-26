@@ -29,6 +29,10 @@ export class Card extends Entity<CardModel> {
 		data: ''
 	};
 
+	protected note: Note | null = null;
+	protected deck: Deck | null = null;
+	protected originalDeck: Deck | null = null;
+
 	public getId(): number {
 		return this.entity.id;
 	}
@@ -39,36 +43,25 @@ export class Card extends Entity<CardModel> {
 		return this;
 	}
 
-	public getNoteId(): number {
-		return this.entity.nid;
-	}
-
-	public setNoteId(noteId: number): Card {
-		this.entity.nid = noteId;
-
-		return this;
-	}
-
 	public setNote(note: Note): Card {
 		this.entity.nid = note.getEntity().id;
+		this.note = note;
 
 		return this;
 	}
 
-	public getDeckId(): number {
-		return this.entity.did;
+	public getNote(): Note | null {
+		return this.note;
 	}
 
-	public setDeckId(deckId: number): Card {
-		this.entity.did = deckId;
+	public setDeck(deck: Deck | null): Card {
+		this.entity.did = deck?.getObject().id ?? 0;
 
 		return this;
 	}
 
-	public setDeck(deck: Deck): Card {
-		this.entity.did = deck.getObject().id;
-
-		return this;
+	public getDeck(): Deck | null {
+		return this.deck;
 	}
 
 	public getOrdinal(): number {
@@ -191,12 +184,13 @@ export class Card extends Entity<CardModel> {
 		return this;
 	}
 
-	public getOriginalDeckId(): number {
-		return this.entity.odid;
+	public getOriginalDeck(): Deck | null {
+		return this.originalDeck;
 	}
 
-	public setOriginalDeckId(originalDeckId: number): Card {
-		this.entity.odid = originalDeckId;
+	public setOriginalDeck(deck: Deck): Card {
+		this.entity.odid = deck.getObject().id;
+		this.originalDeck = deck;
 
 		return this;
 	}

@@ -38,16 +38,6 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 		return this;
 	}
 
-	public getCardId(): number {
-		return this.entity.cid;
-	}
-
-	public setCardId(cardId: number): ReviewLog {
-		this.entity.cid = cardId;
-
-		return this;
-	}
-
 	public setCard(card: Card): ReviewLog {
 		this.entity.cid = card.id;
 

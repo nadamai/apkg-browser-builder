@@ -73,16 +73,6 @@ export class CardTemplate extends Object<CardTemplateObject> {
 		return this;
 	}
 
-	public getDeckId(): number | null {
-		return this.object.did;
-	}
-
-	public setDeckId(deckId: number | null): CardTemplate {
-		this.object.did = deckId;
-
-		return this;
-	}
-
 	public setDeck(deck: Deck): CardTemplate {
 		this.object.did = deck.getObject().id;
 
