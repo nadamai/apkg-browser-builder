@@ -28,11 +28,8 @@
   "scripts": {
     "precommit": "pretty-quick src/**/*.ts --staged --pattern \"src/**/*.ts\"",
     "prepare": "husky",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production --node-env=production",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production --node-env=production",
-    "watch": "webpack --watch"
+    "watch": "webpack --mode=production --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
