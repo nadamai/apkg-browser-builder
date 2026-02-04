@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-env": "^7.29.0",
     "@types/copy-webpack-plugin": "^10.1.0",
     "@types/file-saver": "^2.0.7",
     "@types/sql.js": "^1.4.9",
