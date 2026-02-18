@@ -32,7 +32,7 @@
     "watch": "webpack --mode=production --watch"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
+    "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.29.0",
     "@types/copy-webpack-plugin": "^10.1.0",
     "@types/file-saver": "^2.0.7",
