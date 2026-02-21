@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <title>APKG Browser Builder ✨</title>
+	<style>
+		:root {
+			--pico-font-size: 90%;
+		}
+	</style>
 </head>
 <body>
 	<main class="container">
-		<h1>APKG Browser Builder ✨</h1>
+		<header>
+			<h1>APKG Browser Builder ✨</h1>
+		</header>
+		<hr />
+		<main>
+			<div style="display: flex; gap: 2rem">
+				<div>
+					<ul>
+						<li>Full</li>
+						<li>Minimal</li>
+					</ul>
+				</div>
+				<div style="flex: 1">
+					<textarea>Lorem ipsum dolor sit amet</textarea>
+				</div>
+			</div>
+			<div style="text-align: right">
+				<button>Download APKG!</button>
+			</div>
+		</main>
+		<hr />
+		<footer style="text-align: center">
+			Go to <a href="https://github.com/nadamai/apkg-browser-builder" target="_blank">GitHub</a> page
+		</footer>
 	</main>
     <script src="/dist/index.min.js"></script>
 </body>
