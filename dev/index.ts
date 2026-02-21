@@ -1,1 +1,0 @@
-import ApkgBuilder from '../src';

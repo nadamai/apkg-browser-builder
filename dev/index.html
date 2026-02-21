@@ -39,17 +39,20 @@
 			Go to <a href="https://github.com/nadamai/apkg-browser-builder" target="_blank">GitHub</a> page
 		</footer>
 	</main>
-    <script src="/dist/index.min.js"></script>
+    <script src="/index.dev.js"></script>
 	<script>
+		// ApkgBrowserBuilder is the dev-only global (default export = ApkgBuilder class, plus Collection, etc.)
+		const { default: ApkgBuilder, Collection } = ApkgBrowserBuilder;
+		console.log('ApkgBrowserBuilder', ApkgBrowserBuilder);
+
 		// const collection = new Collection();
 
-		console.log( 123, 'test');
-		// Exporting the .apkg from the given collection
-		const apkg = new ApkgBuilder(collection);
+		// // Exporting the .apkg from the given collection
+		// const apkg = new ApkgBuilder(collection);
 
-		// apkg.init().then(() => {
-		// 	apkg.save('anki.apkg');
-		// });
+		// // apkg.init().then(() => {
+		// // 	apkg.save('anki.apkg');
+		// // });
 	</script>
 </body>
 </html>
