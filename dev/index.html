@@ -41,18 +41,15 @@
 	</main>
     <script src="/index.dev.js"></script>
 	<script>
-		// ApkgBrowserBuilder is the dev-only global (default export = ApkgBuilder class, plus Collection, etc.)
+		// ApkgBrowserBuilder is the dev-only global
 		const { default: ApkgBuilder, Collection } = ApkgBrowserBuilder;
-		console.log('ApkgBrowserBuilder', ApkgBrowserBuilder);
 
-		// const collection = new Collection();
+		const collection = new Collection();
+		const apkg = new ApkgBuilder(collection);
 
-		// // Exporting the .apkg from the given collection
-		// const apkg = new ApkgBuilder(collection);
-
-		// // apkg.init().then(() => {
-		// // 	apkg.save('anki.apkg');
-		// // });
+		apkg.init().then(() => {
+			apkg.save('anki.apkg');
+		});
 	</script>
 </body>
 </html>
