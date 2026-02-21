@@ -34,11 +34,6 @@ module.exports = {
     },
 	resolve: {
 		extensions: ['.ts'],
-		fallback: {
-            crypto: false,
-			fs: false,
-			path: false,
-        },
 	},
 	target: 'web',
 };

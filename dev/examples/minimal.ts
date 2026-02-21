@@ -1,4 +1,3 @@
-import ApkgBuilder from '../../src';
 import { Card, Collection } from '../../src/entity';
 import { Deck } from '../../src/object';
 
@@ -23,11 +22,3 @@ const card = new Card('This is front', 'This is back');
 
 // Adding the card to the deck
 deck.addCard(card);
-
-
-// Exporting the .apkg from the given collection
-const apkg = new ApkgBuilder(collection);
-
-apkg.init().then(() => {
-	apkg.save('anki.apkg');
-});
