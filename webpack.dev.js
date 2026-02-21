@@ -18,15 +18,15 @@ module.exports = {
 			},
 		],
 	},
+	resolve: {
+		extensions: ['.ts', '.js'],
+	},
 	output: {
 		filename: 'index.dev.js',
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: '/',
 		library: 'ApkgBrowserBuilder',
 		libraryTarget: 'window',
-	},
-	resolve: {
-		extensions: ['.ts', '.js'],
 	},
 	devServer: {
 		open: '/index.html',

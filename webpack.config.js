@@ -3,6 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: './src/index.ts',
+	target: 'web',
     module: {
         rules: [
             {
@@ -18,6 +19,9 @@ module.exports = {
 			},
         ],
     },
+	resolve: {
+		extensions: ['.ts'],
+	},
 	optimization: {
 		minimizer: [new TerserPlugin({
 		  	extractComments: false,
@@ -32,8 +36,4 @@ module.exports = {
 		filename: 'index.min.js',
         path: path.resolve(__dirname, 'dist'),
     },
-	resolve: {
-		extensions: ['.ts'],
-	},
-	target: 'web',
 };
