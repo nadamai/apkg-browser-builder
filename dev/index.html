@@ -31,12 +31,12 @@
 				</div>
 			</div>
 			<div style="text-align: right">
-				<button>Download APKG!</button>
+				<button onClick="downloadApkg()">Download APKG!</button>
 			</div>
 		</main>
 		<hr />
 		<footer style="text-align: center">
-			Go to <a href="https://github.com/nadamai/apkg-browser-builder" target="_blank">GitHub</a> page
+			Go to the <a href="https://github.com/nadamai/apkg-browser-builder" target="_blank">GitHub</a> page
 		</footer>
 	</main>
     <script src="/index.dev.js"></script>
@@ -44,12 +44,14 @@
 		// ApkgBrowserBuilder is the dev-only global
 		const { default: ApkgBuilder, Collection } = ApkgBrowserBuilder;
 
-		const collection = new Collection();
-		const apkg = new ApkgBuilder(collection);
+		const downloadApkg = () => {
+			const collection = new Collection();
+			const apkg = new ApkgBuilder(collection);
 
-		apkg.init().then(() => {
-			apkg.save('anki.apkg');
-		});
+			apkg.init().then(() => {
+				apkg.save('anki.apkg');
+			});
+		};
 	</script>
 </body>
 </html>
