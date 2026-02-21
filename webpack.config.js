@@ -8,6 +8,9 @@ module.exports = {
             {
                 loader: 'ts-loader',
                 test: /\.ts$/i,
+				options: {
+					onlyCompileBundledFiles: true,
+				},
             },
 			{
 				loader: 'file-loader',
