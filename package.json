@@ -15,8 +15,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/apk-browser-builder.min.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.min.js",
+  "types": "dist/src/builder.d.ts",
   "bugs": {
     "url": "https://github.com/nadamai/apkg-browser-builder/issues"
   },
