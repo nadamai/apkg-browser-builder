@@ -1,4 +1,4 @@
-import ApkgBuilder from '../../src/builder';
+import ApkgBuilder from '../../src';
 import { Card, Collection } from '../../src/entity';
 import { Deck } from '../../src/object';
 
