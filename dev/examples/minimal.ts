@@ -1,6 +1,6 @@
-import ApkgBuilder from '../src/builder';
-import { Card, Collection } from '../src/entity';
-import { Deck } from '../src/object';
+import ApkgBuilder from '../../src/builder';
+import { Card, Collection } from '../../src/entity';
+import { Deck } from '../../src/object';
 
 /**
  * This is the minimal example of how to create an .apkg file.

@@ -1,0 +1,12 @@
+FOR NOW DISPLAY THIS HTML IN DEV MODE
+
+<!-- There'll be download button for the apkg file -->
+<button id="download-button">Download</button>
+
+<script>
+    const downloadButton = document.getElementById('download-button');
+    downloadButton.addEventListener('click', () => {
+        const apkg = new ApkgBuilder();
+        apkg.build();
+    });
+</script>
