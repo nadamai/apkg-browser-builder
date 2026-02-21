@@ -6,6 +6,8 @@ import { Card, Collection, Note } from './entity';
 import { Deck } from './object/deck';
 import { Entity } from './abstract';
 
+export { Card, Collection, Note };
+
 export type ApkgBuilderConfig = Partial<{
 	sqljs: SqlJsConfig;
 }>;
