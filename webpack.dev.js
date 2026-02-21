@@ -1,18 +1,14 @@
 const path = require('path');
 
 module.exports = {
-	entry: './dev/playground.ts',
+	entry: './dev/index.ts',
 	mode: 'development',
-	output: {
-		filename: 'playground.ts',
-		path: path.resolve(__dirname, 'dev'),
-	},
 	devServer: {
+		open: '/index.html',
+		port: 3000,
 		static: [
 			{ directory: path.join(__dirname, 'dev'), publicPath: '/' },
 			{ directory: path.join(__dirname, 'dist'), publicPath: '/dist' },
 		],
-		port: 3000,
-		open: '/index.html',
 	},
 };
