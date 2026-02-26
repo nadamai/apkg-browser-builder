@@ -34,7 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.29.0",
-    "@types/concurrently": "^6.4.0",
+    "@types/concurrently": "^7.0.3",
     "@types/file-saver": "^2.0.7",
     "@types/jszip": "^3.4.0",
     "@types/sql.js": "^1.4.9",
