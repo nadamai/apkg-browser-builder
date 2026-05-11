@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.29.2",
+    "@babel/preset-env": "^7.29.5",
     "@types/concurrently": "^7.0.3",
     "@types/file-saver": "^2.0.7",
     "@types/jszip": "^3.4.1",
