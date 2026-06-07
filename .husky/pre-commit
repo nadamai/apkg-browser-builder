@@ -1,2 +1,5 @@
+echo "\nRunning tsgo type check..."
+npx tsgo --noEmit || { echo "\ntsgo failed. Commit aborted."; exit 1; }
+
 echo "\nFixing code style on pre-commit..."
 npm run precommit
