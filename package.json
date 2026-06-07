@@ -26,7 +26,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "precommit": "pretty-quick src/**/*.ts --staged --pattern \"src/**/*.ts\"",
+    "prettier": "pretty-quick src/**/*.ts dev/**/*.ts --staged --pattern \"src/**/*.ts\" --pattern \"dev/**/*.ts\"",
     "prepare": "husky",
     "build": "webpack --mode=production --node-env=production",
     "dev": "concurrently \"webpack --mode=production --watch\" \"webpack serve --config webpack.dev.js\""
@@ -39,12 +39,12 @@
     "@types/jszip": "^3.4.1",
     "@types/sql.js": "^1.4.11",
     "@types/webpack-dev-server": "^4.7.2",
-    "@typescript/native-preview": "^7.0.0-dev.20260607.1",
     "concurrently": "^9.1.2",
     "file-loader": "^6.2.0",
     "husky": "^9.1.4",
     "prettier": "^3.8.3",
     "pretty-quick": "^4.0.0",
+    "@typescript/native-preview": "^7.0.0-dev.20260607.1",
     "ts-loader": "^9.5.7",
     "typescript": "^6.0.3",
     "webpack": "^5.107.2",
