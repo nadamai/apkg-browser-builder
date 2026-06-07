@@ -9,5 +9,5 @@ export type Note = {
 	sfld: number;
 	csum: number;
 	flags: number;
-	data: string;
+	data: Test;
 };
