@@ -47,12 +47,20 @@
     "ts-loader": "^9.5.7",
     "typescript": "^6.0.3",
     "webpack": "^5.107.2",
-    "webpack-cli": "^7.0.3",
+    "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.4"
   },
   "dependencies": {
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
     "sql.js": "^1.14.1"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  },
+  "_comments": {
+    "overrides": {
+      "uuid": "Forces uuid to v11+ to fix GHSA-w5hq-g745-h8pq (missing buffer bounds check in v3/v5/v6). sockjs (used by webpack-dev-server) depends on uuid@^8 but only calls uuid.v4() without a buf arg, so v11 is API-compatible. Remove this override once sockjs ships a version that depends on uuid@^11 or when webpack-dev-server drops sockjs."
+    }
   }
 }
