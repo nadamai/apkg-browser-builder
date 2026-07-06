@@ -10,6 +10,15 @@
 		:root {
 			--pico-font-size: 90%;
 		}
+
+		#examples li {
+			cursor: pointer;
+		}
+
+		#examples li.active {
+			color: var(--pico-primary);
+			font-weight: bold;
+		}
 	</style>
 </head>
 <body>
@@ -53,8 +62,18 @@
 		fetch('/examples')
 			.then((resource) => resource.json())
 			.then((examples) => {
-				examples.forEach(({ filename, content }) => {
-					console.log(filename, content);
+				const examplesList = document.getElementById('examples');
+
+				examples.forEach(({ filename, content }, i) => {
+					const element = document.createElement('li');
+
+					element.textContent = filename.replace(/\.ts/, '');
+
+					if (i === 0) {
+						element.className = "active";
+					}
+
+					examplesList.appendChild(element);
 				});
 			});
 	</script>
