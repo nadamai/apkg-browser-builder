@@ -40,7 +40,7 @@
 					<ul id="examples"></ul>
 				</div>
 				<div style="flex: 5">
-					<textarea id="code" style="height: 100%; pointer-events: auto;" disabled></textarea>
+					<textarea id="code" style="height: 100%; font-family: monospace; font-size: 1em; pointer-events: auto;" disabled></textarea>
 				</div>
 			</div>
 			<div style="text-align: right">
@@ -57,6 +57,7 @@
 		// ApkgBrowserBuilder is the dev-only global
 		const { default: ApkgBuilder, Collection } = ApkgBrowserBuilder;
 
+		// TODO: downloading proper collection based on the selected example
 		const downloadApkg = () => {
 			const collection = new Collection();
 			const apkg = new ApkgBuilder(collection);
