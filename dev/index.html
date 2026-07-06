@@ -11,6 +11,12 @@
 			--pico-font-size: 90%;
 		}
 
+		body, main {
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+
 		#examples li {
 			cursor: pointer;
 		}
@@ -27,13 +33,14 @@
 			<h1>APKG Browser Builder ✨</h1>
 		</header>
 		<hr />
-		<main>
-			<div style="display: flex; gap: 2rem">
-				<div>
+		<main style="gap: 1rem">
+			<div style="flex: 1; display: flex; gap: 2rem">
+				<div style="flex: 1">
+					<strong>Examples</strong>
 					<ul id="examples"></ul>
 				</div>
-				<div style="flex: 1">
-					<textarea>Lorem ipsum dolor sit amet</textarea>
+				<div style="flex: 5">
+					<textarea id="code" style="height: 100%; pointer-events: auto;" disabled></textarea>
 				</div>
 			</div>
 			<div style="text-align: right">
@@ -42,7 +49,7 @@
 		</main>
 		<hr />
 		<footer style="text-align: center">
-			Go to the <a href="https://github.com/nadamai/apkg-browser-builder" target="_blank">GitHub</a> page
+			Go to <a href="https://github.com/nadamai/apkg-browser-builder" target="_blank">GitHub</a> page
 		</footer>
 	</main>
     <script src="/index.dev.js"></script>
@@ -63,18 +70,26 @@
 			.then((resource) => resource.json())
 			.then((examples) => {
 				const examplesList = document.getElementById('examples');
+				const code = document.getElementById('code');
 
-				examples.forEach(({ filename, content }, i) => {
+				examples.forEach(({ filename, content }) => {
 					const element = document.createElement('li');
 
-					element.textContent = filename.replace(/\.ts/, '');
+					element.textContent = filename.replace(/\.ts$/, '');
 
-					if (i === 0) {
+					element.onclick = () => {
+						document.querySelectorAll("#examples > li").forEach((element) => element.className = "");
+
 						element.className = "active";
+
+						code.innerHTML = content;
 					}
 
 					examplesList.appendChild(element);
 				});
+			})
+			.then(() => {
+				document.querySelector("#examples > li:first-child").click();
 			});
 	</script>
 </body>
