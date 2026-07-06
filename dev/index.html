@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
     <title>APKG Browser Builder ✨</title>
 	<style>
 		:root {
@@ -39,8 +40,8 @@
 					<strong>Examples</strong>
 					<ul id="examples"></ul>
 				</div>
-				<div style="flex: 5">
-					<textarea id="code" style="height: 100%; font-family: monospace; font-size: 1em; pointer-events: auto;" disabled></textarea>
+				<div style="flex: 5; font-size: .8em">
+					<pre id="code"><code class="language-typescript"></code></pre>
 				</div>
 			</div>
 			<div style="text-align: right">
@@ -53,6 +54,10 @@
 		</footer>
 	</main>
     <script src="/index.dev.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-typescript.min.js"></script>
 	<script>
 		// ApkgBrowserBuilder is the dev-only global
 		const { default: ApkgBuilder, Collection } = ApkgBrowserBuilder;
@@ -71,7 +76,7 @@
 			.then((resource) => resource.json())
 			.then((examples) => {
 				const examplesList = document.getElementById('examples');
-				const code = document.getElementById('code');
+				const code = document.querySelector('code');
 
 				examples.forEach(({ filename, content }) => {
 					const element = document.createElement('li');
@@ -82,8 +87,9 @@
 						document.querySelectorAll("#examples > li").forEach((element) => element.className = "");
 
 						element.className = "active";
+						code.textContent = content;
 
-						code.innerHTML = content;
+						Prism.highlightElement(code);
 					}
 
 					examplesList.appendChild(element);
