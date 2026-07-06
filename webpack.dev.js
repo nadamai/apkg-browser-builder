@@ -1,4 +1,7 @@
+const fs = require('fs');
 const path = require('path');
+
+const EXAMPLES_DIR = path.join(__dirname, 'dev', 'examples');
 
 module.exports = {
 	entry: './src/index.ts',
@@ -35,5 +38,17 @@ module.exports = {
 			{ directory: path.join(__dirname, 'dev'), publicPath: '/' },
 			{ directory: path.join(__dirname, 'dist'), publicPath: '/dist' },
 		],
+		setupMiddlewares: (middlewares, server) => {
+			server.app.get('/examples', (_request, response) => {
+				const files = fs.readdirSync(EXAMPLES_DIR).map((filename) => ({
+					filename,
+					content: fs.readFileSync(path.join(EXAMPLES_DIR, filename), 'utf8'),
+				}));
+
+				response.json(files);
+			});
+
+			return middlewares;
+		},
 	},
 };

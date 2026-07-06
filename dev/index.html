@@ -21,10 +21,7 @@
 		<main>
 			<div style="display: flex; gap: 2rem">
 				<div>
-					<ul>
-						<li>Full</li>
-						<li>Minimal</li>
-					</ul>
+					<ul id="examples"></ul>
 				</div>
 				<div style="flex: 1">
 					<textarea>Lorem ipsum dolor sit amet</textarea>
@@ -52,6 +49,14 @@
 				apkg.save('anki.apkg');
 			});
 		};
+
+		fetch('/examples')
+			.then((resource) => resource.json())
+			.then((examples) => {
+				examples.forEach(({ filename, content }) => {
+					console.log(filename, content);
+				});
+			});
 	</script>
 </body>
 </html>
