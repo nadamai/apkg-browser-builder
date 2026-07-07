@@ -10,5 +10,5 @@
     "strict": true,
     "moduleResolution": "bundler",
   },
-  "include": ["src/**/*", "dev/**/*"]
+  "include": ["src/**/*", "dev/**/*", "tests/**/*"]
 }
