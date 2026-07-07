@@ -6,41 +6,8 @@
     <meta name="color-scheme" content="light dark">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
+	<link rel="stylesheet" href="styles.css">
     <title>APKG Browser Builder ✨</title>
-	<style>
-		:root {
-			--pico-font-size: 90%;
-		}
-
-		body {
-			height: 100vh;
-			display: flex;
-			flex-direction: column;
-		}
-
-		main {
-			flex: 1;
-			display: flex;
-			flex-direction: column;
-		}
-
-		main, div {
-			min-height: 0;
-		}
-
-		#code {
-			height: 100%;
-		}
-
-		#examples li {
-			cursor: pointer;
-		}
-
-		#examples li.active {
-			color: var(--pico-primary);
-			font-weight: bold;
-		}
-	</style>
 </head>
 <body>
 	<main class="container">
@@ -48,22 +15,22 @@
 			<h1>APKG Browser Builder ✨</h1>
 		</header>
 		<hr />
-		<main style="gap: 1rem">
-			<div style="flex: 1; display: flex; gap: 2rem">
-				<div style="flex: 1">
+		<main>
+			<div>
+				<div>
 					<strong>Examples</strong>
 					<ul id="examples"></ul>
 				</div>
-				<div style="flex: 5; font-size: .8em">
+				<div>
 					<pre id="code"><code class="language-typescript"></code></pre>
 				</div>
 			</div>
-			<div style="text-align: right">
+			<div>
 				<button onClick="downloadApkg()">Download APKG!</button>
 			</div>
 		</main>
 		<hr />
-		<footer style="text-align: center">
+		<footer>
 			Go to <a href="https://github.com/nadamai/apkg-browser-builder" target="_blank">GitHub</a> page
 		</footer>
 	</main>
