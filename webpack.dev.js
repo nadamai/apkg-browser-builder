@@ -19,6 +19,10 @@ module.exports = {
 				loader: 'file-loader',
 				test: /\.sqlite$/i,
 			},
+			{
+				loader: 'file-loader',
+				test: /\.wasm$/i,
+			},
 		],
 	},
 	resolve: {
