@@ -37,6 +37,7 @@ module.exports = {
 		static: [
 			{ directory: path.join(__dirname, 'dev'), publicPath: '/' },
 			{ directory: path.join(__dirname, 'dist'), publicPath: '/dist' },
+			{ directory: path.join(__dirname, 'node_modules', 'typescript', 'lib'), publicPath: '/typescript' },
 		],
 		setupMiddlewares: (middlewares, server) => {
 			server.app.get('/examples', (_request, response) => {

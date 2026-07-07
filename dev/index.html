@@ -35,17 +35,32 @@
 		</footer>
 	</main>
     <script src="/index.dev.js"></script>
+	<script src="/typescript/typescript.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-typescript.min.js"></script>
 	<script>
 		// ApkgBrowserBuilder is the dev-only global
-		const { default: ApkgBuilder, Collection } = ApkgBrowserBuilder;
+		const { default: ApkgBuilder } = ApkgBrowserBuilder;
 
-		// TODO: downloading proper collection based on the selected example
+		let selectedExample = null;
+
+		const executeExample = (script) => {
+			const scriptWithoutImports = script.replace(
+				/^import\s*\{([^}]+)\}\s*from\s*['"]\.\.\/\.\.\/src[^'"]*['"];?$/gm,
+				'const {$1} = ApkgBrowserBuilder;'
+			);
+
+			const { outputText } = ts.transpileModule(scriptWithoutImports, {
+				compilerOptions: { target: ts.ScriptTarget.ES2019 },
+			});
+
+			return new Function('ApkgBrowserBuilder', `${outputText}\nreturn collection;`)(ApkgBrowserBuilder);
+		};
+
 		const downloadApkg = () => {
-			const collection = new Collection();
+			const collection = executeExample(selectedExample.content);
 			const apkg = new ApkgBuilder(collection);
 
 			apkg.init().then(() => {
@@ -65,6 +80,8 @@
 					element.textContent = filename.replace(/\.ts$/, '');
 
 					element.onclick = () => {
+						selectedExample = { filename, content };
+
 						document.querySelectorAll("#examples > li").forEach((element) => element.className = "");
 
 						element.className = "active";

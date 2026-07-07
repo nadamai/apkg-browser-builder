@@ -3,10 +3,10 @@ import { SqlJsConfig } from 'sql.js';
 import { Database } from './service/database';
 import JSZip from 'jszip';
 import { Card, Collection, Note } from './entity';
-import { Deck } from './object/deck';
+import { Configuration, Deck, DeckConfiguration, Model } from './object';
 import { Entity } from './abstract';
 
-export { Card, Collection, Note };
+export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model };
 
 export type ApkgBuilderConfig = Partial<{
 	sqljs: SqlJsConfig;
