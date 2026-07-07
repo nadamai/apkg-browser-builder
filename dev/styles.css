@@ -1,0 +1,56 @@
+:root {
+	--pico-font-size: 90%;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+main, div {
+	min-height: 0;
+	gap: 1rem
+}
+
+main > div:first-child {
+	display: flex; 
+	flex: 1; 
+	gap: 2rem;
+}
+
+main > div:last-child {
+	text-align: right;
+}
+
+main > div:first-child > div:first-child {
+	flex: 1;
+}
+
+main > div:first-child > div:last-child {
+	flex: 5; 
+	font-size: .8em;
+}
+
+main #examples li {
+	cursor: pointer;
+}
+
+main #examples li.active {
+	color: var(--pico-primary);
+	font-weight: bold;
+}
+
+main #code {
+	height: 100%;
+}
+
+footer {
+	text-align: center;
+}
