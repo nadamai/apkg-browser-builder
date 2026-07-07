@@ -55,7 +55,7 @@ export default class ApkgBuilder {
 		return [this.collection, ...cards, ...notes];
 	}
 
-	public build(handler: (content: Blob) => void): void {
+	public async build(): Promise<Blob> {
 		const zip = new JSZip();
 		const entities = this.getCollectionEntities();
 
@@ -69,17 +69,15 @@ export default class ApkgBuilder {
 			zip.file('collection.anki2', sqlite);
 			zip.folder('media');
 
-			zip.generateAsync({ type: 'blob' }).then((content: Blob) => {
-				handler(content);
-			});
+			return await zip.generateAsync({ type: 'blob' });
 		} catch (error) {
 			console.error(error);
+
+			throw error;
 		}
 	}
 
-	public save(filename: string): void {
-		return this.build((content: Blob) => {
-			FileSaver.saveAs(content, filename);
-		});
+	public async save(filename: string): Promise<void> {
+		FileSaver.saveAs(await this.build(), filename);
 	}
 }
