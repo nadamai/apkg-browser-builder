@@ -3,6 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: './src/index.ts',
+	mode: 'production',
     module: {
         rules: [
             {
@@ -24,6 +25,9 @@ module.exports = {
     },
 	resolve: {
 		extensions: ['.ts'],
+	},
+	performance: {
+		assetFilter: (filename) => !filename.endsWith('.wasm'),
 	},
 	optimization: {
 		minimizer: [new TerserPlugin({
