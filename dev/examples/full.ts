@@ -21,7 +21,7 @@ const config = new Configuration();
 
 // Creating a deck together with its config
 const deck = new Deck('My deck', 'My deck description');
-const deckConfig = new DeckConfiguration('Default deck config');
+const deckConfig = new DeckConfiguration('Default deck configuration');
 
 // Adding the configuration and the deck for the collection
 collection.setConfiguration(config);
