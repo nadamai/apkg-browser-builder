@@ -28,6 +28,9 @@ module.exports = {
 	resolve: {
 		extensions: ['.ts', '.js'],
 	},
+	performance: {
+		assetFilter: (filename) => !filename.endsWith('.wasm'),
+	},
 	output: {
 		filename: 'index.dev.js',
 		path: path.resolve(__dirname, 'dist'),
