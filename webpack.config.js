@@ -26,9 +26,6 @@ module.exports = {
 	resolve: {
 		extensions: ['.ts'],
 	},
-	performance: {
-		assetFilter: (filename) => !filename.endsWith('.wasm'),
-	},
 	optimization: {
 		minimizer: [new TerserPlugin({
 		  	extractComments: false,
