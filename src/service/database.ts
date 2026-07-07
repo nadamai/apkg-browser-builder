@@ -1,7 +1,7 @@
 import initSqlJs, { Database as SqlJsDatabase, SqlJsConfig, SqlJsStatic } from 'sql.js';
 import { QueryBuilder } from './query-builder';
 
-export const SQL_WASM_CDN_URL: string = 'https://cdn.jsdelivr.net/npm/sql.js@1.14.0/dist/';
+export const SQL_WASM_CDN_URL: string = 'https://cdn.jsdelivr.net/npm/sql.js@1.14.1/dist/';
 
 export class Database {
 	private config?: SqlJsConfig;
