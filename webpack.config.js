@@ -3,7 +3,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: './src/index.ts',
-	target: 'web',
     module: {
         rules: [
             {
