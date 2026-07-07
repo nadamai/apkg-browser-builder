@@ -55,7 +55,7 @@ export default class ApkgBuilder {
 		return [this.collection, ...cards, ...notes];
 	}
 
-	public save(filename: string): void {
+	public build(handler: (content: Blob) => void): void {
 		const zip = new JSZip();
 		const entities = this.getCollectionEntities();
 
@@ -70,10 +70,16 @@ export default class ApkgBuilder {
 			zip.folder('media');
 
 			zip.generateAsync({ type: 'blob' }).then((content: Blob) => {
-				FileSaver.saveAs(content, filename);
+				handler(content);
 			});
 		} catch (error) {
 			console.error(error);
 		}
+	}
+
+	public save(filename: string): void {
+		return this.build((content: Blob) => {
+			FileSaver.saveAs(content, filename);
+		});
 	}
 }
