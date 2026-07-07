@@ -29,7 +29,7 @@
 	"build": "webpack --mode=production --node-env=production",
     "dev": "concurrently \"webpack --mode=production --watch\" \"webpack serve --config webpack.dev.js\"",
 	"prepare": "husky",
-    "prettier": "pretty-quick src/**/*.ts dev/**/*.ts --staged --pattern \"src/**/*.ts\" --pattern \"dev/**/*.ts\"",
+    "prettier": "pretty-quick src/**/*.ts dev/**/*.ts tests/**/*.ts --staged --pattern \"src/**/*.ts\" --pattern \"dev/**/*.ts\" --pattern \"tests/**/*.ts\"",
     "test": "vitest run"
   },
   "devDependencies": {
