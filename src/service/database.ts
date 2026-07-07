@@ -1,8 +1,6 @@
 import initSqlJs, { Database as SqlJsDatabase, SqlJsConfig, SqlJsStatic } from 'sql.js';
 import { QueryBuilder } from './query-builder';
 
-export const SQL_WASM_CDN_URL: string = 'https://cdn.jsdelivr.net/npm/sql.js@1.14.1/dist/';
-
 export class Database {
 	private config?: SqlJsConfig;
 	private db: SqlJsDatabase | null = null;
@@ -13,8 +11,10 @@ export class Database {
 
 	public async init(): Promise<void> {
 		try {
+			const { default: SqlWasmUrl } = require('sql.js/dist/sql-wasm-browser.wasm');
+
 			const SQL: SqlJsStatic = await initSqlJs({
-				locateFile: (file: string) => `${SQL_WASM_CDN_URL}${file}`,
+				locateFile: () => SqlWasmUrl,
 				...this.config
 			});
 
