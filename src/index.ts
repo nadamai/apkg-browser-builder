@@ -6,8 +6,6 @@ import { Card, Collection, Note } from './entity';
 import { Configuration, Deck, DeckConfiguration, Model } from './object';
 import { Entity } from './abstract';
 
-export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model };
-
 export type ApkgBuilderConfig = Partial<{
 	sqljs: SqlJsConfig;
 }>;
@@ -81,3 +79,5 @@ export default class ApkgBuilder {
 		FileSaver.saveAs(await this.build(), filename);
 	}
 }
+
+export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model };
