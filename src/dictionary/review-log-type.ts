@@ -5,7 +5,8 @@ export const ReviewLogType = {
 	review: 1,
 	relearn: 2,
 	filtered: 3,
-	manual: 4
+	manual: 4,
+	rescheduled: 5
 } as const;
 
 export type ReviewLogTypeKey = keyof typeof ReviewLogType;
