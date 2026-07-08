@@ -37,10 +37,11 @@ CREATE TABLE cards (
      --   new: the order in which cards are to be studied; starts from 1.
      --   learning/relearning: epoch timestamp in seconds
      --   review: days since the collection's creation time
+     -- For cards in filtered decks, due represents the position of the card in the filtered deck. The value of due before moving to the filtered deck is saved as odue.
     ivl             integer not null,
-      -- interval (used in SRS algorithm). Negative = seconds, positive = days
-      -- v2 scheduler used seconds for (re)learning cards and days for review cards
-      -- v3 scheduler uses seconds only for intraday (re)learning cards and days for interday (re)learning cards and review cards
+      -- The interval of the card in days.
+      -- For learning cards, it is 0.
+      -- For relearning cards, it is the interval (in days) that the card will get after passing through all the steps.
     factor          integer not null,
       -- The ease factor of the card in permille (parts per thousand). If the ease factor is 2500, the card’s interval will be multiplied by 2.5 the next time you press Good.
     reps            integer not null,
@@ -157,15 +158,17 @@ CREATE TABLE revlog (
        -- review:  1(wrong), 2(hard), 3(ok), 4(easy)
        -- learn/relearn:   1(wrong), 2(ok), 3(easy)
     ivl             integer not null,
-       -- interval (i.e. as in the card table)
+      -- interval (used in SRS algorithm). Negative = seconds, positive = days
+      -- v2 scheduler used seconds for (re)learning cards and days for review cards
+      -- v3 scheduler uses seconds only for intraday (re)learning cards and days for interday (re)learning cards and review cards
     lastIvl         integer not null,
        -- last interval (i.e. the last value of ivl. Note that this value is not necessarily equal to the actual interval between this review and the preceding review)
     factor          integer not null,
-      -- factor
+      -- The ease factor of the card in permille (parts per thousand). If FSRS is enabled, it is replaced by the FSRS difficulty normalized to a 100-1100 range. 
     time            integer not null,
        -- how many milliseconds your review took, up to 60000 (60s)
     type            integer not null
-       --  0=learn, 1=review, 2=relearn, 3=filtered, 4=manual
+       --  0=learn, 1=review, 2=relearn, 3=filtered, 4=manual, 5=rescheduled
 );
 
 CREATE INDEX ix_cards_nid on cards (nid);
