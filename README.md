@@ -29,9 +29,9 @@ await builder.init();
 await builder.save('my-deck.apkg');
 ```
 
-Everything revolves around a `Collection` object — the root entity used for constructing the `.apkg` file. You build up a tree of decks, cards and other optional entities to hand the collection over to `ApkgBuilder`.
+Everything revolves around a `Collection` model — the root Anki database entity used for constructing the `.apkg` file. You then build up a tree of decks, cards and other optional entities to hand the collection over to `ApkgBuilder`.
 
-The `init()` loads the WASM SQLite engine and `save(filename: string)` builds the package and triggers a browser download. If you'd rather handle the file yourself, you can call `build()` instead, which returns the package as a `Blob`.
+The `init()` loads the WASM SQLite engine while `save(filename: string)` builds the package and triggers a browser download. If you'd rather handle the file yourself, you can call `build()` instead, which returns the package as a `Blob`.
 
 ### Custom `.wasm` binary
 
@@ -48,7 +48,20 @@ To see more examples on how to build a package, please check the [`dev/examples`
 
 ## Documentation
 
-TBA
+### `ApkgBuilder`
+
+The main `default export` class responsible for building the final `.apkg` package.
+
+```ts
+new ApkgBuilder(collection?: Collection, config?: ApkgBuilderConfig)
+```
+
+| Method | Description |
+| --- | --- |
+| `init()` | Loads the WASM SQLite engine. Must resolve before `build()`/`save()` methods. |
+| `setCollection(collection: Collection)` / `getCollection()` | The `Collection` the package is built from. |
+| `build()` | Builds the `.apkg` and returns it as a `Blob`. |
+| `save(filename)` | Builds the package and triggers a browser download. |
 
 ## Contributing
 
@@ -72,4 +85,6 @@ When you add a custom feature or change a behavior, please add or update both:
 
 ## Support
 
-If this package saved you some time, consider [buying me a coffee](https://buymeacoffee.com/nadamai) ☕ Thanks!
+If this package saved you some time, consider [buying me a coffee](https://buymeacoffee.com/nadamai) ☕ 
+
+Thanks!
