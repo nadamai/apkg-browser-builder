@@ -44,4 +44,4 @@ const builder = new ApkgBuilder(collection, {
 });
 ```
 
-To see more examples on how to build a package, please check the `dev/examples` files.
+To see more examples on how to build a package, please check the [`dev/examples`](dev/examples) files.
