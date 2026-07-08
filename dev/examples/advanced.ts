@@ -3,7 +3,7 @@ import { Deck, DeckConfiguration, Model } from '../../src/object';
 import { Configuration } from '../../src/object/configuration';
 
 /**
- * This is the full example of how to create an .apkg file.
+ * This is more advanced example of how to create an .apkg file.
  *
  * The collection object is the main object contained within the .apkg file.
  * The collection can contain the configuration and multiple decks with their own configs.
