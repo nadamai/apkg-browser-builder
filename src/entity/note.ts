@@ -39,11 +39,11 @@ export class Note extends Entity<NoteModel> {
 		return this;
 	}
 
-	public getGuid(): number {
+	public getGuid(): string {
 		return this.entity.guid;
 	}
 
-	public setGuid(guid: number): Note {
+	public setGuid(guid: string): Note {
 		this.entity.guid = guid;
 
 		return this;
