@@ -68,4 +68,8 @@ Tests live in [`tests`](tests) and run with [Vitest](https://vitest.dev/). Each 
 When you add a custom feature or change a behavior, please add or update both:
 
 - a working example under [`dev/examples`](dev/examples), so it's testable in the dev playground,
-- a test under [`tests`](tests), so it's verified automatically.
+- a test under [`tests`](tests), so it's verified automatically by CI. 
+
+## Support
+
+If this package saved you some time, consider [buying me a coffee](https://buymeacoffee.com/nadamai) ☕ Thanks!
