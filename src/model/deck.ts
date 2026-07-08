@@ -14,4 +14,5 @@ export type Deck = {
 	id: number;
 	mod: number;
 	desc: string;
+	md: boolean;
 };

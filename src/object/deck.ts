@@ -21,7 +21,8 @@ export class Deck extends Object<DeckObject> {
 		extendNew: null,
 		conf: 0,
 		mod: Generator.now(),
-		desc: ''
+		desc: '',
+		md: false
 	};
 
 	protected collection: Collection | null = null;
@@ -69,6 +70,16 @@ export class Deck extends Object<DeckObject> {
 
 	public setDescription(description: string): Deck {
 		this.object.desc = description;
+
+		return this;
+	}
+
+	public getMarkdownDescription(): boolean {
+		return this.object.md;
+	}
+
+	public setMarkdownDescription(description: boolean): Deck {
+		this.object.md = description;
 
 		return this;
 	}
