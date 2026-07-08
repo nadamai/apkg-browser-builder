@@ -10,9 +10,9 @@ It ships a small ORM layer for the [Anki SQLite database](https://github.com/ank
 npm install apkg-browser-builder
 ```
 
-## Instructions
+## Examples
 
-### The simplest example with one-card deck
+### The simplest example with a one-card deck
 ```ts
 import ApkgBuilder, { Collection, Deck, Card } from 'apkg-browser-builder';
 
@@ -45,3 +45,27 @@ const builder = new ApkgBuilder(collection, {
 ```
 
 To see more examples on how to build a package, please check the [`dev/examples`](dev/examples) files.
+
+## Documentation
+
+TBA
+
+## Contributing
+
+Contributions are welcome! A few things to know before diving in:
+
+```bash
+npm install       # install dependencies
+npm run prepare   # initialize prettier precommit hooks
+npm run dev       # local dev playground at http://localhost:3000
+npm test          # run the vitest suite
+```
+
+The dev playground allows previewing and manually testing every example file under [`dev/examples`](dev/examples). A pre-commit hook runs a `tsgo` type check and `prettier` automatically.
+
+Tests live in [`tests`](tests) and run with [Vitest](https://vitest.dev/). Each test builds an `.apkg` package, unzips it and asserts against the actual zip and SQLite contents.
+
+When you add a custom feature or change a behavior, please add or update both:
+
+- a working example under [`dev/examples`](dev/examples), so it's testable in the dev playground,
+- a test under [`tests`](tests), so it's verified automatically.
