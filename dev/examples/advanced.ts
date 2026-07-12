@@ -1,7 +1,12 @@
-import ApkgBuilder from '../../src';
-import { Card, Collection, Note } from '../../src/entity';
-import { Deck, DeckConfiguration, Model } from '../../src/object';
-import { Configuration } from '../../src/object/configuration';
+import ApkgBuilder, {
+	Card,
+	Collection,
+	Configuration,
+	Deck,
+	DeckConfiguration,
+	Model,
+	Note
+} from 'apkg-browser-builder';
 
 /**
  * This is more advanced example of how to create an .apkg file.
