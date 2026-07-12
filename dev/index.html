@@ -72,7 +72,7 @@
 				examples.forEach(({ filename, content }) => {
 					const element = document.createElement('li');
 
-					element.textContent = filename.replace(/\.ts$/, '');
+					element.textContent = filename.replace(/^[0-9]+\. /, '').replace(/\.ts$/, '');
 
 					element.onclick = () => {
 						selectedExample = { filename, content };
