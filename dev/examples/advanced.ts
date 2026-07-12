@@ -1,3 +1,4 @@
+import ApkgBuilder from '../../src';
 import { Card, Collection, Note } from '../../src/entity';
 import { Deck, DeckConfiguration, Model } from '../../src/object';
 import { Configuration } from '../../src/object/configuration';
@@ -44,3 +45,6 @@ card.setNote(note);
 
 // Adding the card to the deck
 deck.addCard(card);
+
+// Assigning the ApkgBuilder to the const
+const apkg = new ApkgBuilder(collection);

@@ -1,3 +1,4 @@
+import ApkgBuilder from '../../src';
 import { Card, Collection } from '../../src/entity';
 import { Deck } from '../../src/object';
 
@@ -22,3 +23,6 @@ const card = new Card('This is front', 'This is back');
 
 // Adding the card to the deck
 deck.addCard(card);
+
+// Assigning the ApkgBuilder to the const
+const apkg = new ApkgBuilder(collection);
