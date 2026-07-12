@@ -46,5 +46,9 @@ card.setNote(note);
 // Adding the card to the deck
 deck.addCard(card);
 
-// Assigning the ApkgBuilder to the const
+// Building and saving the .apkg file
 const apkg = new ApkgBuilder(collection);
+
+apkg.init().then(() => {
+	apkg.save('advanced-example.apkg');
+});
