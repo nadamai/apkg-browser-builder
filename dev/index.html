@@ -56,10 +56,7 @@
 				},
 			});
 
-			// AsyncFunction, so the examples can use top-level await
-			const AsyncFunction = async function () {}.constructor;
-
-			new AsyncFunction('ApkgBrowserBuilder', outputText)(ApkgBrowserBuilder);
+			new Function('ApkgBrowserBuilder', `return (async () => {\n${outputText}\n})();`)(ApkgBrowserBuilder);
 		};
 
 		const downloadApkg = () => {
