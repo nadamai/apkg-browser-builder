@@ -49,6 +49,5 @@ deck.addCard(card);
 // Building and saving the .apkg file
 const apkg = new ApkgBuilder(collection);
 
-apkg.init().then(() => {
-	apkg.save('advanced-example.apkg');
-});
+await apkg.init();
+await apkg.save('advanced-example.apkg');

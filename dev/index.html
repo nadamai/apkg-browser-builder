@@ -50,10 +50,16 @@
 			);
 
 			const { outputText } = ts.transpileModule(scriptWithoutImports, {
-				compilerOptions: { target: ts.ScriptTarget.ES2019 },
+				compilerOptions: { 
+					target: ts.ScriptTarget.ES2022, 
+					module: ts.ModuleKind.ESNext 
+				},
 			});
 
-			new Function('ApkgBrowserBuilder', outputText)(ApkgBrowserBuilder);
+			// AsyncFunction, so the examples can use top-level await
+			const AsyncFunction = async function () {}.constructor;
+
+			new AsyncFunction('ApkgBrowserBuilder', outputText)(ApkgBrowserBuilder);
 		};
 
 		const downloadApkg = () => {
