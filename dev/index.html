@@ -56,7 +56,7 @@
 				},
 			});
 
-			new Function('ApkgBrowserBuilder', `return (async () => {\n${outputText}\n})();`)(ApkgBrowserBuilder);
+			new Function(`return (async () => {\n${outputText}\n})();`)();
 		};
 
 		const downloadApkg = () => {
