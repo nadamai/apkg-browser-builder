@@ -22,11 +22,12 @@ const card = new Card('This is front', 'This is back');
 // Adding the card to the deck
 deck.addCard(card);
 
-// Building and saving the .apkg file
+// Building .apkg file
 const apkg = new ApkgBuilder(collection);
 
 await apkg.init();
 
+// Grabbing the file as a Blob
 const blob = await apkg.build();
 
 console.log(blob);
