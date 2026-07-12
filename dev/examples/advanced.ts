@@ -1,12 +1,4 @@
-import ApkgBuilder, {
-	Card,
-	Collection,
-	Configuration,
-	Deck,
-	DeckConfiguration,
-	Model,
-	Note
-} from 'apkg-browser-builder';
+import ApkgBuilder, { Card, Collection, Configuration, Deck, DeckConfiguration, Model, Note } from 'apkg-browser-builder';
 
 /**
  * This is more advanced example of how to create an .apkg file.
