@@ -46,22 +46,21 @@
 
 		let selectedExample = null;
 
-		const executeExample = (script) => {
+		const compileApkgScript = (script) => {
 			const scriptWithoutImports = script.replace(
-				/^import\s*\{([^}]+)\}\s*from\s*['"]\.\.\/\.\.\/src[^'"]*['"];?$/gm,
-				'const {$1} = ApkgBrowserBuilder;'
+				/^import\s+(?:(\w+)|\{([^}]+)\})\s*from\s*['"]\.\.\/\.\.\/src[^'"]*['"];?$/gm,
+				(match, name, names) => `const {${name ? `default: ${name}` : names}} = ApkgBrowserBuilder;`
 			);
 
 			const { outputText } = ts.transpileModule(scriptWithoutImports, {
 				compilerOptions: { target: ts.ScriptTarget.ES2019 },
 			});
 
-			return new Function('ApkgBrowserBuilder', `${outputText}\nreturn collection;`)(ApkgBrowserBuilder);
+			return new Function('ApkgBrowserBuilder', `${outputText}\nreturn apkg;`)(ApkgBrowserBuilder);
 		};
 
 		const downloadApkg = () => {
-			const collection = executeExample(selectedExample.content);
-			const apkg = new ApkgBuilder(collection);
+			const apkg = compileApkgScript(selectedExample.content);
 
 			apkg.init().then(() => {
 				apkg.save('anki.apkg');
