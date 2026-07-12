@@ -5,6 +5,7 @@ import ApkgBuilder, { Card, Collection, Deck } from 'apkg-browser-builder';
  *
  * The collection object is the main object contained within the .apkg file.
  * When the card is created it can be added to the deck which is linked to the collection.
+ * Multiple decks can be added to a single collection.
  */
 
 // Creating a new collection
