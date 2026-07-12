@@ -41,12 +41,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-typescript.min.js"></script>
 	<script>
-		// ApkgBrowserBuilder is the dev-only global
-		const { default: ApkgBuilder } = ApkgBrowserBuilder;
-
 		let selectedExample = null;
 
-		const compileApkgScript = (script) => {
+		const runExampleScript = (script) => {
 			const scriptWithoutImports = script.replace(
 				/^import\s+(?:(\w+)|\{([^}]+)\})\s*from\s*['"]\.\.\/\.\.\/src[^'"]*['"];?$/gm,
 				(match, name, names) => `const {${name ? `default: ${name}` : names}} = ApkgBrowserBuilder;`
@@ -56,15 +53,11 @@
 				compilerOptions: { target: ts.ScriptTarget.ES2019 },
 			});
 
-			return new Function('ApkgBrowserBuilder', `${outputText}\nreturn apkg;`)(ApkgBrowserBuilder);
+			new Function('ApkgBrowserBuilder', outputText)(ApkgBrowserBuilder);
 		};
 
 		const downloadApkg = () => {
-			const apkg = compileApkgScript(selectedExample.content);
-
-			apkg.init().then(() => {
-				apkg.save('anki.apkg');
-			});
+			runExampleScript(selectedExample.content);
 		};
 
 		fetch('/examples')
