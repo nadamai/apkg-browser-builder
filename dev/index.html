@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<div>
-				<button onClick="downloadApkg()">Download APKG!</button>
+				<button onClick="runExample()">Run example!</button>
 			</div>
 		</main>
 		<hr />
@@ -43,7 +43,9 @@
 	<script>
 		let selectedExample = null;
 
-		const runExampleScript = (script) => {
+		const runExample = () => {
+			const script = selectedExample.content;
+
 			const scriptWithoutImports = script.replace(
 				/^import\s+(?:(\w+)\s*,?\s*)?(?:\{([^}]+)\})?\s*from\s*['"]apkg-browser-builder['"];?$/gm,
 				(match, name, names) => `const {${[name && `default: ${name}`, names].filter(Boolean).join(',')}} = ApkgBrowserBuilder;`
@@ -57,10 +59,6 @@
 			});
 
 			new Function(`return (async () => {\n${outputText}\n})();`)();
-		};
-
-		const downloadApkg = () => {
-			runExampleScript(selectedExample.content);
 		};
 
 		fetch('/examples')
