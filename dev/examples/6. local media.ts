@@ -32,5 +32,4 @@ const image = await resource.blob();
 // Attaching media to the package (the filename has to be consistent with the one used in the card)
 apkg.addMedia('image.png', image);
 
-await apkg.init();
 await apkg.save('local-media-example.apkg');

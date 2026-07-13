@@ -25,8 +25,6 @@ deck.addCard(card);
 // Building .apkg file
 const apkg = new ApkgBuilder(collection);
 
-await apkg.init();
-
 // Grabbing the file as a Blob
 const blob = await apkg.build();
 
