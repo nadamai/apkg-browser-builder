@@ -98,7 +98,10 @@ export default class ApkgBuilder {
 
 		zip.file('media', JSON.stringify(manifest));
 
-		return await zip.generateAsync({ type: 'blob' });
+		return await zip.generateAsync({
+			type: 'blob',
+			compression: 'DEFLATE'
+		});
 	}
 
 	public async save(filename: string): Promise<void> {
