@@ -16,8 +16,14 @@ describe('APKG Browser Builder', () => {
 
 		const apkg = new ApkgBuilder(collection);
 		const zip = await loadZip(apkg);
+		const manifest = zip.file('media');
 
 		expect(Object.keys(zip.files).sort()).toEqual(['collection.anki2', 'media']);
+		expect(manifest).toBeDefined();
+
+		const manifestContent = JSON.parse(await (manifest as JSZipObject).async('string'));
+
+		expect(manifestContent).toEqual({});
 
 		const db = await loadDatabase(apkg);
 		const tables = queryColumn(db, "SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name");
