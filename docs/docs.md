@@ -4,7 +4,7 @@
 
 ### Card
 
-Defined in: [entity/card.ts:8](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L8)
+Defined in: [entity/card.ts:8](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L8)
 
 #### Extends
 
@@ -16,7 +16,7 @@ Defined in: [entity/card.ts:8](https://github.com/nadamai/apkg-browser-builder/b
 
 > **new Card**(...`fields`): [`Card`](#card)
 
-Defined in: [entity/card.ts:36](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L36)
+Defined in: [entity/card.ts:36](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L36)
 
 ###### Parameters
 
@@ -38,7 +38,7 @@ Defined in: [entity/card.ts:36](https://github.com/nadamai/apkg-browser-builder/
 
 > **getDeck**(): [`Deck`](#deck) \| `null`
 
-Defined in: [entity/card.ts:70](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L70)
+Defined in: [entity/card.ts:70](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L70)
 
 ###### Returns
 
@@ -48,7 +48,7 @@ Defined in: [entity/card.ts:70](https://github.com/nadamai/apkg-browser-builder/
 
 > **getDue**(): `number`
 
-Defined in: [entity/card.ts:124](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L124)
+Defined in: [entity/card.ts:124](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L124)
 
 ###### Returns
 
@@ -58,7 +58,7 @@ Defined in: [entity/card.ts:124](https://github.com/nadamai/apkg-browser-builder
 
 > **getEntity**(): `Card`
 
-Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/entity.ts#L9)
+Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/entity.ts#L9)
 
 ###### Returns
 
@@ -72,7 +72,7 @@ Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-build
 
 > **getFactor**(): `number`
 
-Defined in: [entity/card.ts:144](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L144)
+Defined in: [entity/card.ts:144](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L144)
 
 ###### Returns
 
@@ -82,7 +82,7 @@ Defined in: [entity/card.ts:144](https://github.com/nadamai/apkg-browser-builder
 
 > **getFlags**(): `number`
 
-Defined in: [entity/card.ts:205](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L205)
+Defined in: [entity/card.ts:205](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L205)
 
 ###### Returns
 
@@ -92,7 +92,7 @@ Defined in: [entity/card.ts:205](https://github.com/nadamai/apkg-browser-builder
 
 > **getId**(): `number`
 
-Defined in: [entity/card.ts:42](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L42)
+Defined in: [entity/card.ts:42](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L42)
 
 ###### Returns
 
@@ -102,7 +102,7 @@ Defined in: [entity/card.ts:42](https://github.com/nadamai/apkg-browser-builder/
 
 > **getInterval**(): `number`
 
-Defined in: [entity/card.ts:134](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L134)
+Defined in: [entity/card.ts:134](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L134)
 
 ###### Returns
 
@@ -112,7 +112,7 @@ Defined in: [entity/card.ts:134](https://github.com/nadamai/apkg-browser-builder
 
 > **getLapses**(): `number`
 
-Defined in: [entity/card.ts:164](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L164)
+Defined in: [entity/card.ts:164](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L164)
 
 ###### Returns
 
@@ -122,7 +122,7 @@ Defined in: [entity/card.ts:164](https://github.com/nadamai/apkg-browser-builder
 
 > **getLeft**(): `number`
 
-Defined in: [entity/card.ts:174](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L174)
+Defined in: [entity/card.ts:174](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L174)
 
 ###### Returns
 
@@ -132,7 +132,7 @@ Defined in: [entity/card.ts:174](https://github.com/nadamai/apkg-browser-builder
 
 > **getModificationTime**(): `number`
 
-Defined in: [entity/card.ts:84](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L84)
+Defined in: [entity/card.ts:84](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L84)
 
 ###### Returns
 
@@ -142,7 +142,7 @@ Defined in: [entity/card.ts:84](https://github.com/nadamai/apkg-browser-builder/
 
 > **getNote**(): [`Note`](#note) \| `null`
 
-Defined in: [entity/card.ts:59](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L59)
+Defined in: [entity/card.ts:59](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L59)
 
 ###### Returns
 
@@ -152,7 +152,7 @@ Defined in: [entity/card.ts:59](https://github.com/nadamai/apkg-browser-builder/
 
 > **getNumberOfReviews**(): `number`
 
-Defined in: [entity/card.ts:154](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L154)
+Defined in: [entity/card.ts:154](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L154)
 
 ###### Returns
 
@@ -162,7 +162,7 @@ Defined in: [entity/card.ts:154](https://github.com/nadamai/apkg-browser-builder
 
 > **getOrdinal**(): `number`
 
-Defined in: [entity/card.ts:74](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L74)
+Defined in: [entity/card.ts:74](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L74)
 
 ###### Returns
 
@@ -172,7 +172,7 @@ Defined in: [entity/card.ts:74](https://github.com/nadamai/apkg-browser-builder/
 
 > **getOriginalDeck**(): [`Deck`](#deck) \| `null`
 
-Defined in: [entity/card.ts:194](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L194)
+Defined in: [entity/card.ts:194](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L194)
 
 ###### Returns
 
@@ -182,7 +182,7 @@ Defined in: [entity/card.ts:194](https://github.com/nadamai/apkg-browser-builder
 
 > **getOriginalDue**(): `number`
 
-Defined in: [entity/card.ts:184](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L184)
+Defined in: [entity/card.ts:184](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L184)
 
 ###### Returns
 
@@ -192,7 +192,7 @@ Defined in: [entity/card.ts:184](https://github.com/nadamai/apkg-browser-builder
 
 > **getQueue**(): `"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`
 
-Defined in: [entity/card.ts:114](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L114)
+Defined in: [entity/card.ts:114](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L114)
 
 ###### Returns
 
@@ -202,7 +202,7 @@ Defined in: [entity/card.ts:114](https://github.com/nadamai/apkg-browser-builder
 
 > **getTable**(): `string`
 
-Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/entity.ts#L5)
+Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/entity.ts#L5)
 
 ###### Returns
 
@@ -216,7 +216,7 @@ Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-build
 
 > **getType**(): `"new"` \| `"learning"` \| `"review"` \| `"relearning"`
 
-Defined in: [entity/card.ts:104](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L104)
+Defined in: [entity/card.ts:104](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L104)
 
 ###### Returns
 
@@ -226,7 +226,7 @@ Defined in: [entity/card.ts:104](https://github.com/nadamai/apkg-browser-builder
 
 > **getUpdateSequenceNumber**(): `number`
 
-Defined in: [entity/card.ts:94](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L94)
+Defined in: [entity/card.ts:94](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L94)
 
 ###### Returns
 
@@ -236,7 +236,7 @@ Defined in: [entity/card.ts:94](https://github.com/nadamai/apkg-browser-builder/
 
 > **setDeck**(`deck`): [`Card`](#card)
 
-Defined in: [entity/card.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L63)
+Defined in: [entity/card.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L63)
 
 ###### Parameters
 
@@ -252,7 +252,7 @@ Defined in: [entity/card.ts:63](https://github.com/nadamai/apkg-browser-builder/
 
 > **setDue**(`due`): [`Card`](#card)
 
-Defined in: [entity/card.ts:128](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L128)
+Defined in: [entity/card.ts:128](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L128)
 
 ###### Parameters
 
@@ -268,7 +268,7 @@ Defined in: [entity/card.ts:128](https://github.com/nadamai/apkg-browser-builder
 
 > **setFactor**(`factor`): [`Card`](#card)
 
-Defined in: [entity/card.ts:148](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L148)
+Defined in: [entity/card.ts:148](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L148)
 
 ###### Parameters
 
@@ -284,7 +284,7 @@ Defined in: [entity/card.ts:148](https://github.com/nadamai/apkg-browser-builder
 
 > **setFlags**(`flags`): [`Card`](#card)
 
-Defined in: [entity/card.ts:209](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L209)
+Defined in: [entity/card.ts:209](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L209)
 
 ###### Parameters
 
@@ -300,7 +300,7 @@ Defined in: [entity/card.ts:209](https://github.com/nadamai/apkg-browser-builder
 
 > **setId**(`id?`): [`Card`](#card)
 
-Defined in: [entity/card.ts:46](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L46)
+Defined in: [entity/card.ts:46](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L46)
 
 ###### Parameters
 
@@ -316,7 +316,7 @@ Defined in: [entity/card.ts:46](https://github.com/nadamai/apkg-browser-builder/
 
 > **setInterval**(`interval`): [`Card`](#card)
 
-Defined in: [entity/card.ts:138](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L138)
+Defined in: [entity/card.ts:138](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L138)
 
 ###### Parameters
 
@@ -332,7 +332,7 @@ Defined in: [entity/card.ts:138](https://github.com/nadamai/apkg-browser-builder
 
 > **setLapses**(`lapses`): [`Card`](#card)
 
-Defined in: [entity/card.ts:168](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L168)
+Defined in: [entity/card.ts:168](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L168)
 
 ###### Parameters
 
@@ -348,7 +348,7 @@ Defined in: [entity/card.ts:168](https://github.com/nadamai/apkg-browser-builder
 
 > **setLeft**(`left`): [`Card`](#card)
 
-Defined in: [entity/card.ts:178](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L178)
+Defined in: [entity/card.ts:178](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L178)
 
 ###### Parameters
 
@@ -364,7 +364,7 @@ Defined in: [entity/card.ts:178](https://github.com/nadamai/apkg-browser-builder
 
 > **setModificationTime**(`time`): [`Card`](#card)
 
-Defined in: [entity/card.ts:88](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L88)
+Defined in: [entity/card.ts:88](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L88)
 
 ###### Parameters
 
@@ -380,7 +380,7 @@ Defined in: [entity/card.ts:88](https://github.com/nadamai/apkg-browser-builder/
 
 > **setNote**(`note`): [`Card`](#card)
 
-Defined in: [entity/card.ts:52](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L52)
+Defined in: [entity/card.ts:52](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L52)
 
 ###### Parameters
 
@@ -396,7 +396,7 @@ Defined in: [entity/card.ts:52](https://github.com/nadamai/apkg-browser-builder/
 
 > **setNumberOfReviews**(`numberOfReviews`): [`Card`](#card)
 
-Defined in: [entity/card.ts:158](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L158)
+Defined in: [entity/card.ts:158](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L158)
 
 ###### Parameters
 
@@ -412,7 +412,7 @@ Defined in: [entity/card.ts:158](https://github.com/nadamai/apkg-browser-builder
 
 > **setOrdinal**(`ordinal`): [`Card`](#card)
 
-Defined in: [entity/card.ts:78](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L78)
+Defined in: [entity/card.ts:78](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L78)
 
 ###### Parameters
 
@@ -428,7 +428,7 @@ Defined in: [entity/card.ts:78](https://github.com/nadamai/apkg-browser-builder/
 
 > **setOriginalDeck**(`deck`): [`Card`](#card)
 
-Defined in: [entity/card.ts:198](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L198)
+Defined in: [entity/card.ts:198](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L198)
 
 ###### Parameters
 
@@ -444,7 +444,7 @@ Defined in: [entity/card.ts:198](https://github.com/nadamai/apkg-browser-builder
 
 > **setOriginalDue**(`originalDue`): [`Card`](#card)
 
-Defined in: [entity/card.ts:188](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L188)
+Defined in: [entity/card.ts:188](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L188)
 
 ###### Parameters
 
@@ -460,7 +460,7 @@ Defined in: [entity/card.ts:188](https://github.com/nadamai/apkg-browser-builder
 
 > **setQueue**(`queue`): [`Card`](#card)
 
-Defined in: [entity/card.ts:118](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L118)
+Defined in: [entity/card.ts:118](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L118)
 
 ###### Parameters
 
@@ -476,7 +476,7 @@ Defined in: [entity/card.ts:118](https://github.com/nadamai/apkg-browser-builder
 
 > **setType**(`type`): [`Card`](#card)
 
-Defined in: [entity/card.ts:108](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L108)
+Defined in: [entity/card.ts:108](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L108)
 
 ###### Parameters
 
@@ -492,7 +492,7 @@ Defined in: [entity/card.ts:108](https://github.com/nadamai/apkg-browser-builder
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`): [`Card`](#card)
 
-Defined in: [entity/card.ts:98](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/card.ts#L98)
+Defined in: [entity/card.ts:98](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/card.ts#L98)
 
 ###### Parameters
 
@@ -508,7 +508,7 @@ Defined in: [entity/card.ts:98](https://github.com/nadamai/apkg-browser-builder/
 
 ### Collection
 
-Defined in: [entity/collection.ts:12](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L12)
+Defined in: [entity/collection.ts:12](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L12)
 
 #### Extends
 
@@ -534,7 +534,7 @@ Defined in: [entity/collection.ts:12](https://github.com/nadamai/apkg-browser-bu
 
 > **addDeck**(`deck`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:183](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L183)
+Defined in: [entity/collection.ts:183](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L183)
 
 ###### Parameters
 
@@ -550,7 +550,7 @@ Defined in: [entity/collection.ts:183](https://github.com/nadamai/apkg-browser-b
 
 > **addDeckConfiguration**(`config`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:255](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L255)
+Defined in: [entity/collection.ts:255](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L255)
 
 ###### Parameters
 
@@ -566,7 +566,7 @@ Defined in: [entity/collection.ts:255](https://github.com/nadamai/apkg-browser-b
 
 > **addModel**(`model`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:139](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L139)
+Defined in: [entity/collection.ts:139](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L139)
 
 ###### Parameters
 
@@ -582,7 +582,7 @@ Defined in: [entity/collection.ts:139](https://github.com/nadamai/apkg-browser-b
 
 > **getConfiguration**(): [`Configuration`](#configuration) \| `null`
 
-Defined in: [entity/collection.ts:106](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L106)
+Defined in: [entity/collection.ts:106](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L106)
 
 ###### Returns
 
@@ -592,7 +592,7 @@ Defined in: [entity/collection.ts:106](https://github.com/nadamai/apkg-browser-b
 
 > **getCreationTime**(): `number`
 
-Defined in: [entity/collection.ts:46](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L46)
+Defined in: [entity/collection.ts:46](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L46)
 
 ###### Returns
 
@@ -602,7 +602,7 @@ Defined in: [entity/collection.ts:46](https://github.com/nadamai/apkg-browser-bu
 
 > **getDeckConfigurations**(): [`DeckConfiguration`](#deckconfiguration)[]
 
-Defined in: [entity/collection.ts:230](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L230)
+Defined in: [entity/collection.ts:230](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L230)
 
 ###### Returns
 
@@ -612,7 +612,7 @@ Defined in: [entity/collection.ts:230](https://github.com/nadamai/apkg-browser-b
 
 > **getDecks**(): [`Deck`](#deck)[]
 
-Defined in: [entity/collection.ts:161](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L161)
+Defined in: [entity/collection.ts:161](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L161)
 
 ###### Returns
 
@@ -622,7 +622,7 @@ Defined in: [entity/collection.ts:161](https://github.com/nadamai/apkg-browser-b
 
 > **getEntity**(): `Collection`
 
-Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/entity.ts#L9)
+Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/entity.ts#L9)
 
 ###### Returns
 
@@ -636,7 +636,7 @@ Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-build
 
 > **getId**(): `number`
 
-Defined in: [entity/collection.ts:36](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L36)
+Defined in: [entity/collection.ts:36](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L36)
 
 ###### Returns
 
@@ -646,7 +646,7 @@ Defined in: [entity/collection.ts:36](https://github.com/nadamai/apkg-browser-bu
 
 > **getLastSyncTime**(): `number`
 
-Defined in: [entity/collection.ts:96](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L96)
+Defined in: [entity/collection.ts:96](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L96)
 
 ###### Returns
 
@@ -656,7 +656,7 @@ Defined in: [entity/collection.ts:96](https://github.com/nadamai/apkg-browser-bu
 
 > **getModels**(): [`Model`](#model)[]
 
-Defined in: [entity/collection.ts:117](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L117)
+Defined in: [entity/collection.ts:117](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L117)
 
 ###### Returns
 
@@ -666,7 +666,7 @@ Defined in: [entity/collection.ts:117](https://github.com/nadamai/apkg-browser-b
 
 > **getModificationTime**(): `number`
 
-Defined in: [entity/collection.ts:56](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L56)
+Defined in: [entity/collection.ts:56](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L56)
 
 ###### Returns
 
@@ -676,7 +676,7 @@ Defined in: [entity/collection.ts:56](https://github.com/nadamai/apkg-browser-bu
 
 > **getSchemaModificationTime**(): `number`
 
-Defined in: [entity/collection.ts:66](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L66)
+Defined in: [entity/collection.ts:66](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L66)
 
 ###### Returns
 
@@ -686,7 +686,7 @@ Defined in: [entity/collection.ts:66](https://github.com/nadamai/apkg-browser-bu
 
 > **getTable**(): `string`
 
-Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/entity.ts#L5)
+Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/entity.ts#L5)
 
 ###### Returns
 
@@ -700,7 +700,7 @@ Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-build
 
 > **getTags**(): `string`[]
 
-Defined in: [entity/collection.ts:275](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L275)
+Defined in: [entity/collection.ts:275](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L275)
 
 ###### Returns
 
@@ -710,7 +710,7 @@ Defined in: [entity/collection.ts:275](https://github.com/nadamai/apkg-browser-b
 
 > **getUpdateSequenceNumber**(): `number`
 
-Defined in: [entity/collection.ts:86](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L86)
+Defined in: [entity/collection.ts:86](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L86)
 
 ###### Returns
 
@@ -720,7 +720,7 @@ Defined in: [entity/collection.ts:86](https://github.com/nadamai/apkg-browser-bu
 
 > **getVersion**(): `number`
 
-Defined in: [entity/collection.ts:76](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L76)
+Defined in: [entity/collection.ts:76](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L76)
 
 ###### Returns
 
@@ -730,7 +730,7 @@ Defined in: [entity/collection.ts:76](https://github.com/nadamai/apkg-browser-bu
 
 > **removeDeck**(`deck`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:219](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L219)
+Defined in: [entity/collection.ts:219](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L219)
 
 ###### Parameters
 
@@ -746,7 +746,7 @@ Defined in: [entity/collection.ts:219](https://github.com/nadamai/apkg-browser-b
 
 > **removeDeckConfiguration**(`config`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:263](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L263)
+Defined in: [entity/collection.ts:263](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L263)
 
 ###### Parameters
 
@@ -762,7 +762,7 @@ Defined in: [entity/collection.ts:263](https://github.com/nadamai/apkg-browser-b
 
 > **removeModel**(`model`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:150](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L150)
+Defined in: [entity/collection.ts:150](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L150)
 
 ###### Parameters
 
@@ -778,7 +778,7 @@ Defined in: [entity/collection.ts:150](https://github.com/nadamai/apkg-browser-b
 
 > **setConfiguration**(`configuration`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:110](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L110)
+Defined in: [entity/collection.ts:110](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L110)
 
 ###### Parameters
 
@@ -794,7 +794,7 @@ Defined in: [entity/collection.ts:110](https://github.com/nadamai/apkg-browser-b
 
 > **setCreationTime**(`time`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:50](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L50)
+Defined in: [entity/collection.ts:50](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L50)
 
 ###### Parameters
 
@@ -810,7 +810,7 @@ Defined in: [entity/collection.ts:50](https://github.com/nadamai/apkg-browser-bu
 
 > **setDeckConfigurations**(`configs`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:234](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L234)
+Defined in: [entity/collection.ts:234](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L234)
 
 ###### Parameters
 
@@ -826,7 +826,7 @@ Defined in: [entity/collection.ts:234](https://github.com/nadamai/apkg-browser-b
 
 > **setDecks**(`decks`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:165](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L165)
+Defined in: [entity/collection.ts:165](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L165)
 
 ###### Parameters
 
@@ -842,7 +842,7 @@ Defined in: [entity/collection.ts:165](https://github.com/nadamai/apkg-browser-b
 
 > **setId**(`id`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:40](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L40)
+Defined in: [entity/collection.ts:40](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L40)
 
 ###### Parameters
 
@@ -858,7 +858,7 @@ Defined in: [entity/collection.ts:40](https://github.com/nadamai/apkg-browser-bu
 
 > **setLastSyncTime**(`time`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:100](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L100)
+Defined in: [entity/collection.ts:100](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L100)
 
 ###### Parameters
 
@@ -874,7 +874,7 @@ Defined in: [entity/collection.ts:100](https://github.com/nadamai/apkg-browser-b
 
 > **setModels**(`models`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:121](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L121)
+Defined in: [entity/collection.ts:121](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L121)
 
 ###### Parameters
 
@@ -890,7 +890,7 @@ Defined in: [entity/collection.ts:121](https://github.com/nadamai/apkg-browser-b
 
 > **setModificationTime**(`time`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:60](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L60)
+Defined in: [entity/collection.ts:60](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L60)
 
 ###### Parameters
 
@@ -906,7 +906,7 @@ Defined in: [entity/collection.ts:60](https://github.com/nadamai/apkg-browser-bu
 
 > **setSchemaModificationTime**(`time`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:70](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L70)
+Defined in: [entity/collection.ts:70](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L70)
 
 ###### Parameters
 
@@ -922,7 +922,7 @@ Defined in: [entity/collection.ts:70](https://github.com/nadamai/apkg-browser-bu
 
 > **setTags**(`tags`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:279](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L279)
+Defined in: [entity/collection.ts:279](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L279)
 
 ###### Parameters
 
@@ -938,7 +938,7 @@ Defined in: [entity/collection.ts:279](https://github.com/nadamai/apkg-browser-b
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:90](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L90)
+Defined in: [entity/collection.ts:90](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L90)
 
 ###### Parameters
 
@@ -954,7 +954,7 @@ Defined in: [entity/collection.ts:90](https://github.com/nadamai/apkg-browser-bu
 
 > **setVersion**(`version`): [`Collection`](#collection)
 
-Defined in: [entity/collection.ts:80](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/collection.ts#L80)
+Defined in: [entity/collection.ts:80](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/collection.ts#L80)
 
 ###### Parameters
 
@@ -970,7 +970,7 @@ Defined in: [entity/collection.ts:80](https://github.com/nadamai/apkg-browser-bu
 
 ### Configuration
 
-Defined in: [object/configuration.ts:8](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L8)
+Defined in: [object/configuration.ts:8](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L8)
 
 #### Extends
 
@@ -996,7 +996,7 @@ Defined in: [object/configuration.ts:8](https://github.com/nadamai/apkg-browser-
 
 > **addActiveColumn**(`column`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:208](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L208)
+Defined in: [object/configuration.ts:208](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L208)
 
 ###### Parameters
 
@@ -1012,7 +1012,7 @@ Defined in: [object/configuration.ts:208](https://github.com/nadamai/apkg-browse
 
 > **addActiveDeck**(`deck`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:37](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L37)
+Defined in: [object/configuration.ts:37](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L37)
 
 ###### Parameters
 
@@ -1028,7 +1028,7 @@ Defined in: [object/configuration.ts:37](https://github.com/nadamai/apkg-browser
 
 > **getActiveColumns**(): (`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`)[] \| `null`
 
-Defined in: [object/configuration.ts:198](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L198)
+Defined in: [object/configuration.ts:198](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L198)
 
 ###### Returns
 
@@ -1038,7 +1038,7 @@ Defined in: [object/configuration.ts:198](https://github.com/nadamai/apkg-browse
 
 > **getActiveDecks**(): [`Deck`](#deck)[]
 
-Defined in: [object/configuration.ts:26](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L26)
+Defined in: [object/configuration.ts:26](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L26)
 
 ###### Returns
 
@@ -1048,7 +1048,7 @@ Defined in: [object/configuration.ts:26](https://github.com/nadamai/apkg-browser
 
 > **getAddToCurrentDeck**(): `boolean` \| `null`
 
-Defined in: [object/configuration.ts:158](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L158)
+Defined in: [object/configuration.ts:158](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L158)
 
 ###### Returns
 
@@ -1058,7 +1058,7 @@ Defined in: [object/configuration.ts:158](https://github.com/nadamai/apkg-browse
 
 > **getCurrentDeck**(): [`Deck`](#deck) \| `null`
 
-Defined in: [object/configuration.ts:15](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L15)
+Defined in: [object/configuration.ts:15](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L15)
 
 ###### Returns
 
@@ -1068,7 +1068,7 @@ Defined in: [object/configuration.ts:15](https://github.com/nadamai/apkg-browser
 
 > **getCurrentModel**(): [`Model`](#model) \| `null`
 
-Defined in: [object/configuration.ts:117](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L117)
+Defined in: [object/configuration.ts:117](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L117)
 
 ###### Returns
 
@@ -1078,7 +1078,7 @@ Defined in: [object/configuration.ts:117](https://github.com/nadamai/apkg-browse
 
 > **getLastUnburied**(): `number` \| `null`
 
-Defined in: [object/configuration.ts:188](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L188)
+Defined in: [object/configuration.ts:188](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L188)
 
 ###### Returns
 
@@ -1088,7 +1088,7 @@ Defined in: [object/configuration.ts:188](https://github.com/nadamai/apkg-browse
 
 > **getLearnAheadLimit**(): `number` \| `null`
 
-Defined in: [object/configuration.ts:77](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L77)
+Defined in: [object/configuration.ts:77](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L77)
 
 ###### Returns
 
@@ -1098,7 +1098,7 @@ Defined in: [object/configuration.ts:77](https://github.com/nadamai/apkg-browser
 
 > **getNewBury**(): `boolean` \| `null`
 
-Defined in: [object/configuration.ts:178](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L178)
+Defined in: [object/configuration.ts:178](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L178)
 
 ###### Returns
 
@@ -1108,7 +1108,7 @@ Defined in: [object/configuration.ts:178](https://github.com/nadamai/apkg-browse
 
 > **getNewSpread**(): `"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"` \| `null`
 
-Defined in: [object/configuration.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L63)
+Defined in: [object/configuration.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L63)
 
 ###### Returns
 
@@ -1118,7 +1118,7 @@ Defined in: [object/configuration.ts:63](https://github.com/nadamai/apkg-browser
 
 > **getNextPosition**(): `number` \| `null`
 
-Defined in: [object/configuration.ts:128](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L128)
+Defined in: [object/configuration.ts:128](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L128)
 
 ###### Returns
 
@@ -1128,7 +1128,7 @@ Defined in: [object/configuration.ts:128](https://github.com/nadamai/apkg-browse
 
 > **getObject**(): `Configuration`
 
-Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/object.ts#L4)
+Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/object.ts#L4)
 
 ###### Returns
 
@@ -1142,7 +1142,7 @@ Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-build
 
 > **getShowLearningCardsWithLargerSteps**(): `boolean` \| `null`
 
-Defined in: [object/configuration.ts:168](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L168)
+Defined in: [object/configuration.ts:168](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L168)
 
 ###### Returns
 
@@ -1152,7 +1152,7 @@ Defined in: [object/configuration.ts:168](https://github.com/nadamai/apkg-browse
 
 > **getShowNextReviewTimeAboveAnswerButtons**(): `boolean` \| `null`
 
-Defined in: [object/configuration.ts:97](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L97)
+Defined in: [object/configuration.ts:97](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L97)
 
 ###### Returns
 
@@ -1162,7 +1162,7 @@ Defined in: [object/configuration.ts:97](https://github.com/nadamai/apkg-browser
 
 > **getShowRemainingCardCountDuringReview**(): `boolean` \| `null`
 
-Defined in: [object/configuration.ts:107](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L107)
+Defined in: [object/configuration.ts:107](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L107)
 
 ###### Returns
 
@@ -1172,7 +1172,7 @@ Defined in: [object/configuration.ts:107](https://github.com/nadamai/apkg-browse
 
 > **getSortBackwrds**(): `boolean` \| `null`
 
-Defined in: [object/configuration.ts:148](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L148)
+Defined in: [object/configuration.ts:148](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L148)
 
 ###### Returns
 
@@ -1182,7 +1182,7 @@ Defined in: [object/configuration.ts:148](https://github.com/nadamai/apkg-browse
 
 > **getSortType**(): `string` \| `null`
 
-Defined in: [object/configuration.ts:138](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L138)
+Defined in: [object/configuration.ts:138](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L138)
 
 ###### Returns
 
@@ -1192,7 +1192,7 @@ Defined in: [object/configuration.ts:138](https://github.com/nadamai/apkg-browse
 
 > **getTimeboxTimeLimit**(): `number` \| `null`
 
-Defined in: [object/configuration.ts:87](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L87)
+Defined in: [object/configuration.ts:87](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L87)
 
 ###### Returns
 
@@ -1202,7 +1202,7 @@ Defined in: [object/configuration.ts:87](https://github.com/nadamai/apkg-browser
 
 > **getValue**(`attribute`): `any`
 
-Defined in: [object/configuration.ts:238](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L238)
+Defined in: [object/configuration.ts:238](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L238)
 
 ###### Parameters
 
@@ -1218,7 +1218,7 @@ Defined in: [object/configuration.ts:238](https://github.com/nadamai/apkg-browse
 
 > **removeActiveColumn**(`column`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:218](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L218)
+Defined in: [object/configuration.ts:218](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L218)
 
 ###### Parameters
 
@@ -1234,7 +1234,7 @@ Defined in: [object/configuration.ts:218](https://github.com/nadamai/apkg-browse
 
 > **removeActiveDeck**(`deck`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:44](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L44)
+Defined in: [object/configuration.ts:44](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L44)
 
 ###### Parameters
 
@@ -1250,7 +1250,7 @@ Defined in: [object/configuration.ts:44](https://github.com/nadamai/apkg-browser
 
 > **setActiveColumns**(`columns`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:202](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L202)
+Defined in: [object/configuration.ts:202](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L202)
 
 ###### Parameters
 
@@ -1266,7 +1266,7 @@ Defined in: [object/configuration.ts:202](https://github.com/nadamai/apkg-browse
 
 > **setActiveDecks**(`decks`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:30](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L30)
+Defined in: [object/configuration.ts:30](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L30)
 
 ###### Parameters
 
@@ -1282,7 +1282,7 @@ Defined in: [object/configuration.ts:30](https://github.com/nadamai/apkg-browser
 
 > **setAddToCurrentDeck**(`addToCur`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:162](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L162)
+Defined in: [object/configuration.ts:162](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L162)
 
 ###### Parameters
 
@@ -1298,7 +1298,7 @@ Defined in: [object/configuration.ts:162](https://github.com/nadamai/apkg-browse
 
 > **setCurrentDeck**(`deck`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:19](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L19)
+Defined in: [object/configuration.ts:19](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L19)
 
 ###### Parameters
 
@@ -1314,7 +1314,7 @@ Defined in: [object/configuration.ts:19](https://github.com/nadamai/apkg-browser
 
 > **setCurrentModel**(`model`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:121](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L121)
+Defined in: [object/configuration.ts:121](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L121)
 
 ###### Parameters
 
@@ -1330,7 +1330,7 @@ Defined in: [object/configuration.ts:121](https://github.com/nadamai/apkg-browse
 
 > **setLastUnburied**(`lastUnburied`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:192](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L192)
+Defined in: [object/configuration.ts:192](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L192)
 
 ###### Parameters
 
@@ -1346,7 +1346,7 @@ Defined in: [object/configuration.ts:192](https://github.com/nadamai/apkg-browse
 
 > **setLearnAheadLimit**(`collapseTime`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:81](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L81)
+Defined in: [object/configuration.ts:81](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L81)
 
 ###### Parameters
 
@@ -1362,7 +1362,7 @@ Defined in: [object/configuration.ts:81](https://github.com/nadamai/apkg-browser
 
 > **setNewBury**(`newBury`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:182](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L182)
+Defined in: [object/configuration.ts:182](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L182)
 
 ###### Parameters
 
@@ -1378,7 +1378,7 @@ Defined in: [object/configuration.ts:182](https://github.com/nadamai/apkg-browse
 
 > **setNewSpread**(`newSpread`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:71](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L71)
+Defined in: [object/configuration.ts:71](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L71)
 
 ###### Parameters
 
@@ -1394,7 +1394,7 @@ Defined in: [object/configuration.ts:71](https://github.com/nadamai/apkg-browser
 
 > **setNextPosition**(`nextPos`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:132](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L132)
+Defined in: [object/configuration.ts:132](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L132)
 
 ###### Parameters
 
@@ -1410,7 +1410,7 @@ Defined in: [object/configuration.ts:132](https://github.com/nadamai/apkg-browse
 
 > **setShowLearningCardsWithLargerSteps**(`dayLearnFirst`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:172](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L172)
+Defined in: [object/configuration.ts:172](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L172)
 
 ###### Parameters
 
@@ -1426,7 +1426,7 @@ Defined in: [object/configuration.ts:172](https://github.com/nadamai/apkg-browse
 
 > **setShowNextReviewTimeAboveAnswerButtons**(`estTimes`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:101](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L101)
+Defined in: [object/configuration.ts:101](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L101)
 
 ###### Parameters
 
@@ -1442,7 +1442,7 @@ Defined in: [object/configuration.ts:101](https://github.com/nadamai/apkg-browse
 
 > **setShowRemainingCardCountDuringReview**(`dueCounts`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:111](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L111)
+Defined in: [object/configuration.ts:111](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L111)
 
 ###### Parameters
 
@@ -1458,7 +1458,7 @@ Defined in: [object/configuration.ts:111](https://github.com/nadamai/apkg-browse
 
 > **setSortBackwrds**(`sortBackwards`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:152](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L152)
+Defined in: [object/configuration.ts:152](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L152)
 
 ###### Parameters
 
@@ -1474,7 +1474,7 @@ Defined in: [object/configuration.ts:152](https://github.com/nadamai/apkg-browse
 
 > **setSortType**(`sortType`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:142](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L142)
+Defined in: [object/configuration.ts:142](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L142)
 
 ###### Parameters
 
@@ -1490,7 +1490,7 @@ Defined in: [object/configuration.ts:142](https://github.com/nadamai/apkg-browse
 
 > **setTimeboxTimeLimit**(`timeLim`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:91](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L91)
+Defined in: [object/configuration.ts:91](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L91)
 
 ###### Parameters
 
@@ -1506,7 +1506,7 @@ Defined in: [object/configuration.ts:91](https://github.com/nadamai/apkg-browser
 
 > **setValue**(`attribute`, `value`): [`Configuration`](#configuration)
 
-Defined in: [object/configuration.ts:232](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/configuration.ts#L232)
+Defined in: [object/configuration.ts:232](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/configuration.ts#L232)
 
 ###### Parameters
 
@@ -1526,7 +1526,7 @@ Defined in: [object/configuration.ts:232](https://github.com/nadamai/apkg-browse
 
 ### Deck
 
-Defined in: [object/deck.ts:8](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L8)
+Defined in: [object/deck.ts:8](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L8)
 
 #### Extends
 
@@ -1538,7 +1538,7 @@ Defined in: [object/deck.ts:8](https://github.com/nadamai/apkg-browser-builder/b
 
 > **new Deck**(`name`, `description?`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:33](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L33)
+Defined in: [object/deck.ts:33](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L33)
 
 ###### Parameters
 
@@ -1564,7 +1564,7 @@ Defined in: [object/deck.ts:33](https://github.com/nadamai/apkg-browser-builder/
 
 > **addCard**(`card`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:217](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L217)
+Defined in: [object/deck.ts:217](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L217)
 
 ###### Parameters
 
@@ -1580,7 +1580,7 @@ Defined in: [object/deck.ts:217](https://github.com/nadamai/apkg-browser-builder
 
 > **getBrowserCollapsed**(): `boolean`
 
-Defined in: [object/deck.ts:117](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L117)
+Defined in: [object/deck.ts:117](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L117)
 
 ###### Returns
 
@@ -1590,7 +1590,7 @@ Defined in: [object/deck.ts:117](https://github.com/nadamai/apkg-browser-builder
 
 > **getCards**(): [`Card`](#card)[]
 
-Defined in: [object/deck.ts:255](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L255)
+Defined in: [object/deck.ts:255](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L255)
 
 ###### Returns
 
@@ -1600,7 +1600,7 @@ Defined in: [object/deck.ts:255](https://github.com/nadamai/apkg-browser-builder
 
 > **getCollapsed**(): `boolean`
 
-Defined in: [object/deck.ts:107](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L107)
+Defined in: [object/deck.ts:107](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L107)
 
 ###### Returns
 
@@ -1610,7 +1610,7 @@ Defined in: [object/deck.ts:107](https://github.com/nadamai/apkg-browser-builder
 
 > **getCollection**(): [`Collection`](#collection) \| `null`
 
-Defined in: [object/deck.ts:259](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L259)
+Defined in: [object/deck.ts:259](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L259)
 
 ###### Returns
 
@@ -1620,7 +1620,7 @@ Defined in: [object/deck.ts:259](https://github.com/nadamai/apkg-browser-builder
 
 > **getConfiguration**(): [`DeckConfiguration`](#deckconfiguration) \| `null`
 
-Defined in: [object/deck.ts:177](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L177)
+Defined in: [object/deck.ts:177](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L177)
 
 ###### Returns
 
@@ -1630,7 +1630,7 @@ Defined in: [object/deck.ts:177](https://github.com/nadamai/apkg-browser-builder
 
 > **getDescription**(): `string`
 
-Defined in: [object/deck.ts:67](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L67)
+Defined in: [object/deck.ts:67](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L67)
 
 ###### Returns
 
@@ -1640,7 +1640,7 @@ Defined in: [object/deck.ts:67](https://github.com/nadamai/apkg-browser-builder/
 
 > **getDynamic**(): `boolean`
 
-Defined in: [object/deck.ts:157](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L157)
+Defined in: [object/deck.ts:157](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L157)
 
 ###### Returns
 
@@ -1650,7 +1650,7 @@ Defined in: [object/deck.ts:157](https://github.com/nadamai/apkg-browser-builder
 
 > **getExtendedNewCardLimit**(): `number` \| `null`
 
-Defined in: [object/deck.ts:167](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L167)
+Defined in: [object/deck.ts:167](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L167)
 
 ###### Returns
 
@@ -1660,7 +1660,7 @@ Defined in: [object/deck.ts:167](https://github.com/nadamai/apkg-browser-builder
 
 > **getExtendedReviewCardLimit**(): `number` \| `null`
 
-Defined in: [object/deck.ts:87](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L87)
+Defined in: [object/deck.ts:87](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L87)
 
 ###### Returns
 
@@ -1670,7 +1670,7 @@ Defined in: [object/deck.ts:87](https://github.com/nadamai/apkg-browser-builder/
 
 > **getId**(): `number`
 
-Defined in: [object/deck.ts:47](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L47)
+Defined in: [object/deck.ts:47](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L47)
 
 ###### Returns
 
@@ -1680,7 +1680,7 @@ Defined in: [object/deck.ts:47](https://github.com/nadamai/apkg-browser-builder/
 
 > **getLearningToday**(): \[`number`, `number`\]
 
-Defined in: [object/deck.ts:147](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L147)
+Defined in: [object/deck.ts:147](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L147)
 
 ###### Returns
 
@@ -1690,7 +1690,7 @@ Defined in: [object/deck.ts:147](https://github.com/nadamai/apkg-browser-builder
 
 > **getMarkdownDescription**(): `boolean`
 
-Defined in: [object/deck.ts:77](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L77)
+Defined in: [object/deck.ts:77](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L77)
 
 ###### Returns
 
@@ -1700,7 +1700,7 @@ Defined in: [object/deck.ts:77](https://github.com/nadamai/apkg-browser-builder/
 
 > **getModel**(): [`Model`](#model) \| `null`
 
-Defined in: [object/deck.ts:192](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L192)
+Defined in: [object/deck.ts:192](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L192)
 
 ###### Returns
 
@@ -1710,7 +1710,7 @@ Defined in: [object/deck.ts:192](https://github.com/nadamai/apkg-browser-builder
 
 > **getModificationTime**(): `number`
 
-Defined in: [object/deck.ts:207](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L207)
+Defined in: [object/deck.ts:207](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L207)
 
 ###### Returns
 
@@ -1720,7 +1720,7 @@ Defined in: [object/deck.ts:207](https://github.com/nadamai/apkg-browser-builder
 
 > **getName**(): `string`
 
-Defined in: [object/deck.ts:57](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L57)
+Defined in: [object/deck.ts:57](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L57)
 
 ###### Returns
 
@@ -1730,7 +1730,7 @@ Defined in: [object/deck.ts:57](https://github.com/nadamai/apkg-browser-builder/
 
 > **getNewToday**(): \[`number`, `number`\]
 
-Defined in: [object/deck.ts:127](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L127)
+Defined in: [object/deck.ts:127](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L127)
 
 ###### Returns
 
@@ -1740,7 +1740,7 @@ Defined in: [object/deck.ts:127](https://github.com/nadamai/apkg-browser-builder
 
 > **getObject**(): `Deck`
 
-Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/object.ts#L4)
+Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/object.ts#L4)
 
 ###### Returns
 
@@ -1754,7 +1754,7 @@ Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-build
 
 > **getReviewToday**(): \[`number`, `number`\]
 
-Defined in: [object/deck.ts:137](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L137)
+Defined in: [object/deck.ts:137](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L137)
 
 ###### Returns
 
@@ -1764,7 +1764,7 @@ Defined in: [object/deck.ts:137](https://github.com/nadamai/apkg-browser-builder
 
 > **getUpdateSequenceNumber**(): `number`
 
-Defined in: [object/deck.ts:97](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L97)
+Defined in: [object/deck.ts:97](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L97)
 
 ###### Returns
 
@@ -1774,7 +1774,7 @@ Defined in: [object/deck.ts:97](https://github.com/nadamai/apkg-browser-builder/
 
 > **removeCard**(`card`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:243](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L243)
+Defined in: [object/deck.ts:243](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L243)
 
 ###### Parameters
 
@@ -1790,7 +1790,7 @@ Defined in: [object/deck.ts:243](https://github.com/nadamai/apkg-browser-builder
 
 > **setBrowserCollapsed**(`collapsed`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:121](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L121)
+Defined in: [object/deck.ts:121](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L121)
 
 ###### Parameters
 
@@ -1806,7 +1806,7 @@ Defined in: [object/deck.ts:121](https://github.com/nadamai/apkg-browser-builder
 
 > **setCollapsed**(`collapsed`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:111](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L111)
+Defined in: [object/deck.ts:111](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L111)
 
 ###### Parameters
 
@@ -1822,7 +1822,7 @@ Defined in: [object/deck.ts:111](https://github.com/nadamai/apkg-browser-builder
 
 > **setCollection**(`collection`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:263](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L263)
+Defined in: [object/deck.ts:263](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L263)
 
 ###### Parameters
 
@@ -1838,7 +1838,7 @@ Defined in: [object/deck.ts:263](https://github.com/nadamai/apkg-browser-builder
 
 > **setConfiguration**(`config`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:181](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L181)
+Defined in: [object/deck.ts:181](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L181)
 
 ###### Parameters
 
@@ -1854,7 +1854,7 @@ Defined in: [object/deck.ts:181](https://github.com/nadamai/apkg-browser-builder
 
 > **setDescription**(`description`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:71](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L71)
+Defined in: [object/deck.ts:71](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L71)
 
 ###### Parameters
 
@@ -1870,7 +1870,7 @@ Defined in: [object/deck.ts:71](https://github.com/nadamai/apkg-browser-builder/
 
 > **setDynamic**(`dynamic`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:161](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L161)
+Defined in: [object/deck.ts:161](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L161)
 
 ###### Parameters
 
@@ -1886,7 +1886,7 @@ Defined in: [object/deck.ts:161](https://github.com/nadamai/apkg-browser-builder
 
 > **setExtendedNewCardLimit**(`extendNew`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:171](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L171)
+Defined in: [object/deck.ts:171](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L171)
 
 ###### Parameters
 
@@ -1902,7 +1902,7 @@ Defined in: [object/deck.ts:171](https://github.com/nadamai/apkg-browser-builder
 
 > **setExtendedReviewCardLimit**(`extendRev`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:91](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L91)
+Defined in: [object/deck.ts:91](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L91)
 
 ###### Parameters
 
@@ -1918,7 +1918,7 @@ Defined in: [object/deck.ts:91](https://github.com/nadamai/apkg-browser-builder/
 
 > **setId**(`id?`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:51](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L51)
+Defined in: [object/deck.ts:51](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L51)
 
 ###### Parameters
 
@@ -1934,7 +1934,7 @@ Defined in: [object/deck.ts:51](https://github.com/nadamai/apkg-browser-builder/
 
 > **setLearningToday**(`lrnToday`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:151](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L151)
+Defined in: [object/deck.ts:151](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L151)
 
 ###### Parameters
 
@@ -1950,7 +1950,7 @@ Defined in: [object/deck.ts:151](https://github.com/nadamai/apkg-browser-builder
 
 > **setMarkdownDescription**(`description`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:81](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L81)
+Defined in: [object/deck.ts:81](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L81)
 
 ###### Parameters
 
@@ -1966,7 +1966,7 @@ Defined in: [object/deck.ts:81](https://github.com/nadamai/apkg-browser-builder/
 
 > **setModel**(`model`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:196](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L196)
+Defined in: [object/deck.ts:196](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L196)
 
 ###### Parameters
 
@@ -1982,7 +1982,7 @@ Defined in: [object/deck.ts:196](https://github.com/nadamai/apkg-browser-builder
 
 > **setModificationTime**(`time`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:211](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L211)
+Defined in: [object/deck.ts:211](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L211)
 
 ###### Parameters
 
@@ -1998,7 +1998,7 @@ Defined in: [object/deck.ts:211](https://github.com/nadamai/apkg-browser-builder
 
 > **setName**(`name`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:61](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L61)
+Defined in: [object/deck.ts:61](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L61)
 
 ###### Parameters
 
@@ -2014,7 +2014,7 @@ Defined in: [object/deck.ts:61](https://github.com/nadamai/apkg-browser-builder/
 
 > **setNewToday**(`newToday`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:131](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L131)
+Defined in: [object/deck.ts:131](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L131)
 
 ###### Parameters
 
@@ -2030,7 +2030,7 @@ Defined in: [object/deck.ts:131](https://github.com/nadamai/apkg-browser-builder
 
 > **setReviewToday**(`revToday`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:141](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L141)
+Defined in: [object/deck.ts:141](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L141)
 
 ###### Parameters
 
@@ -2046,7 +2046,7 @@ Defined in: [object/deck.ts:141](https://github.com/nadamai/apkg-browser-builder
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`): [`Deck`](#deck)
 
-Defined in: [object/deck.ts:101](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck.ts#L101)
+Defined in: [object/deck.ts:101](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck.ts#L101)
 
 ###### Parameters
 
@@ -2062,7 +2062,7 @@ Defined in: [object/deck.ts:101](https://github.com/nadamai/apkg-browser-builder
 
 ### DeckConfiguration
 
-Defined in: [object/deck-config.ts:8](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L8)
+Defined in: [object/deck-config.ts:8](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L8)
 
 #### Extends
 
@@ -2074,7 +2074,7 @@ Defined in: [object/deck-config.ts:8](https://github.com/nadamai/apkg-browser-bu
 
 > **new DeckConfiguration**(`name?`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:28](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L28)
+Defined in: [object/deck-config.ts:28](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L28)
 
 ###### Parameters
 
@@ -2096,7 +2096,7 @@ Defined in: [object/deck-config.ts:28](https://github.com/nadamai/apkg-browser-b
 
 > **getAutoplay**(): `boolean`
 
-Defined in: [object/deck-config.ts:58](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L58)
+Defined in: [object/deck-config.ts:58](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L58)
 
 ###### Returns
 
@@ -2106,7 +2106,7 @@ Defined in: [object/deck-config.ts:58](https://github.com/nadamai/apkg-browser-b
 
 > **getDynamic**(): `boolean`
 
-Defined in: [object/deck-config.ts:68](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L68)
+Defined in: [object/deck-config.ts:68](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L68)
 
 ###### Returns
 
@@ -2116,7 +2116,7 @@ Defined in: [object/deck-config.ts:68](https://github.com/nadamai/apkg-browser-b
 
 > **getId**(): `number`
 
-Defined in: [object/deck-config.ts:38](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L38)
+Defined in: [object/deck-config.ts:38](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L38)
 
 ###### Returns
 
@@ -2126,7 +2126,7 @@ Defined in: [object/deck-config.ts:38](https://github.com/nadamai/apkg-browser-b
 
 > **getLapseCardConfig**(): `LapseCardConfig`
 
-Defined in: [object/deck-config.ts:128](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L128)
+Defined in: [object/deck-config.ts:128](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L128)
 
 ###### Returns
 
@@ -2136,7 +2136,7 @@ Defined in: [object/deck-config.ts:128](https://github.com/nadamai/apkg-browser-
 
 > **getMaxTaken**(): `number`
 
-Defined in: [object/deck-config.ts:78](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L78)
+Defined in: [object/deck-config.ts:78](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L78)
 
 ###### Returns
 
@@ -2146,7 +2146,7 @@ Defined in: [object/deck-config.ts:78](https://github.com/nadamai/apkg-browser-b
 
 > **getModificationTime**(): `number`
 
-Defined in: [object/deck-config.ts:88](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L88)
+Defined in: [object/deck-config.ts:88](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L88)
 
 ###### Returns
 
@@ -2156,7 +2156,7 @@ Defined in: [object/deck-config.ts:88](https://github.com/nadamai/apkg-browser-b
 
 > **getName**(): `string`
 
-Defined in: [object/deck-config.ts:48](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L48)
+Defined in: [object/deck-config.ts:48](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L48)
 
 ###### Returns
 
@@ -2166,7 +2166,7 @@ Defined in: [object/deck-config.ts:48](https://github.com/nadamai/apkg-browser-b
 
 > **getNewCardConfig**(): `NewCardConfig`
 
-Defined in: [object/deck-config.ts:139](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L139)
+Defined in: [object/deck-config.ts:139](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L139)
 
 ###### Returns
 
@@ -2176,7 +2176,7 @@ Defined in: [object/deck-config.ts:139](https://github.com/nadamai/apkg-browser-
 
 > **getObject**(): `DeckConfiguration`
 
-Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/object.ts#L4)
+Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/object.ts#L4)
 
 ###### Returns
 
@@ -2190,7 +2190,7 @@ Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-build
 
 > **getReplay**(): `boolean`
 
-Defined in: [object/deck-config.ts:98](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L98)
+Defined in: [object/deck-config.ts:98](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L98)
 
 ###### Returns
 
@@ -2200,7 +2200,7 @@ Defined in: [object/deck-config.ts:98](https://github.com/nadamai/apkg-browser-b
 
 > **getReviewCardConfig**(): `ReviewCardConfig`
 
-Defined in: [object/deck-config.ts:150](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L150)
+Defined in: [object/deck-config.ts:150](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L150)
 
 ###### Returns
 
@@ -2210,7 +2210,7 @@ Defined in: [object/deck-config.ts:150](https://github.com/nadamai/apkg-browser-
 
 > **getTimer**(): `boolean`
 
-Defined in: [object/deck-config.ts:108](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L108)
+Defined in: [object/deck-config.ts:108](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L108)
 
 ###### Returns
 
@@ -2220,7 +2220,7 @@ Defined in: [object/deck-config.ts:108](https://github.com/nadamai/apkg-browser-
 
 > **getUpdateSequenceNumber**(): `number`
 
-Defined in: [object/deck-config.ts:118](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L118)
+Defined in: [object/deck-config.ts:118](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L118)
 
 ###### Returns
 
@@ -2230,7 +2230,7 @@ Defined in: [object/deck-config.ts:118](https://github.com/nadamai/apkg-browser-
 
 > **setAutoplay**(`autoplay`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:62](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L62)
+Defined in: [object/deck-config.ts:62](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L62)
 
 ###### Parameters
 
@@ -2246,7 +2246,7 @@ Defined in: [object/deck-config.ts:62](https://github.com/nadamai/apkg-browser-b
 
 > **setDynamic**(`dynamic`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:72](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L72)
+Defined in: [object/deck-config.ts:72](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L72)
 
 ###### Parameters
 
@@ -2262,7 +2262,7 @@ Defined in: [object/deck-config.ts:72](https://github.com/nadamai/apkg-browser-b
 
 > **setId**(`id?`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:42](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L42)
+Defined in: [object/deck-config.ts:42](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L42)
 
 ###### Parameters
 
@@ -2278,7 +2278,7 @@ Defined in: [object/deck-config.ts:42](https://github.com/nadamai/apkg-browser-b
 
 > **setLapseCardConfig**(`config`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:132](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L132)
+Defined in: [object/deck-config.ts:132](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L132)
 
 ###### Parameters
 
@@ -2294,7 +2294,7 @@ Defined in: [object/deck-config.ts:132](https://github.com/nadamai/apkg-browser-
 
 > **setMaxTaken**(`maxTaken`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:82](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L82)
+Defined in: [object/deck-config.ts:82](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L82)
 
 ###### Parameters
 
@@ -2310,7 +2310,7 @@ Defined in: [object/deck-config.ts:82](https://github.com/nadamai/apkg-browser-b
 
 > **setModificationTime**(`time`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:92](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L92)
+Defined in: [object/deck-config.ts:92](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L92)
 
 ###### Parameters
 
@@ -2326,7 +2326,7 @@ Defined in: [object/deck-config.ts:92](https://github.com/nadamai/apkg-browser-b
 
 > **setName**(`name`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:52](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L52)
+Defined in: [object/deck-config.ts:52](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L52)
 
 ###### Parameters
 
@@ -2342,7 +2342,7 @@ Defined in: [object/deck-config.ts:52](https://github.com/nadamai/apkg-browser-b
 
 > **setNewCardConfig**(`config`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:143](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L143)
+Defined in: [object/deck-config.ts:143](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L143)
 
 ###### Parameters
 
@@ -2358,7 +2358,7 @@ Defined in: [object/deck-config.ts:143](https://github.com/nadamai/apkg-browser-
 
 > **setReplay**(`replay`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:102](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L102)
+Defined in: [object/deck-config.ts:102](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L102)
 
 ###### Parameters
 
@@ -2374,7 +2374,7 @@ Defined in: [object/deck-config.ts:102](https://github.com/nadamai/apkg-browser-
 
 > **setReviewCardConfig**(`config`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:154](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L154)
+Defined in: [object/deck-config.ts:154](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L154)
 
 ###### Parameters
 
@@ -2390,7 +2390,7 @@ Defined in: [object/deck-config.ts:154](https://github.com/nadamai/apkg-browser-
 
 > **setTimer**(`timer`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:112](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L112)
+Defined in: [object/deck-config.ts:112](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L112)
 
 ###### Parameters
 
@@ -2406,7 +2406,7 @@ Defined in: [object/deck-config.ts:112](https://github.com/nadamai/apkg-browser-
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`): [`DeckConfiguration`](#deckconfiguration)
 
-Defined in: [object/deck-config.ts:122](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/deck-config.ts#L122)
+Defined in: [object/deck-config.ts:122](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/deck-config.ts#L122)
 
 ###### Parameters
 
@@ -2422,7 +2422,7 @@ Defined in: [object/deck-config.ts:122](https://github.com/nadamai/apkg-browser-
 
 ### default
 
-Defined in: [index.ts:14](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L14)
+Defined in: [index.ts:14](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L14)
 
 #### Constructors
 
@@ -2430,7 +2430,7 @@ Defined in: [index.ts:14](https://github.com/nadamai/apkg-browser-builder/blob/0
 
 > **new default**(`collection?`, `config?`): [`default`](#default)
 
-Defined in: [index.ts:19](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L19)
+Defined in: [index.ts:19](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L19)
 
 ###### Parameters
 
@@ -2452,7 +2452,7 @@ Defined in: [index.ts:19](https://github.com/nadamai/apkg-browser-builder/blob/0
 
 > **addMedia**(`filename`, `file`): [`default`](#default)
 
-Defined in: [index.ts:55](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L55)
+Defined in: [index.ts:55](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L55)
 
 ###### Parameters
 
@@ -2472,7 +2472,7 @@ Defined in: [index.ts:55](https://github.com/nadamai/apkg-browser-builder/blob/0
 
 > **build**(): `Promise`\<`Blob`\>
 
-Defined in: [index.ts:67](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L67)
+Defined in: [index.ts:67](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L67)
 
 ###### Returns
 
@@ -2482,7 +2482,7 @@ Defined in: [index.ts:67](https://github.com/nadamai/apkg-browser-builder/blob/0
 
 > **getCollection**(): [`Collection`](#collection)
 
-Defined in: [index.ts:25](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L25)
+Defined in: [index.ts:25](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L25)
 
 ###### Returns
 
@@ -2492,7 +2492,7 @@ Defined in: [index.ts:25](https://github.com/nadamai/apkg-browser-builder/blob/0
 
 > **getMedia**(): [`Media`](#media)[]
 
-Defined in: [index.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L63)
+Defined in: [index.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L63)
 
 ###### Returns
 
@@ -2502,7 +2502,7 @@ Defined in: [index.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/0
 
 > **save**(`filename`): `Promise`\<`void`\>
 
-Defined in: [index.ts:103](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L103)
+Defined in: [index.ts:103](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L103)
 
 ###### Parameters
 
@@ -2518,7 +2518,7 @@ Defined in: [index.ts:103](https://github.com/nadamai/apkg-browser-builder/blob/
 
 > **setCollection**(`collection`): [`default`](#default)
 
-Defined in: [index.ts:29](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L29)
+Defined in: [index.ts:29](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L29)
 
 ###### Parameters
 
@@ -2534,7 +2534,7 @@ Defined in: [index.ts:29](https://github.com/nadamai/apkg-browser-builder/blob/0
 
 ### Media
 
-Defined in: [service/media.ts:1](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/service/media.ts#L1)
+Defined in: [service/media.ts:1](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/service/media.ts#L1)
 
 #### Constructors
 
@@ -2542,7 +2542,7 @@ Defined in: [service/media.ts:1](https://github.com/nadamai/apkg-browser-builder
 
 > **new Media**(`filename`, `file`): [`Media`](#media)
 
-Defined in: [service/media.ts:5](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/service/media.ts#L5)
+Defined in: [service/media.ts:5](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/service/media.ts#L5)
 
 ###### Parameters
 
@@ -2564,7 +2564,7 @@ Defined in: [service/media.ts:5](https://github.com/nadamai/apkg-browser-builder
 
 > **getFile**(): `Blob`
 
-Defined in: [service/media.ts:20](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/service/media.ts#L20)
+Defined in: [service/media.ts:20](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/service/media.ts#L20)
 
 ###### Returns
 
@@ -2574,7 +2574,7 @@ Defined in: [service/media.ts:20](https://github.com/nadamai/apkg-browser-builde
 
 > **getFilename**(): `string`
 
-Defined in: [service/media.ts:10](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/service/media.ts#L10)
+Defined in: [service/media.ts:10](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/service/media.ts#L10)
 
 ###### Returns
 
@@ -2584,7 +2584,7 @@ Defined in: [service/media.ts:10](https://github.com/nadamai/apkg-browser-builde
 
 > **setFile**(`file`): [`Media`](#media)
 
-Defined in: [service/media.ts:24](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/service/media.ts#L24)
+Defined in: [service/media.ts:24](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/service/media.ts#L24)
 
 ###### Parameters
 
@@ -2600,7 +2600,7 @@ Defined in: [service/media.ts:24](https://github.com/nadamai/apkg-browser-builde
 
 > **setFilename**(`filename`): [`Media`](#media)
 
-Defined in: [service/media.ts:14](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/service/media.ts#L14)
+Defined in: [service/media.ts:14](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/service/media.ts#L14)
 
 ###### Parameters
 
@@ -2616,7 +2616,7 @@ Defined in: [service/media.ts:14](https://github.com/nadamai/apkg-browser-builde
 
 ### Model
 
-Defined in: [object/model.ts:9](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L9)
+Defined in: [object/model.ts:9](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L9)
 
 #### Extends
 
@@ -2628,7 +2628,7 @@ Defined in: [object/model.ts:9](https://github.com/nadamai/apkg-browser-builder/
 
 > **new Model**(`name?`): [`Model`](#model)
 
-Defined in: [object/model.ts:34](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L34)
+Defined in: [object/model.ts:34](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L34)
 
 ###### Parameters
 
@@ -2650,7 +2650,7 @@ Defined in: [object/model.ts:34](https://github.com/nadamai/apkg-browser-builder
 
 > **addField**(`field`): [`Model`](#model)
 
-Defined in: [object/model.ts:107](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L107)
+Defined in: [object/model.ts:107](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L107)
 
 ###### Parameters
 
@@ -2666,7 +2666,7 @@ Defined in: [object/model.ts:107](https://github.com/nadamai/apkg-browser-builde
 
 > **addTemplate**(`template`): [`Model`](#model)
 
-Defined in: [object/model.ts:145](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L145)
+Defined in: [object/model.ts:145](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L145)
 
 ###### Parameters
 
@@ -2682,7 +2682,7 @@ Defined in: [object/model.ts:145](https://github.com/nadamai/apkg-browser-builde
 
 > **getCss**(): `string`
 
-Defined in: [object/model.ts:65](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L65)
+Defined in: [object/model.ts:65](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L65)
 
 ###### Returns
 
@@ -2692,7 +2692,7 @@ Defined in: [object/model.ts:65](https://github.com/nadamai/apkg-browser-builder
 
 > **getDeck**(): [`Deck`](#deck) \| `null`
 
-Defined in: [object/model.ts:75](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L75)
+Defined in: [object/model.ts:75](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L75)
 
 ###### Returns
 
@@ -2702,7 +2702,7 @@ Defined in: [object/model.ts:75](https://github.com/nadamai/apkg-browser-builder
 
 > **getFields**(): `Field`[]
 
-Defined in: [object/model.ts:86](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L86)
+Defined in: [object/model.ts:86](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L86)
 
 ###### Returns
 
@@ -2712,7 +2712,7 @@ Defined in: [object/model.ts:86](https://github.com/nadamai/apkg-browser-builder
 
 > **getId**(): `number`
 
-Defined in: [object/model.ts:55](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L55)
+Defined in: [object/model.ts:55](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L55)
 
 ###### Returns
 
@@ -2722,7 +2722,7 @@ Defined in: [object/model.ts:55](https://github.com/nadamai/apkg-browser-builder
 
 > **getLatexPostamble**(): `string`
 
-Defined in: [object/model.ts:173](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L173)
+Defined in: [object/model.ts:173](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L173)
 
 ###### Returns
 
@@ -2732,7 +2732,7 @@ Defined in: [object/model.ts:173](https://github.com/nadamai/apkg-browser-builde
 
 > **getLatexPreamble**(): `string`
 
-Defined in: [object/model.ts:163](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L163)
+Defined in: [object/model.ts:163](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L163)
 
 ###### Returns
 
@@ -2742,7 +2742,7 @@ Defined in: [object/model.ts:163](https://github.com/nadamai/apkg-browser-builde
 
 > **getModificationTime**(): `number`
 
-Defined in: [object/model.ts:183](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L183)
+Defined in: [object/model.ts:183](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L183)
 
 ###### Returns
 
@@ -2752,7 +2752,7 @@ Defined in: [object/model.ts:183](https://github.com/nadamai/apkg-browser-builde
 
 > **getName**(): `string`
 
-Defined in: [object/model.ts:193](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L193)
+Defined in: [object/model.ts:193](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L193)
 
 ###### Returns
 
@@ -2762,7 +2762,7 @@ Defined in: [object/model.ts:193](https://github.com/nadamai/apkg-browser-builde
 
 > **getObject**(): `Model`
 
-Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/object.ts#L4)
+Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/object.ts#L4)
 
 ###### Returns
 
@@ -2776,7 +2776,7 @@ Defined in: [abstract/object.ts:4](https://github.com/nadamai/apkg-browser-build
 
 > **getSortField**(): `number`
 
-Defined in: [object/model.ts:203](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L203)
+Defined in: [object/model.ts:203](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L203)
 
 ###### Returns
 
@@ -2786,7 +2786,7 @@ Defined in: [object/model.ts:203](https://github.com/nadamai/apkg-browser-builde
 
 > **getTemplates**(): `CardTemplate`[]
 
-Defined in: [object/model.ts:125](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L125)
+Defined in: [object/model.ts:125](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L125)
 
 ###### Returns
 
@@ -2796,7 +2796,7 @@ Defined in: [object/model.ts:125](https://github.com/nadamai/apkg-browser-builde
 
 > **getType**(): `"standard"` \| `"cloze"`
 
-Defined in: [object/model.ts:213](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L213)
+Defined in: [object/model.ts:213](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L213)
 
 ###### Returns
 
@@ -2806,7 +2806,7 @@ Defined in: [object/model.ts:213](https://github.com/nadamai/apkg-browser-builde
 
 > **getUpdateSequenceNumber**(): `number`
 
-Defined in: [object/model.ts:223](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L223)
+Defined in: [object/model.ts:223](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L223)
 
 ###### Returns
 
@@ -2816,7 +2816,7 @@ Defined in: [object/model.ts:223](https://github.com/nadamai/apkg-browser-builde
 
 > **removeField**(`field`): [`Model`](#model)
 
-Defined in: [object/model.ts:114](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L114)
+Defined in: [object/model.ts:114](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L114)
 
 ###### Parameters
 
@@ -2832,7 +2832,7 @@ Defined in: [object/model.ts:114](https://github.com/nadamai/apkg-browser-builde
 
 > **removeTemplate**(`template`): [`Model`](#model)
 
-Defined in: [object/model.ts:152](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L152)
+Defined in: [object/model.ts:152](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L152)
 
 ###### Parameters
 
@@ -2848,7 +2848,7 @@ Defined in: [object/model.ts:152](https://github.com/nadamai/apkg-browser-builde
 
 > **setCss**(`css`): [`Model`](#model)
 
-Defined in: [object/model.ts:69](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L69)
+Defined in: [object/model.ts:69](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L69)
 
 ###### Parameters
 
@@ -2864,7 +2864,7 @@ Defined in: [object/model.ts:69](https://github.com/nadamai/apkg-browser-builder
 
 > **setDeck**(`deck`): [`Model`](#model)
 
-Defined in: [object/model.ts:79](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L79)
+Defined in: [object/model.ts:79](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L79)
 
 ###### Parameters
 
@@ -2880,7 +2880,7 @@ Defined in: [object/model.ts:79](https://github.com/nadamai/apkg-browser-builder
 
 > **setFields**(`fields`): [`Model`](#model)
 
-Defined in: [object/model.ts:90](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L90)
+Defined in: [object/model.ts:90](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L90)
 
 ###### Parameters
 
@@ -2896,7 +2896,7 @@ Defined in: [object/model.ts:90](https://github.com/nadamai/apkg-browser-builder
 
 > **setId**(`id?`): [`Model`](#model)
 
-Defined in: [object/model.ts:59](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L59)
+Defined in: [object/model.ts:59](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L59)
 
 ###### Parameters
 
@@ -2912,7 +2912,7 @@ Defined in: [object/model.ts:59](https://github.com/nadamai/apkg-browser-builder
 
 > **setLatexPostamble**(`postamble`): [`Model`](#model)
 
-Defined in: [object/model.ts:177](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L177)
+Defined in: [object/model.ts:177](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L177)
 
 ###### Parameters
 
@@ -2928,7 +2928,7 @@ Defined in: [object/model.ts:177](https://github.com/nadamai/apkg-browser-builde
 
 > **setLatexPreamble**(`preamble`): [`Model`](#model)
 
-Defined in: [object/model.ts:167](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L167)
+Defined in: [object/model.ts:167](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L167)
 
 ###### Parameters
 
@@ -2944,7 +2944,7 @@ Defined in: [object/model.ts:167](https://github.com/nadamai/apkg-browser-builde
 
 > **setModificationTime**(`time`): [`Model`](#model)
 
-Defined in: [object/model.ts:187](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L187)
+Defined in: [object/model.ts:187](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L187)
 
 ###### Parameters
 
@@ -2960,7 +2960,7 @@ Defined in: [object/model.ts:187](https://github.com/nadamai/apkg-browser-builde
 
 > **setName**(`name`): [`Model`](#model)
 
-Defined in: [object/model.ts:197](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L197)
+Defined in: [object/model.ts:197](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L197)
 
 ###### Parameters
 
@@ -2976,7 +2976,7 @@ Defined in: [object/model.ts:197](https://github.com/nadamai/apkg-browser-builde
 
 > **setSortField**(`sort`): [`Model`](#model)
 
-Defined in: [object/model.ts:207](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L207)
+Defined in: [object/model.ts:207](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L207)
 
 ###### Parameters
 
@@ -2992,7 +2992,7 @@ Defined in: [object/model.ts:207](https://github.com/nadamai/apkg-browser-builde
 
 > **setTemplates**(`templates`): [`Model`](#model)
 
-Defined in: [object/model.ts:129](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L129)
+Defined in: [object/model.ts:129](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L129)
 
 ###### Parameters
 
@@ -3008,7 +3008,7 @@ Defined in: [object/model.ts:129](https://github.com/nadamai/apkg-browser-builde
 
 > **setType**(`type`): [`Model`](#model)
 
-Defined in: [object/model.ts:217](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L217)
+Defined in: [object/model.ts:217](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L217)
 
 ###### Parameters
 
@@ -3024,7 +3024,7 @@ Defined in: [object/model.ts:217](https://github.com/nadamai/apkg-browser-builde
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`): [`Model`](#model)
 
-Defined in: [object/model.ts:227](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/object/model.ts#L227)
+Defined in: [object/model.ts:227](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/object/model.ts#L227)
 
 ###### Parameters
 
@@ -3040,7 +3040,7 @@ Defined in: [object/model.ts:227](https://github.com/nadamai/apkg-browser-builde
 
 ### Note
 
-Defined in: [entity/note.ts:6](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L6)
+Defined in: [entity/note.ts:6](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L6)
 
 #### Extends
 
@@ -3052,7 +3052,7 @@ Defined in: [entity/note.ts:6](https://github.com/nadamai/apkg-browser-builder/b
 
 > **new Note**(...`fields`): [`Note`](#note)
 
-Defined in: [entity/note.ts:25](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L25)
+Defined in: [entity/note.ts:25](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L25)
 
 ###### Parameters
 
@@ -3074,7 +3074,7 @@ Defined in: [entity/note.ts:25](https://github.com/nadamai/apkg-browser-builder/
 
 > **getChecksum**(): `number`
 
-Defined in: [entity/note.ts:113](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L113)
+Defined in: [entity/note.ts:113](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L113)
 
 ###### Returns
 
@@ -3084,7 +3084,7 @@ Defined in: [entity/note.ts:113](https://github.com/nadamai/apkg-browser-builder
 
 > **getEntity**(): `Note`
 
-Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/entity.ts#L9)
+Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/entity.ts#L9)
 
 ###### Returns
 
@@ -3098,7 +3098,7 @@ Defined in: [abstract/entity.ts:9](https://github.com/nadamai/apkg-browser-build
 
 > **getFields**(): `string`[]
 
-Defined in: [entity/note.ts:93](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L93)
+Defined in: [entity/note.ts:93](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L93)
 
 ###### Returns
 
@@ -3108,7 +3108,7 @@ Defined in: [entity/note.ts:93](https://github.com/nadamai/apkg-browser-builder/
 
 > **getGuid**(): `string`
 
-Defined in: [entity/note.ts:42](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L42)
+Defined in: [entity/note.ts:42](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L42)
 
 ###### Returns
 
@@ -3118,7 +3118,7 @@ Defined in: [entity/note.ts:42](https://github.com/nadamai/apkg-browser-builder/
 
 > **getId**(): `number`
 
-Defined in: [entity/note.ts:32](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L32)
+Defined in: [entity/note.ts:32](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L32)
 
 ###### Returns
 
@@ -3128,7 +3128,7 @@ Defined in: [entity/note.ts:32](https://github.com/nadamai/apkg-browser-builder/
 
 > **getModel**(): [`Model`](#model) \| `null`
 
-Defined in: [entity/note.ts:52](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L52)
+Defined in: [entity/note.ts:52](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L52)
 
 ###### Returns
 
@@ -3138,7 +3138,7 @@ Defined in: [entity/note.ts:52](https://github.com/nadamai/apkg-browser-builder/
 
 > **getModificationTime**(): `number`
 
-Defined in: [entity/note.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L63)
+Defined in: [entity/note.ts:63](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L63)
 
 ###### Returns
 
@@ -3148,7 +3148,7 @@ Defined in: [entity/note.ts:63](https://github.com/nadamai/apkg-browser-builder/
 
 > **getSortField**(): `number`
 
-Defined in: [entity/note.ts:103](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L103)
+Defined in: [entity/note.ts:103](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L103)
 
 ###### Returns
 
@@ -3158,7 +3158,7 @@ Defined in: [entity/note.ts:103](https://github.com/nadamai/apkg-browser-builder
 
 > **getTable**(): `string`
 
-Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/abstract/entity.ts#L5)
+Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/abstract/entity.ts#L5)
 
 ###### Returns
 
@@ -3172,7 +3172,7 @@ Defined in: [abstract/entity.ts:5](https://github.com/nadamai/apkg-browser-build
 
 > **getTags**(): `string`[]
 
-Defined in: [entity/note.ts:83](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L83)
+Defined in: [entity/note.ts:83](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L83)
 
 ###### Returns
 
@@ -3182,7 +3182,7 @@ Defined in: [entity/note.ts:83](https://github.com/nadamai/apkg-browser-builder/
 
 > **getUpdateSequenceNumber**(): `number`
 
-Defined in: [entity/note.ts:73](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L73)
+Defined in: [entity/note.ts:73](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L73)
 
 ###### Returns
 
@@ -3192,7 +3192,7 @@ Defined in: [entity/note.ts:73](https://github.com/nadamai/apkg-browser-builder/
 
 > **setChecksum**(`checksum`): [`Note`](#note)
 
-Defined in: [entity/note.ts:117](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L117)
+Defined in: [entity/note.ts:117](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L117)
 
 ###### Parameters
 
@@ -3208,7 +3208,7 @@ Defined in: [entity/note.ts:117](https://github.com/nadamai/apkg-browser-builder
 
 > **setFields**(`fields`): [`Note`](#note)
 
-Defined in: [entity/note.ts:97](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L97)
+Defined in: [entity/note.ts:97](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L97)
 
 ###### Parameters
 
@@ -3224,7 +3224,7 @@ Defined in: [entity/note.ts:97](https://github.com/nadamai/apkg-browser-builder/
 
 > **setGuid**(`guid`): [`Note`](#note)
 
-Defined in: [entity/note.ts:46](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L46)
+Defined in: [entity/note.ts:46](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L46)
 
 ###### Parameters
 
@@ -3240,7 +3240,7 @@ Defined in: [entity/note.ts:46](https://github.com/nadamai/apkg-browser-builder/
 
 > **setId**(`id?`): [`Note`](#note)
 
-Defined in: [entity/note.ts:36](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L36)
+Defined in: [entity/note.ts:36](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L36)
 
 ###### Parameters
 
@@ -3256,7 +3256,7 @@ Defined in: [entity/note.ts:36](https://github.com/nadamai/apkg-browser-builder/
 
 > **setModel**(`model`): [`Note`](#note)
 
-Defined in: [entity/note.ts:56](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L56)
+Defined in: [entity/note.ts:56](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L56)
 
 ###### Parameters
 
@@ -3272,7 +3272,7 @@ Defined in: [entity/note.ts:56](https://github.com/nadamai/apkg-browser-builder/
 
 > **setModificationTime**(`time`): [`Note`](#note)
 
-Defined in: [entity/note.ts:67](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L67)
+Defined in: [entity/note.ts:67](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L67)
 
 ###### Parameters
 
@@ -3288,7 +3288,7 @@ Defined in: [entity/note.ts:67](https://github.com/nadamai/apkg-browser-builder/
 
 > **setSortField**(`sort`): [`Note`](#note)
 
-Defined in: [entity/note.ts:107](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L107)
+Defined in: [entity/note.ts:107](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L107)
 
 ###### Parameters
 
@@ -3304,7 +3304,7 @@ Defined in: [entity/note.ts:107](https://github.com/nadamai/apkg-browser-builder
 
 > **setTags**(`tags`): [`Note`](#note)
 
-Defined in: [entity/note.ts:87](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L87)
+Defined in: [entity/note.ts:87](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L87)
 
 ###### Parameters
 
@@ -3320,7 +3320,7 @@ Defined in: [entity/note.ts:87](https://github.com/nadamai/apkg-browser-builder/
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`): [`Note`](#note)
 
-Defined in: [entity/note.ts:77](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/entity/note.ts#L77)
+Defined in: [entity/note.ts:77](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/entity/note.ts#L77)
 
 ###### Parameters
 
@@ -3338,4 +3338,4 @@ Defined in: [entity/note.ts:77](https://github.com/nadamai/apkg-browser-builder/
 
 > **ApkgBuilderConfig** = `Partial`\<\{ `sqljs`: `SqlJsConfig`; \}\>
 
-Defined in: [index.ts:10](https://github.com/nadamai/apkg-browser-builder/blob/0dc9c55ec47c51f1d0dabd2cc3450badf1338660/src/index.ts#L10)
+Defined in: [index.ts:10](https://github.com/nadamai/apkg-browser-builder/blob/5769f7bccfb3b91c71d289eade4af393462575ef/src/index.ts#L10)
