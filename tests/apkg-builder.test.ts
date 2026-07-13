@@ -4,7 +4,7 @@ import ApkgBuilder, { Card, Collection, Configuration, Deck, DeckConfiguration, 
 import { loadDatabase, loadZip, queryColumn, queryRow } from './helpers';
 import { JSZipObject } from 'jszip';
 
-describe('APKG Browser Builder', () => {
+describe('APKG Builder', () => {
 	it('bundles minimal collection', async () => {
 		const collection = new Collection();
 
