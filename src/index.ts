@@ -105,4 +105,4 @@ export default class ApkgBuilder {
 	}
 }
 
-export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model };
+export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model, Media };
