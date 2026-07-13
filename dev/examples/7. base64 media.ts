@@ -17,14 +17,10 @@ const deck = new Deck('My deck');
 collection.addDeck(deck);
 
 // Base64 PNG image
-const base64 =
-	'iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII=';
+const base64 = 'iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII=';
 
 // Creating a card with the initial note data containing a Base64 image (it can contain any HTML)
-const card = new Card(
-	'This is front',
-	`This is back together with some Base64 image: <img src="data:image/png;base64,${base64}" />`
-);
+const card = new Card('This is front', `This is back together with some Base64 image: <img src="data:image/png;base64,${base64}" />`);
 
 // Adding the card to the deck
 deck.addCard(card);
