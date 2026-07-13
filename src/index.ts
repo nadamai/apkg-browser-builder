@@ -80,14 +80,25 @@ export default class ApkgBuilder {
 			const sqlite = this.db.dump();
 
 			zip.file('collection.anki2', sqlite);
-			zip.folder('media');
-
-			return await zip.generateAsync({ type: 'blob' });
 		} catch (error) {
 			console.error(error);
 
 			throw error;
 		}
+
+		const manifest: Record<number, string> = {};
+
+		for (let i = 0; i < this.media.length; i++) {
+			const media = this.media[i];
+
+			manifest[i] = media.getFilename();
+
+			zip.file(i.toString(), media.getFile());
+		}
+
+		zip.file('media', JSON.stringify(manifest));
+
+		return await zip.generateAsync({ type: 'blob' });
 	}
 
 	public async save(filename: string): Promise<void> {

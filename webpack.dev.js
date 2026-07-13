@@ -48,10 +48,12 @@ module.exports = {
 		],
 		setupMiddlewares: (middlewares, server) => {
 			server.app.get('/examples', (_request, response) => {
-				const files = fs.readdirSync(EXAMPLES_DIR).map((filename) => ({
-					filename,
-					content: fs.readFileSync(path.join(EXAMPLES_DIR, filename), 'utf8'),
-				}));
+				const files = fs.readdirSync(EXAMPLES_DIR)
+					.filter((filename) => filename.endsWith('.ts'))
+					.map((filename) => ({
+						filename,
+						content: fs.readFileSync(path.join(EXAMPLES_DIR, filename), 'utf8'),
+					}));
 
 				response.json(files);
 			});
