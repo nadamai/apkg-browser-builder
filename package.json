@@ -33,8 +33,6 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@babel/core": "^8.0.1",
-    "@babel/preset-env": "^8.0.2",
     "@types/file-saver": "^2.0.7",
     "@types/jszip": "^3.4.1",
     "@types/node": "^26.1.0",
