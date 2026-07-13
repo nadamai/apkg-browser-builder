@@ -4,9 +4,6 @@ import ApkgBuilder, { Collection } from '../src/index';
 
 export async function loadCollectionZip(collection: Collection): Promise<JSZip> {
 	const builder = new ApkgBuilder(collection);
-
-	await builder.init();
-
 	const apkg = await builder.build();
 
 	return JSZip.loadAsync(await apkg.arrayBuffer());

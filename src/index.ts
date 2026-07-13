@@ -22,10 +22,6 @@ export default class ApkgBuilder {
 		this.media = [];
 	}
 
-	public async init(): Promise<void> {
-		await this.db.init();
-	}
-
 	public getCollection(): Collection {
 		return this.collection;
 	}
@@ -71,6 +67,8 @@ export default class ApkgBuilder {
 	public async build(): Promise<Blob> {
 		const zip = new JSZip();
 		const entities = this.getCollectionEntities();
+
+		await this.db.init();
 
 		for (let entity of entities) {
 			this.db.insert(entity.getTable(), entity.getEntity());

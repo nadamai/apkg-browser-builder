@@ -29,5 +29,4 @@ const apkg = new ApkgBuilder(collection, {
 	}
 });
 
-await apkg.init();
 await apkg.save('custom-wasm-example.apkg');
