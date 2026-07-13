@@ -5,6 +5,7 @@ import JSZip from 'jszip';
 import { Card, Collection, Note } from './entity';
 import { Configuration, Deck, DeckConfiguration, Model } from './object';
 import { Entity } from './abstract';
+import { Media } from './service';
 
 export type ApkgBuilderConfig = Partial<{
 	sqljs: SqlJsConfig;
@@ -13,10 +14,12 @@ export type ApkgBuilderConfig = Partial<{
 export default class ApkgBuilder {
 	private db: Database;
 	private collection: Collection;
+	private media: Media[];
 
 	constructor(collection?: Collection, config?: ApkgBuilderConfig) {
 		this.db = new Database(config?.sqljs);
 		this.collection = collection ?? new Collection();
+		this.media = [];
 	}
 
 	public async init(): Promise<void> {
@@ -51,6 +54,18 @@ export default class ApkgBuilder {
 		});
 
 		return [this.collection, ...cards, ...notes];
+	}
+
+	public addMedia(filename: string, file: Blob): ApkgBuilder {
+		const index = this.media.length;
+
+		this.media[index] = new Media(filename, file);
+
+		return this;
+	}
+
+	public getMedia(): Media[] {
+		return this.media;
 	}
 
 	public async build(): Promise<Blob> {
