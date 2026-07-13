@@ -5,7 +5,7 @@ import { loadDatabase, loadZip, queryColumn, queryRow } from './helpers';
 import { JSZipObject } from 'jszip';
 
 describe('APKG Browser Builder', () => {
-	it('bundles minimal deck', async () => {
+	it('bundles minimal collection', async () => {
 		const collection = new Collection();
 
 		const deck = new Deck('European capitals');
@@ -36,7 +36,7 @@ describe('APKG Browser Builder', () => {
 		db.close();
 	});
 
-	it('bundles deck with configuration, model and a note built separately', async () => {
+	it('bundles collection with configuration, model and a note built separately', async () => {
 		const collection = new Collection();
 		const config = new Configuration();
 		const model = new Model();
@@ -87,7 +87,7 @@ describe('APKG Browser Builder', () => {
 		db.close();
 	});
 
-	it('bundles deck with local media', async () => {
+	it('bundles collection with local media', async () => {
 		const collection = new Collection();
 
 		const deck = new Deck('European capitals');
@@ -120,6 +120,51 @@ describe('APKG Browser Builder', () => {
 		const db = await loadDatabase(apkg);
 
 		expect(queryColumn(db, 'SELECT flds FROM notes')[0]).toBe('What is the flag of Poland?\x1fThis one: <img src="pl.png" />');
+
+		db.close();
+	});
+
+	it('bundles collection with multiple cards and decks', async () => {
+		const collection = new Collection();
+
+		const deckA = new Deck('European capitals');
+		const deckB = new Deck('Asian capitals');
+
+		const deckAcardA = new Card('What is the capital of Poland?', 'Warsaw');
+		const deckAcardB = new Card('What is the capital of France?', 'Paris');
+
+		const deckBcardA = new Card('What is the capital of Japan?', 'Tokyo');
+		const deckBcardB = new Card('What is the capital of India?', 'Mumbay');
+
+		deckA.addCard(deckAcardA);
+		deckA.addCard(deckAcardB);
+
+		deckB.addCard(deckBcardA);
+		deckB.addCard(deckBcardB);
+
+		collection.addDeck(deckA);
+		collection.addDeck(deckB);
+
+		const apkg = new ApkgBuilder(collection);
+		const zip = await loadZip(apkg);
+
+		expect(Object.keys(zip.files).sort()).toEqual(['collection.anki2', 'media']);
+
+		const db = await loadDatabase(apkg);
+		const tables = queryColumn(db, "SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name");
+
+		expect(tables).toEqual(['cards', 'col', 'graves', 'notes', 'revlog']);
+
+		const notes = queryColumn(db, 'SELECT flds FROM notes ORDER BY flds');
+		const decks = queryColumn(db, 'SELECT did FROM cards GROUP BY did ORDER BY did');
+
+		expect(notes[0]).toBe('What is the capital of France?\x1fParis');
+		expect(notes[1]).toBe('What is the capital of India?\x1fMumbay');
+		expect(notes[2]).toBe('What is the capital of Japan?\x1fTokyo');
+		expect(notes[3]).toBe('What is the capital of Poland?\x1fWarsaw');
+
+		expect(decks).toContain(deckA.getId());
+		expect(decks).toContain(deckB.getId());
 
 		db.close();
 	});
