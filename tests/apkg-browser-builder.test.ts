@@ -14,7 +14,7 @@ describe('APKG Browser Builder', () => {
 
 		const zip = await loadCollectionZip(collection);
 
-		expect(Object.keys(zip.files).sort()).toEqual(['collection.anki2', 'media/']);
+		expect(Object.keys(zip.files).sort()).toEqual(['collection.anki2', 'media']);
 
 		const db = await loadCollectionDatabase(collection);
 		const tables = queryColumn(db, "SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name");
