@@ -52,4 +52,13 @@ export class Database {
 
 		return this.db.export();
 	}
+
+	public close(): void {
+		if (!this.db) {
+			return;
+		}
+
+		this.db.close();
+		this.db = null;
+	}
 }
