@@ -76,16 +76,7 @@ export default class ApkgBuilder {
 			this.db.insert(entity.getTable(), entity.getEntity());
 		}
 
-		try {
-			const sqlite = this.db.dump();
-
-			zip.file('collection.anki2', sqlite);
-		} catch (error) {
-			console.error(error);
-
-			throw error;
-		}
-
+		const sqlite = this.db.dump();
 		const manifest: Record<number, string> = {};
 
 		for (let i = 0; i < this.media.length; i++) {
@@ -96,6 +87,7 @@ export default class ApkgBuilder {
 			zip.file(i.toString(), media.getFile());
 		}
 
+		zip.file('collection.anki2', sqlite);
 		zip.file('media', JSON.stringify(manifest));
 
 		return await zip.generateAsync({
