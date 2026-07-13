@@ -62,6 +62,7 @@ export class Card extends Entity<CardModel> {
 
 	public setDeck(deck: Deck | null): Card {
 		this.entity.did = deck?.getId() ?? 0;
+		this.deck = deck;
 
 		return this;
 	}
