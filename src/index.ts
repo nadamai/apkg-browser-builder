@@ -12,13 +12,13 @@ export type ApkgBuilderConfig = Partial<{
 }>;
 
 export default class ApkgBuilder {
-	private db: Database;
 	private collection: Collection;
+	private config?: ApkgBuilderConfig;
 	private media: Media[];
 
 	constructor(collection?: Collection, config?: ApkgBuilderConfig) {
-		this.db = new Database(config?.sqljs);
 		this.collection = collection ?? new Collection();
+		this.config = config;
 		this.media = [];
 	}
 
@@ -66,15 +66,22 @@ export default class ApkgBuilder {
 
 	public async build(): Promise<Blob> {
 		const zip = new JSZip();
+		const db = new Database(this.config?.sqljs);
+
 		const entities = this.getCollectionEntities();
 
-		await this.db.init();
+		try {
+			await db.init();
 
-		for (let entity of entities) {
-			this.db.insert(entity.getTable(), entity.getEntity());
+			for (let entity of entities) {
+				db.insert(entity.getTable(), entity.getEntity());
+			}
+
+			zip.file('collection.anki2', db.dump());
+		} finally {
+			db.close();
 		}
 
-		const sqlite = this.db.dump();
 		const manifest: Record<number, string> = {};
 
 		for (let i = 0; i < this.media.length; i++) {
@@ -85,7 +92,6 @@ export default class ApkgBuilder {
 			zip.file(i.toString(), media.getFile());
 		}
 
-		zip.file('collection.anki2', sqlite);
 		zip.file('media', JSON.stringify(manifest));
 
 		return await zip.generateAsync({
