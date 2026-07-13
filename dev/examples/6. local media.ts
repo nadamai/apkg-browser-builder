@@ -16,8 +16,8 @@ const deck = new Deck('My deck');
 // Adding the deck to the collection
 collection.addDeck(deck);
 
-// Creating a card with the initial note data (it can contain any HTML)
-const card = new Card('This is front', 'This is back together with some image: <img src="image.png" />');
+// Creating a card with the initial note data containing a local media image (it can contain any HTML)
+const card = new Card('This is front', 'This is back together with some local image: <img src="image.png" />');
 
 // Adding the card to the deck
 deck.addCard(card);
@@ -25,9 +25,11 @@ deck.addCard(card);
 // Building and saving the .apkg file
 const apkg = new ApkgBuilder(collection);
 
+// Grabbing the actual media to be attached
 const resource = await fetch('../examples/media/anki.png');
 const image = await resource.blob();
 
+// Attaching media to the package (the filename has to be consistent with the one used in the card)
 apkg.addMedia('image.png', image);
 
 await apkg.init();
