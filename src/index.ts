@@ -89,7 +89,7 @@ export default class ApkgBuilder {
 
 			manifest[i] = media.getFilename();
 
-			zip.file(i.toString(), media.getFile());
+			zip.file(i.toString(), media.getFile().arrayBuffer());
 		}
 
 		zip.file('media', JSON.stringify(manifest));
