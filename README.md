@@ -14,7 +14,7 @@ npm install apkg-browser-builder
 
 ### The simplest example with a one-card deck
 ```ts
-import ApkgBuilder, { Collection, Deck, Card } from 'apkg-browser-builder';
+import ApkgBuilder, { Card, Collection, Deck } from 'apkg-browser-builder';
 
 const collection = new Collection();
 const deck = new Deck('My deck');
@@ -25,7 +25,6 @@ deck.addCard(card);
 
 const builder = new ApkgBuilder(collection);
 
-await builder.init();
 await builder.save('my-deck.apkg');
 ```
 
