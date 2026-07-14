@@ -1,6 +1,6 @@
 # APKG Browser Builder ✨
 
-A compact npm package for building [Anki](https://apps.ankiweb.net/) `.apkg` flashcard collections directly in a browser — no server or CLI needed.
+A compact npm package for building [Anki](https://apps.ankiweb.net) `.apkg` flashcard collections directly in a browser — no server or CLI needed.
 
 It ships a small ORM layer for the [Anki SQLite database](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure) that can be used to build an `.apkg` package and retrieve it as a blob or downloadable file. The package uses [sql.js](https://github.com/sql-js/sql.js) which needs the SQLite `.wasm` binary at runtime. While it comes bundled within the package by default, you can switch to any remote copy or CDN.
 
@@ -36,9 +36,7 @@ To see more examples on how to build a package, please check the [`dev/examples`
 
 ## Documentation
 
-TBD
-
-<!-- The library exposes an `ApkgBuilder` object together with the schema classes that mirror the original [Anki SQLite schema](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure). For any specific configuration please consult the original schema which is the source of truth.
+The library exposes an `ApkgBuilder` object together with the classes that mirror the original [Anki SQLite schema](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure). For any specific configuration please consult the original database structure which is the source of truth.
 
 The object composition is as follows:
 
@@ -48,22 +46,25 @@ The object composition is as follows:
       - `Card` — holds a `Note`,
         - `Note` — holds a `Model` (fields/tags for the card content).
 
-For the detailed documentation please refer to the TypeScript type definitions directly. Every schema class exposes typed getters/setters on top of it. Setters return the instance so methods can be chained. -->
+For the detailed documentation please refer to the [docs/REFERENCE.md](docs/REFERENCE.md).
 
 ## Contributing
 
 Contributions are welcome! A few things to know before diving in:
 
 ```bash
-npm install       # install dependencies
-npm run prepare   # initialize prettier pre-commit hooks
-npm run dev       # local dev playground at localhost:3000
-npm test          # run the vitest suite
+npm install          # install dependencies
+npm run prepare      # initialize prettier pre-commit hooks
+npm run dev          # local dev playground at localhost:3000 with typedoc watch
+npm run prettier     # run prettier
+npm test             # run the vitest suite
 ```
 
 The dev playground allows previewing and manually testing every example file under [`dev/examples`](dev/examples). A pre-commit hook runs a `tsgo` type check and `prettier` automatically.
 
-Tests live in [`tests`](tests) and run with [Vitest](https://vitest.dev/). Each test builds an `.apkg` package, unzips it and asserts against the actual zip and SQLite contents.
+Tests live in [`tests`](tests) and run with [Vitest](https://vitest.dev). Each test builds an `.apkg` package, unzips it and asserts against the actual zip and SQLite contents.
+
+The [`docs/REFERENCE.md`](docs/REFERENCE.md) documentation is automatically generated from the source code using the [TypeDoc](https://typedoc.org).
 
 When you add a custom feature or change a behavior, please add or update both:
 

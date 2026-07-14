@@ -28,7 +28,8 @@
     "build": "webpack",
     "dev": "concurrently --names \"webpack,typedoc\" \"npm:dev:serve\" \"npm:docs:watch\"",
     "dev:serve": "webpack serve --config webpack.dev.js",
-    "docs:watch": "typedoc --watch --preserveWatchOutput --cleanOutputDir false",
+    "docs": "typedoc --preserveWatchOutput --cleanOutputDir false",
+    "docs:watch": "npm run docs -- --watch",
     "prepare": "husky",
     "prettier": "pretty-quick src/**/*.ts dev/**/*.ts tests/**/*.ts --staged --pattern \"src/**/*.ts\" --pattern \"dev/**/*.ts\" --pattern \"tests/**/*.ts\"",
     "test": "vitest run"
