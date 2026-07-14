@@ -10,7 +10,7 @@ The main (`export default`) class used for generating .apkg package.
 
 ##### Constructor
 
-> **new ApkgBuilder**(`collection`, `config?`): [`ApkgBuilder`](#apkgbuilder)
+> **new ApkgBuilder**(`collection`: `Collection`, `config?`: `Partial`\<[`ApkgBuilderConfig`](#apkgbuilderconfig)\>): [`ApkgBuilder`](#apkgbuilder)
 
 ###### Parameters
 
@@ -66,7 +66,7 @@ Optional builder configuration.
 
 ##### addMedia()
 
-> **addMedia**(`filename`, `file`): [`ApkgBuilder`](#apkgbuilder)
+> **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
 
 ###### Parameters
 
@@ -135,7 +135,7 @@ Optional builder configuration.
 
 ##### save()
 
-> **save**(`filename`): `Promise`\<`void`\>
+> **save**(`filename`: `string`): `Promise`\<`void`\>
 
 ###### Parameters
 
@@ -168,7 +168,7 @@ Optional builder configuration.
 
 ##### setCollection()
 
-> **setCollection**(`collection`): [`ApkgBuilder`](#apkgbuilder)
+> **setCollection**(`collection`: `Collection`): [`ApkgBuilder`](#apkgbuilder)
 
 ###### Parameters
 
