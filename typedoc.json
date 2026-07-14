@@ -12,6 +12,7 @@
 	"excludeReferences": true,
 	"hidePageHeader": true,
 	"expandObjects": true,
+	"expandParameters": true,
 	"typeDeclarationFormat": "htmlTable",
 	"propertiesFormat": "htmlTable",
 	"parametersFormat": "htmlTable",
