@@ -234,14 +234,11 @@ export class Collection extends Entity<CollectionModel> {
 	public setDeckConfigurations(configs: DeckConfiguration[]): Collection {
 		this.deckConfigurations = configs;
 
-		const value = this.deckConfigurations.reduce(
-			(acc: Record<number, DeckConfigurationModel>, config: DeckConfiguration) => {
-				acc[config.getId()] = config.getObject();
+		const value = this.deckConfigurations.reduce((acc: Record<number, DeckConfigurationModel>, config: DeckConfiguration) => {
+			acc[config.getId()] = config.getObject();
 
-				return acc;
-			},
-			{}
-		);
+			return acc;
+		}, {});
 
 		this.entity.dconf = JSON.stringify(value);
 
