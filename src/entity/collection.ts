@@ -19,8 +19,8 @@ export class Collection extends Entity<CollectionModel> {
 
 	protected entity: CollectionModel = {
 		id: Generator.id(),
-		crt: 0,
-		mod: Generator.now(),
+		crt: Generator.now(),
+		mod: Date.now(),
 		scm: 0,
 		ver: 11,
 		dty: 0,
