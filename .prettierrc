@@ -8,5 +8,6 @@
   "quoteProps": "as-needed",
   "semi": true,
   "trailingComma": "none",
-  "useTabs": true
+  "useTabs": true,
+  "plugins": ["prettier-plugin-jsdoc"]
 }
