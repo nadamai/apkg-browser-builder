@@ -8,7 +8,7 @@ import { Media } from './service';
 import { ApkgBuilderConfig } from './type/apkg-builder-config';
 
 /**
- * The main (`export default`) class used for generating `.apkg` package.
+ * The main (`export default`) class used for generating `.apkg` packages.
  */
 class ApkgBuilder {
 	private collection: Collection;
@@ -19,7 +19,7 @@ class ApkgBuilder {
 	/**
 	 * @group Methods
 	 *
-	 * @param collection The {@link Collection} object.
+	 * @param collection The {@link Collection} to be exported.
 	 * @param config Optional builder configuration.
 	 */
 	constructor(collection: Collection, config?: Partial<ApkgBuilderConfig>) {
@@ -31,6 +31,9 @@ class ApkgBuilder {
 		return this.collection;
 	}
 
+	/**
+	 * @param collection The {@link Collection} to be exported.
+	 */
 	public setCollection(collection: Collection): ApkgBuilder {
 		this.collection = collection;
 
@@ -57,6 +60,13 @@ class ApkgBuilder {
 		return [this.collection, ...cards, ...notes];
 	}
 
+	/**
+	 * Adds a media file to be used in the {@link Note} contents.
+	 *
+	 * @param filename The unique name under which the file is stored in the package.
+	 * {@link Note} contents reference media by this exact name, e.g. `<img src="photo.jpg">`.
+	 * @param file The file as a `Blob`.
+	 */
 	public addMedia(filename: string, file: Blob): ApkgBuilder {
 		const index = this.media.length;
 
@@ -69,6 +79,9 @@ class ApkgBuilder {
 		return this.media;
 	}
 
+	/**
+	 * Returns the generated `.apkg` package as a `Blob`.
+	 */
 	public async build(): Promise<Blob> {
 		const zip = new JSZip();
 		const db = new Database(this.config?.sqljs);
@@ -105,6 +118,11 @@ class ApkgBuilder {
 		});
 	}
 
+	/**
+	 * Triggers the generated `.apkg` package download.
+	 *
+	 * @param filename The downloaded package filename, including extension — e.g. "my-deck.apkg".
+	 */
 	public async save(filename: string): Promise<void> {
 		FileSaver.saveAs(await this.build(), filename);
 	}

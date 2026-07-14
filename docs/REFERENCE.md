@@ -4,7 +4,7 @@
 
 ### ApkgBuilder
 
-The main (`export default`) class used for generating `.apkg` package.
+The main (`export default`) class used for generating `.apkg` packages.
 
 #### Methods
 
@@ -36,7 +36,7 @@ The main (`export default`) class used for generating `.apkg` package.
 </td>
 <td>
 
-The Collection object.
+The Collection to be exported.
 
 </td>
 </tr>
@@ -75,6 +75,7 @@ Optional builder configuration.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -89,6 +90,11 @@ Optional builder configuration.
 `Collection`
 
 </td>
+<td>
+
+The Collection to be exported.
+
+</td>
 </tr>
 </tbody>
 </table>
@@ -97,6 +103,8 @@ Optional builder configuration.
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
 
+Adds a media file to be used in the Note contents.
+
 ###### Parameters
 
 <table>
@@ -104,6 +112,7 @@ Optional builder configuration.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -116,6 +125,12 @@ Optional builder configuration.
 <td>
 
 `string`
+
+</td>
+<td>
+
+The unique name under which the file is stored in the package.
+Note contents reference media by this exact name, e.g. `<img src="photo.jpg">`.
 
 </td>
 </tr>
@@ -130,6 +145,11 @@ Optional builder configuration.
 `Blob`
 
 </td>
+<td>
+
+The file as a `Blob`.
+
+</td>
 </tr>
 </tbody>
 </table>
@@ -142,9 +162,13 @@ Optional builder configuration.
 
 > **build**(): `Promise`\<`Blob`\>
 
+Returns the generated `.apkg` package as a `Blob`.
+
 ##### save()
 
 > **save**(`filename`: `string`): `Promise`\<`void`\>
+
+Triggers the generated `.apkg` package download.
 
 ###### Parameters
 
@@ -153,6 +177,7 @@ Optional builder configuration.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -165,6 +190,11 @@ Optional builder configuration.
 <td>
 
 `string`
+
+</td>
+<td>
+
+The downloaded package filename, including extension — e.g. "my-deck.apkg".
 
 </td>
 </tr>
