@@ -6,13 +6,11 @@
 
 The main (`export default`) class used for generating `.apkg` packages.
 
-#### Methods
-
-##### Constructor
+#### Constructor
 
 > **new ApkgBuilder**(`collection`: `Collection`, `config?`: `Partial`\<[`ApkgBuilderConfig`](#apkgbuilderconfig)\>): [`ApkgBuilder`](#apkgbuilder)
 
-###### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -60,15 +58,15 @@ Optional builder configuration.
 </tbody>
 </table>
 
-##### getCollection()
+#### getCollection()
 
 > **getCollection**(): `Collection`
 
-##### setCollection()
+#### setCollection()
 
 > **setCollection**(`collection`: `Collection`): [`ApkgBuilder`](#apkgbuilder)
 
-###### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -99,13 +97,13 @@ The Collection to be exported.
 </tbody>
 </table>
 
-##### addMedia()
+#### addMedia()
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
 
 Adds a media file to be used in the Note contents.
 
-###### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -154,23 +152,23 @@ The file as a `Blob`.
 </tbody>
 </table>
 
-##### getMedia()
+#### getMedia()
 
 > **getMedia**(): `Media`[]
 
-##### build()
+#### build()
 
 > **build**(): `Promise`\<`Blob`\>
 
 Returns the generated `.apkg` package as a `Blob`.
 
-##### save()
+#### save()
 
 > **save**(`filename`: `string`): `Promise`\<`void`\>
 
 Triggers the generated `.apkg` package download.
 
-###### Parameters
+##### Parameters
 
 <table>
 <thead>
