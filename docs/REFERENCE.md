@@ -954,6 +954,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -966,6 +967,11 @@ The optional description of the deck.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The card ID (by default the time in milliseconds of when the card was created).
 
 </td>
 </tr>
@@ -987,6 +993,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -999,6 +1006,11 @@ The optional description of the deck.
 <td>
 
 `string`
+
+</td>
+<td>
+
+The name of the deck.
 
 </td>
 </tr>
@@ -1020,6 +1032,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1032,6 +1045,11 @@ The optional description of the deck.
 <td>
 
 `string`
+
+</td>
+<td>
+
+The description of the deck.
 
 </td>
 </tr>
@@ -1053,6 +1071,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1065,6 +1084,12 @@ The optional description of the deck.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+If `false` it render description with legacy HTML rendering.
+If `true` it uses markdown rendering with `img` tags stripped.
 
 </td>
 </tr>
@@ -1086,6 +1111,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1098,6 +1124,11 @@ The optional description of the deck.
 <td>
 
 `number` \| `null`
+
+</td>
+<td>
+
+Extended review card limit.
 
 </td>
 </tr>
@@ -1119,6 +1150,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1131,6 +1163,11 @@ The optional description of the deck.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The update sequence number.
 
 </td>
 </tr>
@@ -1152,6 +1189,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1164,6 +1202,11 @@ The optional description of the deck.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the deck is collapsed.
 
 </td>
 </tr>
@@ -1185,6 +1228,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1197,6 +1241,11 @@ The optional description of the deck.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the deck is collapsed in a browser.
 
 </td>
 </tr>
@@ -1218,6 +1267,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1230,6 +1280,13 @@ The optional description of the deck.
 <td>
 
 \[`number`, `number`\]
+
+</td>
+<td>
+
+The first number is the number of days that have passed between the
+collection was created and the deck was last updated. The second is equal to the number of
+cards seen today in this deck minus the number of new cards in custom study today.
 
 </td>
 </tr>
@@ -1251,6 +1308,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1263,6 +1321,13 @@ The optional description of the deck.
 <td>
 
 \[`number`, `number`\]
+
+</td>
+<td>
+
+The first number is the number of days that have passed between the
+collection was created and the deck was last updated. The second is equal to the number of
+cards seen today in this deck minus the number of new cards in custom study today.
 
 </td>
 </tr>
@@ -1284,6 +1349,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1296,6 +1362,13 @@ The optional description of the deck.
 <td>
 
 \[`number`, `number`\]
+
+</td>
+<td>
+
+The first number is the number of days that have passed between the
+collection was created and the deck was last updated. The second is equal to the number of
+cards seen today in this deck minus the number of new cards in custom study today.
 
 </td>
 </tr>
@@ -1317,6 +1390,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1329,6 +1403,11 @@ The optional description of the deck.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the deck is dynamic (filtered).
 
 </td>
 </tr>
@@ -1350,6 +1429,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1362,6 +1442,11 @@ The optional description of the deck.
 <td>
 
 `number` \| `null`
+
+</td>
+<td>
+
+Extended new card limit.
 
 </td>
 </tr>
@@ -1383,6 +1468,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1395,6 +1481,11 @@ The optional description of the deck.
 <td>
 
 `DeckConfiguration`
+
+</td>
+<td>
+
+A DeckConfiguration.
 
 </td>
 </tr>
@@ -1416,6 +1507,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1428,6 +1520,11 @@ The optional description of the deck.
 <td>
 
 `Model`
+
+</td>
+<td>
+
+A Model.
 
 </td>
 </tr>
@@ -1449,6 +1546,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1461,6 +1559,11 @@ The optional description of the deck.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The last modification time in milliseconds.
 
 </td>
 </tr>
@@ -1478,6 +1581,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1490,6 +1594,11 @@ The optional description of the deck.
 <td>
 
 `Card`
+
+</td>
+<td>
+
+A Card.
 
 </td>
 </tr>
@@ -1507,6 +1616,7 @@ The optional description of the deck.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1519,6 +1629,11 @@ The optional description of the deck.
 <td>
 
 `Card`
+
+</td>
+<td>
+
+A Card.
 
 </td>
 </tr>

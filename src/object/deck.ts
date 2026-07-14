@@ -55,6 +55,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.id;
 	}
 
+	/**
+	 * @param id The card ID (by default the time in milliseconds of when the card was created).
+	 */
 	public setId(id?: number): Deck {
 		this.object.id = id ?? Date.now();
 
@@ -65,6 +68,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.name;
 	}
 
+	/**
+	 * @param name The name of the deck.
+	 */
 	public setName(name: string): Deck {
 		this.object.name = name;
 
@@ -75,6 +81,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.desc;
 	}
 
+	/**
+	 * @param description The description of the deck.
+	 */
 	public setDescription(description: string): Deck {
 		this.object.desc = description;
 
@@ -85,6 +94,10 @@ export class Deck extends Object<DeckObject> {
 		return this.object.md;
 	}
 
+	/**
+	 * @param description If `false` it render description with legacy HTML rendering.
+	 * If `true` it uses markdown rendering with `img` tags stripped.
+	 */
 	public setMarkdownDescription(description: boolean): Deck {
 		this.object.md = description;
 
@@ -95,6 +108,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.extendRev;
 	}
 
+	/**
+	 * @param extendRev Extended review card limit.
+	 */
 	public setExtendedReviewCardLimit(extendRev: number | null): Deck {
 		this.object.extendRev = extendRev;
 
@@ -105,6 +121,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.usn;
 	}
 
+	/**
+	 * @param updateSequenceNumber The update sequence number.
+	 */
 	public setUpdateSequenceNumber(updateSequenceNumber: number): Deck {
 		this.object.usn = updateSequenceNumber;
 
@@ -115,6 +134,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.collapsed;
 	}
 
+	/**
+	 * @param collapsed Whether the deck is collapsed.
+	 */
 	public setCollapsed(collapsed: boolean): Deck {
 		this.object.collapsed = collapsed;
 
@@ -125,6 +147,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.collapsed;
 	}
 
+	/**
+	 * @param collapsed Whether the deck is collapsed in a browser.
+	 */
 	public setBrowserCollapsed(collapsed: boolean): Deck {
 		this.object.browserCollapsed = collapsed;
 
@@ -135,6 +160,11 @@ export class Deck extends Object<DeckObject> {
 		return this.object.newToday;
 	}
 
+	/**
+	 * @param newToday The first number is the number of days that have passed between the
+	 * collection was created and the deck was last updated. The second is equal to the number of
+	 * cards seen today in this deck minus the number of new cards in custom study today.
+	 */
 	public setNewToday(newToday: [number, number]): Deck {
 		this.object.newToday = newToday;
 
@@ -145,6 +175,11 @@ export class Deck extends Object<DeckObject> {
 		return this.object.revToday;
 	}
 
+	/**
+	 * @param revToday The first number is the number of days that have passed between the
+	 * collection was created and the deck was last updated. The second is equal to the number of
+	 * cards seen today in this deck minus the number of new cards in custom study today.
+	 */
 	public setReviewToday(revToday: [number, number]): Deck {
 		this.object.revToday = revToday;
 
@@ -155,6 +190,11 @@ export class Deck extends Object<DeckObject> {
 		return this.object.lrnToday;
 	}
 
+	/**
+	 * @param lrnToday The first number is the number of days that have passed between the
+	 * collection was created and the deck was last updated. The second is equal to the number of
+	 * cards seen today in this deck minus the number of new cards in custom study today.
+	 */
 	public setLearningToday(lrnToday: [number, number]): Deck {
 		this.object.lrnToday = lrnToday;
 
@@ -165,6 +205,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.dyn;
 	}
 
+	/**
+	 * @param dynamic Whether the deck is dynamic (filtered).
+	 */
 	public setDynamic(dynamic: boolean): Deck {
 		this.object.dyn = dynamic;
 
@@ -175,6 +218,9 @@ export class Deck extends Object<DeckObject> {
 		return this.object.extendNew;
 	}
 
+	/**
+	 * @param extendNew Extended new card limit.
+	 */
 	public setExtendedNewCardLimit(extendNew: number | null): Deck {
 		this.object.extendNew = extendNew;
 
@@ -185,6 +231,9 @@ export class Deck extends Object<DeckObject> {
 		return this.configuration;
 	}
 
+	/**
+	 * @param config A {@link DeckConfiguration}.
+	 */
 	public setConfiguration(config: DeckConfiguration): Deck {
 		this.configuration = config;
 		this.object.conf = config.getId();
@@ -200,6 +249,9 @@ export class Deck extends Object<DeckObject> {
 		return this.model;
 	}
 
+	/**
+	 * @param model A {@link Model}.
+	 */
 	public setModel(model: Model): Deck {
 		this.model = model;
 		model.setDeck(this);
@@ -215,12 +267,18 @@ export class Deck extends Object<DeckObject> {
 		return this.object.mod;
 	}
 
+	/**
+	 * @param time The last modification time in milliseconds.
+	 */
 	public setModificationTime(time: number): Deck {
 		this.object.mod = time;
 
 		return this;
 	}
 
+	/**
+	 * @param card A {@link Card}.
+	 */
 	public addCard(card: Card): Deck {
 		card.setDeck(this);
 
@@ -247,6 +305,9 @@ export class Deck extends Object<DeckObject> {
 		return this;
 	}
 
+	/**
+	 * @param card A {@link Card}.
+	 */
 	public removeCard(card: Card): Deck {
 		card.setDeck(null);
 
@@ -267,6 +328,9 @@ export class Deck extends Object<DeckObject> {
 		return this.collection;
 	}
 
+	/**
+	 * @param card A {@link Collection}.
+	 */
 	public setCollection(collection: Collection): Deck {
 		this.collection = collection;
 
