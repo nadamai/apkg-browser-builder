@@ -12,4 +12,6 @@
 	"excludeReferences": true,
 	"hidePageHeader": true,
 	"expandObjects": true,
+	"typeDeclarationFormat": "table",
+	"propertiesFormat": "table",
 }

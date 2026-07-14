@@ -1,7 +1,7 @@
 import { SqlJsConfig } from 'sql.js';
 
 /**
- * Optional configuration of {@link ApkgBuilder}. For now it only contains `sqljs` configuration.
+ * Optional configuration of {@link ApkgBuilder}.
  */
 export type ApkgBuilderConfig = {
 	/**
