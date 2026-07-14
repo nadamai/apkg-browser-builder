@@ -303,6 +303,10 @@ export class Collection extends Entity<CollectionModel> {
 	 * @param config A {@link DeckConfiguration}.
 	 */
 	public addDeckConfiguration(config: DeckConfiguration): Collection {
+		if (this.deckConfigurations.indexOf(config) > -1) {
+			return this;
+		}
+
 		this.deckConfigurations.push(config);
 		this.updateDeckConfigurations();
 		this.updateDecks();
