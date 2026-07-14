@@ -9,8 +9,7 @@ import Module from 'node:module';
  * does: resolve the import to the file's own absolute path so production code resolves
  * both files the same way it does in the browser bundle, without any test-only override.
  */
-const extensions = (Module as unknown as { _extensions: Record<string, (module: Module, filename: string) => void> })
-	._extensions;
+const extensions = (Module as unknown as { _extensions: Record<string, (module: Module, filename: string) => void> })._extensions;
 
 const defaultHandler = (module: Module, filename: string) => {
 	module.exports = { default: filename };
