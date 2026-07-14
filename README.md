@@ -46,7 +46,9 @@ The object composition is as follows:
       - `Card` — holds a `Note`,
         - `Note` — holds a `Model` (fields/tags for the card content).
 
-For the detailed documentation please refer to the [docs/REFERENCE.md](docs/REFERENCE.md).
+For the detailed documentation please refer to the [docs/REFERENCE.md](docs/REFERENCE.md). 
+
+Every schema class exposes proper getters/setters on top of it. Setters return the instance so methods can be chained.
 
 ## Contributing
 
