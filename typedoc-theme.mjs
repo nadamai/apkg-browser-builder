@@ -1,6 +1,11 @@
-// TypeDoc theme extending typedoc-plugin-markdown: renders signatures
-// without the "Returns" section (the return type stays visible in the
-// signature line itself).
+// TypeDoc theme extending typedoc-plugin-markdown.
+// 
+// Renders class pages without the "Extends" / "Extended by" hierarchy sections 
+// and without the "Returns" section (the return type stays visible in 
+// the signature line itself).
+// 
+// Also removes the "Constructors" / "Methods" member group
+// headings, which the hideGroupHeadings option does not cover.
 //
 // Wired up in typedoc.json via:
 //   "plugin": [..., "./typedoc-theme.mjs"],
@@ -19,6 +24,7 @@ class HiddenTagsTheme extends MarkdownTheme {
 class HiddenTagsThemeContext extends MarkdownThemeContext {
 	partials = {
 		...this.partials,
+		hierarchy: () => '',
 		signatureReturns: () => ''
 	};
 }
