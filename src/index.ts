@@ -9,6 +9,8 @@ import { ApkgBuilderConfig } from './type/apkg-builder-config';
 
 /**
  * The main (`export default`) class used for generating `.apkg` packages.
+ *
+ * @group ApkgBuilder
  */
 class ApkgBuilder {
 	private collection: Collection;
@@ -128,9 +130,9 @@ class ApkgBuilder {
 
 export default ApkgBuilder;
 
-export { ApkgBuilder };
+export { ApkgBuilder, Collection };
 
 export type { ApkgBuilderConfig };
 
 /** @hidden */
-export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model, Media };
+export { Card, Note, Configuration, Deck, DeckConfiguration, Model, Media };

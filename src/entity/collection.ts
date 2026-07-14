@@ -9,6 +9,11 @@ import { Deck, DeckConfiguration, Model } from '../object';
 import { Configuration } from '../object/configuration';
 import { Generator } from '../service/generator';
 
+/**
+ * The root Anki database entity containing decks, cards and all the other information.
+ *
+ * @group Collection
+ */
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
 
@@ -37,6 +42,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.entity.id;
 	}
 
+	/**
+	 * @param id The ID of the collection (it can be some arbitrary number as there's only one collection).
+	 */
 	public setId(id: number): Collection {
 		this.entity.id = id;
 
@@ -47,6 +55,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.entity.crt;
 	}
 
+	/**
+	 * @param time The timestamp of the creation date in seconds.
+	 */
 	public setCreationTime(time: number): Collection {
 		this.entity.crt = time;
 
@@ -57,6 +68,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.entity.mod;
 	}
 
+	/**
+	 * @param time The last modification time in milliseconds.
+	 */
 	public setModificationTime(time: number): Collection {
 		this.entity.mod = time;
 
@@ -67,6 +81,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.entity.scm;
 	}
 
+	/**
+	 * @param time The last schema modification time in milliseconds.
+	 */
 	public setSchemaModificationTime(time: number): Collection {
 		this.entity.scm = time;
 
@@ -77,6 +94,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.entity.ver;
 	}
 
+	/**
+	 * @param version The Anki schema version number.
+	 */
 	public setVersion(version: number): Collection {
 		this.entity.ver = version;
 
@@ -87,6 +107,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.entity.usn;
 	}
 
+	/**
+	 * @param updateSequenceNumber The update sequence number.
+	 */
 	public setUpdateSequenceNumber(updateSequenceNumber: number): Collection {
 		this.entity.usn = updateSequenceNumber;
 
@@ -97,6 +120,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.entity.ls;
 	}
 
+	/**
+	 * @param time The last synchronisation time in milliseconds.
+	 */
 	public setLastSyncTime(time: number): Collection {
 		this.entity.ls = time;
 
@@ -107,6 +133,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.configuration;
 	}
 
+	/**
+	 * @param configuration A collection {@link Configuration}.
+	 */
 	public setConfiguration(configuration: Configuration): Collection {
 		this.configuration = configuration;
 		this.entity.conf = JSON.stringify(configuration.getObject());
@@ -118,6 +147,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.models;
 	}
 
+	/**
+	 * @param models An array of possible {@link Model}s.
+	 */
 	public setModels(models: Model[]): Collection {
 		this.models = models;
 
@@ -136,6 +168,9 @@ export class Collection extends Entity<CollectionModel> {
 		this.setModels(this.models);
 	}
 
+	/**
+	 * @param model A {@link Model} to be added.
+	 */
 	public addModel(model: Model): Collection {
 		if (this.models.indexOf(model) > -1) {
 			return this;
@@ -147,6 +182,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
+	/**
+	 * @param model A {@link Model} to be removed.
+	 */
 	public removeModel(model: Model): Collection {
 		const index = this.models.indexOf(model);
 
@@ -162,6 +200,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.decks;
 	}
 
+	/**
+	 * @param decks An array of {@link Deck}s to be set.
+	 */
 	public setDecks(decks: Deck[]): Collection {
 		this.decks = decks;
 
@@ -180,6 +221,9 @@ export class Collection extends Entity<CollectionModel> {
 		this.setDecks(this.decks);
 	}
 
+	/**
+	 * @param deck A {@link Deck} to be added.
+	 */
 	public addDeck(deck: Deck): Collection {
 		deck.setCollection(this);
 
@@ -216,10 +260,13 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
+	/**
+	 * @param deck A {@link Deck} to be removed.
+	 */
 	public removeDeck(deck: Deck): Collection {
 		const index = this.decks.indexOf(deck);
 
-		if (index < 0) {
+		if (index > -1) {
 			this.decks.splice(index, 1);
 			this.updateDecks();
 		}
@@ -231,6 +278,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this.deckConfigurations;
 	}
 
+	/**
+	 * @param configs An array of {@link DeckConfiguration}s.
+	 */
 	public setDeckConfigurations(configs: DeckConfiguration[]): Collection {
 		this.deckConfigurations = configs;
 
@@ -249,6 +299,9 @@ export class Collection extends Entity<CollectionModel> {
 		this.setDeckConfigurations(this.deckConfigurations);
 	}
 
+	/**
+	 * @param config A {@link DeckConfiguration}.
+	 */
 	public addDeckConfiguration(config: DeckConfiguration): Collection {
 		this.deckConfigurations.push(config);
 		this.updateDeckConfigurations();
@@ -257,6 +310,9 @@ export class Collection extends Entity<CollectionModel> {
 		return this;
 	}
 
+	/**
+	 * @param config A {@link DeckConfiguration}.
+	 */
 	public removeDeckConfiguration(config: DeckConfiguration): Collection {
 		const index = this.deckConfigurations.indexOf(config);
 
@@ -273,6 +329,9 @@ export class Collection extends Entity<CollectionModel> {
 		return JSON.parse(this.entity.tags);
 	}
 
+	/**
+	 * @param tags An array of collection tags.
+	 */
 	public setTags(tags: string[]): Collection {
 		this.entity.tags = JSON.stringify(tags);
 

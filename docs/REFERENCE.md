@@ -1,16 +1,14 @@
 # APK Browser Builder v1.0.0
 
-## Classes
-
-### ApkgBuilder
+## ApkgBuilder
 
 The main (`export default`) class used for generating `.apkg` packages.
 
-#### Constructor
+### Constructor
 
-> **new ApkgBuilder**(`collection`: `Collection`, `config?`: `Partial`\<[`ApkgBuilderConfig`](#apkgbuilderconfig)\>): [`ApkgBuilder`](#apkgbuilder)
+> **new ApkgBuilder**(`collection`: [`Collection`](#collection), `config?`: `Partial`\<[`ApkgBuilderConfig`](#apkgbuilderconfig)\>): [`ApkgBuilder`](#apkgbuilder)
 
-##### Parameters
+#### Parameters
 
 <table>
 <thead>
@@ -29,12 +27,12 @@ The main (`export default`) class used for generating `.apkg` packages.
 </td>
 <td>
 
-`Collection`
+[`Collection`](#collection)
 
 </td>
 <td>
 
-The Collection to be exported.
+The [Collection](#collection) to be exported.
 
 </td>
 </tr>
@@ -58,15 +56,15 @@ Optional builder configuration.
 </tbody>
 </table>
 
-#### getCollection()
+### getCollection()
 
-> **getCollection**(): `Collection`
+> **getCollection**(): [`Collection`](#collection)
 
-#### setCollection()
+### setCollection()
 
-> **setCollection**(`collection`: `Collection`): [`ApkgBuilder`](#apkgbuilder)
+> **setCollection**(`collection`: [`Collection`](#collection)): [`ApkgBuilder`](#apkgbuilder)
 
-##### Parameters
+#### Parameters
 
 <table>
 <thead>
@@ -85,25 +83,25 @@ Optional builder configuration.
 </td>
 <td>
 
-`Collection`
+[`Collection`](#collection)
 
 </td>
 <td>
 
-The Collection to be exported.
+The [Collection](#collection) to be exported.
 
 </td>
 </tr>
 </tbody>
 </table>
 
-#### addMedia()
+### addMedia()
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
 
 Adds a media file to be used in the Note contents.
 
-##### Parameters
+#### Parameters
 
 <table>
 <thead>
@@ -152,23 +150,23 @@ The file as a `Blob`.
 </tbody>
 </table>
 
-#### getMedia()
+### getMedia()
 
 > **getMedia**(): `Media`[]
 
-#### build()
+### build()
 
 > **build**(): `Promise`\<`Blob`\>
 
 Returns the generated `.apkg` package as a `Blob`.
 
-#### save()
+### save()
 
 > **save**(`filename`: `string`): `Promise`\<`void`\>
 
 Triggers the generated `.apkg` package download.
 
-##### Parameters
+#### Parameters
 
 <table>
 <thead>
@@ -199,15 +197,699 @@ The downloaded package filename, including extension — e.g. "my-deck.apkg".
 </tbody>
 </table>
 
-## Type Aliases
+***
 
-### ApkgBuilderConfig
+## Collection
+
+The root Anki database entity containing decks, cards and all the other information.
+
+### getId()
+
+> **getId**(): `number`
+
+### setId()
+
+> **setId**(`id`: `number`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The ID of the collection (it can be some arbitrary number as there's only one collection).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getCreationTime()
+
+> **getCreationTime**(): `number`
+
+### setCreationTime()
+
+> **setCreationTime**(`time`: `number`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The timestamp of the creation date in seconds.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModificationTime()
+
+> **getModificationTime**(): `number`
+
+### setModificationTime()
+
+> **setModificationTime**(`time`: `number`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The last modification time in milliseconds.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getSchemaModificationTime()
+
+> **getSchemaModificationTime**(): `number`
+
+### setSchemaModificationTime()
+
+> **setSchemaModificationTime**(`time`: `number`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The last schema modification time in milliseconds.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getVersion()
+
+> **getVersion**(): `number`
+
+### setVersion()
+
+> **setVersion**(`version`: `number`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`version`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The Anki schema version number.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The update sequence number.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLastSyncTime()
+
+> **getLastSyncTime**(): `number`
+
+### setLastSyncTime()
+
+> **setLastSyncTime**(`time`: `number`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The last synchronisation time in milliseconds.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getConfiguration()
+
+> **getConfiguration**(): `Configuration` \| `null`
+
+### setConfiguration()
+
+> **setConfiguration**(`configuration`: `Configuration`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`configuration`
+
+</td>
+<td>
+
+`Configuration`
+
+</td>
+<td>
+
+A collection Configuration.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModels()
+
+> **getModels**(): `Model`[]
+
+### setModels()
+
+> **setModels**(`models`: `Model`[]): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`models`
+
+</td>
+<td>
+
+`Model`[]
+
+</td>
+<td>
+
+An array of possible Models.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addModel()
+
+> **addModel**(`model`: `Model`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`model`
+
+</td>
+<td>
+
+`Model`
+
+</td>
+<td>
+
+A Model to be added.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeModel()
+
+> **removeModel**(`model`: `Model`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`model`
+
+</td>
+<td>
+
+`Model`
+
+</td>
+<td>
+
+A Model to be removed.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDecks()
+
+> **getDecks**(): `Deck`[]
+
+### setDecks()
+
+> **setDecks**(`decks`: `Deck`[]): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`decks`
+
+</td>
+<td>
+
+`Deck`[]
+
+</td>
+<td>
+
+An array of Decks to be set.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addDeck()
+
+> **addDeck**(`deck`: `Deck`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+`Deck`
+
+</td>
+<td>
+
+A Deck to be added.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeDeck()
+
+> **removeDeck**(`deck`: `Deck`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+`Deck`
+
+</td>
+<td>
+
+A Deck to be removed.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDeckConfigurations()
+
+> **getDeckConfigurations**(): `DeckConfiguration`[]
+
+### setDeckConfigurations()
+
+> **setDeckConfigurations**(`configs`: `DeckConfiguration`[]): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`configs`
+
+</td>
+<td>
+
+`DeckConfiguration`[]
+
+</td>
+<td>
+
+An array of DeckConfigurations.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addDeckConfiguration()
+
+> **addDeckConfiguration**(`config`: `DeckConfiguration`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`
+
+</td>
+<td>
+
+`DeckConfiguration`
+
+</td>
+<td>
+
+A DeckConfiguration.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeDeckConfiguration()
+
+> **removeDeckConfiguration**(`config`: `DeckConfiguration`): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`
+
+</td>
+<td>
+
+`DeckConfiguration`
+
+</td>
+<td>
+
+A DeckConfiguration.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getTags()
+
+> **getTags**(): `string`[]
+
+### setTags()
+
+> **setTags**(`tags`: `string`[]): [`Collection`](#collection)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tags`
+
+</td>
+<td>
+
+`string`[]
+
+</td>
+<td>
+
+An array of collection tags.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+## ApkgBuilderConfig
 
 > **ApkgBuilderConfig** = \{ `sqljs`: `SqlJsConfig`; \}
 
 Optional configuration of [ApkgBuilder](#apkgbuilder).
 
-#### Properties
+### Properties
 
 <table>
 <thead>
