@@ -60,6 +60,39 @@ Optional builder configuration.
 </tbody>
 </table>
 
+##### getCollection()
+
+> **getCollection**(): `Collection`
+
+##### setCollection()
+
+> **setCollection**(`collection`: `Collection`): [`ApkgBuilder`](#apkgbuilder)
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`collection`
+
+</td>
+<td>
+
+`Collection`
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ##### addMedia()
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
@@ -101,17 +134,13 @@ Optional builder configuration.
 </tbody>
 </table>
 
-##### build()
-
-> **build**(): `Promise`\<`Blob`\>
-
-##### getCollection()
-
-> **getCollection**(): `Collection`
-
 ##### getMedia()
 
 > **getMedia**(): `Media`[]
+
+##### build()
+
+> **build**(): `Promise`\<`Blob`\>
 
 ##### save()
 
@@ -136,35 +165,6 @@ Optional builder configuration.
 <td>
 
 `string`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-##### setCollection()
-
-> **setCollection**(`collection`: `Collection`): [`ApkgBuilder`](#apkgbuilder)
-
-###### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`collection`
-
-</td>
-<td>
-
-`Collection`
 
 </td>
 </tr>

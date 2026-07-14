@@ -11,6 +11,7 @@
 	"plugin": ["typedoc-plugin-markdown", "./typedoc-theme.mjs"],
 	"theme": "typedoc-theme",
 	"excludeReferences": true,
+	"sort": ["source-order"],
 	"hidePageHeader": true,
 	"expandObjects": true,
 	"expandParameters": true,
