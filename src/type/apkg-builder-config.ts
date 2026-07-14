@@ -1,6 +1,8 @@
 import { SqlJsConfig } from 'sql.js';
 
-/** Optional configuration of {@link ApkgBuilder}. */
+/**
+ * Optional configuration of {@link ApkgBuilder}.
+ */
 export type ApkgBuilderConfig = {
 	/**
 	 * Options forwarded to [`initSqlJs()`](https://sql.js.org/documentation/global.html#initSqlJs)

@@ -106,7 +106,9 @@ class ApkgBuilder {
 
 export default ApkgBuilder;
 
-export type { ApkgBuilder, ApkgBuilderConfig };
+export { ApkgBuilder };
+
+export type { ApkgBuilderConfig };
 
 /** @hidden */
 export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model, Media };
