@@ -204,8 +204,18 @@ export class Collection extends Entity<CollectionModel> {
 	 * @param decks An array of {@link Deck}s to be set.
 	 */
 	public setDecks(decks: Deck[]): Collection {
-		this.decks = decks;
+		this.decks = [];
 
+		for (const deck of decks) {
+			this.addDeck(deck);
+		}
+
+		this.updateEntityDecks();
+
+		return this;
+	}
+
+	private updateEntityDecks(): void {
 		const value = this.decks.reduce((acc: Record<number, DeckModel>, deck: Deck) => {
 			acc[deck.getId()] = deck.getObject();
 
@@ -213,12 +223,6 @@ export class Collection extends Entity<CollectionModel> {
 		}, {});
 
 		this.entity.decks = JSON.stringify(value);
-
-		return this;
-	}
-
-	private updateDecks(): void {
-		this.setDecks(this.decks);
 	}
 
 	/**
@@ -232,7 +236,7 @@ export class Collection extends Entity<CollectionModel> {
 		deck.setCollection(this);
 
 		this.decks.push(deck);
-		this.updateDecks();
+		this.updateEntityDecks();
 
 		const model = deck.getModel();
 		const deckConfiguration = deck.getConfiguration();
@@ -272,7 +276,7 @@ export class Collection extends Entity<CollectionModel> {
 
 		if (index > -1) {
 			this.decks.splice(index, 1);
-			this.updateDecks();
+			this.updateEntityDecks();
 		}
 
 		return this;
@@ -313,7 +317,7 @@ export class Collection extends Entity<CollectionModel> {
 
 		this.deckConfigurations.push(config);
 		this.updateDeckConfigurations();
-		this.updateDecks();
+		this.updateEntityDecks();
 
 		return this;
 	}
@@ -327,7 +331,7 @@ export class Collection extends Entity<CollectionModel> {
 		if (index > -1) {
 			this.deckConfigurations.splice(index, 1);
 			this.updateDeckConfigurations();
-			this.updateDecks();
+			this.updateEntityDecks();
 		}
 
 		return this;
