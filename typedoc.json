@@ -11,4 +11,5 @@
 	"plugin": ["typedoc-plugin-markdown"],
 	"excludeReferences": true,
 	"hidePageHeader": true,
+	"expandObjects": true,
 }

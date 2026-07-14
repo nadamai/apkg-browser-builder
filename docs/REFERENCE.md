@@ -82,7 +82,7 @@ The main (`export default`) class used for generating .apkg package.
 
 ### ApkgBuilderConfig
 
-> **ApkgBuilderConfig** = `object`
+> **ApkgBuilderConfig** = \{ `sqljs`: `SqlJsConfig`; \}
 
 Optional configuration of [ApkgBuilder](#apkgbuilder). For now it only contains `sqljs` configuration.
 
@@ -98,8 +98,8 @@ By default, the `sql-wasm-browser.wasm` binary bundled with this package is used
 
 ```ts
 const builder = new ApkgBuilder(collection, {
-    sqljs: { 
-        locateFile: (file) => `https://sql.js.org/dist/${file}` 
+    sqljs: {
+        locateFile: (file) => `https://sql.js.org/dist/${file}`
     }
 });
 ```
