@@ -14,5 +14,5 @@
       "apkg-browser-builder": ["./src"]
     },
   },
-  "include": ["src/**/*", "dev/**/*", "tests/**/*"]
+  "include": ["src/**/*", "dev/**/*", "tests/**/*", "typedoc-theme.mjs"]
 }

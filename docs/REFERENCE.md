@@ -4,7 +4,7 @@
 
 ### ApkgBuilder
 
-The main (`export default`) class used for generating .apkg package.
+The main (`export default`) class used for generating `.apkg` package.
 
 #### Methods
 
@@ -60,10 +60,6 @@ Optional builder configuration.
 </tbody>
 </table>
 
-###### Returns
-
-[`ApkgBuilder`](#apkgbuilder)
-
 ##### addMedia()
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
@@ -105,33 +101,17 @@ Optional builder configuration.
 </tbody>
 </table>
 
-###### Returns
-
-[`ApkgBuilder`](#apkgbuilder)
-
 ##### build()
 
 > **build**(): `Promise`\<`Blob`\>
-
-###### Returns
-
-`Promise`\<`Blob`\>
 
 ##### getCollection()
 
 > **getCollection**(): `Collection`
 
-###### Returns
-
-`Collection`
-
 ##### getMedia()
 
 > **getMedia**(): `Media`[]
-
-###### Returns
-
-`Media`[]
 
 ##### save()
 
@@ -162,10 +142,6 @@ Optional builder configuration.
 </tbody>
 </table>
 
-###### Returns
-
-`Promise`\<`void`\>
-
 ##### setCollection()
 
 > **setCollection**(`collection`: `Collection`): [`ApkgBuilder`](#apkgbuilder)
@@ -194,10 +170,6 @@ Optional builder configuration.
 </tr>
 </tbody>
 </table>
-
-###### Returns
-
-[`ApkgBuilder`](#apkgbuilder)
 
 ## Type Aliases
 

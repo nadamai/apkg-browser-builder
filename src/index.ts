@@ -8,7 +8,7 @@ import { Media } from './service';
 import { ApkgBuilderConfig } from './type/apkg-builder-config';
 
 /**
- * The main (`export default`) class used for generating .apkg package.
+ * The main (`export default`) class used for generating `.apkg` package.
  */
 class ApkgBuilder {
 	private collection: Collection;
