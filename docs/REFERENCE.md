@@ -1,30 +1,10 @@
 # APK Browser Builder v1.0.0
 
-## Classes
+## Interfaces
 
 ### ApkgBuilder
 
 The main (`export default`) class used for generating .apkg package.
-
-#### Constructors
-
-##### Constructor
-
-> **new ApkgBuilder**(`collection?`, `config?`): [`ApkgBuilder`](#apkgbuilder)
-
-###### Parameters
-
-###### collection?
-
-`Collection`
-
-###### config?
-
-`Partial`\<\{ `sqljs`: `SqlJsConfig`; \}\>
-
-###### Returns
-
-[`ApkgBuilder`](#apkgbuilder)
 
 #### Methods
 
@@ -102,4 +82,24 @@ The main (`export default`) class used for generating .apkg package.
 
 ### ApkgBuilderConfig
 
-> **ApkgBuilderConfig** = `Partial`\<\{ `sqljs`: `SqlJsConfig`; \}\>
+> **ApkgBuilderConfig** = `object`
+
+Optional configuration of [ApkgBuilder](#apkgbuilder). For now it only contains `sqljs` configuration.
+
+#### Properties
+
+##### sqljs
+
+> **sqljs**: `SqlJsConfig`
+
+Options forwarded to [`initSqlJs()`](https://sql.js.org/documentation/global.html#initSqlJs) of sql.js, which loads the WebAssembly build of SQLite used to create the ANKI database when [ApkgBuilder](#apkgbuilder) `build` is called.
+
+By default, the `sql-wasm-browser.wasm` binary bundled with this package is used. Provide a `locateFile` callback to load the `.wasm` file from somewhere else instead, such as a CDN or your own static assets:
+
+```ts
+const builder = new ApkgBuilder(collection, {
+    sqljs: { 
+        locateFile: (file) => `https://sql.js.org/dist/${file}` 
+    }
+});
+```
