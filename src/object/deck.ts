@@ -5,6 +5,9 @@ import { Generator } from '../service/generator';
 import { DeckConfiguration } from './deck-config';
 import { Model } from './model';
 
+/**
+ * A deck contained within a collection.
+ */
 export class Deck extends Object<DeckObject> {
 	protected object: DeckObject = {
 		id: Generator.id(),
@@ -30,6 +33,10 @@ export class Deck extends Object<DeckObject> {
 	protected configuration: DeckConfiguration | null = null;
 	protected model: Model | null = null;
 
+	/**
+	 * @param name The name of the deck.
+	 * @param description The optional description of the deck.
+	 */
 	constructor(name: string, description?: string) {
 		super();
 

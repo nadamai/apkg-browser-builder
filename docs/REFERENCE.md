@@ -626,11 +626,11 @@ A Model to be removed.
 
 ### getDecks()
 
-> **getDecks**(): `Deck`[]
+> **getDecks**(): [`Deck`](#deck)[]
 
 ### setDecks()
 
-> **setDecks**(`decks`: `Deck`[]): [`Collection`](#collection)
+> **setDecks**(`decks`: [`Deck`](#deck)[]): [`Collection`](#collection)
 
 #### Parameters
 
@@ -651,12 +651,12 @@ A Model to be removed.
 </td>
 <td>
 
-`Deck`[]
+[`Deck`](#deck)[]
 
 </td>
 <td>
 
-An array of Decks to be set.
+An array of [Deck](#deck)s to be set.
 
 </td>
 </tr>
@@ -665,7 +665,7 @@ An array of Decks to be set.
 
 ### addDeck()
 
-> **addDeck**(`deck`: `Deck`): [`Collection`](#collection)
+> **addDeck**(`deck`: [`Deck`](#deck)): [`Collection`](#collection)
 
 #### Parameters
 
@@ -686,12 +686,12 @@ An array of Decks to be set.
 </td>
 <td>
 
-`Deck`
+[`Deck`](#deck)
 
 </td>
 <td>
 
-A Deck to be added.
+A [Deck](#deck) to be added.
 
 </td>
 </tr>
@@ -700,7 +700,7 @@ A Deck to be added.
 
 ### removeDeck()
 
-> **removeDeck**(`deck`: `Deck`): [`Collection`](#collection)
+> **removeDeck**(`deck`: [`Deck`](#deck)): [`Collection`](#collection)
 
 #### Parameters
 
@@ -721,12 +721,12 @@ A Deck to be added.
 </td>
 <td>
 
-`Deck`
+[`Deck`](#deck)
 
 </td>
 <td>
 
-A Deck to be removed.
+A [Deck](#deck) to be removed.
 
 </td>
 </tr>
@@ -875,6 +875,687 @@ A DeckConfiguration.
 <td>
 
 An array of collection tags.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+## Deck
+
+A deck contained within a collection.
+
+### Constructor
+
+> **new Deck**(`name`: `string`, `description?`: `string`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the deck.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`description?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The optional description of the deck.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getId()
+
+> **getId**(): `number`
+
+### setId()
+
+> **setId**(`id?`: `number`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getName()
+
+> **getName**(): `string`
+
+### setName()
+
+> **setName**(`name`: `string`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDescription()
+
+> **getDescription**(): `string`
+
+### setDescription()
+
+> **setDescription**(`description`: `string`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`description`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getMarkdownDescription()
+
+> **getMarkdownDescription**(): `boolean`
+
+### setMarkdownDescription()
+
+> **setMarkdownDescription**(`description`: `boolean`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`description`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getExtendedReviewCardLimit()
+
+> **getExtendedReviewCardLimit**(): `number` \| `null`
+
+### setExtendedReviewCardLimit()
+
+> **setExtendedReviewCardLimit**(`extendRev`: `number` \| `null`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`extendRev`
+
+</td>
+<td>
+
+`number` \| `null`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getCollapsed()
+
+> **getCollapsed**(): `boolean`
+
+### setCollapsed()
+
+> **setCollapsed**(`collapsed`: `boolean`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`collapsed`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getBrowserCollapsed()
+
+> **getBrowserCollapsed**(): `boolean`
+
+### setBrowserCollapsed()
+
+> **setBrowserCollapsed**(`collapsed`: `boolean`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`collapsed`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getNewToday()
+
+> **getNewToday**(): \[`number`, `number`\]
+
+### setNewToday()
+
+> **setNewToday**(`newToday`: \[`number`, `number`\]): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`newToday`
+
+</td>
+<td>
+
+\[`number`, `number`\]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getReviewToday()
+
+> **getReviewToday**(): \[`number`, `number`\]
+
+### setReviewToday()
+
+> **setReviewToday**(`revToday`: \[`number`, `number`\]): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`revToday`
+
+</td>
+<td>
+
+\[`number`, `number`\]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLearningToday()
+
+> **getLearningToday**(): \[`number`, `number`\]
+
+### setLearningToday()
+
+> **setLearningToday**(`lrnToday`: \[`number`, `number`\]): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`lrnToday`
+
+</td>
+<td>
+
+\[`number`, `number`\]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDynamic()
+
+> **getDynamic**(): `boolean`
+
+### setDynamic()
+
+> **setDynamic**(`dynamic`: `boolean`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`dynamic`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getExtendedNewCardLimit()
+
+> **getExtendedNewCardLimit**(): `number` \| `null`
+
+### setExtendedNewCardLimit()
+
+> **setExtendedNewCardLimit**(`extendNew`: `number` \| `null`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`extendNew`
+
+</td>
+<td>
+
+`number` \| `null`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getConfiguration()
+
+> **getConfiguration**(): `DeckConfiguration` \| `null`
+
+### setConfiguration()
+
+> **setConfiguration**(`config`: `DeckConfiguration`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`
+
+</td>
+<td>
+
+`DeckConfiguration`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModel()
+
+> **getModel**(): `Model` \| `null`
+
+### setModel()
+
+> **setModel**(`model`: `Model`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`model`
+
+</td>
+<td>
+
+`Model`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModificationTime()
+
+> **getModificationTime**(): `number`
+
+### setModificationTime()
+
+> **setModificationTime**(`time`: `number`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addCard()
+
+> **addCard**(`card`: `Card`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`card`
+
+</td>
+<td>
+
+`Card`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeCard()
+
+> **removeCard**(`card`: `Card`): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`card`
+
+</td>
+<td>
+
+`Card`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getCards()
+
+> **getCards**(): `Card`[]
+
+### getCollection()
+
+> **getCollection**(): [`Collection`](#collection) \| `null`
+
+### setCollection()
+
+> **setCollection**(`collection`: [`Collection`](#collection)): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`collection`
+
+</td>
+<td>
+
+[`Collection`](#collection)
 
 </td>
 </tr>
