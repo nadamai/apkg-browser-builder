@@ -6,7 +6,9 @@
 	"outputFileStrategy": "modules",
 	"entryFileName": "REFERENCE.md",
 	"includeVersion": true,
+	"disableSources": true,
 	"cleanOutputDir": true,
 	"plugin": ["typedoc-plugin-markdown"],
+	"excludeReferences": true,
 	"hidePageHeader": true,
 }

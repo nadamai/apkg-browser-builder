@@ -11,7 +11,10 @@ export type ApkgBuilderConfig = Partial<{
 	sqljs: SqlJsConfig;
 }>;
 
-export default class ApkgBuilder {
+/**
+ * The main (`export default`) class used for generating .apkg package.
+ */
+class ApkgBuilder {
 	private collection: Collection;
 	private config?: ApkgBuilderConfig;
 	private media: Media[];
@@ -105,4 +108,7 @@ export default class ApkgBuilder {
 	}
 }
 
-export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model, Media };
+export default ApkgBuilder;
+
+/** @hidden */
+export { ApkgBuilder, Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model, Media };
