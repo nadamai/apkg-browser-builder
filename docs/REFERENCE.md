@@ -1,10 +1,57 @@
 # APK Browser Builder v1.0.0
 
-## Interfaces
+## Classes
 
 ### ApkgBuilder
 
 The main (`export default`) class used for generating .apkg package.
+
+#### Constructors
+
+##### Constructor
+
+> **new ApkgBuilder**(`collection?`, `config?`): [`ApkgBuilder`](#apkgbuilder)
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`collection?`
+
+</td>
+<td>
+
+`Collection`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`config?`
+
+</td>
+<td>
+
+`Partial`\<[`ApkgBuilderConfig`](#apkgbuilderconfig)\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`ApkgBuilder`](#apkgbuilder)
 
 #### Methods
 
@@ -14,13 +61,40 @@ The main (`export default`) class used for generating .apkg package.
 
 ###### Parameters
 
-###### filename
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`filename`
+
+</td>
+<td>
 
 `string`
 
-###### file
+</td>
+</tr>
+<tr>
+<td>
+
+`file`
+
+</td>
+<td>
 
 `Blob`
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ###### Returns
 
@@ -56,9 +130,28 @@ The main (`export default`) class used for generating .apkg package.
 
 ###### Parameters
 
-###### filename
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`filename`
+
+</td>
+<td>
 
 `string`
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ###### Returns
 
@@ -70,9 +163,28 @@ The main (`export default`) class used for generating .apkg package.
 
 ###### Parameters
 
-###### collection
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`collection`
+
+</td>
+<td>
 
 `Collection`
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ###### Returns
 
@@ -111,11 +223,11 @@ Optional configuration of [ApkgBuilder](#apkgbuilder).
 <td>
 
 Options forwarded to [`initSqlJs()`](https://sql.js.org/documentation/global.html#initSqlJs)
-of sql.js, which loads the WebAssembly build of SQLite used to create the ANKI database when 
+of sql.js, which loads the WebAssembly build of SQLite used to create the ANKI database when
 [ApkgBuilder](#apkgbuilder) `build` is called.
 
 By default, the `sql-wasm-browser.wasm` binary bundled with this package is used. Provide
-a `locateFile` callback to load the `.wasm` file from somewhere else instead, such as a CDN 
+a `locateFile` callback to load the `.wasm` file from somewhere else instead, such as a CDN
 or your own static assets:
 
 ```ts
