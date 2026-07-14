@@ -17,8 +17,6 @@ class ApkgBuilder {
 	private media: Media[] = [];
 
 	/**
-	 * @group Methods
-	 *
 	 * @param collection The {@link Collection} to be exported.
 	 * @param config Optional builder configuration.
 	 */
