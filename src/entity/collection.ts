@@ -225,6 +225,10 @@ export class Collection extends Entity<CollectionModel> {
 	 * @param deck A {@link Deck} to be added.
 	 */
 	public addDeck(deck: Deck): Collection {
+		if (this.decks.indexOf(deck) > -1) {
+			return this;
+		}
+
 		deck.setCollection(this);
 
 		this.decks.push(deck);
