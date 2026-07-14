@@ -151,8 +151,18 @@ export class Collection extends Entity<CollectionModel> {
 	 * @param models An array of possible {@link Model}s.
 	 */
 	public setModels(models: Model[]): Collection {
-		this.models = models;
+		this.models = [];
 
+		for (const model of models) {
+			this.addModel(model);
+		}
+
+		this.updateEntityModels();
+
+		return this;
+	}
+
+	private updateEntityModels(): void {
 		const value = this.models.reduce((acc: Record<number, ModelModel>, model: Model) => {
 			acc[model.getId()] = model.getObject();
 
@@ -160,12 +170,6 @@ export class Collection extends Entity<CollectionModel> {
 		}, {});
 
 		this.entity.models = JSON.stringify(value);
-
-		return this;
-	}
-
-	private updateModels(): void {
-		this.setModels(this.models);
 	}
 
 	/**
@@ -177,7 +181,7 @@ export class Collection extends Entity<CollectionModel> {
 		}
 
 		this.models.push(model);
-		this.updateModels();
+		this.updateEntityModels();
 
 		return this;
 	}
@@ -190,7 +194,7 @@ export class Collection extends Entity<CollectionModel> {
 
 		if (index > -1) {
 			this.models.splice(index, 1);
-			this.updateModels();
+			this.updateEntityModels();
 		}
 
 		return this;
@@ -290,8 +294,18 @@ export class Collection extends Entity<CollectionModel> {
 	 * @param configs An array of {@link DeckConfiguration}s.
 	 */
 	public setDeckConfigurations(configs: DeckConfiguration[]): Collection {
-		this.deckConfigurations = configs;
+		this.deckConfigurations = [];
 
+		for (const config of configs) {
+			this.addDeckConfiguration(config);
+		}
+
+		this.updateEntityDeckConfigurations();
+
+		return this;
+	}
+
+	private updateEntityDeckConfigurations(): void {
 		const value = this.deckConfigurations.reduce((acc: Record<number, DeckConfigurationModel>, config: DeckConfiguration) => {
 			acc[config.getId()] = config.getObject();
 
@@ -299,12 +313,6 @@ export class Collection extends Entity<CollectionModel> {
 		}, {});
 
 		this.entity.dconf = JSON.stringify(value);
-
-		return this;
-	}
-
-	private updateDeckConfigurations(): void {
-		this.setDeckConfigurations(this.deckConfigurations);
 	}
 
 	/**
@@ -316,7 +324,7 @@ export class Collection extends Entity<CollectionModel> {
 		}
 
 		this.deckConfigurations.push(config);
-		this.updateDeckConfigurations();
+		this.updateEntityDeckConfigurations();
 		this.updateEntityDecks();
 
 		return this;
@@ -330,7 +338,7 @@ export class Collection extends Entity<CollectionModel> {
 
 		if (index > -1) {
 			this.deckConfigurations.splice(index, 1);
-			this.updateDeckConfigurations();
+			this.updateEntityDeckConfigurations();
 			this.updateEntityDecks();
 		}
 
