@@ -6,11 +6,11 @@
 
 The main (`export default`) class used for generating .apkg package.
 
-#### Constructors
+#### Methods
 
 ##### Constructor
 
-> **new ApkgBuilder**(`collection?`, `config?`): [`ApkgBuilder`](#apkgbuilder)
+> **new ApkgBuilder**(`collection`, `config?`): [`ApkgBuilder`](#apkgbuilder)
 
 ###### Parameters
 
@@ -19,18 +19,24 @@ The main (`export default`) class used for generating .apkg package.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-`collection?`
+`collection`
 
 </td>
 <td>
 
 `Collection`
+
+</td>
+<td>
+
+The Collection object.
 
 </td>
 </tr>
@@ -45,6 +51,11 @@ The main (`export default`) class used for generating .apkg package.
 `Partial`\<[`ApkgBuilderConfig`](#apkgbuilderconfig)\>
 
 </td>
+<td>
+
+Optional builder configuration.
+
+</td>
 </tr>
 </tbody>
 </table>
@@ -52,8 +63,6 @@ The main (`export default`) class used for generating .apkg package.
 ###### Returns
 
 [`ApkgBuilder`](#apkgbuilder)
-
-#### Methods
 
 ##### addMedia()
 
