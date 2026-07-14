@@ -13,12 +13,18 @@ import { ApkgBuilderConfig } from './type/apkg-builder-config';
 class ApkgBuilder {
 	private collection: Collection;
 	private config?: Partial<ApkgBuilderConfig>;
-	private media: Media[];
 
-	constructor(collection?: Collection, config?: Partial<ApkgBuilderConfig>) {
-		this.collection = collection ?? new Collection();
+	private media: Media[] = [];
+
+	/**
+	 * @group Methods
+	 *
+	 * @param collection The {@link Collection} object.
+	 * @param config Optional builder configuration.
+	 */
+	constructor(collection: Collection, config?: Partial<ApkgBuilderConfig>) {
+		this.collection = collection;
 		this.config = config;
-		this.media = [];
 	}
 
 	public getCollection(): Collection {
