@@ -1,9 +1,10 @@
 // TypeDoc theme extending typedoc-plugin-markdown.
-// 
-// Renders class pages without the "Extends" / "Extended by" hierarchy sections 
-// and without the "Returns" section (the return type stays visible in 
-// the signature line itself).
-// 
+//
+// Renders class pages without:
+// - the "Extends" / "Extended by" hierarchy sections,
+// - the "Returns" section (the return type stays visible in the signature line itself),
+// - the "Overrides" / "Inherited from" / "Implementation of" sections.
+//
 // Also removes the "Constructors" / "Methods" member group
 // headings, which the hideGroupHeadings option does not cover.
 //
@@ -25,7 +26,8 @@ class HiddenTagsThemeContext extends MarkdownThemeContext {
 	partials = {
 		...this.partials,
 		hierarchy: () => '',
-		signatureReturns: () => ''
+		signatureReturns: () => '',
+		inheritance: () => ''
 	};
 }
 

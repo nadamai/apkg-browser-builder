@@ -1,10 +1,12 @@
 export abstract class Object<Model = {}> {
 	protected abstract object: Model;
 
+	/** @internal */
 	public getObject(): Model {
 		return this.object;
 	}
 
+	/** @internal */
 	protected getDictionaryKey<DictionaryKey extends string | number | symbol>(
 		dictionary: Record<DictionaryKey, number>,
 		value: number
