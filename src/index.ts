@@ -1,25 +1,21 @@
 import * as FileSaver from 'file-saver';
-import { SqlJsConfig } from 'sql.js';
 import { Database } from './service/database';
 import JSZip from 'jszip';
 import { Card, Collection, Note } from './entity';
 import { Configuration, Deck, DeckConfiguration, Model } from './object';
 import { Entity } from './abstract';
 import { Media } from './service';
-
-export type ApkgBuilderConfig = Partial<{
-	sqljs: SqlJsConfig;
-}>;
+import { ApkgBuilderConfig } from './type/apkg-builder-config';
 
 /**
  * The main (`export default`) class used for generating .apkg package.
  */
 class ApkgBuilder {
 	private collection: Collection;
-	private config?: ApkgBuilderConfig;
+	private config?: Partial<ApkgBuilderConfig>;
 	private media: Media[];
 
-	constructor(collection?: Collection, config?: ApkgBuilderConfig) {
+	constructor(collection?: Collection, config?: Partial<ApkgBuilderConfig>) {
 		this.collection = collection ?? new Collection();
 		this.config = config;
 		this.media = [];
@@ -110,5 +106,7 @@ class ApkgBuilder {
 
 export default ApkgBuilder;
 
+export type { ApkgBuilder, ApkgBuilderConfig };
+
 /** @hidden */
-export { ApkgBuilder, Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model, Media };
+export { Card, Collection, Note, Configuration, Deck, DeckConfiguration, Model, Media };
