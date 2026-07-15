@@ -10,6 +10,7 @@ import { Note } from './note';
  *
  * @group Card
  */
+// test
 export class Card extends Entity<CardModel> {
 	protected table: string = 'cards';
 
