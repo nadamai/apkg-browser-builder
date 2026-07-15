@@ -6,21 +6,32 @@ export class CardTemplate extends Object<CardTemplateObject> {
 	protected object: CardTemplateObject = {
 		name: 'Card 1',
 		qfmt: '{{Front}}',
-		afmt: '{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}',
+		afmt: '{{FrontSide}}\n\n<hr id="answer">\n\n{{Back}}',
 		bqfmt: '',
 		bafmt: '',
 		did: null,
 		ord: 0
 	};
 
-	constructor(name?: string) {
+	/**
+	 * @param name The name of the template.
+	 * @param questionFormat The question (front side) template of the card.
+	 * @param answerFormat The answer (back side) template of the card.
+	 */
+	constructor(name?: string, questionFormat?: string, answerFormat?: string) {
 		super();
 
-		if (!name) {
-			return;
+		if (name) {
+			this.object.name = name;
 		}
 
-		this.object.name = name;
+		if (questionFormat) {
+			this.object.qfmt = questionFormat;
+		}
+
+		if (answerFormat) {
+			this.object.afmt = answerFormat;
+		}
 	}
 
 	public getName(): string {

@@ -38,18 +38,27 @@ export class Model extends Object<ModelObject> {
 	protected deck: Deck | null = null;
 
 	/**
-	 * Creates a model with default `Front` and `Back` {@link Field}s and a single
-	 * {@link CardTemplate}.
+	 * Creates a model with the given {@link Field}s (`Front` and `Back` by default) and a
+	 * single {@link CardTemplate} generated from the first two of them: the first field
+	 * becomes the question, the second the answer.
 	 *
 	 * @param name The name of the model.
+	 * @param fields The fields of the model, replacing the default `Front` and `Back` ones.
 	 */
-	constructor(name?: string) {
+	constructor(name?: string, fields?: Field[]) {
 		super();
 
-		this.addField(new Field('Front'));
-		this.addField(new Field('Back'));
+		this.setFields(fields ?? [new Field('Front'), new Field('Back')]);
 
-		this.addTemplate(new CardTemplate());
+		const [question, answer] = this.fields;
+
+		this.addTemplate(
+			new CardTemplate(
+				undefined,
+				question && `{{${question.getName()}}}`,
+				answer ? `{{FrontSide}}\n\n<hr id="answer">\n\n{{${answer.getName()}}}` : '{{FrontSide}}'
+			)
+		);
 
 		if (!name) {
 			return;

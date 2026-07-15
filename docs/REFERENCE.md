@@ -2989,10 +2989,11 @@ generate [Card](#card)s from [Note](#note)s.
 
 ### Constructor
 
-> **new Model**(`name?`: `string`): [`Model`](#model)
+> **new Model**(`name?`: `string`, `fields?`: `Field`[]): [`Model`](#model)
 
-Creates a model with default `Front` and `Back` Fields and a single
-CardTemplate.
+Creates a model with the given Fields (`Front` and `Back` by default) and a
+single CardTemplate generated from the first two of them: the first field
+becomes the question, the second the answer.
 
 #### Parameters
 
@@ -3019,6 +3020,23 @@ CardTemplate.
 <td>
 
 The name of the model.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`fields?`
+
+</td>
+<td>
+
+`Field`[]
+
+</td>
+<td>
+
+The fields of the model, replacing the default `Front` and `Back` ones.
 
 </td>
 </tr>
