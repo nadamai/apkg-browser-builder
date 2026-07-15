@@ -12,6 +12,7 @@ import { ApkgBuilderConfig } from './type/apkg-builder-config';
  *
  * @group ApkgBuilder
  */
+// Test
 class ApkgBuilder {
 	private collection: Collection;
 	private config?: Partial<ApkgBuilderConfig>;
