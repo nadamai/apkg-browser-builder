@@ -1375,6 +1375,47 @@ learning cards seen today in this deck minus the number of learning cards in cus
 </tbody>
 </table>
 
+### getTimeToday()
+
+> **getTimeToday**(): \[`number`, `number`\]
+
+### setTimeToday()
+
+> **setTimeToday**(`timeToday`: \[`number`, `number`\]): [`Deck`](#deck)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`timeToday`
+
+</td>
+<td>
+
+\[`number`, `number`\]
+
+</td>
+<td>
+
+The first number is the number of days that have passed between the
+collection was created and the deck was last updated. The second is the time spent
+studying in this deck today, in milliseconds.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### getDynamic()
 
 > **getDynamic**(): `boolean`

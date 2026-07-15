@@ -201,6 +201,21 @@ export class Deck extends Object<DeckObject> {
 		return this;
 	}
 
+	public getTimeToday(): [number, number] {
+		return this.object.timeToday;
+	}
+
+	/**
+	 * @param timeToday The first number is the number of days that have passed between the
+	 * collection was created and the deck was last updated. The second is the time spent
+	 * studying in this deck today, in milliseconds.
+	 */
+	public setTimeToday(timeToday: [number, number]): Deck {
+		this.object.timeToday = timeToday;
+
+		return this;
+	}
+
 	public getDynamic(): boolean {
 		return this.object.dyn;
 	}
@@ -309,11 +324,11 @@ export class Deck extends Object<DeckObject> {
 	 * @param card A {@link Card}.
 	 */
 	public removeCard(card: Card): Deck {
-		card.setDeck(null);
-
 		const index = this.cards.indexOf(card);
 
 		if (index > -1) {
+			card.setDeck(null);
+
 			this.cards.splice(index, 1);
 		}
 
