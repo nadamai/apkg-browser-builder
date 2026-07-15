@@ -80,7 +80,7 @@ export class Card extends Entity<CardModel> {
 	 * @param note A {@link Note} containing the card's content.
 	 */
 	public setNote(note: Note): Card {
-		this.entity.nid = note.getEntity().id;
+		this.entity.nid = note.getId();
 		this.note = note;
 
 		return this;
