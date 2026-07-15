@@ -18,7 +18,7 @@ export class Model extends Object<ModelObject> {
 
 	protected object: ModelObject = {
 		id: Generator.id(),
-		name: '',
+		name: 'Basic',
 		css: '.card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n',
 		did: 1,
 		flds: [],
