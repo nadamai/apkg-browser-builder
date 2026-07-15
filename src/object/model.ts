@@ -46,16 +46,10 @@ export class Model extends Object<ModelObject> {
 	constructor(name?: string) {
 		super();
 
-		const front = new Field('Front');
-		const back = new Field('Back');
-		const template = new CardTemplate();
+		this.addField(new Field('Front'));
+		this.addField(new Field('Back'));
 
-		front.setOrdinal(0);
-		back.setOrdinal(1);
-
-		this.addField(front);
-		this.addField(back);
-		this.addTemplate(template);
+		this.addTemplate(new CardTemplate());
 
 		if (!name) {
 			return;
@@ -121,13 +115,13 @@ export class Model extends Object<ModelObject> {
 
 	/**
 	 * @param fields An array of {@link Field}s replacing the current ones, serialized into
-	 * the model.
+	 * the model. Field ordinals are assigned automatically from the array order.
 	 */
 	public setFields(fields: Field[]): Model {
 		this.fields = fields;
 
-		const value = this.fields.map((field: Field) => {
-			return field.getObject();
+		const value = this.fields.map((field: Field, index: number) => {
+			return field.setOrdinal(index).getObject();
 		});
 
 		this.object.flds = value;
@@ -174,13 +168,13 @@ export class Model extends Object<ModelObject> {
 
 	/**
 	 * @param templates An array of {@link CardTemplate}s replacing the current ones,
-	 * serialized into the model.
+	 * serialized into the model. Template ordinals are assigned automatically from the array order.
 	 */
 	public setTemplates(templates: CardTemplate[]): Model {
 		this.templates = templates;
 
-		const value = this.templates.map((template: CardTemplate) => {
-			return template.getObject();
+		const value = this.templates.map((template: CardTemplate, index: number) => {
+			return template.setOrdinal(index).getObject();
 		});
 
 		this.object.tmpls = value;
