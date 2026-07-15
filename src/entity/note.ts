@@ -3,6 +3,11 @@ import { Note as NoteModel } from '../model';
 import { Model } from '../object';
 import { Generator } from '../service/generator';
 
+/**
+ * A data container holding field values, used to generate {@link Card}s based on a {@link Model}.
+ *
+ * @group Note
+ */
 export class Note extends Entity<NoteModel> {
 	protected table: string = 'notes';
 

@@ -6,6 +6,9 @@ import { Field } from './field';
 import { CardTemplate } from './card-template';
 import { Generator } from '../service/generator';
 
+/**
+ * @group Model
+ */
 export class Model extends Object<ModelObject> {
 	protected fields: Field[] = [];
 	protected templates: CardTemplate[] = [];
