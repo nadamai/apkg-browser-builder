@@ -32,11 +32,10 @@
     "docs:watch": "npm run docs -- --watch",
     "prepare": "husky",
     "prettier": "pretty-quick --staged --pattern \"{src,dev,tests}/**/*.ts\"",
-	"prettier:check": "prettier --check \"{src,dev,tests}/**/*.ts\"",
+    "prettier:check": "prettier --check \"{src,dev,tests}/**/*.ts\"",
     "test": "vitest run"
   },
   "devDependencies": {
-    "@types/concurrently": "^7.0.3",
     "@types/file-saver": "^2.0.7",
     "@types/node": "^26.1.1",
     "@types/sql.js": "^1.4.11",
