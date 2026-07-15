@@ -99,7 +99,7 @@ The [Collection](#collection) to be exported.
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
 
-Adds a media file to be used in the Note contents.
+Adds a media file to be used in the [Note](#note) contents.
 
 #### Parameters
 
@@ -126,7 +126,7 @@ Adds a media file to be used in the Note contents.
 <td>
 
 The unique name under which the file is stored in the package.
-Note contents reference media by this exact name, e.g. `<img src="photo.jpg">`.
+[Note](#note) contents reference media by this exact name, e.g. `<img src="photo.jpg">`.
 
 </td>
 </tr>
@@ -481,11 +481,11 @@ The last synchronisation time in milliseconds (`0` if the collection has never b
 
 ### getConfiguration()
 
-> **getConfiguration**(): `Configuration` \| `null`
+> **getConfiguration**(): [`Configuration`](#configuration) \| `null`
 
 ### setConfiguration()
 
-> **setConfiguration**(`configuration`: `Configuration`): [`Collection`](#collection)
+> **setConfiguration**(`configuration`: [`Configuration`](#configuration)): [`Collection`](#collection)
 
 #### Parameters
 
@@ -506,12 +506,12 @@ The last synchronisation time in milliseconds (`0` if the collection has never b
 </td>
 <td>
 
-`Configuration`
+[`Configuration`](#configuration)
 
 </td>
 <td>
 
-A collection Configuration. It is serialized into the
+A collection [Configuration](#configuration). It is serialized into the
 collection immediately, so mutations made afterwards require setting it again.
 
 </td>
@@ -521,11 +521,11 @@ collection immediately, so mutations made afterwards require setting it again.
 
 ### getModels()
 
-> **getModels**(): `Model`[]
+> **getModels**(): [`Model`](#model)[]
 
 ### setModels()
 
-> **setModels**(`models`: `Model`[]): [`Collection`](#collection)
+> **setModels**(`models`: [`Model`](#model)[]): [`Collection`](#collection)
 
 #### Parameters
 
@@ -546,12 +546,12 @@ collection immediately, so mutations made afterwards require setting it again.
 </td>
 <td>
 
-`Model`[]
+[`Model`](#model)[]
 
 </td>
 <td>
 
-An array of Models replacing the current ones. Each model is
+An array of [Model](#model)s replacing the current ones. Each model is
 added via `addModel`, so duplicates are skipped.
 
 </td>
@@ -561,7 +561,7 @@ added via `addModel`, so duplicates are skipped.
 
 ### addModel()
 
-> **addModel**(`model`: `Model`): [`Collection`](#collection)
+> **addModel**(`model`: [`Model`](#model)): [`Collection`](#collection)
 
 #### Parameters
 
@@ -582,12 +582,12 @@ added via `addModel`, so duplicates are skipped.
 </td>
 <td>
 
-`Model`
+[`Model`](#model)
 
 </td>
 <td>
 
-A Model to be added and serialized into the collection.
+A [Model](#model) to be added and serialized into the collection.
 Duplicates are skipped.
 
 </td>
@@ -597,7 +597,7 @@ Duplicates are skipped.
 
 ### removeModel()
 
-> **removeModel**(`model`: `Model`): [`Collection`](#collection)
+> **removeModel**(`model`: [`Model`](#model)): [`Collection`](#collection)
 
 #### Parameters
 
@@ -618,12 +618,12 @@ Duplicates are skipped.
 </td>
 <td>
 
-`Model`
+[`Model`](#model)
 
 </td>
 <td>
 
-A Model to be removed.
+A [Model](#model) to be removed.
 
 </td>
 </tr>
@@ -699,7 +699,7 @@ via `addDeck`, including all of its automatic wiring and registrations.
 <td>
 
 A [Deck](#deck) to be added. The deck is wired back to this collection, and
-its Model, DeckConfiguration and the models of its cards' notes are
+its [Model](#model), [DeckConfiguration](#deckconfiguration) and the models of its cards' notes are
 registered automatically. Duplicates are skipped.
 
 </td>
@@ -744,11 +744,11 @@ A [Deck](#deck) to be removed.
 
 ### getDeckConfigurations()
 
-> **getDeckConfigurations**(): `DeckConfiguration`[]
+> **getDeckConfigurations**(): [`DeckConfiguration`](#deckconfiguration)[]
 
 ### setDeckConfigurations()
 
-> **setDeckConfigurations**(`configs`: `DeckConfiguration`[]): [`Collection`](#collection)
+> **setDeckConfigurations**(`configs`: [`DeckConfiguration`](#deckconfiguration)[]): [`Collection`](#collection)
 
 #### Parameters
 
@@ -769,12 +769,12 @@ A [Deck](#deck) to be removed.
 </td>
 <td>
 
-`DeckConfiguration`[]
+[`DeckConfiguration`](#deckconfiguration)[]
 
 </td>
 <td>
 
-An array of DeckConfigurations replacing the current ones.
+An array of [DeckConfiguration](#deckconfiguration)s replacing the current ones.
 Each configuration is added via `addDeckConfiguration`, so duplicates are skipped.
 
 </td>
@@ -784,7 +784,7 @@ Each configuration is added via `addDeckConfiguration`, so duplicates are skippe
 
 ### addDeckConfiguration()
 
-> **addDeckConfiguration**(`config`: `DeckConfiguration`): [`Collection`](#collection)
+> **addDeckConfiguration**(`config`: [`DeckConfiguration`](#deckconfiguration)): [`Collection`](#collection)
 
 #### Parameters
 
@@ -805,12 +805,12 @@ Each configuration is added via `addDeckConfiguration`, so duplicates are skippe
 </td>
 <td>
 
-`DeckConfiguration`
+[`DeckConfiguration`](#deckconfiguration)
 
 </td>
 <td>
 
-A DeckConfiguration to be added and serialized into the collection.
+A [DeckConfiguration](#deckconfiguration) to be added and serialized into the collection.
 Duplicates are skipped.
 
 </td>
@@ -820,7 +820,7 @@ Duplicates are skipped.
 
 ### removeDeckConfiguration()
 
-> **removeDeckConfiguration**(`config`: `DeckConfiguration`): [`Collection`](#collection)
+> **removeDeckConfiguration**(`config`: [`DeckConfiguration`](#deckconfiguration)): [`Collection`](#collection)
 
 #### Parameters
 
@@ -841,12 +841,12 @@ Duplicates are skipped.
 </td>
 <td>
 
-`DeckConfiguration`
+[`DeckConfiguration`](#deckconfiguration)
 
 </td>
 <td>
 
-A DeckConfiguration to be removed.
+A [DeckConfiguration](#deckconfiguration) to be removed.
 
 </td>
 </tr>
@@ -902,7 +902,7 @@ A deck contained within a [Collection](#collection) made of [Card](#card)s.
 
 > **new Deck**(`name`: `string`, `description?`: `string`): [`Deck`](#deck)
 
-Creates a deck with a default DeckConfiguration and Model attached.
+Creates a deck with a default [DeckConfiguration](#deckconfiguration) and [Model](#model) attached.
 
 #### Parameters
 
@@ -1511,11 +1511,11 @@ The extended new card limit for a custom study session.
 
 ### getConfiguration()
 
-> **getConfiguration**(): `DeckConfiguration` \| `null`
+> **getConfiguration**(): [`DeckConfiguration`](#deckconfiguration) \| `null`
 
 ### setConfiguration()
 
-> **setConfiguration**(`config`: `DeckConfiguration`): [`Deck`](#deck)
+> **setConfiguration**(`config`: [`DeckConfiguration`](#deckconfiguration)): [`Deck`](#deck)
 
 #### Parameters
 
@@ -1536,12 +1536,12 @@ The extended new card limit for a custom study session.
 </td>
 <td>
 
-`DeckConfiguration`
+[`DeckConfiguration`](#deckconfiguration)
 
 </td>
 <td>
 
-A DeckConfiguration with the deck's scheduling options, linked by ID.
+A [DeckConfiguration](#deckconfiguration) with the deck's scheduling options, linked by ID.
 It is registered in the parent collection immediately if the deck is attached to one,
 otherwise when the deck is added to a collection.
 
@@ -1552,11 +1552,11 @@ otherwise when the deck is added to a collection.
 
 ### getModel()
 
-> **getModel**(): `Model` \| `null`
+> **getModel**(): [`Model`](#model) \| `null`
 
 ### setModel()
 
-> **setModel**(`model`: `Model`): [`Deck`](#deck)
+> **setModel**(`model`: [`Model`](#model)): [`Deck`](#deck)
 
 #### Parameters
 
@@ -1577,12 +1577,12 @@ otherwise when the deck is added to a collection.
 </td>
 <td>
 
-`Model`
+[`Model`](#model)
 
 </td>
 <td>
 
-The note Model used by the deck's cards. The model is back-referenced
+The note [Model](#model) used by the deck's cards. The model is back-referenced
 to this deck and registered in the parent collection immediately if the deck is attached
 to one, otherwise when the deck is added to a collection.
 
@@ -1750,7 +1750,7 @@ the deck is added to a collection.
 
 ## Card
 
-A single flashcard generated from a Note, contained within a [Deck](#deck).
+A single flashcard generated from a [Note](#note), contained within a [Deck](#deck).
 
 ### Constructor
 
@@ -1780,7 +1780,7 @@ A single flashcard generated from a Note, contained within a [Deck](#deck).
 </td>
 <td>
 
-The field values of the Note the card is created with.
+The field values of the [Note](#note) the card is created with.
 
 </td>
 </tr>
@@ -1828,7 +1828,7 @@ The card ID (by default the time in milliseconds of when the card was created).
 
 ### setNote()
 
-> **setNote**(`note`: `Note`): [`Card`](#card)
+> **setNote**(`note`: [`Note`](#note)): [`Card`](#card)
 
 #### Parameters
 
@@ -1849,12 +1849,12 @@ The card ID (by default the time in milliseconds of when the card was created).
 </td>
 <td>
 
-`Note`
+[`Note`](#note)
 
 </td>
 <td>
 
-A Note containing the card's content.
+A [Note](#note) containing the card's content.
 
 </td>
 </tr>
@@ -1863,7 +1863,7 @@ A Note containing the card's content.
 
 ### getNote()
 
-> **getNote**(): `Note` \| `null`
+> **getNote**(): [`Note`](#note) \| `null`
 
 ### setDeck()
 
@@ -2494,6 +2494,1943 @@ The flag colour of the card: `0` = none, `1` = red, `2` = orange, `3` = green,
 
 Additional card data. Unused by the legacy schema; modern Anki versions
 store scheduler (FSRS) information here as JSON.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+## Note
+
+A data container holding field values, used to generate [Card](#card)s based on a [Model](#model).
+
+### getId()
+
+> **getId**(): `number`
+
+### setId()
+
+> **setId**(`id?`: `number`): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getGuid()
+
+> **getGuid**(): `string`
+
+### setGuid()
+
+> **setGuid**(`guid`: `string`): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`guid`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModel()
+
+> **getModel**(): [`Model`](#model) \| `null`
+
+### setModel()
+
+> **setModel**(`model`: [`Model`](#model)): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`model`
+
+</td>
+<td>
+
+[`Model`](#model)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModificationTime()
+
+> **getModificationTime**(): `number`
+
+### setModificationTime()
+
+> **setModificationTime**(`time`: `number`): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getTags()
+
+> **getTags**(): `string`[]
+
+### setTags()
+
+> **setTags**(`tags`: `string`[]): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tags`
+
+</td>
+<td>
+
+`string`[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getFields()
+
+> **getFields**(): `string`[]
+
+### setFields()
+
+> **setFields**(`fields`: `string`[]): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`fields`
+
+</td>
+<td>
+
+`string`[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getSortField()
+
+> **getSortField**(): `number`
+
+### setSortField()
+
+> **setSortField**(`sort`: `number`): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`sort`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getChecksum()
+
+> **getChecksum**(): `number`
+
+### setChecksum()
+
+> **setChecksum**(`checksum`: `number`): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`checksum`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+## Configuration
+
+### getCurrentDeck()
+
+> **getCurrentDeck**(): [`Deck`](#deck) \| `null`
+
+### setCurrentDeck()
+
+> **setCurrentDeck**(`deck`: [`Deck`](#deck)): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getActiveDecks()
+
+> **getActiveDecks**(): [`Deck`](#deck)[]
+
+### setActiveDecks()
+
+> **setActiveDecks**(`decks`: [`Deck`](#deck)[]): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`decks`
+
+</td>
+<td>
+
+[`Deck`](#deck)[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addActiveDeck()
+
+> **addActiveDeck**(`deck`: [`Deck`](#deck)): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeActiveDeck()
+
+> **removeActiveDeck**(`deck`: [`Deck`](#deck)): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getNewSpread()
+
+> **getNewSpread**(): `"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"` \| `null`
+
+### setNewSpread()
+
+> **setNewSpread**(`newSpread`: `"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`newSpread`
+
+</td>
+<td>
+
+`"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLearnAheadLimit()
+
+> **getLearnAheadLimit**(): `number` \| `null`
+
+### setLearnAheadLimit()
+
+> **setLearnAheadLimit**(`collapseTime`: `number`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`collapseTime`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getTimeboxTimeLimit()
+
+> **getTimeboxTimeLimit**(): `number` \| `null`
+
+### setTimeboxTimeLimit()
+
+> **setTimeboxTimeLimit**(`timeLim`: `number`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`timeLim`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getShowNextReviewTimeAboveAnswerButtons()
+
+> **getShowNextReviewTimeAboveAnswerButtons**(): `boolean` \| `null`
+
+### setShowNextReviewTimeAboveAnswerButtons()
+
+> **setShowNextReviewTimeAboveAnswerButtons**(`estTimes`: `boolean`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`estTimes`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getShowRemainingCardCountDuringReview()
+
+> **getShowRemainingCardCountDuringReview**(): `boolean` \| `null`
+
+### setShowRemainingCardCountDuringReview()
+
+> **setShowRemainingCardCountDuringReview**(`dueCounts`: `boolean`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`dueCounts`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getCurrentModel()
+
+> **getCurrentModel**(): [`Model`](#model) \| `null`
+
+### setCurrentModel()
+
+> **setCurrentModel**(`model`: [`Model`](#model)): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`model`
+
+</td>
+<td>
+
+[`Model`](#model)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getNextPosition()
+
+> **getNextPosition**(): `number` \| `null`
+
+### setNextPosition()
+
+> **setNextPosition**(`nextPos`: `number`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`nextPos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getSortType()
+
+> **getSortType**(): `string` \| `null`
+
+### setSortType()
+
+> **setSortType**(`sortType`: `string`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`sortType`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getSortBackwrds()
+
+> **getSortBackwrds**(): `boolean` \| `null`
+
+### setSortBackwrds()
+
+> **setSortBackwrds**(`sortBackwards`: `boolean`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`sortBackwards`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getAddToCurrentDeck()
+
+> **getAddToCurrentDeck**(): `boolean` \| `null`
+
+### setAddToCurrentDeck()
+
+> **setAddToCurrentDeck**(`addToCur`: `boolean`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`addToCur`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getShowLearningCardsWithLargerSteps()
+
+> **getShowLearningCardsWithLargerSteps**(): `boolean` \| `null`
+
+### setShowLearningCardsWithLargerSteps()
+
+> **setShowLearningCardsWithLargerSteps**(`dayLearnFirst`: `boolean`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`dayLearnFirst`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getNewBury()
+
+> **getNewBury**(): `boolean` \| `null`
+
+### setNewBury()
+
+> **setNewBury**(`newBury`: `boolean`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`newBury`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLastUnburied()
+
+> **getLastUnburied**(): `number` \| `null`
+
+### setLastUnburied()
+
+> **setLastUnburied**(`lastUnburied`: `number`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`lastUnburied`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getActiveColumns()
+
+> **getActiveColumns**(): (`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`)[] \| `null`
+
+### setActiveColumns()
+
+> **setActiveColumns**(`columns`: (`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`)[]): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`columns`
+
+</td>
+<td>
+
+(`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`)[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addActiveColumn()
+
+> **addActiveColumn**(`column`: `"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`column`
+
+</td>
+<td>
+
+`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeActiveColumn()
+
+> **removeActiveColumn**(`column`: `"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`column`
+
+</td>
+<td>
+
+`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### setValue()
+
+> **setValue**(`attribute`: `string`, `value`: `any`): [`Configuration`](#configuration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`attribute`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`value`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getValue()
+
+> **getValue**(`attribute`: `string`): `any`
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`attribute`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+## DeckConfiguration
+
+### getId()
+
+> **getId**(): `number`
+
+### setId()
+
+> **setId**(`id?`: `number`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getName()
+
+> **getName**(): `string`
+
+### setName()
+
+> **setName**(`name`: `string`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getAutoplay()
+
+> **getAutoplay**(): `boolean`
+
+### setAutoplay()
+
+> **setAutoplay**(`autoplay`: `boolean`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`autoplay`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDynamic()
+
+> **getDynamic**(): `boolean`
+
+### setDynamic()
+
+> **setDynamic**(`dynamic`: `boolean`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`dynamic`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getMaxTaken()
+
+> **getMaxTaken**(): `number`
+
+### setMaxTaken()
+
+> **setMaxTaken**(`maxTaken`: `number`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`maxTaken`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModificationTime()
+
+> **getModificationTime**(): `number`
+
+### setModificationTime()
+
+> **setModificationTime**(`time`: `number`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getReplay()
+
+> **getReplay**(): `boolean`
+
+### setReplay()
+
+> **setReplay**(`replay`: `boolean`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`replay`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getTimer()
+
+> **getTimer**(): `boolean`
+
+### setTimer()
+
+> **setTimer**(`timer`: `boolean`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`timer`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLapseCardConfig()
+
+> **getLapseCardConfig**(): `LapseCardConfig`
+
+### setLapseCardConfig()
+
+> **setLapseCardConfig**(`config`: `LapseCardConfig`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`
+
+</td>
+<td>
+
+`LapseCardConfig`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getNewCardConfig()
+
+> **getNewCardConfig**(): `NewCardConfig`
+
+### setNewCardConfig()
+
+> **setNewCardConfig**(`config`: `NewCardConfig`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`
+
+</td>
+<td>
+
+`NewCardConfig`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getReviewCardConfig()
+
+> **getReviewCardConfig**(): `ReviewCardConfig`
+
+### setReviewCardConfig()
+
+> **setReviewCardConfig**(`config`: `ReviewCardConfig`): [`DeckConfiguration`](#deckconfiguration)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`
+
+</td>
+<td>
+
+`ReviewCardConfig`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+## Model
+
+### getId()
+
+> **getId**(): `number`
+
+### setId()
+
+> **setId**(`id?`: `number`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getCss()
+
+> **getCss**(): `string`
+
+### setCss()
+
+> **setCss**(`css`: `string`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`css`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDeck()
+
+> **getDeck**(): [`Deck`](#deck) \| `null`
+
+### setDeck()
+
+> **setDeck**(`deck`: [`Deck`](#deck)): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getFields()
+
+> **getFields**(): `Field`[]
+
+### setFields()
+
+> **setFields**(`fields`: `Field`[]): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`fields`
+
+</td>
+<td>
+
+`Field`[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addField()
+
+> **addField**(`field`: `Field`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`field`
+
+</td>
+<td>
+
+`Field`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeField()
+
+> **removeField**(`field`: `Field`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`field`
+
+</td>
+<td>
+
+`Field`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getTemplates()
+
+> **getTemplates**(): `CardTemplate`[]
+
+### setTemplates()
+
+> **setTemplates**(`templates`: `CardTemplate`[]): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`templates`
+
+</td>
+<td>
+
+`CardTemplate`[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addTemplate()
+
+> **addTemplate**(`template`: `CardTemplate`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`template`
+
+</td>
+<td>
+
+`CardTemplate`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeTemplate()
+
+> **removeTemplate**(`template`: `CardTemplate`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`template`
+
+</td>
+<td>
+
+`CardTemplate`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLatexPreamble()
+
+> **getLatexPreamble**(): `string`
+
+### setLatexPreamble()
+
+> **setLatexPreamble**(`preamble`: `string`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`preamble`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLatexPostamble()
+
+> **getLatexPostamble**(): `string`
+
+### setLatexPostamble()
+
+> **setLatexPostamble**(`postamble`: `string`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`postamble`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModificationTime()
+
+> **getModificationTime**(): `number`
+
+### setModificationTime()
+
+> **setModificationTime**(`time`: `number`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getName()
+
+> **getName**(): `string`
+
+### setName()
+
+> **setName**(`name`: `string`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getSortField()
+
+> **getSortField**(): `number`
+
+### setSortField()
+
+> **setSortField**(`sort`: `number`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`sort`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getType()
+
+> **getType**(): `"standard"` \| `"cloze"`
+
+### setType()
+
+> **setType**(`type`: `"standard"` \| `"cloze"`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`type`
+
+</td>
+<td>
+
+`"standard"` \| `"cloze"`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
 
 </td>
 </tr>
