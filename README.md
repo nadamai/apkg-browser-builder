@@ -36,9 +36,7 @@ To see more examples on how to build a package, please check the [`dev/examples`
 
 ## Documentation
 
-The library exposes an `ApkgBuilder` object together with the classes that mirror the original [Anki SQLite schema](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure). For any specific configuration please consult the original database structure which is the source of truth.
-
-The object composition is as follows:
+The library exposes an `ApkgBuilder` object together with the classes that mirror the original [Anki SQLite schema](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure). The object composition is as follows:
 
 - `ApkgBuilder` — wraps a `Collection` and turns it into a downloadable `.apkg` file,
   - `Collection` — root schema object holding a `Configuration` and every `Deck`, `Model` and `DeckConfiguration` used in the package,
@@ -46,7 +44,7 @@ The object composition is as follows:
       - `Card` — holds a `Note`,
         - `Note` — holds a `Model` (fields/tags for the card content).
 
-For the detailed documentation please refer to the [docs/REFERENCE.md](docs/REFERENCE.md). 
+For the detailed documentation please refer to the [docs/REFERENCE.md](docs/REFERENCE.md). For any specific configuration please consult the original database structure which is the source of truth.
 
 Every schema class exposes proper getters/setters on top of it. Setters return the instance so methods can be chained.
 
