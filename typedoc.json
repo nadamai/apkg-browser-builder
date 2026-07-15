@@ -15,13 +15,11 @@
 	"cleanOutputDir": true,
 	"plugin": ["typedoc-plugin-markdown", "./typedoc-theme.mjs"],
 	"theme": "typedoc-theme",
-	"groupOrder": ["ApkgBuilder", "Collection", "Deck", "Card", "Note", "Model", "Configuration", "DeckConfiguration"],
 	"sort": ["source-order"],
 	"hidePageHeader": true,
 	"expandObjects": true,
 	"expandParameters": true,
 	"typeDeclarationFormat": "htmlTable",
 	"propertiesFormat": "htmlTable",
-	"parametersFormat": "htmlTable",
-	"hideGroupHeadings": true
+	"parametersFormat": "htmlTable"
 }

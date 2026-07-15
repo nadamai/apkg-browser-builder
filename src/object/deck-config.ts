@@ -5,9 +5,6 @@ import { LapseCardConfig } from './lapse-card-config';
 import { NewCardConfig } from './new-card-config';
 import { ReviewCardConfig } from './review-card-config';
 
-/**
- * @group DeckConfiguration
- */
 export class DeckConfiguration extends Object<DeckConfigurationObject> {
 	protected lapseCardConfig: LapseCardConfig = new LapseCardConfig();
 	protected newCardConfig: NewCardConfig = new NewCardConfig();

@@ -10,8 +10,6 @@ import { Generator } from '../service/generator';
 /**
  * A note type: defines the {@link Field}s, {@link CardTemplate}s and styling used to
  * generate {@link Card}s from {@link Note}s.
- *
- * @group Model
  */
 export class Model extends Object<ModelObject> {
 	protected fields: Field[] = [];

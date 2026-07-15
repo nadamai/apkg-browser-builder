@@ -1,14 +1,16 @@
 # APK Browser Builder v1.0.0
 
-## ApkgBuilder
+## Classes
+
+### ApkgBuilder
 
 The main (`export default`) class used for generating `.apkg` packages.
 
-### Constructor
+#### Constructor
 
 > **new ApkgBuilder**(`collection`: [`Collection`](#collection), `config?`: `Partial`\<[`ApkgBuilderConfig`](#apkgbuilderconfig)\>): [`ApkgBuilder`](#apkgbuilder)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -56,15 +58,15 @@ Optional builder configuration.
 </tbody>
 </table>
 
-### getCollection()
+#### getCollection()
 
 > **getCollection**(): [`Collection`](#collection)
 
-### setCollection()
+#### setCollection()
 
 > **setCollection**(`collection`: [`Collection`](#collection)): [`ApkgBuilder`](#apkgbuilder)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -95,13 +97,13 @@ The [Collection](#collection) to be exported.
 </tbody>
 </table>
 
-### addMedia()
+#### addMedia()
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
 
 Adds a media file to be used in the [Note](#note) contents.
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -150,23 +152,23 @@ The file as a `Blob`.
 </tbody>
 </table>
 
-### getMedia()
+#### getMedia()
 
 > **getMedia**(): `Media`[]
 
-### build()
+#### build()
 
 > **build**(): `Promise`\<`Blob`\>
 
 Returns the generated `.apkg` package as a `Blob`.
 
-### save()
+#### save()
 
 > **save**(`filename`: `string`): `Promise`\<`void`\>
 
 Triggers the generated `.apkg` package download.
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -199,19 +201,19 @@ The downloaded package filename, including extension — e.g. "my-deck.apkg".
 
 ***
 
-## Collection
+### Collection
 
 The root Anki database entity containing decks, cards and all the other information.
 
-### getId()
+#### getId()
 
 > **getId**(): `number`
 
-### setId()
+#### setId()
 
 > **setId**(`id`: `number`): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -242,15 +244,15 @@ The ID of the collection (it can be some arbitrary number as there's only one co
 </tbody>
 </table>
 
-### getCreationTime()
+#### getCreationTime()
 
 > **getCreationTime**(): `number`
 
-### setCreationTime()
+#### setCreationTime()
 
 > **setCreationTime**(`time`: `number`): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -282,15 +284,15 @@ scheduling day arithmetic — e.g. a review card's due value is the number of da
 </tbody>
 </table>
 
-### getModificationTime()
+#### getModificationTime()
 
 > **getModificationTime**(): `number`
 
-### setModificationTime()
+#### setModificationTime()
 
 > **setModificationTime**(`time`: `number`): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -321,15 +323,15 @@ The last modification time in milliseconds.
 </tbody>
 </table>
 
-### getSchemaModificationTime()
+#### getSchemaModificationTime()
 
 > **getSchemaModificationTime**(): `number`
 
-### setSchemaModificationTime()
+#### setSchemaModificationTime()
 
 > **setSchemaModificationTime**(`time`: `number`): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -361,15 +363,15 @@ the client and the server, a full sync is required.
 </tbody>
 </table>
 
-### getVersion()
+#### getVersion()
 
 > **getVersion**(): `number`
 
-### setVersion()
+#### setVersion()
 
 > **setVersion**(`version`: `number`): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -400,15 +402,15 @@ The Anki schema version number (`11` for the legacy `anki2` format).
 </tbody>
 </table>
 
-### getUpdateSequenceNumber()
+#### getUpdateSequenceNumber()
 
 > **getUpdateSequenceNumber**(): `number`
 
-### setUpdateSequenceNumber()
+#### setUpdateSequenceNumber()
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -440,15 +442,15 @@ synchronising. `-1` indicates changes that have not been synced yet.
 </tbody>
 </table>
 
-### getLastSyncTime()
+#### getLastSyncTime()
 
 > **getLastSyncTime**(): `number`
 
-### setLastSyncTime()
+#### setLastSyncTime()
 
 > **setLastSyncTime**(`time`: `number`): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -479,15 +481,15 @@ The last synchronisation time in milliseconds (`0` if the collection has never b
 </tbody>
 </table>
 
-### getConfiguration()
+#### getConfiguration()
 
 > **getConfiguration**(): [`Configuration`](#configuration) \| `null`
 
-### setConfiguration()
+#### setConfiguration()
 
 > **setConfiguration**(`configuration`: [`Configuration`](#configuration)): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -519,15 +521,15 @@ collection immediately, so mutations made afterwards require setting it again.
 </tbody>
 </table>
 
-### getModels()
+#### getModels()
 
 > **getModels**(): [`Model`](#model)[]
 
-### setModels()
+#### setModels()
 
 > **setModels**(`models`: [`Model`](#model)[]): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -559,11 +561,11 @@ added via `addModel`, so duplicates are skipped.
 </tbody>
 </table>
 
-### addModel()
+#### addModel()
 
 > **addModel**(`model`: [`Model`](#model)): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -595,11 +597,11 @@ Duplicates are skipped.
 </tbody>
 </table>
 
-### removeModel()
+#### removeModel()
 
 > **removeModel**(`model`: [`Model`](#model)): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -630,15 +632,15 @@ A [Model](#model) to be removed.
 </tbody>
 </table>
 
-### getDecks()
+#### getDecks()
 
 > **getDecks**(): [`Deck`](#deck)[]
 
-### setDecks()
+#### setDecks()
 
 > **setDecks**(`decks`: [`Deck`](#deck)[]): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -670,11 +672,11 @@ via `addDeck`, including all of its automatic wiring and registrations.
 </tbody>
 </table>
 
-### addDeck()
+#### addDeck()
 
 > **addDeck**(`deck`: [`Deck`](#deck)): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -707,11 +709,11 @@ registered automatically. Duplicates are skipped.
 </tbody>
 </table>
 
-### removeDeck()
+#### removeDeck()
 
 > **removeDeck**(`deck`: [`Deck`](#deck)): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -742,15 +744,15 @@ A [Deck](#deck) to be removed.
 </tbody>
 </table>
 
-### getDeckConfigurations()
+#### getDeckConfigurations()
 
 > **getDeckConfigurations**(): [`DeckConfiguration`](#deckconfiguration)[]
 
-### setDeckConfigurations()
+#### setDeckConfigurations()
 
 > **setDeckConfigurations**(`configs`: [`DeckConfiguration`](#deckconfiguration)[]): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -782,11 +784,11 @@ Each configuration is added via `addDeckConfiguration`, so duplicates are skippe
 </tbody>
 </table>
 
-### addDeckConfiguration()
+#### addDeckConfiguration()
 
 > **addDeckConfiguration**(`config`: [`DeckConfiguration`](#deckconfiguration)): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -818,11 +820,11 @@ Duplicates are skipped.
 </tbody>
 </table>
 
-### removeDeckConfiguration()
+#### removeDeckConfiguration()
 
 > **removeDeckConfiguration**(`config`: [`DeckConfiguration`](#deckconfiguration)): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -853,15 +855,15 @@ A [DeckConfiguration](#deckconfiguration) to be removed.
 </tbody>
 </table>
 
-### getTags()
+#### getTags()
 
 > **getTags**(): `string`[]
 
-### setTags()
+#### setTags()
 
 > **setTags**(`tags`: `string`[]): [`Collection`](#collection)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -894,17 +896,17 @@ The cache of all tags used in the collection.
 
 ***
 
-## Deck
+### Deck
 
 A deck contained within a [Collection](#collection) made of [Card](#card)s.
 
-### Constructor
+#### Constructor
 
 > **new Deck**(`name`: `string`, `description?`: `string`): [`Deck`](#deck)
 
 Creates a deck with a default [DeckConfiguration](#deckconfiguration) and [Model](#model) attached.
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -952,15 +954,15 @@ The optional description of the deck.
 </tbody>
 </table>
 
-### getId()
+#### getId()
 
 > **getId**(): `number`
 
-### setId()
+#### setId()
 
 > **setId**(`id?`: `number`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -991,15 +993,15 @@ The deck ID (by default the time in milliseconds of when the deck was created).
 </tbody>
 </table>
 
-### getName()
+#### getName()
 
 > **getName**(): `string`
 
-### setName()
+#### setName()
 
 > **setName**(`name`: `string`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1030,15 +1032,15 @@ The name of the deck. Use `::` to nest decks, e.g. `"Languages::Polish::Verbs"`.
 </tbody>
 </table>
 
-### getDescription()
+#### getDescription()
 
 > **getDescription**(): `string`
 
-### setDescription()
+#### setDescription()
 
 > **setDescription**(`description`: `string`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1069,15 +1071,15 @@ The description of the deck, shown on its overview screen.
 </tbody>
 </table>
 
-### getMarkdownDescription()
+#### getMarkdownDescription()
 
 > **getMarkdownDescription**(): `boolean`
 
-### setMarkdownDescription()
+#### setMarkdownDescription()
 
 > **setMarkdownDescription**(`description`: `boolean`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1109,15 +1111,15 @@ If `true` it uses markdown rendering with `img` tags stripped.
 </tbody>
 </table>
 
-### getExtendedReviewCardLimit()
+#### getExtendedReviewCardLimit()
 
 > **getExtendedReviewCardLimit**(): `number` \| `null`
 
-### setExtendedReviewCardLimit()
+#### setExtendedReviewCardLimit()
 
 > **setExtendedReviewCardLimit**(`extendRev`: `number` \| `null`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1148,15 +1150,15 @@ The extended review card limit for a custom study session.
 </tbody>
 </table>
 
-### getUpdateSequenceNumber()
+#### getUpdateSequenceNumber()
 
 > **getUpdateSequenceNumber**(): `number`
 
-### setUpdateSequenceNumber()
+#### setUpdateSequenceNumber()
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1188,15 +1190,15 @@ synchronising. `-1` indicates changes that have not been synced yet.
 </tbody>
 </table>
 
-### getCollapsed()
+#### getCollapsed()
 
 > **getCollapsed**(): `boolean`
 
-### setCollapsed()
+#### setCollapsed()
 
 > **setCollapsed**(`collapsed`: `boolean`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1227,15 +1229,15 @@ Whether the deck is collapsed in the main deck list.
 </tbody>
 </table>
 
-### getBrowserCollapsed()
+#### getBrowserCollapsed()
 
 > **getBrowserCollapsed**(): `boolean`
 
-### setBrowserCollapsed()
+#### setBrowserCollapsed()
 
 > **setBrowserCollapsed**(`collapsed`: `boolean`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1266,15 +1268,15 @@ Whether the deck is collapsed in the card browser's sidebar.
 </tbody>
 </table>
 
-### getNewToday()
+#### getNewToday()
 
 > **getNewToday**(): \[`number`, `number`\]
 
-### setNewToday()
+#### setNewToday()
 
 > **setNewToday**(`newToday`: \[`number`, `number`\]): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1307,15 +1309,15 @@ new cards seen today in this deck minus the number of new cards in custom study 
 </tbody>
 </table>
 
-### getReviewToday()
+#### getReviewToday()
 
 > **getReviewToday**(): \[`number`, `number`\]
 
-### setReviewToday()
+#### setReviewToday()
 
 > **setReviewToday**(`revToday`: \[`number`, `number`\]): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1348,15 +1350,15 @@ review cards seen today in this deck minus the number of review cards in custom 
 </tbody>
 </table>
 
-### getLearningToday()
+#### getLearningToday()
 
 > **getLearningToday**(): \[`number`, `number`\]
 
-### setLearningToday()
+#### setLearningToday()
 
 > **setLearningToday**(`lrnToday`: \[`number`, `number`\]): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1389,15 +1391,15 @@ learning cards seen today in this deck minus the number of learning cards in cus
 </tbody>
 </table>
 
-### getTimeToday()
+#### getTimeToday()
 
 > **getTimeToday**(): \[`number`, `number`\]
 
-### setTimeToday()
+#### setTimeToday()
 
 > **setTimeToday**(`timeToday`: \[`number`, `number`\]): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1430,15 +1432,15 @@ studying in this deck today, in milliseconds.
 </tbody>
 </table>
 
-### getDynamic()
+#### getDynamic()
 
 > **getDynamic**(): `boolean`
 
-### setDynamic()
+#### setDynamic()
 
 > **setDynamic**(`dynamic`: `boolean`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1470,15 +1472,15 @@ cards from other decks based on a search.
 </tbody>
 </table>
 
-### getExtendedNewCardLimit()
+#### getExtendedNewCardLimit()
 
 > **getExtendedNewCardLimit**(): `number` \| `null`
 
-### setExtendedNewCardLimit()
+#### setExtendedNewCardLimit()
 
 > **setExtendedNewCardLimit**(`extendNew`: `number` \| `null`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1509,15 +1511,15 @@ The extended new card limit for a custom study session.
 </tbody>
 </table>
 
-### getConfiguration()
+#### getConfiguration()
 
 > **getConfiguration**(): [`DeckConfiguration`](#deckconfiguration) \| `null`
 
-### setConfiguration()
+#### setConfiguration()
 
 > **setConfiguration**(`config`: [`DeckConfiguration`](#deckconfiguration)): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1550,15 +1552,15 @@ otherwise when the deck is added to a collection.
 </tbody>
 </table>
 
-### getModel()
+#### getModel()
 
 > **getModel**(): [`Model`](#model) \| `null`
 
-### setModel()
+#### setModel()
 
 > **setModel**(`model`: [`Model`](#model)): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1591,15 +1593,15 @@ to one, otherwise when the deck is added to a collection.
 </tbody>
 </table>
 
-### getModificationTime()
+#### getModificationTime()
 
 > **getModificationTime**(): `number`
 
-### setModificationTime()
+#### setModificationTime()
 
 > **setModificationTime**(`time`: `number`): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1630,11 +1632,11 @@ The last modification time in seconds.
 </tbody>
 </table>
 
-### addCard()
+#### addCard()
 
 > **addCard**(`card`: [`Card`](#card)): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1667,11 +1669,11 @@ Duplicates are skipped.
 </tbody>
 </table>
 
-### removeCard()
+#### removeCard()
 
 > **removeCard**(`card`: [`Card`](#card)): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1702,19 +1704,19 @@ A [Card](#card) to be removed and detached from this deck.
 </tbody>
 </table>
 
-### getCards()
+#### getCards()
 
 > **getCards**(): [`Card`](#card)[]
 
-### getCollection()
+#### getCollection()
 
 > **getCollection**(): [`Collection`](#collection) \| `null`
 
-### setCollection()
+#### setCollection()
 
 > **setCollection**(`collection`: [`Collection`](#collection)): [`Deck`](#deck)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1748,15 +1750,15 @@ the deck is added to a collection.
 
 ***
 
-## Card
+### Card
 
 A single flashcard generated from a [Note](#note), contained within a [Deck](#deck).
 
-### Constructor
+#### Constructor
 
 > **new Card**(...`fields`: `string`[]): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1787,15 +1789,15 @@ The field values of the [Note](#note) the card is created with.
 </tbody>
 </table>
 
-### getId()
+#### getId()
 
 > **getId**(): `number`
 
-### setId()
+#### setId()
 
 > **setId**(`id?`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1826,11 +1828,11 @@ The card ID (by default the time in milliseconds of when the card was created).
 </tbody>
 </table>
 
-### setNote()
+#### setNote()
 
 > **setNote**(`note`: [`Note`](#note)): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1861,15 +1863,15 @@ A [Note](#note) containing the card's content.
 </tbody>
 </table>
 
-### getNote()
+#### getNote()
 
 > **getNote**(): [`Note`](#note) \| `null`
 
-### setDeck()
+#### setDeck()
 
 > **setDeck**(`deck`: [`Deck`](#deck) \| `null`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1900,19 +1902,19 @@ A [Deck](#deck) the card belongs to or `null` to detach the card from its deck.
 </tbody>
 </table>
 
-### getDeck()
+#### getDeck()
 
 > **getDeck**(): [`Deck`](#deck) \| `null`
 
-### getOrdinal()
+#### getOrdinal()
 
 > **getOrdinal**(): `number`
 
-### setOrdinal()
+#### setOrdinal()
 
 > **setOrdinal**(`ordinal`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1943,15 +1945,15 @@ Identifies which of the note model's card templates the card was generated from.
 </tbody>
 </table>
 
-### getModificationTime()
+#### getModificationTime()
 
 > **getModificationTime**(): `number`
 
-### setModificationTime()
+#### setModificationTime()
 
 > **setModificationTime**(`time`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -1982,15 +1984,15 @@ The last modification time in seconds.
 </tbody>
 </table>
 
-### getUpdateSequenceNumber()
+#### getUpdateSequenceNumber()
 
 > **getUpdateSequenceNumber**(): `number`
 
-### setUpdateSequenceNumber()
+#### setUpdateSequenceNumber()
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2022,15 +2024,15 @@ synchronising. `-1` indicates changes that have not been synced yet.
 </tbody>
 </table>
 
-### getType()
+#### getType()
 
 > **getType**(): `"new"` \| `"learning"` \| `"review"` \| `"relearning"`
 
-### setType()
+#### setType()
 
 > **setType**(`type`: `"new"` \| `"learning"` \| `"review"` \| `"relearning"`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2062,15 +2064,15 @@ Keep it consistent with the `queue` property.
 </tbody>
 </table>
 
-### getQueue()
+#### getQueue()
 
 > **getQueue**(): `"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`
 
-### setQueue()
+#### setQueue()
 
 > **setQueue**(`queue`: `"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2103,15 +2105,15 @@ Keep it consistent with the `type` property.
 </tbody>
 </table>
 
-### getDue()
+#### getDue()
 
 > **getDue**(): `number`
 
-### setDue()
+#### setDue()
 
 > **setDue**(`due`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2144,15 +2146,15 @@ and for `review` cards the number of days since the collection was created.
 </tbody>
 </table>
 
-### getInterval()
+#### getInterval()
 
 > **getInterval**(): `number`
 
-### setInterval()
+#### setInterval()
 
 > **setInterval**(`interval`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2183,15 +2185,15 @@ The interval between reviews. Positive values are days, negative values are seco
 </tbody>
 </table>
 
-### getFactor()
+#### getFactor()
 
 > **getFactor**(): `number`
 
-### setFactor()
+#### setFactor()
 
 > **setFactor**(`factor`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2222,15 +2224,15 @@ The ease factor in permille (e.g. `2500` means 250%).
 </tbody>
 </table>
 
-### getNumberOfReviews()
+#### getNumberOfReviews()
 
 > **getNumberOfReviews**(): `number`
 
-### setNumberOfReviews()
+#### setNumberOfReviews()
 
 > **setNumberOfReviews**(`numberOfReviews`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2261,15 +2263,15 @@ The number of times the card has been reviewed.
 </tbody>
 </table>
 
-### getLapses()
+#### getLapses()
 
 > **getLapses**(): `number`
 
-### setLapses()
+#### setLapses()
 
 > **setLapses**(`lapses`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2301,15 +2303,15 @@ back to relearning).
 </tbody>
 </table>
 
-### getLeft()
+#### getLeft()
 
 > **getLeft**(): `number`
 
-### setLeft()
+#### setLeft()
 
 > **setLeft**(`left`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2341,15 +2343,15 @@ of repetitions left until graduation and `a` is the number of repetitions left t
 </tbody>
 </table>
 
-### getOriginalDue()
+#### getOriginalDue()
 
 > **getOriginalDue**(): `number`
 
-### setOriginalDue()
+#### setOriginalDue()
 
 > **setOriginalDue**(`originalDue`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2380,15 +2382,15 @@ The original due value of the card before it was moved to a filtered deck.
 </tbody>
 </table>
 
-### getOriginalDeck()
+#### getOriginalDeck()
 
 > **getOriginalDeck**(): [`Deck`](#deck) \| `null`
 
-### setOriginalDeck()
+#### setOriginalDeck()
 
 > **setOriginalDeck**(`deck`: [`Deck`](#deck) \| `null`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2420,15 +2422,15 @@ or `null` to clear it.
 </tbody>
 </table>
 
-### getFlags()
+#### getFlags()
 
 > **getFlags**(): `number`
 
-### setFlags()
+#### setFlags()
 
 > **setFlags**(`flags`: `number`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2460,15 +2462,15 @@ The flag colour of the card: `0` = none, `1` = red, `2` = orange, `3` = green,
 </tbody>
 </table>
 
-### getData()
+#### getData()
 
 > **getData**(): `string`
 
-### setData()
+#### setData()
 
 > **setData**(`data`: `string`): [`Card`](#card)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2502,17 +2504,17 @@ store scheduler (FSRS) information here as JSON.
 
 ***
 
-## Note
+### Note
 
 A data container holding field values, used to generate [Card](#card)s based on a [Model](#model).
 
-### Constructor
+#### Constructor
 
 > **new Note**(...`fields`: `string`[]): [`Note`](#note)
 
 Creates a note with a default [Model](#model) attached.
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2543,15 +2545,15 @@ The values of the note's fields, in the order defined by its [Model](#model).
 </tbody>
 </table>
 
-### getId()
+#### getId()
 
 > **getId**(): `number`
 
-### setId()
+#### setId()
 
 > **setId**(`id?`: `number`): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2582,15 +2584,15 @@ The note ID (by default the time in milliseconds of when the note was created).
 </tbody>
 </table>
 
-### getGuid()
+#### getGuid()
 
 > **getGuid**(): `string`
 
-### setGuid()
+#### setGuid()
 
 > **setGuid**(`guid`: `string`): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2622,15 +2624,15 @@ a package to match and update existing notes instead of duplicating them.
 </tbody>
 </table>
 
-### getModel()
+#### getModel()
 
 > **getModel**(): [`Model`](#model) \| `null`
 
-### setModel()
+#### setModel()
 
 > **setModel**(`model`: [`Model`](#model)): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2661,15 +2663,15 @@ The [Model](#model) defining the note's fields and card templates, linked by ID.
 </tbody>
 </table>
 
-### getModificationTime()
+#### getModificationTime()
 
 > **getModificationTime**(): `number`
 
-### setModificationTime()
+#### setModificationTime()
 
 > **setModificationTime**(`time`: `number`): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2700,15 +2702,15 @@ The last modification time in seconds.
 </tbody>
 </table>
 
-### getUpdateSequenceNumber()
+#### getUpdateSequenceNumber()
 
 > **getUpdateSequenceNumber**(): `number`
 
-### setUpdateSequenceNumber()
+#### setUpdateSequenceNumber()
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2740,15 +2742,15 @@ synchronising. `-1` indicates changes that have not been synced yet.
 </tbody>
 </table>
 
-### getTags()
+#### getTags()
 
 > **getTags**(): `string`[]
 
-### setTags()
+#### setTags()
 
 > **setTags**(`tags`: `string`[]): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2780,15 +2782,15 @@ space-separated.
 </tbody>
 </table>
 
-### getFields()
+#### getFields()
 
 > **getFields**(): `string`[]
 
-### setFields()
+#### setFields()
 
 > **setFields**(`fields`: `string`[]): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2821,15 +2823,15 @@ becomes the note's sort field.
 </tbody>
 </table>
 
-### getSortField()
+#### getSortField()
 
 > **getSortField**(): `string`
 
-### setSortField()
+#### setSortField()
 
 > **setSortField**(`sort`: `string`): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2862,15 +2864,15 @@ values sort numerically — Anki's database stores them as numbers.
 </tbody>
 </table>
 
-### getChecksum()
+#### getChecksum()
 
 > **getChecksum**(): `number`
 
-### setChecksum()
+#### setChecksum()
 
 > **setChecksum**(`checksum`: `number`): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2902,15 +2904,15 @@ detection - the first 8 hex digits of the SHA1 of the stripped field text, as an
 </tbody>
 </table>
 
-### getFlags()
+#### getFlags()
 
 > **getFlags**(): `number`
 
-### setFlags()
+#### setFlags()
 
 > **setFlags**(`flags`: `number`): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2941,15 +2943,15 @@ Unused by Anki; kept for schema completeness.
 </tbody>
 </table>
 
-### getData()
+#### getData()
 
 > **getData**(): `string`
 
-### setData()
+#### setData()
 
 > **setData**(`data`: `string`): [`Note`](#note)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -2982,12 +2984,12 @@ Additional note data. Unused by Anki; kept for schema completeness.
 
 ***
 
-## Model
+### Model
 
 A note type: defines the Fields, CardTemplates and styling used to
 generate [Card](#card)s from [Note](#note)s.
 
-### Constructor
+#### Constructor
 
 > **new Model**(`name?`: `string`, `fields?`: `Field`[]): [`Model`](#model)
 
@@ -2995,7 +2997,7 @@ Creates a model with the given Fields (`Front` and `Back` by default) and a
 single CardTemplate generated from the first two of them: the first field
 becomes the question, the second the answer.
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3043,15 +3045,15 @@ The fields of the model, replacing the default `Front` and `Back` ones.
 </tbody>
 </table>
 
-### getId()
+#### getId()
 
 > **getId**(): `number`
 
-### setId()
+#### setId()
 
 > **setId**(`id?`: `number`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3082,15 +3084,15 @@ The model ID (by default the time in milliseconds of when the model was created)
 </tbody>
 </table>
 
-### getCss()
+#### getCss()
 
 > **getCss**(): `string`
 
-### setCss()
+#### setCss()
 
 > **setCss**(`css`: `string`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3121,15 +3123,15 @@ The CSS shared by all card templates of the model.
 </tbody>
 </table>
 
-### getDeck()
+#### getDeck()
 
 > **getDeck**(): [`Deck`](#deck) \| `null`
 
-### setDeck()
+#### setDeck()
 
 > **setDeck**(`deck`: [`Deck`](#deck)): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3161,15 +3163,15 @@ added to by default.
 </tbody>
 </table>
 
-### getFields()
+#### getFields()
 
 > **getFields**(): `Field`[]
 
-### setFields()
+#### setFields()
 
 > **setFields**(`fields`: `Field`[]): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3202,11 +3204,11 @@ automatically from the array order.
 </tbody>
 </table>
 
-### addField()
+#### addField()
 
 > **addField**(`field`: `Field`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3237,11 +3239,11 @@ A Field to be added and serialized into the model.
 </tbody>
 </table>
 
-### removeField()
+#### removeField()
 
 > **removeField**(`field`: `Field`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3272,15 +3274,15 @@ A Field to be removed.
 </tbody>
 </table>
 
-### getTemplates()
+#### getTemplates()
 
 > **getTemplates**(): `CardTemplate`[]
 
-### setTemplates()
+#### setTemplates()
 
 > **setTemplates**(`templates`: `CardTemplate`[]): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3313,11 +3315,11 @@ assigned automatically from the array order.
 </tbody>
 </table>
 
-### addTemplate()
+#### addTemplate()
 
 > **addTemplate**(`template`: `CardTemplate`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3348,11 +3350,11 @@ A CardTemplate to be added and serialized into the model.
 </tbody>
 </table>
 
-### removeTemplate()
+#### removeTemplate()
 
 > **removeTemplate**(`template`: `CardTemplate`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3383,15 +3385,15 @@ A CardTemplate to be removed.
 </tbody>
 </table>
 
-### getLatexPreamble()
+#### getLatexPreamble()
 
 > **getLatexPreamble**(): `string`
 
-### setLatexPreamble()
+#### setLatexPreamble()
 
 > **setLatexPreamble**(`preamble`: `string`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3422,15 +3424,15 @@ The LaTeX preamble used when rendering `[latex]` blocks in fields.
 </tbody>
 </table>
 
-### getLatexPostamble()
+#### getLatexPostamble()
 
 > **getLatexPostamble**(): `string`
 
-### setLatexPostamble()
+#### setLatexPostamble()
 
 > **setLatexPostamble**(`postamble`: `string`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3461,15 +3463,15 @@ The LaTeX postamble used when rendering `[latex]` blocks in fields.
 </tbody>
 </table>
 
-### getModificationTime()
+#### getModificationTime()
 
 > **getModificationTime**(): `number`
 
-### setModificationTime()
+#### setModificationTime()
 
 > **setModificationTime**(`time`: `number`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3500,15 +3502,15 @@ The last modification time in seconds.
 </tbody>
 </table>
 
-### getName()
+#### getName()
 
 > **getName**(): `string`
 
-### setName()
+#### setName()
 
 > **setName**(`name`: `string`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3539,15 +3541,15 @@ The name of the model.
 </tbody>
 </table>
 
-### getSortField()
+#### getSortField()
 
 > **getSortField**(): `number`
 
-### setSortField()
+#### setSortField()
 
 > **setSortField**(`sort`: `number`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3579,15 +3581,15 @@ The index of the field used for sorting notes in Anki's card browser
 </tbody>
 </table>
 
-### getType()
+#### getType()
 
 > **getType**(): `"standard"` \| `"cloze"`
 
-### setType()
+#### setType()
 
 > **setType**(`type`: `"standard"` \| `"cloze"`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3618,15 +3620,15 @@ The type of the model: `standard` or `cloze`.
 </tbody>
 </table>
 
-### getUpdateSequenceNumber()
+#### getUpdateSequenceNumber()
 
 > **getUpdateSequenceNumber**(): `number`
 
-### setUpdateSequenceNumber()
+#### setUpdateSequenceNumber()
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3658,15 +3660,15 @@ synchronising. `-1` indicates changes that have not been synced yet.
 </tbody>
 </table>
 
-### getRequirements()
+#### getRequirements()
 
 > **getRequirements**(): `ModelRequirement`[]
 
-### setRequirements()
+#### setRequirements()
 
 > **setRequirements**(`requirements`: `ModelRequirement`[]): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3699,15 +3701,15 @@ and ignores this value.
 </tbody>
 </table>
 
-### getTags()
+#### getTags()
 
 > **getTags**(): `string`[]
 
-### setTags()
+#### setTags()
 
 > **setTags**(`tags`: `string`[]): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3738,15 +3740,15 @@ Legacy cache of the tags of the last note added with this model. Unused by moder
 </tbody>
 </table>
 
-### getVersions()
+#### getVersions()
 
 > **getVersions**(): `number`[]
 
-### setVersions()
+#### setVersions()
 
 > **setVersions**(`versions`: `number`[]): [`Model`](#model)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3779,17 +3781,17 @@ Legacy version array. Unused by modern Anki.
 
 ***
 
-## Configuration
+### Configuration
 
-### getCurrentDeck()
+#### getCurrentDeck()
 
 > **getCurrentDeck**(): [`Deck`](#deck) \| `null`
 
-### setCurrentDeck()
+#### setCurrentDeck()
 
 > **setCurrentDeck**(`deck`: [`Deck`](#deck)): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3814,15 +3816,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getActiveDecks()
+#### getActiveDecks()
 
 > **getActiveDecks**(): [`Deck`](#deck)[]
 
-### setActiveDecks()
+#### setActiveDecks()
 
 > **setActiveDecks**(`decks`: [`Deck`](#deck)[]): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3847,11 +3849,11 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### addActiveDeck()
+#### addActiveDeck()
 
 > **addActiveDeck**(`deck`: [`Deck`](#deck)): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3876,11 +3878,11 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### removeActiveDeck()
+#### removeActiveDeck()
 
 > **removeActiveDeck**(`deck`: [`Deck`](#deck)): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3905,15 +3907,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getNewSpread()
+#### getNewSpread()
 
 > **getNewSpread**(): `"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"` \| `null`
 
-### setNewSpread()
+#### setNewSpread()
 
 > **setNewSpread**(`newSpread`: `"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3938,15 +3940,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getLearnAheadLimit()
+#### getLearnAheadLimit()
 
 > **getLearnAheadLimit**(): `number` \| `null`
 
-### setLearnAheadLimit()
+#### setLearnAheadLimit()
 
 > **setLearnAheadLimit**(`collapseTime`: `number`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -3971,15 +3973,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getTimeboxTimeLimit()
+#### getTimeboxTimeLimit()
 
 > **getTimeboxTimeLimit**(): `number` \| `null`
 
-### setTimeboxTimeLimit()
+#### setTimeboxTimeLimit()
 
 > **setTimeboxTimeLimit**(`timeLim`: `number`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4004,15 +4006,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getShowNextReviewTimeAboveAnswerButtons()
+#### getShowNextReviewTimeAboveAnswerButtons()
 
 > **getShowNextReviewTimeAboveAnswerButtons**(): `boolean` \| `null`
 
-### setShowNextReviewTimeAboveAnswerButtons()
+#### setShowNextReviewTimeAboveAnswerButtons()
 
 > **setShowNextReviewTimeAboveAnswerButtons**(`estTimes`: `boolean`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4037,15 +4039,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getShowRemainingCardCountDuringReview()
+#### getShowRemainingCardCountDuringReview()
 
 > **getShowRemainingCardCountDuringReview**(): `boolean` \| `null`
 
-### setShowRemainingCardCountDuringReview()
+#### setShowRemainingCardCountDuringReview()
 
 > **setShowRemainingCardCountDuringReview**(`dueCounts`: `boolean`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4070,15 +4072,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getCurrentModel()
+#### getCurrentModel()
 
 > **getCurrentModel**(): [`Model`](#model) \| `null`
 
-### setCurrentModel()
+#### setCurrentModel()
 
 > **setCurrentModel**(`model`: [`Model`](#model)): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4103,15 +4105,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getNextPosition()
+#### getNextPosition()
 
 > **getNextPosition**(): `number` \| `null`
 
-### setNextPosition()
+#### setNextPosition()
 
 > **setNextPosition**(`nextPos`: `number`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4136,15 +4138,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getSortType()
+#### getSortType()
 
 > **getSortType**(): `string` \| `null`
 
-### setSortType()
+#### setSortType()
 
 > **setSortType**(`sortType`: `string`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4169,15 +4171,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getSortBackwrds()
+#### getSortBackwrds()
 
 > **getSortBackwrds**(): `boolean` \| `null`
 
-### setSortBackwrds()
+#### setSortBackwrds()
 
 > **setSortBackwrds**(`sortBackwards`: `boolean`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4202,15 +4204,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getAddToCurrentDeck()
+#### getAddToCurrentDeck()
 
 > **getAddToCurrentDeck**(): `boolean` \| `null`
 
-### setAddToCurrentDeck()
+#### setAddToCurrentDeck()
 
 > **setAddToCurrentDeck**(`addToCur`: `boolean`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4235,15 +4237,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getShowLearningCardsWithLargerSteps()
+#### getShowLearningCardsWithLargerSteps()
 
 > **getShowLearningCardsWithLargerSteps**(): `boolean` \| `null`
 
-### setShowLearningCardsWithLargerSteps()
+#### setShowLearningCardsWithLargerSteps()
 
 > **setShowLearningCardsWithLargerSteps**(`dayLearnFirst`: `boolean`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4268,15 +4270,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getNewBury()
+#### getNewBury()
 
 > **getNewBury**(): `boolean` \| `null`
 
-### setNewBury()
+#### setNewBury()
 
 > **setNewBury**(`newBury`: `boolean`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4301,15 +4303,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getLastUnburied()
+#### getLastUnburied()
 
 > **getLastUnburied**(): `number` \| `null`
 
-### setLastUnburied()
+#### setLastUnburied()
 
 > **setLastUnburied**(`lastUnburied`: `number`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4334,15 +4336,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getActiveColumns()
+#### getActiveColumns()
 
 > **getActiveColumns**(): (`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`)[] \| `null`
 
-### setActiveColumns()
+#### setActiveColumns()
 
 > **setActiveColumns**(`columns`: (`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`)[]): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4367,11 +4369,11 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### addActiveColumn()
+#### addActiveColumn()
 
 > **addActiveColumn**(`column`: `"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4396,11 +4398,11 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### removeActiveColumn()
+#### removeActiveColumn()
 
 > **removeActiveColumn**(`column`: `"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4425,11 +4427,11 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### setValue()
+#### setValue()
 
 > **setValue**(`attribute`: `string`, `value`: `any`): [`Configuration`](#configuration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4466,11 +4468,11 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getValue()
+#### getValue()
 
 > **getValue**(`attribute`: `string`): `any`
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4497,17 +4499,17 @@ Legacy version array. Unused by modern Anki.
 
 ***
 
-## DeckConfiguration
+### DeckConfiguration
 
-### getId()
+#### getId()
 
 > **getId**(): `number`
 
-### setId()
+#### setId()
 
 > **setId**(`id?`: `number`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4532,15 +4534,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getName()
+#### getName()
 
 > **getName**(): `string`
 
-### setName()
+#### setName()
 
 > **setName**(`name`: `string`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4565,15 +4567,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getAutoplay()
+#### getAutoplay()
 
 > **getAutoplay**(): `boolean`
 
-### setAutoplay()
+#### setAutoplay()
 
 > **setAutoplay**(`autoplay`: `boolean`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4598,15 +4600,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getDynamic()
+#### getDynamic()
 
 > **getDynamic**(): `boolean`
 
-### setDynamic()
+#### setDynamic()
 
 > **setDynamic**(`dynamic`: `boolean`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4631,15 +4633,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getMaxTaken()
+#### getMaxTaken()
 
 > **getMaxTaken**(): `number`
 
-### setMaxTaken()
+#### setMaxTaken()
 
 > **setMaxTaken**(`maxTaken`: `number`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4664,15 +4666,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getModificationTime()
+#### getModificationTime()
 
 > **getModificationTime**(): `number`
 
-### setModificationTime()
+#### setModificationTime()
 
 > **setModificationTime**(`time`: `number`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4697,15 +4699,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getReplay()
+#### getReplay()
 
 > **getReplay**(): `boolean`
 
-### setReplay()
+#### setReplay()
 
 > **setReplay**(`replay`: `boolean`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4730,15 +4732,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getTimer()
+#### getTimer()
 
 > **getTimer**(): `boolean`
 
-### setTimer()
+#### setTimer()
 
 > **setTimer**(`timer`: `boolean`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4763,15 +4765,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getUpdateSequenceNumber()
+#### getUpdateSequenceNumber()
 
 > **getUpdateSequenceNumber**(): `number`
 
-### setUpdateSequenceNumber()
+#### setUpdateSequenceNumber()
 
 > **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4796,15 +4798,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getLapseCardConfig()
+#### getLapseCardConfig()
 
 > **getLapseCardConfig**(): `LapseCardConfig`
 
-### setLapseCardConfig()
+#### setLapseCardConfig()
 
 > **setLapseCardConfig**(`config`: `LapseCardConfig`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4829,15 +4831,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getNewCardConfig()
+#### getNewCardConfig()
 
 > **getNewCardConfig**(): `NewCardConfig`
 
-### setNewCardConfig()
+#### setNewCardConfig()
 
 > **setNewCardConfig**(`config`: `NewCardConfig`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4862,15 +4864,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-### getReviewCardConfig()
+#### getReviewCardConfig()
 
 > **getReviewCardConfig**(): `ReviewCardConfig`
 
-### setReviewCardConfig()
+#### setReviewCardConfig()
 
 > **setReviewCardConfig**(`config`: `ReviewCardConfig`): [`DeckConfiguration`](#deckconfiguration)
 
-#### Parameters
+##### Parameters
 
 <table>
 <thead>
@@ -4895,15 +4897,15 @@ Legacy version array. Unused by modern Anki.
 </tbody>
 </table>
 
-***
+## Type Aliases
 
-## ApkgBuilderConfig
+### ApkgBuilderConfig
 
 > **ApkgBuilderConfig** = \{ `sqljs`: `SqlJsConfig`; \}
 
 Optional configuration of [ApkgBuilder](#apkgbuilder).
 
-### Properties
+#### Properties
 
 <table>
 <thead>

@@ -11,8 +11,6 @@ import { Generator } from '../service/generator';
 
 /**
  * The root Anki database entity containing decks, cards and all the other information.
- *
- * @group Collection
  */
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';
