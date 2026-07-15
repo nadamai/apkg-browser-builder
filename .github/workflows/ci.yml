@@ -22,6 +22,9 @@ jobs:
       - name: Run types check
         run: npx tsc --noEmit
 
+      - name: Verify build compiles
+        run: npm run build
+
   tests:
     runs-on: ubuntu-latest
     needs: static-analysis
