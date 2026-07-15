@@ -144,7 +144,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	public getBrowserCollapsed(): boolean {
-		return this.object.collapsed;
+		return this.object.browserCollapsed;
 	}
 
 	/**
