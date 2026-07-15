@@ -6,7 +6,7 @@ export type Note = {
 	usn: number;
 	tags: string;
 	flds: string;
-	sfld: number;
+	sfld: string;
 	csum: number;
 	flags: number;
 	data: string;

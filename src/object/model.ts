@@ -7,6 +7,9 @@ import { CardTemplate } from './card-template';
 import { Generator } from '../service/generator';
 
 /**
+ * A note type: defines the {@link Field}s, {@link CardTemplate}s and styling used to
+ * generate {@link Card}s from {@link Note}s.
+ *
  * @group Model
  */
 export class Model extends Object<ModelObject> {
@@ -15,7 +18,7 @@ export class Model extends Object<ModelObject> {
 
 	protected object: ModelObject = {
 		id: Generator.id(),
-		name: 'test',
+		name: '',
 		css: '.card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n',
 		did: 1,
 		flds: [],
@@ -28,12 +31,18 @@ export class Model extends Object<ModelObject> {
 		tags: [],
 		tmpls: [],
 		type: ModelType.standard,
-		usn: 0,
+		usn: -1,
 		vers: []
 	};
 
 	protected deck: Deck | null = null;
 
+	/**
+	 * Creates a model with default `Front` and `Back` {@link Field}s and a single
+	 * {@link CardTemplate}.
+	 *
+	 * @param name The name of the model.
+	 */
 	constructor(name?: string) {
 		super();
 
@@ -59,6 +68,9 @@ export class Model extends Object<ModelObject> {
 		return this.object.id;
 	}
 
+	/**
+	 * @param id The model ID (by default the time in milliseconds of when the model was created).
+	 */
 	public setId(id?: number): Model {
 		this.object.id = id ?? Date.now();
 
@@ -69,6 +81,9 @@ export class Model extends Object<ModelObject> {
 		return this.object.css;
 	}
 
+	/**
+	 * @param css The CSS shared by all card templates of the model.
+	 */
 	public setCss(css: string): Model {
 		this.object.css = css;
 
@@ -79,6 +94,10 @@ export class Model extends Object<ModelObject> {
 		return this.deck;
 	}
 
+	/**
+	 * @param deck The {@link Deck}, linked by ID, that cards created with this model are
+	 * added to by default.
+	 */
 	public setDeck(deck: Deck): Model {
 		this.deck = deck;
 		this.object.did = deck.getId();
@@ -90,6 +109,10 @@ export class Model extends Object<ModelObject> {
 		return this.fields;
 	}
 
+	/**
+	 * @param fields An array of {@link Field}s replacing the current ones, serialized into
+	 * the model.
+	 */
 	public setFields(fields: Field[]): Model {
 		this.fields = fields;
 
@@ -107,13 +130,23 @@ export class Model extends Object<ModelObject> {
 		this.setTemplates(this.templates);
 	}
 
+	/**
+	 * @param field A {@link Field} to be added and serialized into the model.
+	 */
 	public addField(field: Field): Model {
+		if (this.fields.indexOf(field) > -1) {
+			return this;
+		}
+
 		this.fields.push(field);
 		this.updateFields();
 
 		return this;
 	}
 
+	/**
+	 * @param field A {@link Field} to be removed.
+	 */
 	public removeField(field: Field): Model {
 		const index = this.fields.indexOf(field);
 
@@ -129,6 +162,10 @@ export class Model extends Object<ModelObject> {
 		return this.templates;
 	}
 
+	/**
+	 * @param templates An array of {@link CardTemplate}s replacing the current ones,
+	 * serialized into the model.
+	 */
 	public setTemplates(templates: CardTemplate[]): Model {
 		this.templates = templates;
 
@@ -145,13 +182,23 @@ export class Model extends Object<ModelObject> {
 		this.setTemplates(this.templates);
 	}
 
+	/**
+	 * @param template A {@link CardTemplate} to be added and serialized into the model.
+	 */
 	public addTemplate(template: CardTemplate): Model {
+		if (this.templates.indexOf(template) > -1) {
+			return this;
+		}
+
 		this.templates.push(template);
 		this.updateTemplates();
 
 		return this;
 	}
 
+	/**
+	 * @param template A {@link CardTemplate} to be removed.
+	 */
 	public removeTemplate(template: CardTemplate): Model {
 		const index = this.templates.indexOf(template);
 
@@ -167,6 +214,9 @@ export class Model extends Object<ModelObject> {
 		return this.object.latexPre;
 	}
 
+	/**
+	 * @param preamble The LaTeX preamble used when rendering `[latex]` blocks in fields.
+	 */
 	public setLatexPreamble(preamble: string): Model {
 		this.object.latexPre = preamble;
 
@@ -177,6 +227,9 @@ export class Model extends Object<ModelObject> {
 		return this.object.latexPost;
 	}
 
+	/**
+	 * @param postamble The LaTeX postamble used when rendering `[latex]` blocks in fields.
+	 */
 	public setLatexPostamble(postamble: string): Model {
 		this.object.latexPost = postamble;
 
@@ -187,6 +240,9 @@ export class Model extends Object<ModelObject> {
 		return this.object.mod;
 	}
 
+	/**
+	 * @param time The last modification time in seconds.
+	 */
 	public setModificationTime(time: number): Model {
 		this.object.mod = time;
 
@@ -197,6 +253,9 @@ export class Model extends Object<ModelObject> {
 		return this.object.name;
 	}
 
+	/**
+	 * @param name The name of the model.
+	 */
 	public setName(name: string): Model {
 		this.object.name = name;
 
@@ -207,6 +266,10 @@ export class Model extends Object<ModelObject> {
 		return this.object.sortf;
 	}
 
+	/**
+	 * @param sort The index of the field used for sorting notes in Anki's card browser
+	 * (`0` = the first field).
+	 */
 	public setSortField(sort: number): Model {
 		this.object.sortf = sort;
 
@@ -217,6 +280,9 @@ export class Model extends Object<ModelObject> {
 		return this.getDictionaryKey(ModelType, this.object.type) || 'standard';
 	}
 
+	/**
+	 * @param type The type of the model: `standard` or `cloze`.
+	 */
 	public setType(type: ModelTypeKey): Model {
 		this.object.type = ModelType[type];
 
@@ -227,6 +293,10 @@ export class Model extends Object<ModelObject> {
 		return this.object.usn;
 	}
 
+	/**
+	 * @param updateSequenceNumber The update sequence number, used to find changes when
+	 * synchronising. `-1` indicates changes that have not been synced yet.
+	 */
 	public setUpdateSequenceNumber(updateSequenceNumber: number): Model {
 		this.object.usn = updateSequenceNumber;
 
