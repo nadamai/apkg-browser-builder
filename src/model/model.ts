@@ -1,4 +1,5 @@
 import { ModelTypeValue } from '../dictionary/model-type';
+import { ModelRequirement } from '../type';
 import { CardTemplate } from './card-template';
 import { Field } from './field';
 
@@ -11,11 +12,11 @@ export type Model = {
 	latexPre: string;
 	mod: number;
 	name: string;
-	req: [];
+	req: ModelRequirement[];
 	sortf: number;
-	tags: [];
+	tags: string[];
 	tmpls: CardTemplate[];
 	type: ModelTypeValue;
 	usn: number;
-	vers: [];
+	vers: number[];
 };

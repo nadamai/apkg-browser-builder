@@ -1,6 +1,7 @@
 import { Object } from '../abstract';
 import { ModelType, ModelTypeKey } from '../dictionary/model-type';
 import { Model as ModelObject } from '../model';
+import { ModelRequirement } from '../type';
 import { Deck } from '../object';
 import { Field } from './field';
 import { CardTemplate } from './card-template';
@@ -322,6 +323,47 @@ export class Model extends Object<ModelObject> {
 	 */
 	public setUpdateSequenceNumber(updateSequenceNumber: number): Model {
 		this.object.usn = updateSequenceNumber;
+
+		return this;
+	}
+
+	public getRequirements(): ModelRequirement[] {
+		return this.object.req;
+	}
+
+	/**
+	 * @param requirements Legacy card-generation requirements as {@link ModelRequirement} tuples,
+	 * used by old Anki clients to decide which cards to generate. Modern Anki recomputes them
+	 * and ignores this value.
+	 */
+	public setRequirements(requirements: ModelRequirement[]): Model {
+		this.object.req = requirements;
+
+		return this;
+	}
+
+	public getTags(): string[] {
+		return this.object.tags;
+	}
+
+	/**
+	 * @param tags Legacy cache of the tags of the last note added with this model. Unused by modern Anki.
+	 */
+	public setTags(tags: string[]): Model {
+		this.object.tags = tags;
+
+		return this;
+	}
+
+	public getVersions(): number[] {
+		return this.object.vers;
+	}
+
+	/**
+	 * @param versions Legacy version array. Unused by modern Anki.
+	 */
+	public setVersions(versions: number[]): Model {
+		this.object.vers = versions;
 
 		return this;
 	}
