@@ -295,6 +295,10 @@ export class Deck extends Object<DeckObject> {
 	 * @param card A {@link Card}.
 	 */
 	public addCard(card: Card): Deck {
+		if (this.cards.indexOf(card) > -1) {
+			return this;
+		}
+
 		card.setDeck(this);
 
 		this.cards.push(card);
