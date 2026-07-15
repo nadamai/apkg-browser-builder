@@ -2506,6 +2506,43 @@ store scheduler (FSRS) information here as JSON.
 
 A data container holding field values, used to generate [Card](#card)s based on a [Model](#model).
 
+### Constructor
+
+> **new Note**(...`fields`: `string`[]): [`Note`](#note)
+
+Creates a note with a default [Model](#model) attached.
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+...`fields`
+
+</td>
+<td>
+
+`string`[]
+
+</td>
+<td>
+
+The values of the note's fields, in the order defined by its [Model](#model).
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### getId()
 
 > **getId**(): `number`
@@ -2521,6 +2558,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2533,6 +2571,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `number`
+
+</td>
+<td>
+
+The note ID (by default the time in milliseconds of when the note was created).
 
 </td>
 </tr>
@@ -2554,6 +2597,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2566,6 +2610,12 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `string`
+
+</td>
+<td>
+
+A globally unique identifier of the note. Anki uses it when re-importing
+a package to match and update existing notes instead of duplicating them.
 
 </td>
 </tr>
@@ -2587,6 +2637,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2599,6 +2650,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 [`Model`](#model)
+
+</td>
+<td>
+
+The [Model](#model) defining the note's fields and card templates, linked by ID.
 
 </td>
 </tr>
@@ -2620,6 +2676,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2632,6 +2689,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `number`
+
+</td>
+<td>
+
+The last modification time in seconds.
 
 </td>
 </tr>
@@ -2653,6 +2715,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2665,6 +2728,12 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `number`
+
+</td>
+<td>
+
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>
@@ -2686,6 +2755,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2698,6 +2768,12 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `string`[]
+
+</td>
+<td>
+
+An array of tags. Tags must not contain spaces, as Anki stores the list
+space-separated.
 
 </td>
 </tr>
@@ -2719,6 +2795,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2733,17 +2810,24 @@ A data container holding field values, used to generate [Card](#card)s based on 
 `string`[]
 
 </td>
+<td>
+
+The values of the note's fields in the order defined by its [Model](#model).
+Stored joined with the `0x1f` unit separator. The first field (stripped of HTML) also
+becomes the note's sort field.
+
+</td>
 </tr>
 </tbody>
 </table>
 
 ### getSortField()
 
-> **getSortField**(): `number`
+> **getSortField**(): `string`
 
 ### setSortField()
 
-> **setSortField**(`sort`: `number`): [`Note`](#note)
+> **setSortField**(`sort`: `string`): [`Note`](#note)
 
 #### Parameters
 
@@ -2752,6 +2836,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2763,7 +2848,14 @@ A data container holding field values, used to generate [Card](#card)s based on 
 </td>
 <td>
 
-`number`
+`string`
+
+</td>
+<td>
+
+The value of the note's sort field used for ordering in Anki's card browser
+(normally the content of the first field, set automatically by `setFields`). Numeric
+values sort numerically — Anki's database stores them as numbers.
 
 </td>
 </tr>
@@ -2785,6 +2877,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -2797,6 +2890,90 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `number`
+
+</td>
+<td>
+
+An integer checksum of the note's first field, used by Anki for duplicate
+detection - the first 8 hex digits of the SHA1 of the stripped field text, as an integer.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getFlags()
+
+> **getFlags**(): `number`
+
+### setFlags()
+
+> **setFlags**(`flags`: `number`): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`flags`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+Unused by Anki; kept for schema completeness.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getData()
+
+> **getData**(): `string`
+
+### setData()
+
+> **setData**(`data`: `string`): [`Note`](#note)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`data`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Additional note data. Unused by Anki; kept for schema completeness.
 
 </td>
 </tr>
@@ -3925,6 +4102,47 @@ A data container holding field values, used to generate [Card](#card)s based on 
 
 ## Model
 
+A note type: defines the Fields, CardTemplates and styling used to
+generate [Card](#card)s from [Note](#note)s.
+
+### Constructor
+
+> **new Model**(`name?`: `string`): [`Model`](#model)
+
+Creates a model with default `Front` and `Back` Fields and a single
+CardTemplate.
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the model.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### getId()
 
 > **getId**(): `number`
@@ -3940,6 +4158,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -3952,6 +4171,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `number`
+
+</td>
+<td>
+
+The model ID (by default the time in milliseconds of when the model was created).
 
 </td>
 </tr>
@@ -3973,6 +4197,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -3985,6 +4210,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `string`
+
+</td>
+<td>
+
+The CSS shared by all card templates of the model.
 
 </td>
 </tr>
@@ -4006,6 +4236,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4018,6 +4249,12 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 [`Deck`](#deck)
+
+</td>
+<td>
+
+The [Deck](#deck), linked by ID, that cards created with this model are
+added to by default.
 
 </td>
 </tr>
@@ -4039,6 +4276,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4051,6 +4289,12 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `Field`[]
+
+</td>
+<td>
+
+An array of Fields replacing the current ones, serialized into
+the model.
 
 </td>
 </tr>
@@ -4068,6 +4312,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4080,6 +4325,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `Field`
+
+</td>
+<td>
+
+A Field to be added and serialized into the model.
 
 </td>
 </tr>
@@ -4097,6 +4347,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4109,6 +4360,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `Field`
+
+</td>
+<td>
+
+A Field to be removed.
 
 </td>
 </tr>
@@ -4130,6 +4386,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4142,6 +4399,12 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `CardTemplate`[]
+
+</td>
+<td>
+
+An array of CardTemplates replacing the current ones,
+serialized into the model.
 
 </td>
 </tr>
@@ -4159,6 +4422,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4171,6 +4435,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `CardTemplate`
+
+</td>
+<td>
+
+A CardTemplate to be added and serialized into the model.
 
 </td>
 </tr>
@@ -4188,6 +4457,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4200,6 +4470,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `CardTemplate`
+
+</td>
+<td>
+
+A CardTemplate to be removed.
 
 </td>
 </tr>
@@ -4221,6 +4496,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4233,6 +4509,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `string`
+
+</td>
+<td>
+
+The LaTeX preamble used when rendering `[latex]` blocks in fields.
 
 </td>
 </tr>
@@ -4254,6 +4535,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4266,6 +4548,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `string`
+
+</td>
+<td>
+
+The LaTeX postamble used when rendering `[latex]` blocks in fields.
 
 </td>
 </tr>
@@ -4287,6 +4574,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4299,6 +4587,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `number`
+
+</td>
+<td>
+
+The last modification time in seconds.
 
 </td>
 </tr>
@@ -4320,6 +4613,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4332,6 +4626,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `string`
+
+</td>
+<td>
+
+The name of the model.
 
 </td>
 </tr>
@@ -4353,6 +4652,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4365,6 +4665,12 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `number`
+
+</td>
+<td>
+
+The index of the field used for sorting notes in Anki's card browser
+(`0` = the first field).
 
 </td>
 </tr>
@@ -4386,6 +4692,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4398,6 +4705,11 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `"standard"` \| `"cloze"`
+
+</td>
+<td>
+
+The type of the model: `standard` or `cloze`.
 
 </td>
 </tr>
@@ -4419,6 +4731,7 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4431,6 +4744,12 @@ A data container holding field values, used to generate [Card](#card)s based on 
 <td>
 
 `number`
+
+</td>
+<td>
+
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>
