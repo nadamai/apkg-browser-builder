@@ -3175,8 +3175,9 @@ added to by default.
 </td>
 <td>
 
-An array of Fields replacing the current ones, serialized into
-the model. Field ordinals are assigned automatically from the array order.
+An array of Fields replacing the current ones. Each field is
+added via `addField`, so duplicates are skipped; field ordinals are assigned
+automatically from the array order.
 
 </td>
 </tr>
@@ -3285,8 +3286,9 @@ A Field to be removed.
 </td>
 <td>
 
-An array of CardTemplates replacing the current ones,
-serialized into the model. Template ordinals are assigned automatically from the array order.
+An array of CardTemplates replacing the current ones. Each
+template is added via `addTemplate`, so duplicates are skipped; template ordinals are
+assigned automatically from the array order.
 
 </td>
 </tr>
