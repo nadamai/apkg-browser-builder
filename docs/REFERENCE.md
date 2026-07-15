@@ -3658,6 +3658,125 @@ synchronising. `-1` indicates changes that have not been synced yet.
 </tbody>
 </table>
 
+### getRequirements()
+
+> **getRequirements**(): `ModelRequirement`[]
+
+### setRequirements()
+
+> **setRequirements**(`requirements`: `ModelRequirement`[]): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`requirements`
+
+</td>
+<td>
+
+`ModelRequirement`[]
+
+</td>
+<td>
+
+Legacy card-generation requirements as ModelRequirement tuples,
+used by old Anki clients to decide which cards to generate. Modern Anki recomputes them
+and ignores this value.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getTags()
+
+> **getTags**(): `string`[]
+
+### setTags()
+
+> **setTags**(`tags`: `string`[]): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tags`
+
+</td>
+<td>
+
+`string`[]
+
+</td>
+<td>
+
+Legacy cache of the tags of the last note added with this model. Unused by modern Anki.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getVersions()
+
+> **getVersions**(): `number`[]
+
+### setVersions()
+
+> **setVersions**(`versions`: `number`[]): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`versions`
+
+</td>
+<td>
+
+`number`[]
+
+</td>
+<td>
+
+Legacy version array. Unused by modern Anki.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ***
 
 ## Configuration
