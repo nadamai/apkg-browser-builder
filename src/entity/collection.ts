@@ -38,6 +38,14 @@ export class Collection extends Entity<CollectionModel> {
 	protected decks: Deck[] = [];
 	protected deckConfigurations: DeckConfiguration[] = [];
 
+	public getEntity(): CollectionModel {
+		this.updateEntityModels();
+		this.updateEntityDecks();
+		this.updateEntityDeckConfigurations();
+
+		return this.entity;
+	}
+
 	public getId(): number {
 		return this.entity.id;
 	}

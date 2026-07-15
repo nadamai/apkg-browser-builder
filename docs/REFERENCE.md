@@ -2982,6 +2982,664 @@ Additional note data. Unused by Anki; kept for schema completeness.
 
 ***
 
+## Model
+
+A note type: defines the Fields, CardTemplates and styling used to
+generate [Card](#card)s from [Note](#note)s.
+
+### Constructor
+
+> **new Model**(`name?`: `string`): [`Model`](#model)
+
+Creates a model with default `Front` and `Back` Fields and a single
+CardTemplate.
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the model.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getId()
+
+> **getId**(): `number`
+
+### setId()
+
+> **setId**(`id?`: `number`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The model ID (by default the time in milliseconds of when the model was created).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getCss()
+
+> **getCss**(): `string`
+
+### setCss()
+
+> **setCss**(`css`: `string`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`css`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The CSS shared by all card templates of the model.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDeck()
+
+> **getDeck**(): [`Deck`](#deck) \| `null`
+
+### setDeck()
+
+> **setDeck**(`deck`: [`Deck`](#deck)): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck)
+
+</td>
+<td>
+
+The [Deck](#deck), linked by ID, that cards created with this model are
+added to by default.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getFields()
+
+> **getFields**(): `Field`[]
+
+### setFields()
+
+> **setFields**(`fields`: `Field`[]): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`fields`
+
+</td>
+<td>
+
+`Field`[]
+
+</td>
+<td>
+
+An array of Fields replacing the current ones, serialized into
+the model.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addField()
+
+> **addField**(`field`: `Field`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`field`
+
+</td>
+<td>
+
+`Field`
+
+</td>
+<td>
+
+A Field to be added and serialized into the model.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeField()
+
+> **removeField**(`field`: `Field`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`field`
+
+</td>
+<td>
+
+`Field`
+
+</td>
+<td>
+
+A Field to be removed.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getTemplates()
+
+> **getTemplates**(): `CardTemplate`[]
+
+### setTemplates()
+
+> **setTemplates**(`templates`: `CardTemplate`[]): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`templates`
+
+</td>
+<td>
+
+`CardTemplate`[]
+
+</td>
+<td>
+
+An array of CardTemplates replacing the current ones,
+serialized into the model.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### addTemplate()
+
+> **addTemplate**(`template`: `CardTemplate`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`template`
+
+</td>
+<td>
+
+`CardTemplate`
+
+</td>
+<td>
+
+A CardTemplate to be added and serialized into the model.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### removeTemplate()
+
+> **removeTemplate**(`template`: `CardTemplate`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`template`
+
+</td>
+<td>
+
+`CardTemplate`
+
+</td>
+<td>
+
+A CardTemplate to be removed.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLatexPreamble()
+
+> **getLatexPreamble**(): `string`
+
+### setLatexPreamble()
+
+> **setLatexPreamble**(`preamble`: `string`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`preamble`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The LaTeX preamble used when rendering `[latex]` blocks in fields.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLatexPostamble()
+
+> **getLatexPostamble**(): `string`
+
+### setLatexPostamble()
+
+> **setLatexPostamble**(`postamble`: `string`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`postamble`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The LaTeX postamble used when rendering `[latex]` blocks in fields.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModificationTime()
+
+> **getModificationTime**(): `number`
+
+### setModificationTime()
+
+> **setModificationTime**(`time`: `number`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The last modification time in seconds.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getName()
+
+> **getName**(): `string`
+
+### setName()
+
+> **setName**(`name`: `string`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the model.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getSortField()
+
+> **getSortField**(): `number`
+
+### setSortField()
+
+> **setSortField**(`sort`: `number`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`sort`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The index of the field used for sorting notes in Anki's card browser
+(`0` = the first field).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getType()
+
+> **getType**(): `"standard"` \| `"cloze"`
+
+### setType()
+
+> **setType**(`type`: `"standard"` \| `"cloze"`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`type`
+
+</td>
+<td>
+
+`"standard"` \| `"cloze"`
+
+</td>
+<td>
+
+The type of the model: `standard` or `cloze`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Model`](#model)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
 ## Configuration
 
 ### getCurrentDeck()
@@ -4092,664 +4750,6 @@ Additional note data. Unused by Anki; kept for schema completeness.
 <td>
 
 `ReviewCardConfig`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-***
-
-## Model
-
-A note type: defines the Fields, CardTemplates and styling used to
-generate [Card](#card)s from [Note](#note)s.
-
-### Constructor
-
-> **new Model**(`name?`: `string`): [`Model`](#model)
-
-Creates a model with default `Front` and `Back` Fields and a single
-CardTemplate.
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`name?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The name of the model.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getId()
-
-> **getId**(): `number`
-
-### setId()
-
-> **setId**(`id?`: `number`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`id?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-The model ID (by default the time in milliseconds of when the model was created).
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getCss()
-
-> **getCss**(): `string`
-
-### setCss()
-
-> **setCss**(`css`: `string`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`css`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The CSS shared by all card templates of the model.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getDeck()
-
-> **getDeck**(): [`Deck`](#deck) \| `null`
-
-### setDeck()
-
-> **setDeck**(`deck`: [`Deck`](#deck)): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`deck`
-
-</td>
-<td>
-
-[`Deck`](#deck)
-
-</td>
-<td>
-
-The [Deck](#deck), linked by ID, that cards created with this model are
-added to by default.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getFields()
-
-> **getFields**(): `Field`[]
-
-### setFields()
-
-> **setFields**(`fields`: `Field`[]): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`fields`
-
-</td>
-<td>
-
-`Field`[]
-
-</td>
-<td>
-
-An array of Fields replacing the current ones, serialized into
-the model.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### addField()
-
-> **addField**(`field`: `Field`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`field`
-
-</td>
-<td>
-
-`Field`
-
-</td>
-<td>
-
-A Field to be added and serialized into the model.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### removeField()
-
-> **removeField**(`field`: `Field`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`field`
-
-</td>
-<td>
-
-`Field`
-
-</td>
-<td>
-
-A Field to be removed.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getTemplates()
-
-> **getTemplates**(): `CardTemplate`[]
-
-### setTemplates()
-
-> **setTemplates**(`templates`: `CardTemplate`[]): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`templates`
-
-</td>
-<td>
-
-`CardTemplate`[]
-
-</td>
-<td>
-
-An array of CardTemplates replacing the current ones,
-serialized into the model.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### addTemplate()
-
-> **addTemplate**(`template`: `CardTemplate`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`template`
-
-</td>
-<td>
-
-`CardTemplate`
-
-</td>
-<td>
-
-A CardTemplate to be added and serialized into the model.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### removeTemplate()
-
-> **removeTemplate**(`template`: `CardTemplate`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`template`
-
-</td>
-<td>
-
-`CardTemplate`
-
-</td>
-<td>
-
-A CardTemplate to be removed.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getLatexPreamble()
-
-> **getLatexPreamble**(): `string`
-
-### setLatexPreamble()
-
-> **setLatexPreamble**(`preamble`: `string`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`preamble`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The LaTeX preamble used when rendering `[latex]` blocks in fields.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getLatexPostamble()
-
-> **getLatexPostamble**(): `string`
-
-### setLatexPostamble()
-
-> **setLatexPostamble**(`postamble`: `string`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`postamble`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The LaTeX postamble used when rendering `[latex]` blocks in fields.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getModificationTime()
-
-> **getModificationTime**(): `number`
-
-### setModificationTime()
-
-> **setModificationTime**(`time`: `number`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`time`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-The last modification time in seconds.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getName()
-
-> **getName**(): `string`
-
-### setName()
-
-> **setName**(`name`: `string`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`name`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The name of the model.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getSortField()
-
-> **getSortField**(): `number`
-
-### setSortField()
-
-> **setSortField**(`sort`: `number`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`sort`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-The index of the field used for sorting notes in Anki's card browser
-(`0` = the first field).
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getType()
-
-> **getType**(): `"standard"` \| `"cloze"`
-
-### setType()
-
-> **setType**(`type`: `"standard"` \| `"cloze"`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`type`
-
-</td>
-<td>
-
-`"standard"` \| `"cloze"`
-
-</td>
-<td>
-
-The type of the model: `standard` or `cloze`.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### getUpdateSequenceNumber()
-
-> **getUpdateSequenceNumber**(): `number`
-
-### setUpdateSequenceNumber()
-
-> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Model`](#model)
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`updateSequenceNumber`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-The update sequence number, used to find changes when
-synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>
