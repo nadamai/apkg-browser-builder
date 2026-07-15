@@ -56,7 +56,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param id The card ID (by default the time in milliseconds of when the card was created).
+	 * @param id The deck ID (by default the time in milliseconds of when the deck was created).
 	 */
 	public setId(id?: number): Deck {
 		this.object.id = id ?? Date.now();
@@ -95,7 +95,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param description If `false` it render description with legacy HTML rendering.
+	 * @param description If `false` it renders the description with legacy HTML rendering.
 	 * If `true` it uses markdown rendering with `img` tags stripped.
 	 */
 	public setMarkdownDescription(description: boolean): Deck {
@@ -163,7 +163,7 @@ export class Deck extends Object<DeckObject> {
 	/**
 	 * @param newToday The first number is the number of days that have passed between the
 	 * collection was created and the deck was last updated. The second is equal to the number of
-	 * cards seen today in this deck minus the number of new cards in custom study today.
+	 * new cards seen today in this deck minus the number of new cards in custom study today.
 	 */
 	public setNewToday(newToday: [number, number]): Deck {
 		this.object.newToday = newToday;
@@ -178,7 +178,7 @@ export class Deck extends Object<DeckObject> {
 	/**
 	 * @param revToday The first number is the number of days that have passed between the
 	 * collection was created and the deck was last updated. The second is equal to the number of
-	 * cards seen today in this deck minus the number of new cards in custom study today.
+	 * review cards seen today in this deck minus the number of review cards in custom study today.
 	 */
 	public setReviewToday(revToday: [number, number]): Deck {
 		this.object.revToday = revToday;
@@ -193,7 +193,7 @@ export class Deck extends Object<DeckObject> {
 	/**
 	 * @param lrnToday The first number is the number of days that have passed between the
 	 * collection was created and the deck was last updated. The second is equal to the number of
-	 * cards seen today in this deck minus the number of new cards in custom study today.
+	 * learning cards seen today in this deck minus the number of learning cards in custom study today.
 	 */
 	public setLearningToday(lrnToday: [number, number]): Deck {
 		this.object.lrnToday = lrnToday;
@@ -268,7 +268,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param time The last modification time in milliseconds.
+	 * @param time The last modification time in seconds.
 	 */
 	public setModificationTime(time: number): Deck {
 		this.object.mod = time;
@@ -329,7 +329,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param card A {@link Collection}.
+	 * @param collection A {@link Collection}.
 	 */
 	public setCollection(collection: Collection): Deck {
 		this.collection = collection;

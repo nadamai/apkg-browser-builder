@@ -971,7 +971,7 @@ The optional description of the deck.
 </td>
 <td>
 
-The card ID (by default the time in milliseconds of when the card was created).
+The deck ID (by default the time in milliseconds of when the deck was created).
 
 </td>
 </tr>
@@ -1088,7 +1088,7 @@ The description of the deck.
 </td>
 <td>
 
-If `false` it render description with legacy HTML rendering.
+If `false` it renders the description with legacy HTML rendering.
 If `true` it uses markdown rendering with `img` tags stripped.
 
 </td>
@@ -1286,7 +1286,7 @@ Whether the deck is collapsed in a browser.
 
 The first number is the number of days that have passed between the
 collection was created and the deck was last updated. The second is equal to the number of
-cards seen today in this deck minus the number of new cards in custom study today.
+new cards seen today in this deck minus the number of new cards in custom study today.
 
 </td>
 </tr>
@@ -1327,7 +1327,7 @@ cards seen today in this deck minus the number of new cards in custom study toda
 
 The first number is the number of days that have passed between the
 collection was created and the deck was last updated. The second is equal to the number of
-cards seen today in this deck minus the number of new cards in custom study today.
+review cards seen today in this deck minus the number of review cards in custom study today.
 
 </td>
 </tr>
@@ -1368,7 +1368,7 @@ cards seen today in this deck minus the number of new cards in custom study toda
 
 The first number is the number of days that have passed between the
 collection was created and the deck was last updated. The second is equal to the number of
-cards seen today in this deck minus the number of new cards in custom study today.
+learning cards seen today in this deck minus the number of learning cards in custom study today.
 
 </td>
 </tr>
@@ -1563,7 +1563,7 @@ A Model.
 </td>
 <td>
 
-The last modification time in milliseconds.
+The last modification time in seconds.
 
 </td>
 </tr>
@@ -1659,6 +1659,7 @@ A Card.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1671,6 +1672,11 @@ A Card.
 <td>
 
 [`Collection`](#collection)
+
+</td>
+<td>
+
+A [Collection](#collection).
 
 </td>
 </tr>
