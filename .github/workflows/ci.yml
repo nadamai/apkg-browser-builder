@@ -3,8 +3,23 @@ name: CI
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'typedoc*'
+      - 'dev/**'
+      - 'docs/**'
+      - 'src/anki.sqlite'
+
   pull_request:
     branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'typedoc*'
+      - 'dev/**'
+      - 'docs/**'
+      - 'src/anki.sqlite'
 
 jobs:
   static-analysis:
