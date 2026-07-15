@@ -130,9 +130,9 @@ class ApkgBuilder {
 
 export default ApkgBuilder;
 
-export { ApkgBuilder, Collection, Deck };
+export { ApkgBuilder, Collection, Deck, Card };
 
 export type { ApkgBuilderConfig };
 
 /** @hidden */
-export { Card, Note, Configuration, DeckConfiguration, Model };
+export { Note, Configuration, DeckConfiguration, Model };

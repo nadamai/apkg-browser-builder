@@ -6,7 +6,9 @@ import { DeckConfiguration } from './deck-config';
 import { Model } from './model';
 
 /**
- * A deck contained within a collection.
+ * A deck contained within a {@link Collection} made of {@link Card}s.
+ *
+ * @group Deck
  */
 export class Deck extends Object<DeckObject> {
 	protected object: DeckObject = {
