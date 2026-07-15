@@ -5,9 +5,6 @@ import { ColumnValue } from '../type';
 import { Deck } from './deck';
 import { Model } from './model';
 
-/**
- * @group Configuration
- */
 export class Configuration extends Object<ConfigurationObject> {
 	protected object: ConfigurationObject = {};
 

@@ -6,14 +6,13 @@
 // - the "Overrides" / "Inherited from" / "Implementation of" sections.
 //
 // Also removes the "Constructors" / "Methods" member group
-// headings, which the hideGroupHeadings option does not cover.
-//
-// Wired up in typedoc.json via:
-//   "plugin": [..., "./typedoc-theme.mjs"],
-//   "theme": "typedoc-theme",
+// headings, which the hideGroupHeadings option does not cover, and orders the
+// classes in the "Classes" group by CLASS_ORDER (source order otherwise puts
+// them in file-path order).
 import { Converter, ReflectionKind } from 'typedoc';
 import { MarkdownTheme, MarkdownThemeContext } from 'typedoc-plugin-markdown';
 
+const CLASS_ORDER = ['ApkgBuilder', 'Collection', 'Deck', 'Card', 'Note', 'Model', 'Configuration', 'DeckConfiguration'];
 const HIDDEN_GROUP_HEADINGS = ['Constructors', 'Methods'];
 
 class HiddenTagsTheme extends MarkdownTheme {
@@ -41,6 +40,18 @@ export function load(app) {
 	app.converter.on(
 		Converter.EVENT_RESOLVE_END,
 		(context) => {
+			const classGroup = (context.project.groups ?? []).find((group) => group.title === 'Classes');
+
+			if (classGroup) {
+				const rank = (name) => {
+					const index = CLASS_ORDER.indexOf(name);
+
+					return index === -1 ? CLASS_ORDER.length : index;
+				};
+
+				classGroup.children.sort((a, b) => rank(a.name) - rank(b.name));
+			}
+
 			for (const reflection of context.project.getReflectionsByKind(ReflectionKind.Class)) {
 				const hidden = (reflection.groups ?? []).filter((group) => HIDDEN_GROUP_HEADINGS.includes(group.title));
 

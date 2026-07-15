@@ -7,8 +7,6 @@ import { Note } from './note';
 
 /**
  * A single flashcard generated from a {@link Note}, contained within a {@link Deck}.
- *
- * @group Card
  */
 export class Card extends Entity<CardModel> {
 	protected table: string = 'cards';
