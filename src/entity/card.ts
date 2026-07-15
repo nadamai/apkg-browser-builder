@@ -5,6 +5,11 @@ import { Deck } from '../object';
 import { Generator } from '../service/generator';
 import { Note } from './note';
 
+/**
+ * A single flashcard generated from a {@link Note}, contained within a {@link Deck}.
+ *
+ * @group Card
+ */
 export class Card extends Entity<CardModel> {
 	protected table: string = 'cards';
 
@@ -33,6 +38,9 @@ export class Card extends Entity<CardModel> {
 	protected deck: Deck | null = null;
 	protected originalDeck: Deck | null = null;
 
+	/**
+	 * @param fields The field values of the {@link Note} the card is created with.
+	 */
 	constructor(...fields: string[]) {
 		super();
 
@@ -43,12 +51,18 @@ export class Card extends Entity<CardModel> {
 		return this.entity.id;
 	}
 
+	/**
+	 * @param id The card ID (by default the time in milliseconds of when the card was created).
+	 */
 	public setId(id?: number): Card {
 		this.entity.id = id ?? Date.now();
 
 		return this;
 	}
 
+	/**
+	 * @param note A {@link Note} containing the card's content.
+	 */
 	public setNote(note: Note): Card {
 		this.entity.nid = note.getEntity().id;
 		this.note = note;
@@ -60,6 +74,9 @@ export class Card extends Entity<CardModel> {
 		return this.note;
 	}
 
+	/**
+	 * @param deck A {@link Deck} the card belongs to or `null` to detach the card from its deck.
+	 */
 	public setDeck(deck: Deck | null): Card {
 		this.entity.did = deck?.getId() ?? 0;
 		this.deck = deck;
@@ -75,6 +92,9 @@ export class Card extends Entity<CardModel> {
 		return this.entity.ord;
 	}
 
+	/**
+	 * @param ordinal Identifies which of the note model's card templates the card was generated from.
+	 */
 	public setOrdinal(ordinal: number): Card {
 		this.entity.ord = ordinal;
 
@@ -85,6 +105,9 @@ export class Card extends Entity<CardModel> {
 		return this.entity.mod;
 	}
 
+	/**
+	 * @param time The last modification time in seconds.
+	 */
 	public setModificationTime(time: number): Card {
 		this.entity.mod = time;
 
@@ -95,6 +118,9 @@ export class Card extends Entity<CardModel> {
 		return this.entity.usn;
 	}
 
+	/**
+	 * @param updateSequenceNumber The update sequence number.
+	 */
 	public setUpdateSequenceNumber(updateSequenceNumber: number): Card {
 		this.entity.usn = updateSequenceNumber;
 
@@ -105,6 +131,9 @@ export class Card extends Entity<CardModel> {
 		return this.getDictionaryKey(CardType, this.entity.type) || 'new';
 	}
 
+	/**
+	 * @param type The learning state of the card: `new`, `learning`, `review` or `relearning`.
+	 */
 	public setType(type: CardTypeKey): Card {
 		this.entity.type = CardType[type];
 
@@ -115,6 +144,10 @@ export class Card extends Entity<CardModel> {
 		return this.getDictionaryKey(CardQueue, this.entity.queue) || 'new';
 	}
 
+	/**
+	 * @param queue The scheduling queue the card is placed in: `new`, `learning`, `review`,
+	 * `inLearning`, `preview`, `suspended`, `userBuried` or `scheduleBuried`.
+	 */
 	public setQueue(queue: CardQueueKey): Card {
 		this.entity.queue = CardQueue[queue];
 
@@ -125,6 +158,11 @@ export class Card extends Entity<CardModel> {
 		return this.entity.due;
 	}
 
+	/**
+	 * @param due When the card is due. The meaning depends on the card type: for `new` cards
+	 * it is the position in the new-card queue, for `learning` cards a timestamp in seconds,
+	 * and for `review` cards the number of days since the collection was created.
+	 */
 	public setDue(due: number): Card {
 		this.entity.due = due;
 
@@ -135,6 +173,9 @@ export class Card extends Entity<CardModel> {
 		return this.entity.ivl;
 	}
 
+	/**
+	 * @param interval The interval between reviews. Positive values are days, negative values are seconds.
+	 */
 	public setInterval(interval: number): Card {
 		this.entity.ivl = interval;
 
@@ -145,6 +186,9 @@ export class Card extends Entity<CardModel> {
 		return this.entity.factor;
 	}
 
+	/**
+	 * @param factor The ease factor in permille (e.g. `2500` means 250%).
+	 */
 	public setFactor(factor: number): Card {
 		this.entity.factor = factor;
 
@@ -155,6 +199,9 @@ export class Card extends Entity<CardModel> {
 		return this.entity.reps;
 	}
 
+	/**
+	 * @param numberOfReviews The number of times the card has been reviewed.
+	 */
 	public setNumberOfReviews(numberOfReviews: number): Card {
 		this.entity.reps = numberOfReviews;
 
@@ -165,6 +212,10 @@ export class Card extends Entity<CardModel> {
 		return this.entity.lapses;
 	}
 
+	/**
+	 * @param lapses The number of times the card was forgotten (went from the `review` state
+	 * back to relearning).
+	 */
 	public setLapses(lapses: number): Card {
 		this.entity.lapses = lapses;
 
@@ -175,6 +226,10 @@ export class Card extends Entity<CardModel> {
 		return this.entity.left;
 	}
 
+	/**
+	 * @param left The learning steps left, of the form `a * 1000 + b`, where `b` is the number
+	 * of repetitions left until graduation and `a` is the number of repetitions left today.
+	 */
 	public setLeft(left: number): Card {
 		this.entity.left = left;
 
@@ -185,6 +240,9 @@ export class Card extends Entity<CardModel> {
 		return this.entity.odue;
 	}
 
+	/**
+	 * @param originalDue The original due value of the card before it was moved to a filtered deck.
+	 */
 	public setOriginalDue(originalDue: number): Card {
 		this.entity.odue = originalDue;
 
@@ -195,6 +253,9 @@ export class Card extends Entity<CardModel> {
 		return this.originalDeck;
 	}
 
+	/**
+	 * @param deck The original {@link Deck} of the card before it was moved to a filtered deck.
+	 */
 	public setOriginalDeck(deck: Deck): Card {
 		this.entity.odid = deck.getId();
 		this.originalDeck = deck;
@@ -206,6 +267,10 @@ export class Card extends Entity<CardModel> {
 		return this.entity.flags;
 	}
 
+	/**
+	 * @param flags The flag colour of the card: `0` = none, `1` = red, `2` = orange, `3` = green,
+	 * `4` = blue, `5` = pink, `6` = turquoise, `7` = purple.
+	 */
 	public setFlags(flags: number): Card {
 		this.entity.flags = flags;
 

@@ -885,7 +885,7 @@ An array of collection tags.
 
 ## Deck
 
-A deck contained within a collection.
+A deck contained within a [Collection](#collection) made of [Card](#card)s.
 
 ### Constructor
 
@@ -1613,7 +1613,7 @@ The last modification time in seconds.
 
 ### addCard()
 
-> **addCard**(`card`: `Card`): [`Deck`](#deck)
+> **addCard**(`card`: [`Card`](#card)): [`Deck`](#deck)
 
 #### Parameters
 
@@ -1634,12 +1634,12 @@ The last modification time in seconds.
 </td>
 <td>
 
-`Card`
+[`Card`](#card)
 
 </td>
 <td>
 
-A Card.
+A [Card](#card).
 
 </td>
 </tr>
@@ -1648,7 +1648,7 @@ A Card.
 
 ### removeCard()
 
-> **removeCard**(`card`: `Card`): [`Deck`](#deck)
+> **removeCard**(`card`: [`Card`](#card)): [`Deck`](#deck)
 
 #### Parameters
 
@@ -1669,12 +1669,12 @@ A Card.
 </td>
 <td>
 
-`Card`
+[`Card`](#card)
 
 </td>
 <td>
 
-A Card.
+A [Card](#card).
 
 </td>
 </tr>
@@ -1683,7 +1683,7 @@ A Card.
 
 ### getCards()
 
-> **getCards**(): `Card`[]
+> **getCards**(): [`Card`](#card)[]
 
 ### getCollection()
 
@@ -1718,6 +1718,716 @@ A Card.
 <td>
 
 A [Collection](#collection).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+## Card
+
+A single flashcard generated from a Note, contained within a [Deck](#deck).
+
+### Constructor
+
+> **new Card**(...`fields`: `string`[]): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+...`fields`
+
+</td>
+<td>
+
+`string`[]
+
+</td>
+<td>
+
+The field values of the Note the card is created with.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getId()
+
+> **getId**(): `number`
+
+### setId()
+
+> **setId**(`id?`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The card ID (by default the time in milliseconds of when the card was created).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### setNote()
+
+> **setNote**(`note`: `Note`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`note`
+
+</td>
+<td>
+
+`Note`
+
+</td>
+<td>
+
+A Note containing the card's content.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getNote()
+
+> **getNote**(): `Note` \| `null`
+
+### setDeck()
+
+> **setDeck**(`deck`: [`Deck`](#deck) \| `null`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck) \| `null`
+
+</td>
+<td>
+
+A [Deck](#deck) the card belongs to or `null` to detach the card from its deck.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDeck()
+
+> **getDeck**(): [`Deck`](#deck) \| `null`
+
+### getOrdinal()
+
+> **getOrdinal**(): `number`
+
+### setOrdinal()
+
+> **setOrdinal**(`ordinal`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`ordinal`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+Identifies which of the note model's card templates the card was generated from.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getModificationTime()
+
+> **getModificationTime**(): `number`
+
+### setModificationTime()
+
+> **setModificationTime**(`time`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The last modification time in seconds.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The update sequence number.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getType()
+
+> **getType**(): `"new"` \| `"learning"` \| `"review"` \| `"relearning"`
+
+### setType()
+
+> **setType**(`type`: `"new"` \| `"learning"` \| `"review"` \| `"relearning"`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`type`
+
+</td>
+<td>
+
+`"new"` \| `"learning"` \| `"review"` \| `"relearning"`
+
+</td>
+<td>
+
+The learning state of the card: `new`, `learning`, `review` or `relearning`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getQueue()
+
+> **getQueue**(): `"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`
+
+### setQueue()
+
+> **setQueue**(`queue`: `"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`queue`
+
+</td>
+<td>
+
+`"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`
+
+</td>
+<td>
+
+The scheduling queue the card is placed in: `new`, `learning`, `review`,
+`inLearning`, `preview`, `suspended`, `userBuried` or `scheduleBuried`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getDue()
+
+> **getDue**(): `number`
+
+### setDue()
+
+> **setDue**(`due`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`due`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+When the card is due. The meaning depends on the card type: for `new` cards
+it is the position in the new-card queue, for `learning` cards a timestamp in seconds,
+and for `review` cards the number of days since the collection was created.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getInterval()
+
+> **getInterval**(): `number`
+
+### setInterval()
+
+> **setInterval**(`interval`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`interval`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The interval between reviews. Positive values are days, negative values are seconds.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getFactor()
+
+> **getFactor**(): `number`
+
+### setFactor()
+
+> **setFactor**(`factor`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`factor`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The ease factor in permille (e.g. `2500` means 250%).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getNumberOfReviews()
+
+> **getNumberOfReviews**(): `number`
+
+### setNumberOfReviews()
+
+> **setNumberOfReviews**(`numberOfReviews`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`numberOfReviews`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The number of times the card has been reviewed.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLapses()
+
+> **getLapses**(): `number`
+
+### setLapses()
+
+> **setLapses**(`lapses`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`lapses`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The number of times the card was forgotten (went from the `review` state
+back to relearning).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getLeft()
+
+> **getLeft**(): `number`
+
+### setLeft()
+
+> **setLeft**(`left`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`left`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The learning steps left, of the form `a * 1000 + b`, where `b` is the number
+of repetitions left until graduation and `a` is the number of repetitions left today.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getOriginalDue()
+
+> **getOriginalDue**(): `number`
+
+### setOriginalDue()
+
+> **setOriginalDue**(`originalDue`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`originalDue`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The original due value of the card before it was moved to a filtered deck.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getOriginalDeck()
+
+> **getOriginalDeck**(): [`Deck`](#deck) \| `null`
+
+### setOriginalDeck()
+
+> **setOriginalDeck**(`deck`: [`Deck`](#deck)): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck)
+
+</td>
+<td>
+
+The original [Deck](#deck) of the card before it was moved to a filtered deck.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getFlags()
+
+> **getFlags**(): `number`
+
+### setFlags()
+
+> **setFlags**(`flags`: `number`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`flags`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The flag colour of the card: `0` = none, `1` = red, `2` = orange, `3` = green,
+`4` = blue, `5` = pink, `6` = turquoise, `7` = purple.
 
 </td>
 </tr>
