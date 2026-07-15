@@ -64,6 +64,7 @@ export class Model extends Object<ModelObject> {
 		}
 
 		this.updateFields();
+		this.updateTemplates();
 
 		return this.object;
 	}
@@ -114,24 +115,28 @@ export class Model extends Object<ModelObject> {
 	}
 
 	/**
-	 * @param fields An array of {@link Field}s replacing the current ones, serialized into
-	 * the model. Field ordinals are assigned automatically from the array order.
+	 * @param fields An array of {@link Field}s replacing the current ones. Each field is
+	 * added via `addField`, so duplicates are skipped; field ordinals are assigned
+	 * automatically from the array order.
 	 */
 	public setFields(fields: Field[]): Model {
-		this.fields = fields;
+		this.fields = [];
 
-		const value = this.fields.map((field: Field, index: number) => {
-			return field.setOrdinal(index).getObject();
-		});
+		for (const field of fields) {
+			this.addField(field);
+		}
 
-		this.object.flds = value;
+		this.updateFields();
 
 		return this;
 	}
 
 	private updateFields(): void {
-		this.setFields(this.fields);
-		this.setTemplates(this.templates);
+		const value = this.fields.map((field: Field, index: number) => {
+			return field.setOrdinal(index).getObject();
+		});
+
+		this.object.flds = value;
 	}
 
 	/**
@@ -167,23 +172,28 @@ export class Model extends Object<ModelObject> {
 	}
 
 	/**
-	 * @param templates An array of {@link CardTemplate}s replacing the current ones,
-	 * serialized into the model. Template ordinals are assigned automatically from the array order.
+	 * @param templates An array of {@link CardTemplate}s replacing the current ones. Each
+	 * template is added via `addTemplate`, so duplicates are skipped; template ordinals are
+	 * assigned automatically from the array order.
 	 */
 	public setTemplates(templates: CardTemplate[]): Model {
-		this.templates = templates;
+		this.templates = [];
 
-		const value = this.templates.map((template: CardTemplate, index: number) => {
-			return template.setOrdinal(index).getObject();
-		});
+		for (const template of templates) {
+			this.addTemplate(template);
+		}
 
-		this.object.tmpls = value;
+		this.updateTemplates();
 
 		return this;
 	}
 
 	private updateTemplates(): void {
-		this.setTemplates(this.templates);
+		const value = this.templates.map((template: CardTemplate, index: number) => {
+			return template.setOrdinal(index).getObject();
+		});
+
+		this.object.tmpls = value;
 	}
 
 	/**
