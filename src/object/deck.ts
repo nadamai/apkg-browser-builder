@@ -36,13 +36,16 @@ export class Deck extends Object<DeckObject> {
 	protected model: Model | null = null;
 
 	/**
-	 * @param name The name of the deck.
+	 * Creates a deck with a default {@link DeckConfiguration} and {@link Model} attached.
+	 *
+	 * @param name The name of the deck. Use `::` to nest decks, e.g. `"Languages::Polish::Verbs"`.
 	 * @param description The optional description of the deck.
 	 */
 	constructor(name: string, description?: string) {
 		super();
 
 		this.object.name = name;
+
 		this.setConfiguration(new DeckConfiguration());
 		this.setModel(new Model());
 
@@ -71,7 +74,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param name The name of the deck.
+	 * @param name The name of the deck. Use `::` to nest decks, e.g. `"Languages::Polish::Verbs"`.
 	 */
 	public setName(name: string): Deck {
 		this.object.name = name;
@@ -84,7 +87,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param description The description of the deck.
+	 * @param description The description of the deck, shown on its overview screen.
 	 */
 	public setDescription(description: string): Deck {
 		this.object.desc = description;
@@ -111,7 +114,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param extendRev Extended review card limit.
+	 * @param extendRev The extended review card limit for a custom study session.
 	 */
 	public setExtendedReviewCardLimit(extendRev: number | null): Deck {
 		this.object.extendRev = extendRev;
@@ -124,7 +127,8 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param updateSequenceNumber The update sequence number.
+	 * @param updateSequenceNumber The update sequence number, used to find changes when
+	 * synchronising. `-1` indicates changes that have not been synced yet.
 	 */
 	public setUpdateSequenceNumber(updateSequenceNumber: number): Deck {
 		this.object.usn = updateSequenceNumber;
@@ -137,7 +141,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param collapsed Whether the deck is collapsed.
+	 * @param collapsed Whether the deck is collapsed in the main deck list.
 	 */
 	public setCollapsed(collapsed: boolean): Deck {
 		this.object.collapsed = collapsed;
@@ -150,7 +154,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param collapsed Whether the deck is collapsed in a browser.
+	 * @param collapsed Whether the deck is collapsed in the card browser's sidebar.
 	 */
 	public setBrowserCollapsed(collapsed: boolean): Deck {
 		this.object.browserCollapsed = collapsed;
@@ -223,7 +227,8 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param dynamic Whether the deck is dynamic (filtered).
+	 * @param dynamic Whether the deck is dynamic (filtered) — a deck that temporarily gathers
+	 * cards from other decks based on a search.
 	 */
 	public setDynamic(dynamic: boolean): Deck {
 		this.object.dyn = dynamic;
@@ -236,7 +241,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param extendNew Extended new card limit.
+	 * @param extendNew The extended new card limit for a custom study session.
 	 */
 	public setExtendedNewCardLimit(extendNew: number | null): Deck {
 		this.object.extendNew = extendNew;
@@ -249,7 +254,9 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param config A {@link DeckConfiguration}.
+	 * @param config A {@link DeckConfiguration} with the deck's scheduling options, linked by ID.
+	 * It is registered in the parent collection immediately if the deck is attached to one,
+	 * otherwise when the deck is added to a collection.
 	 */
 	public setConfiguration(config: DeckConfiguration): Deck {
 		this.configuration = config;
@@ -267,7 +274,9 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param model A {@link Model}.
+	 * @param model The note {@link Model} used by the deck's cards. The model is back-referenced
+	 * to this deck and registered in the parent collection immediately if the deck is attached
+	 * to one, otherwise when the deck is added to a collection.
 	 */
 	public setModel(model: Model): Deck {
 		this.model = model;
@@ -294,7 +303,9 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param card A {@link Card}.
+	 * @param card A {@link Card} to be added. The card is wired back to this deck, and its
+	 * note's model is registered in the parent collection if the deck is attached to one.
+	 * Duplicates are skipped.
 	 */
 	public addCard(card: Card): Deck {
 		if (this.cards.indexOf(card) > -1) {
@@ -327,7 +338,7 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param card A {@link Card}.
+	 * @param card A {@link Card} to be removed and detached from this deck.
 	 */
 	public removeCard(card: Card): Deck {
 		const index = this.cards.indexOf(card);
@@ -350,7 +361,8 @@ export class Deck extends Object<DeckObject> {
 	}
 
 	/**
-	 * @param collection A {@link Collection}.
+	 * @param collection The {@link Collection} the deck belongs to. Set automatically when
+	 * the deck is added to a collection.
 	 */
 	public setCollection(collection: Collection): Deck {
 		this.collection = collection;

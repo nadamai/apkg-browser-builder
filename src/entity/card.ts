@@ -135,7 +135,8 @@ export class Card extends Entity<CardModel> {
 	}
 
 	/**
-	 * @param updateSequenceNumber The update sequence number.
+	 * @param updateSequenceNumber The update sequence number, used to find changes when
+	 * synchronising. `-1` indicates changes that have not been synced yet.
 	 */
 	public setUpdateSequenceNumber(updateSequenceNumber: number): Card {
 		this.entity.usn = updateSequenceNumber;
