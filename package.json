@@ -38,7 +38,7 @@
   "devDependencies": {
     "@types/concurrently": "^6.4.0",
     "@types/file-saver": "^2.0.7",
-    "@types/node": "^26.1.0",
+    "@types/node": "^26.1.1",
     "@types/sql.js": "^1.4.11",
     "@typescript/native-preview": "^7.0.0-dev.20260624.1",
     "concurrently": "^10.0.3",
