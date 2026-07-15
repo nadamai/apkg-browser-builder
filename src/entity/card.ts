@@ -47,6 +47,22 @@ export class Card extends Entity<CardModel> {
 		this.setNote(new Note(...fields));
 	}
 
+	public getEntity(): CardModel {
+		if (this.note) {
+			this.entity.nid = this.note.getId();
+		}
+
+		if (this.deck) {
+			this.entity.did = this.deck.getId();
+		}
+
+		if (this.originalDeck) {
+			this.entity.odid = this.originalDeck.getId();
+		}
+
+		return this.entity;
+	}
+
 	public getId(): number {
 		return this.entity.id;
 	}
@@ -133,6 +149,7 @@ export class Card extends Entity<CardModel> {
 
 	/**
 	 * @param type The learning state of the card: `new`, `learning`, `review` or `relearning`.
+	 * Keep it consistent with the `queue` property.
 	 */
 	public setType(type: CardTypeKey): Card {
 		this.entity.type = CardType[type];
@@ -147,6 +164,7 @@ export class Card extends Entity<CardModel> {
 	/**
 	 * @param queue The scheduling queue the card is placed in: `new`, `learning`, `review`,
 	 * `inLearning`, `preview`, `suspended`, `userBuried` or `scheduleBuried`.
+	 * Keep it consistent with the `type` property.
 	 */
 	public setQueue(queue: CardQueueKey): Card {
 		this.entity.queue = CardQueue[queue];
@@ -254,10 +272,11 @@ export class Card extends Entity<CardModel> {
 	}
 
 	/**
-	 * @param deck The original {@link Deck} of the card before it was moved to a filtered deck.
+	 * @param deck The original {@link Deck} of the card before it was moved to a filtered deck
+	 * or `null` to clear it.
 	 */
-	public setOriginalDeck(deck: Deck): Card {
-		this.entity.odid = deck.getId();
+	public setOriginalDeck(deck: Deck | null): Card {
+		this.entity.odid = deck?.getId() ?? 0;
 		this.originalDeck = deck;
 
 		return this;
@@ -273,6 +292,20 @@ export class Card extends Entity<CardModel> {
 	 */
 	public setFlags(flags: number): Card {
 		this.entity.flags = flags;
+
+		return this;
+	}
+
+	public getData(): string {
+		return this.entity.data;
+	}
+
+	/**
+	 * @param data Additional card data. Unused by the legacy schema; modern Anki versions
+	 * store scheduler (FSRS) information here as JSON.
+	 */
+	public setData(data: string): Card {
+		this.entity.data = data;
 
 		return this;
 	}

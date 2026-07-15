@@ -2032,6 +2032,7 @@ The update sequence number.
 <td>
 
 The learning state of the card: `new`, `learning`, `review` or `relearning`.
+Keep it consistent with the `queue` property.
 
 </td>
 </tr>
@@ -2072,6 +2073,7 @@ The learning state of the card: `new`, `learning`, `review` or `relearning`.
 
 The scheduling queue the card is placed in: `new`, `learning`, `review`,
 `inLearning`, `preview`, `suspended`, `userBuried` or `scheduleBuried`.
+Keep it consistent with the `type` property.
 
 </td>
 </tr>
@@ -2361,7 +2363,7 @@ The original due value of the card before it was moved to a filtered deck.
 
 ### setOriginalDeck()
 
-> **setOriginalDeck**(`deck`: [`Deck`](#deck)): [`Card`](#card)
+> **setOriginalDeck**(`deck`: [`Deck`](#deck) \| `null`): [`Card`](#card)
 
 #### Parameters
 
@@ -2382,12 +2384,13 @@ The original due value of the card before it was moved to a filtered deck.
 </td>
 <td>
 
-[`Deck`](#deck)
+[`Deck`](#deck) \| `null`
 
 </td>
 <td>
 
-The original [Deck](#deck) of the card before it was moved to a filtered deck.
+The original [Deck](#deck) of the card before it was moved to a filtered deck
+or `null` to clear it.
 
 </td>
 </tr>
@@ -2428,6 +2431,46 @@ The original [Deck](#deck) of the card before it was moved to a filtered deck.
 
 The flag colour of the card: `0` = none, `1` = red, `2` = orange, `3` = green,
 `4` = blue, `5` = pink, `6` = turquoise, `7` = purple.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### getData()
+
+> **getData**(): `string`
+
+### setData()
+
+> **setData**(`data`: `string`): [`Card`](#card)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`data`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Additional card data. Unused by the legacy schema; modern Anki versions
+store scheduler (FSRS) information here as JSON.
 
 </td>
 </tr>
