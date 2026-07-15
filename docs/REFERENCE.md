@@ -3176,7 +3176,7 @@ added to by default.
 <td>
 
 An array of Fields replacing the current ones, serialized into
-the model.
+the model. Field ordinals are assigned automatically from the array order.
 
 </td>
 </tr>
@@ -3286,7 +3286,7 @@ A Field to be removed.
 <td>
 
 An array of CardTemplates replacing the current ones,
-serialized into the model.
+serialized into the model. Template ordinals are assigned automatically from the array order.
 
 </td>
 </tr>
