@@ -28,7 +28,7 @@ jobs:
         run: npm run prettier:check
 
       - name: Run types check
-        run: npx tsc --noEmit
+        run: npx tsgo --noEmit
 
       - name: Verify build compiles
         run: npm run build
