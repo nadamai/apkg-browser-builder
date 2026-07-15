@@ -31,7 +31,8 @@
     "docs": "typedoc --preserveWatchOutput --cleanOutputDir false",
     "docs:watch": "npm run docs -- --watch",
     "prepare": "husky",
-    "prettier": "pretty-quick src/**/*.ts dev/**/*.ts tests/**/*.ts --staged --pattern \"src/**/*.ts\" --pattern \"dev/**/*.ts\" --pattern \"tests/**/*.ts\"",
+    "prettier": "pretty-quick --staged --pattern \"{src,dev,tests}/**/*.ts\"",
+	"prettier:check": "prettier --check \"{src,dev,tests}/**/*.ts\"",
     "test": "vitest run"
   },
   "devDependencies": {
