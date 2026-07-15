@@ -64,6 +64,16 @@ export class Model extends Object<ModelObject> {
 		this.object.name = name;
 	}
 
+	public getObject(): ModelObject {
+		if (this.deck) {
+			this.object.did = this.deck.getId();
+		}
+
+		this.updateFields();
+
+		return this.object;
+	}
+
 	public getId(): number {
 		return this.object.id;
 	}
