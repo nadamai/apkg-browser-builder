@@ -56,7 +56,6 @@ Contributions are welcome! A few things to know before diving in:
 npm install          # install dependencies
 npm run prepare      # initialize prettier pre-commit hooks
 npm run dev          # local dev playground at localhost:3000 with typedoc watch
-npm run prettier     # run prettier
 npm test             # run the vitest suite
 ```
 
