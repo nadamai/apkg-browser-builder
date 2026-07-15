@@ -274,7 +274,8 @@ The ID of the collection (it can be some arbitrary number as there's only one co
 </td>
 <td>
 
-The timestamp of the creation date in seconds.
+The timestamp of the creation date in seconds. Anki uses it as the epoch for
+scheduling day arithmetic — e.g. a review card's due value is the number of days since this timestamp.
 
 </td>
 </tr>
@@ -352,7 +353,8 @@ The last modification time in milliseconds.
 </td>
 <td>
 
-The last schema modification time in milliseconds.
+The last schema modification time in milliseconds. If it differs between
+the client and the server, a full sync is required.
 
 </td>
 </tr>
@@ -391,7 +393,7 @@ The last schema modification time in milliseconds.
 </td>
 <td>
 
-The Anki schema version number.
+The Anki schema version number (`11` for the legacy `anki2` format).
 
 </td>
 </tr>
@@ -430,7 +432,8 @@ The Anki schema version number.
 </td>
 <td>
 
-The update sequence number.
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>
@@ -469,7 +472,7 @@ The update sequence number.
 </td>
 <td>
 
-The last synchronisation time in milliseconds.
+The last synchronisation time in milliseconds (`0` if the collection has never been synced).
 
 </td>
 </tr>
@@ -508,7 +511,8 @@ The last synchronisation time in milliseconds.
 </td>
 <td>
 
-A collection Configuration.
+A collection Configuration. It is serialized into the
+collection immediately, so mutations made afterwards require setting it again.
 
 </td>
 </tr>
@@ -547,7 +551,8 @@ A collection Configuration.
 </td>
 <td>
 
-An array of possible Models.
+An array of Models replacing the current ones. Each model is
+added via `addModel`, so duplicates are skipped.
 
 </td>
 </tr>
@@ -582,7 +587,8 @@ An array of possible Models.
 </td>
 <td>
 
-A Model to be added.
+A Model to be added and serialized into the collection.
+Duplicates are skipped.
 
 </td>
 </tr>
@@ -656,7 +662,8 @@ A Model to be removed.
 </td>
 <td>
 
-An array of [Deck](#deck)s to be set.
+An array of [Deck](#deck)s replacing the current ones. Each deck is added
+via `addDeck`, including all of its automatic wiring and registrations.
 
 </td>
 </tr>
@@ -691,7 +698,9 @@ An array of [Deck](#deck)s to be set.
 </td>
 <td>
 
-A [Deck](#deck) to be added.
+A [Deck](#deck) to be added. The deck is wired back to this collection, and
+its Model, DeckConfiguration and the models of its cards' notes are
+registered automatically. Duplicates are skipped.
 
 </td>
 </tr>
@@ -765,7 +774,8 @@ A [Deck](#deck) to be removed.
 </td>
 <td>
 
-An array of DeckConfigurations.
+An array of DeckConfigurations replacing the current ones.
+Each configuration is added via `addDeckConfiguration`, so duplicates are skipped.
 
 </td>
 </tr>
@@ -800,7 +810,8 @@ An array of DeckConfigurations.
 </td>
 <td>
 
-A DeckConfiguration.
+A DeckConfiguration to be added and serialized into the collection.
+Duplicates are skipped.
 
 </td>
 </tr>
@@ -835,7 +846,7 @@ A DeckConfiguration.
 </td>
 <td>
 
-A DeckConfiguration.
+A DeckConfiguration to be removed.
 
 </td>
 </tr>
@@ -874,7 +885,7 @@ A DeckConfiguration.
 </td>
 <td>
 
-An array of collection tags.
+The cache of all tags used in the collection.
 
 </td>
 </tr>
@@ -890,6 +901,8 @@ A deck contained within a [Collection](#collection) made of [Card](#card)s.
 ### Constructor
 
 > **new Deck**(`name`: `string`, `description?`: `string`): [`Deck`](#deck)
+
+Creates a deck with a default DeckConfiguration and Model attached.
 
 #### Parameters
 
@@ -915,7 +928,7 @@ A deck contained within a [Collection](#collection) made of [Card](#card)s.
 </td>
 <td>
 
-The name of the deck.
+The name of the deck. Use `::` to nest decks, e.g. `"Languages::Polish::Verbs"`.
 
 </td>
 </tr>
@@ -1010,7 +1023,7 @@ The deck ID (by default the time in milliseconds of when the deck was created).
 </td>
 <td>
 
-The name of the deck.
+The name of the deck. Use `::` to nest decks, e.g. `"Languages::Polish::Verbs"`.
 
 </td>
 </tr>
@@ -1049,7 +1062,7 @@ The name of the deck.
 </td>
 <td>
 
-The description of the deck.
+The description of the deck, shown on its overview screen.
 
 </td>
 </tr>
@@ -1128,7 +1141,7 @@ If `true` it uses markdown rendering with `img` tags stripped.
 </td>
 <td>
 
-Extended review card limit.
+The extended review card limit for a custom study session.
 
 </td>
 </tr>
@@ -1167,7 +1180,8 @@ Extended review card limit.
 </td>
 <td>
 
-The update sequence number.
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>
@@ -1206,7 +1220,7 @@ The update sequence number.
 </td>
 <td>
 
-Whether the deck is collapsed.
+Whether the deck is collapsed in the main deck list.
 
 </td>
 </tr>
@@ -1245,7 +1259,7 @@ Whether the deck is collapsed.
 </td>
 <td>
 
-Whether the deck is collapsed in a browser.
+Whether the deck is collapsed in the card browser's sidebar.
 
 </td>
 </tr>
@@ -1448,7 +1462,8 @@ studying in this deck today, in milliseconds.
 </td>
 <td>
 
-Whether the deck is dynamic (filtered).
+Whether the deck is dynamic (filtered) — a deck that temporarily gathers
+cards from other decks based on a search.
 
 </td>
 </tr>
@@ -1487,7 +1502,7 @@ Whether the deck is dynamic (filtered).
 </td>
 <td>
 
-Extended new card limit.
+The extended new card limit for a custom study session.
 
 </td>
 </tr>
@@ -1526,7 +1541,9 @@ Extended new card limit.
 </td>
 <td>
 
-A DeckConfiguration.
+A DeckConfiguration with the deck's scheduling options, linked by ID.
+It is registered in the parent collection immediately if the deck is attached to one,
+otherwise when the deck is added to a collection.
 
 </td>
 </tr>
@@ -1565,7 +1582,9 @@ A DeckConfiguration.
 </td>
 <td>
 
-A Model.
+The note Model used by the deck's cards. The model is back-referenced
+to this deck and registered in the parent collection immediately if the deck is attached
+to one, otherwise when the deck is added to a collection.
 
 </td>
 </tr>
@@ -1639,7 +1658,9 @@ The last modification time in seconds.
 </td>
 <td>
 
-A [Card](#card).
+A [Card](#card) to be added. The card is wired back to this deck, and its
+note's model is registered in the parent collection if the deck is attached to one.
+Duplicates are skipped.
 
 </td>
 </tr>
@@ -1674,7 +1695,7 @@ A [Card](#card).
 </td>
 <td>
 
-A [Card](#card).
+A [Card](#card) to be removed and detached from this deck.
 
 </td>
 </tr>
@@ -1717,7 +1738,8 @@ A [Card](#card).
 </td>
 <td>
 
-A [Collection](#collection).
+The [Collection](#collection) the deck belongs to. Set automatically when
+the deck is added to a collection.
 
 </td>
 </tr>
@@ -1992,7 +2014,8 @@ The last modification time in seconds.
 </td>
 <td>
 
-The update sequence number.
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>

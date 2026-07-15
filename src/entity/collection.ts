@@ -56,7 +56,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param time The timestamp of the creation date in seconds.
+	 * @param time The timestamp of the creation date in seconds. Anki uses it as the epoch for
+	 * scheduling day arithmetic — e.g. a review card's due value is the number of days since this timestamp.
 	 */
 	public setCreationTime(time: number): Collection {
 		this.entity.crt = time;
@@ -82,7 +83,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param time The last schema modification time in milliseconds.
+	 * @param time The last schema modification time in milliseconds. If it differs between
+	 * the client and the server, a full sync is required.
 	 */
 	public setSchemaModificationTime(time: number): Collection {
 		this.entity.scm = time;
@@ -95,7 +97,7 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param version The Anki schema version number.
+	 * @param version The Anki schema version number (`11` for the legacy `anki2` format).
 	 */
 	public setVersion(version: number): Collection {
 		this.entity.ver = version;
@@ -108,7 +110,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param updateSequenceNumber The update sequence number.
+	 * @param updateSequenceNumber The update sequence number, used to find changes when
+	 * synchronising. `-1` indicates changes that have not been synced yet.
 	 */
 	public setUpdateSequenceNumber(updateSequenceNumber: number): Collection {
 		this.entity.usn = updateSequenceNumber;
@@ -121,7 +124,7 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param time The last synchronisation time in milliseconds.
+	 * @param time The last synchronisation time in milliseconds (`0` if the collection has never been synced).
 	 */
 	public setLastSyncTime(time: number): Collection {
 		this.entity.ls = time;
@@ -134,7 +137,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param configuration A collection {@link Configuration}.
+	 * @param configuration A collection {@link Configuration}. It is serialized into the
+	 * collection immediately, so mutations made afterwards require setting it again.
 	 */
 	public setConfiguration(configuration: Configuration): Collection {
 		this.configuration = configuration;
@@ -148,7 +152,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param models An array of possible {@link Model}s.
+	 * @param models An array of {@link Model}s replacing the current ones. Each model is
+	 * added via `addModel`, so duplicates are skipped.
 	 */
 	public setModels(models: Model[]): Collection {
 		this.models = [];
@@ -173,7 +178,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param model A {@link Model} to be added.
+	 * @param model A {@link Model} to be added and serialized into the collection.
+	 * Duplicates are skipped.
 	 */
 	public addModel(model: Model): Collection {
 		if (this.models.indexOf(model) > -1) {
@@ -205,7 +211,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param decks An array of {@link Deck}s to be set.
+	 * @param decks An array of {@link Deck}s replacing the current ones. Each deck is added
+	 * via `addDeck`, including all of its automatic wiring and registrations.
 	 */
 	public setDecks(decks: Deck[]): Collection {
 		this.decks = [];
@@ -213,8 +220,6 @@ export class Collection extends Entity<CollectionModel> {
 		for (const deck of decks) {
 			this.addDeck(deck);
 		}
-
-		this.updateEntityDecks();
 
 		return this;
 	}
@@ -230,7 +235,9 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param deck A {@link Deck} to be added.
+	 * @param deck A {@link Deck} to be added. The deck is wired back to this collection, and
+	 * its {@link Model}, {@link DeckConfiguration} and the models of its cards' notes are
+	 * registered automatically. Duplicates are skipped.
 	 */
 	public addDeck(deck: Deck): Collection {
 		if (this.decks.indexOf(deck) > -1) {
@@ -291,7 +298,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param configs An array of {@link DeckConfiguration}s.
+	 * @param configs An array of {@link DeckConfiguration}s replacing the current ones.
+	 * Each configuration is added via `addDeckConfiguration`, so duplicates are skipped.
 	 */
 	public setDeckConfigurations(configs: DeckConfiguration[]): Collection {
 		this.deckConfigurations = [];
@@ -316,7 +324,8 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param config A {@link DeckConfiguration}.
+	 * @param config A {@link DeckConfiguration} to be added and serialized into the collection.
+	 * Duplicates are skipped.
 	 */
 	public addDeckConfiguration(config: DeckConfiguration): Collection {
 		if (this.deckConfigurations.indexOf(config) > -1) {
@@ -331,7 +340,7 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param config A {@link DeckConfiguration}.
+	 * @param config A {@link DeckConfiguration} to be removed.
 	 */
 	public removeDeckConfiguration(config: DeckConfiguration): Collection {
 		const index = this.deckConfigurations.indexOf(config);
@@ -350,7 +359,7 @@ export class Collection extends Entity<CollectionModel> {
 	}
 
 	/**
-	 * @param tags An array of collection tags.
+	 * @param tags The cache of all tags used in the collection.
 	 */
 	public setTags(tags: string[]): Collection {
 		this.entity.tags = JSON.stringify(tags);
