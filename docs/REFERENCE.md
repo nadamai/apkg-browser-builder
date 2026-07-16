@@ -2066,11 +2066,11 @@ Keep it consistent with the `queue` property.
 
 #### getQueue()
 
-> **getQueue**(): `"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`
+> **getQueue**(): `"new"` \| `"suspended"` \| `"user_buried"` \| `"schedule_buried"` \| `"learning"` \| `"review"` \| `"in_learning"` \| `"preview"`
 
 #### setQueue()
 
-> **setQueue**(`queue`: `"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`): [`Card`](#card)
+> **setQueue**(`queue`: `"new"` \| `"suspended"` \| `"user_buried"` \| `"schedule_buried"` \| `"learning"` \| `"review"` \| `"in_learning"` \| `"preview"`): [`Card`](#card)
 
 ##### Parameters
 
@@ -2091,7 +2091,7 @@ Keep it consistent with the `queue` property.
 </td>
 <td>
 
-`"new"` \| `"suspended"` \| `"userBuried"` \| `"scheduleBuried"` \| `"learning"` \| `"review"` \| `"inLearning"` \| `"preview"`
+`"new"` \| `"suspended"` \| `"user_buried"` \| `"schedule_buried"` \| `"learning"` \| `"review"` \| `"in_learning"` \| `"preview"`
 
 </td>
 <td>
@@ -4648,7 +4648,7 @@ The value of the attribute.
 ### DeckConfiguration
 
 A named group of study options shared by the [Deck](#deck)s it is assigned to: timers,
-audio playback and the NewCardConfig, ReviewCardConfig and
+audio playback and the [NewCardConfig](#newcardconfig), ReviewCardConfig and
 [LapseCardConfig](#lapsecardconfig) scheduling settings.
 
 #### Constructor
@@ -5083,11 +5083,11 @@ The [LapseCardConfig](#lapsecardconfig) with the scheduling options for lapsed
 
 #### getNewCardConfig()
 
-> **getNewCardConfig**(): `NewCardConfig`
+> **getNewCardConfig**(): [`NewCardConfig`](#newcardconfig)
 
 #### setNewCardConfig()
 
-> **setNewCardConfig**(`config`: `NewCardConfig`): [`DeckConfiguration`](#deckconfiguration)
+> **setNewCardConfig**(`config`: [`NewCardConfig`](#newcardconfig)): [`DeckConfiguration`](#deckconfiguration)
 
 ##### Parameters
 
@@ -5108,12 +5108,12 @@ The [LapseCardConfig](#lapsecardconfig) with the scheduling options for lapsed
 </td>
 <td>
 
-`NewCardConfig`
+[`NewCardConfig`](#newcardconfig)
 
 </td>
 <td>
 
-The NewCardConfig with the scheduling options for new cards,
+The [NewCardConfig](#newcardconfig) with the scheduling options for new cards,
 serialized into the configuration.
 
 </td>
@@ -5155,6 +5155,284 @@ serialized into the configuration.
 
 The ReviewCardConfig with the scheduling options for review cards,
 serialized into the configuration.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+### NewCardConfig
+
+The scheduling options of a [DeckConfiguration](#deckconfiguration) for new cards — cards that have
+not been studied yet.
+
+#### getBury()
+
+> **getBury**(): `boolean`
+
+#### setBury()
+
+> **setBury**(`bury`: `boolean`): [`NewCardConfig`](#newcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`bury`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Whether new sibling cards — other cards of the same note — are buried
+(hidden) until the next day once one of them is answered.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getDelays()
+
+> **getDelays**(): `number`[]
+
+#### setDelays()
+
+> **setDelays**(`delays`: `number`[]): [`NewCardConfig`](#newcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`delays`
+
+</td>
+<td>
+
+`number`[]
+
+</td>
+<td>
+
+The learning steps in minutes, e.g. `[1, 10]` = steps of 1 and 10 minutes.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getInitialEaseFactor()
+
+> **getInitialEaseFactor**(): `number`
+
+#### setInitialEaseFactor()
+
+> **setInitialEaseFactor**(`factor`: `number`): [`NewCardConfig`](#newcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`factor`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The ease factor in permille that cards graduate from learning with
+(e.g. `2500` means 250%).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getIntervals()
+
+> **getIntervals**(): `number`[]
+
+#### setIntervals()
+
+> **setIntervals**(`intervals`: `number`[]): [`NewCardConfig`](#newcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`intervals`
+
+</td>
+<td>
+
+`number`[]
+
+</td>
+<td>
+
+The intervals in days applied when a card leaves learning: the first
+for the `Good` (graduating) answer, the second for `Easy`; the third is legacy and unused.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getCardsOrder()
+
+> **getCardsOrder**(): `"new_cards_random"` \| `"new_cards_due"`
+
+#### setCardsOrder()
+
+> **setCardsOrder**(`order`: `"new_cards_random"` \| `"new_cards_due"`): [`NewCardConfig`](#newcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`order`
+
+</td>
+<td>
+
+`"new_cards_random"` \| `"new_cards_due"`
+
+</td>
+<td>
+
+Whether new cards are shown in random order (`new_cards_random`) or in the
+order they were added (`new_cards_due`).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getMaximumCardsPerDay()
+
+> **getMaximumCardsPerDay**(): `number`
+
+#### setMaximumCardsPerDay()
+
+> **setMaximumCardsPerDay**(`cards`: `number`): [`NewCardConfig`](#newcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`cards`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getSeparate()
+
+> **getSeparate**(): `boolean`
+
+#### setSeparate()
+
+> **setSeparate**(`separate`: `boolean`): [`NewCardConfig`](#newcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`separate`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Legacy option. Unused by Anki; kept for schema completeness.
 
 </td>
 </tr>

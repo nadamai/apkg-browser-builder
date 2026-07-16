@@ -7,5 +7,5 @@ export type NewCardConfig = {
 	ints: number[];
 	order: CardsOrderValue;
 	perDay: number;
-	separate: number;
+	separate: boolean;
 };
