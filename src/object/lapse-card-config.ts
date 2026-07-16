@@ -25,7 +25,7 @@ export class LapseCardConfig extends Object<LapseCardConfigObject> {
 		return this.getDictionaryKey(LeechAction, this.object.leechAction) || 'suspend';
 	}
 
-	public setLechAction(action: LeechActionKey): LapseCardConfig {
+	public setLeechAction(action: LeechActionKey): LapseCardConfig {
 		this.object.leechAction = LeechAction[action] || 0;
 
 		return this;

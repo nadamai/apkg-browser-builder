@@ -3,7 +3,7 @@ export * from './card-template';
 export * from './collection';
 export * from './configuration';
 export * from './deck';
-export * from './deck-config';
+export * from './deck-configuration';
 export * from './field';
 export * from './grave';
 export * from './lapse-card-config';
