@@ -1,13 +1,13 @@
 import { ValueOf } from '../type';
 
 export const CardQueue = {
-	userBuried: -3,
-	scheduleBuried: -2,
+	user_buried: -3,
+	schedule_buried: -2,
 	suspended: -1,
 	new: 0,
 	learning: 1,
 	review: 2,
-	inLearning: 3,
+	in_learning: 3,
 	preview: 4
 } as const;
 

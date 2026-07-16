@@ -12,7 +12,20 @@
 import { Converter, ReflectionKind } from 'typedoc';
 import { MarkdownTheme, MarkdownThemeContext } from 'typedoc-plugin-markdown';
 
-const CLASS_ORDER = ['ApkgBuilder', 'Collection', 'Deck', 'Card', 'Note', 'Model', 'Configuration', 'DeckConfiguration', 'LapseCardConfig', 'Media'];
+const CLASS_ORDER = [
+	'ApkgBuilder',
+	'Collection',
+	'Deck',
+	'Card',
+	'Note',
+	'Model',
+	'Configuration',
+	'DeckConfiguration',
+	'NewCardConfig',
+	'LapseCardConfig',
+	'Media'
+];
+
 const HIDDEN_GROUP_HEADINGS = ['Constructors', 'Methods'];
 
 class HiddenTagsTheme extends MarkdownTheme {
