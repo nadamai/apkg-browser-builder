@@ -105,7 +105,8 @@ The [Collection](#collection) to be exported.
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
 
-Adds a media file to be used in the [Note](#note) contents.
+Adds a media file to be used in the [Note](#note) contents. Adding a file under an
+already used name replaces its contents.
 
 ##### Parameters
 
@@ -6837,7 +6838,7 @@ the package is imported.
 <td>
 
 The review log ID: the time in milliseconds of when the review happened
-(by default the time of the creation of this entry).
+(by default the time of the creation of this entry, kept unique across entries).
 
 </td>
 </tr>
