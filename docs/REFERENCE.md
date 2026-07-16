@@ -7167,6 +7167,10 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 
 ### Grave
 
+A deletion marker (tombstone) stored in the collection's `graves` table: tells Anki
+during synchronisation that a [Card](#card), [Note](#note) or [Deck](#deck) was deleted,
+so the deletion propagates to other devices.
+
 #### getOriginalId()
 
 > **getOriginalId**(): `number`
@@ -7182,6 +7186,7 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -7194,6 +7199,11 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <td>
 
 `number`
+
+</td>
+<td>
+
+The ID of the deleted object the grave marks.
 
 </td>
 </tr>
@@ -7211,6 +7221,7 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -7223,6 +7234,11 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <td>
 
 [`Card`](#card)
+
+</td>
+<td>
+
+The deleted [Card](#card) the grave marks, linked by ID. Sets the type accordingly.
 
 </td>
 </tr>
@@ -7240,6 +7256,7 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -7252,6 +7269,11 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <td>
 
 [`Note`](#note)
+
+</td>
+<td>
+
+The deleted [Note](#note) the grave marks, linked by ID. Sets the type accordingly.
 
 </td>
 </tr>
@@ -7269,6 +7291,7 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -7281,6 +7304,11 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <td>
 
 [`Deck`](#deck)
+
+</td>
+<td>
+
+The deleted [Deck](#deck) the grave marks, linked by ID. Sets the type accordingly.
 
 </td>
 </tr>
@@ -7302,6 +7330,7 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -7314,6 +7343,52 @@ The kind of the review: `learn`, `review`, `relearn`, `filtered`
 <td>
 
 `"deck"` \| `"note"` \| `"card"`
+
+</td>
+<td>
+
+The kind of the deleted object: `card`, `note` or `deck`. Changing the
+type resets the original ID, as it identifies a different kind of object.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+#### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`Grave`](#grave)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>
