@@ -11,7 +11,6 @@ import {
 	ReviewLogLearnEaseKey,
 	ReviewLogReviewEaseKey
 } from '../dictionary';
-import { Generator } from '../service/generator';
 
 /**
  * A single review history entry of a {@link Card}, stored in the collection's `revlog`
@@ -19,10 +18,18 @@ import { Generator } from '../service/generator';
  * the package is imported.
  */
 export class ReviewLog extends Entity<ReviewLogModel> {
+	private static lastId: number = 0;
+
+	private static nextId(): number {
+		ReviewLog.lastId = Math.max(Date.now(), ReviewLog.lastId + 1);
+
+		return ReviewLog.lastId;
+	}
+
 	protected table: string = 'revlog';
 
 	protected entity: ReviewLogModel = {
-		id: Date.now(),
+		id: ReviewLog.nextId(),
 		cid: 0,
 		usn: -1,
 		ease: ReviewLogEase.wrong,
@@ -52,10 +59,10 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 
 	/**
 	 * @param id The review log ID: the time in milliseconds of when the review happened
-	 * (by default the time of the creation of this entry).
+	 * (by default the time of the creation of this entry, kept unique across entries).
 	 */
 	public setId(id?: number): ReviewLog {
-		this.entity.id = id ?? Date.now();
+		this.entity.id = id ?? ReviewLog.nextId();
 
 		return this;
 	}
