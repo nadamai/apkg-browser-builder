@@ -1,7 +1,7 @@
 import { GraveTypeValue } from '../dictionary';
 
 export type Grave = {
-	usn: -1;
+	usn: number;
 	oid: number;
 	type: GraveTypeValue;
 };
