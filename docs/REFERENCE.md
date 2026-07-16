@@ -154,7 +154,7 @@ The file as a `Blob`.
 
 #### getMedia()
 
-> **getMedia**(): `Media`[]
+> **getMedia**(): [`Media`](#media)[]
 
 #### build()
 
@@ -4994,8 +4994,7 @@ Whether the question audio is replayed when the answer is shown.
 </td>
 <td>
 
-Whether the answer timer is shown during review. Stored as `1`/`0`,
-as Anki keeps this flag as an integer, unlike the other boolean options.
+Whether the answer timer is shown during review.
 
 </td>
 </tr>
@@ -5156,6 +5155,145 @@ serialized into the configuration.
 
 The ReviewCardConfig with the scheduling options for review cards,
 serialized into the configuration.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+### Media
+
+A media file (e.g. an image or audio) attached to the `.apkg` package, referenced
+from the [Note](#note) contents by its filename.
+
+#### Constructor
+
+> **new Media**(`filename`: `string`, `file`: `Blob`): [`Media`](#media)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`filename`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The unique name under which the file is stored in the package.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`file`
+
+</td>
+<td>
+
+`Blob`
+
+</td>
+<td>
+
+The file contents as a `Blob`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getFilename()
+
+> **getFilename**(): `string`
+
+#### setFilename()
+
+> **setFilename**(`filename`: `string`): [`Media`](#media)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`filename`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The unique name under which the file is stored in the package.
+[Note](#note) contents reference media by this exact name, e.g. `<img src="photo.jpg">`
+or `[sound:audio.mp3]`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getFile()
+
+> **getFile**(): `Blob`
+
+#### setFile()
+
+> **setFile**(`file`: `Blob`): [`Media`](#media)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`file`
+
+</td>
+<td>
+
+`Blob`
+
+</td>
+<td>
+
+The file contents as a `Blob`.
 
 </td>
 </tr>
