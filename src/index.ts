@@ -7,6 +7,7 @@ import { Entity } from './abstract';
 import { Media } from './builder';
 import { ApkgBuilderConfig } from './type/apkg-builder-config';
 import { NewCardConfig } from './object/new-card-config';
+import { ReviewCardConfig } from './object/review-card-config';
 import { LapseCardConfig } from './object/lapse-card-config';
 
 /**
@@ -130,6 +131,19 @@ class ApkgBuilder {
 
 export default ApkgBuilder;
 
-export { ApkgBuilder, Collection, Deck, Card, Note, Configuration, DeckConfiguration, Model, NewCardConfig, LapseCardConfig, Media };
+export {
+	ApkgBuilder,
+	Collection,
+	Deck,
+	Card,
+	Note,
+	Configuration,
+	DeckConfiguration,
+	Model,
+	NewCardConfig,
+	ReviewCardConfig,
+	LapseCardConfig,
+	Media
+};
 
 export type { ApkgBuilderConfig };

@@ -2097,7 +2097,7 @@ Keep it consistent with the `queue` property.
 <td>
 
 The scheduling queue the card is placed in: `new`, `learning`, `review`,
-`inLearning`, `preview`, `suspended`, `userBuried` or `scheduleBuried`.
+`in_learning`, `preview`, `suspended`, `user_buried` or `schedule_buried`.
 Keep it consistent with the `type` property.
 
 </td>
@@ -3938,11 +3938,11 @@ A [Deck](#deck) to be removed from the active ones.
 
 #### getNewSpread()
 
-> **getNewSpread**(): `"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"` \| `null`
+> **getNewSpread**(): `"new_cards_distribute"` \| `"new_cards_last"` \| `"new_cards_first"` \| `null`
 
 #### setNewSpread()
 
-> **setNewSpread**(`newSpread`: `"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"`): [`Configuration`](#configuration)
+> **setNewSpread**(`newSpread`: `"new_cards_distribute"` \| `"new_cards_last"` \| `"new_cards_first"`): [`Configuration`](#configuration)
 
 ##### Parameters
 
@@ -3963,13 +3963,13 @@ A [Deck](#deck) to be removed from the active ones.
 </td>
 <td>
 
-`"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"`
+`"new_cards_distribute"` \| `"new_cards_last"` \| `"new_cards_first"`
 
 </td>
 <td>
 
-How new cards are mixed with reviews: `newCardsDistribute` (spread among
-the reviews), `newCardsLast` or `newCardsFirst`.
+How new cards are mixed with reviews: `new_cards_distribute` (spread
+among the reviews), `new_cards_last` or `new_cards_first`.
 
 </td>
 </tr>
@@ -4648,7 +4648,7 @@ The value of the attribute.
 ### DeckConfiguration
 
 A named group of study options shared by the [Deck](#deck)s it is assigned to: timers,
-audio playback and the [NewCardConfig](#newcardconfig), ReviewCardConfig and
+audio playback and the [NewCardConfig](#newcardconfig), [ReviewCardConfig](#reviewcardconfig) and
 [LapseCardConfig](#lapsecardconfig) scheduling settings.
 
 #### Constructor
@@ -5123,11 +5123,11 @@ serialized into the configuration.
 
 #### getReviewCardConfig()
 
-> **getReviewCardConfig**(): `ReviewCardConfig`
+> **getReviewCardConfig**(): [`ReviewCardConfig`](#reviewcardconfig)
 
 #### setReviewCardConfig()
 
-> **setReviewCardConfig**(`config`: `ReviewCardConfig`): [`DeckConfiguration`](#deckconfiguration)
+> **setReviewCardConfig**(`config`: [`ReviewCardConfig`](#reviewcardconfig)): [`DeckConfiguration`](#deckconfiguration)
 
 ##### Parameters
 
@@ -5148,12 +5148,12 @@ serialized into the configuration.
 </td>
 <td>
 
-`ReviewCardConfig`
+[`ReviewCardConfig`](#reviewcardconfig)
 
 </td>
 <td>
 
-The ReviewCardConfig with the scheduling options for review cards,
+The [ReviewCardConfig](#reviewcardconfig) with the scheduling options for review cards,
 serialized into the configuration.
 
 </td>
@@ -5433,6 +5433,292 @@ order they were added (`new_cards_due`).
 <td>
 
 Legacy option. Unused by Anki; kept for schema completeness.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+### ReviewCardConfig
+
+The scheduling options of a [DeckConfiguration](#deckconfiguration) for review cards — cards that
+have graduated from learning.
+
+#### getBury()
+
+> **getBury**(): `boolean`
+
+#### setBury()
+
+> **setBury**(`bury`: `boolean`): [`ReviewCardConfig`](#reviewcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`bury`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Whether review sibling cards — other cards of the same note — are buried
+(hidden) until the next day once one of them is answered.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getEasyBonus()
+
+> **getEasyBonus**(): `number`
+
+#### setEasyBonus()
+
+> **setEasyBonus**(`bonus`: `number`): [`ReviewCardConfig`](#reviewcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`bonus`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The extra multiplier applied to the interval when a card is answered `Easy`,
+as a fraction (e.g. `1.3` = 130% of the usual next interval).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getFuzz()
+
+> **getFuzz**(): `number`
+
+#### setFuzz()
+
+> **setFuzz**(`fuzz`: `number`): [`ReviewCardConfig`](#reviewcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`fuzz`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The random variation applied to intervals as a fraction (e.g. `0.05` = 5%),
+so that cards introduced together do not always stay due on the same days. Legacy —
+newer Anki schedulers compute their own fuzz.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getIntervalModifier()
+
+> **getIntervalModifier**(): `number`
+
+#### setIntervalModifier()
+
+> **setIntervalModifier**(`modifier`: `number`): [`ReviewCardConfig`](#reviewcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`modifier`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The multiplier applied to all review intervals, as a fraction
+(e.g. `1` = 100%, no change).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getMaximumInterval()
+
+> **getMaximumInterval**(): `number`
+
+#### setMaximumInterval()
+
+> **setMaximumInterval**(`interval`: `number`): [`ReviewCardConfig`](#reviewcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`interval`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The maximum interval in days a review card can reach
+(e.g. `36500` = 100 years).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getMinimumSpace()
+
+> **getMinimumSpace**(): `number`
+
+#### setMinimumSpace()
+
+> **setMinimumSpace**(`space`: `number`): [`ReviewCardConfig`](#reviewcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`space`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+Legacy option. Unused by Anki; kept for schema completeness.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getMaximumCardsPerDay()
+
+> **getMaximumCardsPerDay**(): `number`
+
+#### setMaximumCardsPerDay()
+
+> **setMaximumCardsPerDay**(`cards`: `number`): [`ReviewCardConfig`](#reviewcardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`cards`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The maximum number of review cards shown per day.
 
 </td>
 </tr>
