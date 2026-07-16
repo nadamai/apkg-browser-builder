@@ -99,12 +99,12 @@ export class Configuration extends Object<ConfigurationObject> {
 			return null;
 		}
 
-		return this.getDictionaryKey(NewSpread, this.object.newSpread) || 'newCardsDistribute';
+		return this.getDictionaryKey(NewSpread, this.object.newSpread) || 'new_cards_distribute';
 	}
 
 	/**
-	 * @param newSpread How new cards are mixed with reviews: `newCardsDistribute` (spread among
-	 * the reviews), `newCardsLast` or `newCardsFirst`.
+	 * @param newSpread How new cards are mixed with reviews: `new_cards_distribute` (spread
+	 * among the reviews), `new_cards_last` or `new_cards_first`.
 	 */
 	public setNewSpread(newSpread: NewSpreadKey): Configuration {
 		this.object.newSpread = NewSpread[newSpread];

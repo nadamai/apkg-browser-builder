@@ -22,6 +22,7 @@ const CLASS_ORDER = [
 	'Configuration',
 	'DeckConfiguration',
 	'NewCardConfig',
+	'ReviewCardConfig',
 	'LapseCardConfig',
 	'Media'
 ];

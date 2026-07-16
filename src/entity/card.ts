@@ -162,7 +162,7 @@ export class Card extends Entity<CardModel> {
 
 	/**
 	 * @param queue The scheduling queue the card is placed in: `new`, `learning`, `review`,
-	 * `inLearning`, `preview`, `suspended`, `userBuried` or `scheduleBuried`.
+	 * `in_learning`, `preview`, `suspended`, `user_buried` or `schedule_buried`.
 	 * Keep it consistent with the `type` property.
 	 */
 	public setQueue(queue: CardQueueKey): Card {
