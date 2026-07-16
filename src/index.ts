@@ -6,6 +6,7 @@ import { Configuration, Deck, DeckConfiguration, Model } from './object';
 import { Entity } from './abstract';
 import { Media } from './builder';
 import { ApkgBuilderConfig } from './type/apkg-builder-config';
+import { LapseCardConfig } from './object/lapse-card-config';
 
 /**
  * The main (`export default`) class used for generating `.apkg` packages.
@@ -128,6 +129,6 @@ class ApkgBuilder {
 
 export default ApkgBuilder;
 
-export { ApkgBuilder, Collection, Deck, Card, Note, Configuration, DeckConfiguration, Model, Media };
+export { ApkgBuilder, Collection, Deck, Card, Note, Configuration, DeckConfiguration, Model, LapseCardConfig, Media };
 
 export type { ApkgBuilderConfig };

@@ -4649,7 +4649,7 @@ The value of the attribute.
 
 A named group of study options shared by the [Deck](#deck)s it is assigned to: timers,
 audio playback and the NewCardConfig, ReviewCardConfig and
-LapseCardConfig scheduling settings.
+[LapseCardConfig](#lapsecardconfig) scheduling settings.
 
 #### Constructor
 
@@ -5043,11 +5043,11 @@ synchronising. `-1` indicates changes that have not been synced yet.
 
 #### getLapseCardConfig()
 
-> **getLapseCardConfig**(): `LapseCardConfig`
+> **getLapseCardConfig**(): [`LapseCardConfig`](#lapsecardconfig)
 
 #### setLapseCardConfig()
 
-> **setLapseCardConfig**(`config`: `LapseCardConfig`): [`DeckConfiguration`](#deckconfiguration)
+> **setLapseCardConfig**(`config`: [`LapseCardConfig`](#lapsecardconfig)): [`DeckConfiguration`](#deckconfiguration)
 
 ##### Parameters
 
@@ -5068,12 +5068,12 @@ synchronising. `-1` indicates changes that have not been synced yet.
 </td>
 <td>
 
-`LapseCardConfig`
+[`LapseCardConfig`](#lapsecardconfig)
 
 </td>
 <td>
 
-The LapseCardConfig with the scheduling options for lapsed
+The [LapseCardConfig](#lapsecardconfig) with the scheduling options for lapsed
 (forgotten) cards, serialized into the configuration.
 
 </td>
@@ -5155,6 +5155,211 @@ serialized into the configuration.
 
 The ReviewCardConfig with the scheduling options for review cards,
 serialized into the configuration.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+### LapseCardConfig
+
+The scheduling options of a [DeckConfiguration](#deckconfiguration) for lapsed cards — cards answered
+`Again` during review.
+
+#### getDelays()
+
+> **getDelays**(): `number`[]
+
+#### setDelays()
+
+> **setDelays**(`delays`: `number`[]): [`LapseCardConfig`](#lapsecardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`delays`
+
+</td>
+<td>
+
+`number`[]
+
+</td>
+<td>
+
+The relearning steps in minutes, e.g. `[10]` = a single 10-minute step.
+When empty, lapsed cards go straight back to the review queue.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getLeechAction()
+
+> **getLeechAction**(): `"mark"` \| `"suspend"`
+
+#### setLeechAction()
+
+> **setLeechAction**(`action`: `"mark"` \| `"suspend"`): [`LapseCardConfig`](#lapsecardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`action`
+
+</td>
+<td>
+
+`"mark"` \| `"suspend"`
+
+</td>
+<td>
+
+What happens to a card marked as a leech: `suspend` or `mark` (tag only).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getLeechFails()
+
+> **getLeechFails**(): `number`
+
+#### setLeechFails()
+
+> **setLeechFails**(`fails`: `number`): [`LapseCardConfig`](#lapsecardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`fails`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The number of lapses after which a card is tagged as a leech
+(`0` = leeches disabled).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getMinimumInterval()
+
+> **getMinimumInterval**(): `number`
+
+#### setMinimumInterval()
+
+> **setMinimumInterval**(`interval`: `number`): [`LapseCardConfig`](#lapsecardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`interval`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The minimum interval in days a card is given after a lapse.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getMultiplier()
+
+> **getMultiplier**(): `number`
+
+#### setMultiplier()
+
+> **setMultiplier**(`multiplier`: `number`): [`LapseCardConfig`](#lapsecardconfig)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`multiplier`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The fraction of the previous interval a lapsed card keeps, e.g.
+`0` = the interval is reset (Anki's "new interval" option).
 
 </td>
 </tr>
