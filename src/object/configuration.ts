@@ -57,7 +57,7 @@ export class Configuration extends Object<ConfigurationObject> {
 	 */
 	public setActiveDecks(decks: Deck[]): Configuration {
 		this.activeDecks = decks;
-		this.object.activeDecks = decks.map((deck: Deck) => deck.getId());
+		this.updateActiveDecks();
 
 		return this;
 	}
@@ -91,7 +91,7 @@ export class Configuration extends Object<ConfigurationObject> {
 	}
 
 	private updateActiveDecks(): void {
-		this.setActiveDecks(this.activeDecks);
+		this.object.activeDecks = this.activeDecks.map((deck: Deck) => deck.getId());
 	}
 
 	public getNewSpread(): NewSpreadKey | null {

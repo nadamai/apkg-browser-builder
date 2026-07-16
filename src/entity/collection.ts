@@ -231,6 +231,8 @@ export class Collection extends Entity<CollectionModel> {
 			this.addDeck(deck);
 		}
 
+		this.updateEntityDecks();
+
 		return this;
 	}
 

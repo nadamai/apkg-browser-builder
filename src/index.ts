@@ -2,15 +2,20 @@ import * as FileSaver from 'file-saver';
 import { Database } from './service/database';
 import JSZip from 'jszip';
 import { Card, Collection, Grave, Note, ReviewLog } from './entity';
-import { Configuration, Deck, DeckConfiguration, Model } from './object';
+import {
+	CardTemplate,
+	Configuration,
+	Deck,
+	DeckConfiguration,
+	Field,
+	LapseCardConfig,
+	Model,
+	NewCardConfig,
+	ReviewCardConfig
+} from './object';
 import { Entity } from './abstract';
 import { Media } from './builder';
 import { ApkgBuilderConfig } from './type/apkg-builder-config';
-import { NewCardConfig } from './object/new-card-config';
-import { ReviewCardConfig } from './object/review-card-config';
-import { LapseCardConfig } from './object/lapse-card-config';
-import { Field } from './object/field';
-import { CardTemplate } from './object/card-template';
 
 /**
  * The main (`export default`) class used for generating `.apkg` packages.
