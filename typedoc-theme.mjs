@@ -26,6 +26,7 @@ const CLASS_ORDER = [
 	'NewCardConfig',
 	'ReviewCardConfig',
 	'LapseCardConfig',
+	'ReviewLog',
 	'Media'
 ];
 

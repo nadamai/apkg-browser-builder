@@ -1,7 +1,7 @@
 import * as FileSaver from 'file-saver';
 import { Database } from './service/database';
 import JSZip from 'jszip';
-import { Card, Collection, Note } from './entity';
+import { Card, Collection, Note, ReviewLog } from './entity';
 import { Configuration, Deck, DeckConfiguration, Model } from './object';
 import { Entity } from './abstract';
 import { Media } from './builder';
@@ -21,6 +21,7 @@ class ApkgBuilder {
 	private config?: Partial<ApkgBuilderConfig>;
 
 	private media: Media[] = [];
+	private reviewLogs: ReviewLog[] = [];
 
 	/**
 	 * @param collection The {@link Collection} to be exported.
@@ -61,7 +62,11 @@ class ApkgBuilder {
 			return [note];
 		});
 
-		return [this.collection, ...cards, ...notes];
+		return [this.collection, ...cards, ...notes, ...this.reviewLogs];
+	}
+
+	public getMedia(): Media[] {
+		return this.media;
 	}
 
 	/**
@@ -79,8 +84,49 @@ class ApkgBuilder {
 		return this;
 	}
 
-	public getMedia(): Media[] {
-		return this.media;
+	/**
+	 * @param media A {@link Media} file to be removed from the package.
+	 */
+	public removeMedia(media: Media): ApkgBuilder {
+		const index = this.media.indexOf(media);
+
+		if (index > -1) {
+			this.media.splice(index, 1);
+		}
+
+		return this;
+	}
+
+	public getReviewLogs(): ReviewLog[] {
+		return this.reviewLogs;
+	}
+
+	/**
+	 * Adds a review history entry, exported into the collection's `revlog` table.
+	 *
+	 * @param reviewLog A {@link ReviewLog} to be added. Duplicates are skipped.
+	 */
+	public addReviewLog(reviewLog: ReviewLog): ApkgBuilder {
+		if (this.reviewLogs.indexOf(reviewLog) > -1) {
+			return this;
+		}
+
+		this.reviewLogs.push(reviewLog);
+
+		return this;
+	}
+
+	/**
+	 * @param reviewLog A {@link ReviewLog} to be removed.
+	 */
+	public removeReviewLog(reviewLog: ReviewLog): ApkgBuilder {
+		const index = this.reviewLogs.indexOf(reviewLog);
+
+		if (index > -1) {
+			this.reviewLogs.splice(index, 1);
+		}
+
+		return this;
 	}
 
 	/**
@@ -140,6 +186,7 @@ export {
 	Deck,
 	Card,
 	Note,
+	ReviewLog,
 	Model,
 	Field,
 	CardTemplate,
