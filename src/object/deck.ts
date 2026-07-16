@@ -54,6 +54,14 @@ export class Deck extends Object<DeckObject> {
 		this.object.desc = description;
 	}
 
+	public getObject(): DeckObject {
+		if (this.configuration) {
+			this.object.conf = this.configuration.getId();
+		}
+
+		return this.object;
+	}
+
 	public getId(): number {
 		return this.object.id;
 	}
