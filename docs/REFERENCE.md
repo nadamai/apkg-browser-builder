@@ -267,6 +267,82 @@ A [ReviewLog](#reviewlog) to be removed.
 </tbody>
 </table>
 
+#### getGraves()
+
+> **getGraves**(): [`Grave`](#grave)[]
+
+#### addGrave()
+
+> **addGrave**(`grave`: [`Grave`](#grave)): [`ApkgBuilder`](#apkgbuilder)
+
+Adds a deletion marker, exported into the collection's `graves` table.
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`grave`
+
+</td>
+<td>
+
+[`Grave`](#grave)
+
+</td>
+<td>
+
+A [Grave](#grave) to be added. Duplicates are skipped.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### removeGrave()
+
+> **removeGrave**(`grave`: [`Grave`](#grave)): [`ApkgBuilder`](#apkgbuilder)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`grave`
+
+</td>
+<td>
+
+[`Grave`](#grave)
+
+</td>
+<td>
+
+A [Grave](#grave) to be removed.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 #### build()
 
 > **build**(): `Promise`\<`Blob`\>
@@ -7081,6 +7157,163 @@ The duration of the review in milliseconds (Anki records at most `60000`).
 
 The kind of the review: `learn`, `review`, `relearn`, `filtered`
 (reviewed in a filtered deck), `manual` or `rescheduled`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+### Grave
+
+#### getOriginalId()
+
+> **getOriginalId**(): `number`
+
+#### setOriginalId()
+
+> **setOriginalId**(`originalId`: `number`): [`Grave`](#grave)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`originalId`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### setCard()
+
+> **setCard**(`card`: [`Card`](#card)): [`Grave`](#grave)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`card`
+
+</td>
+<td>
+
+[`Card`](#card)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### setNote()
+
+> **setNote**(`note`: [`Note`](#note)): [`Grave`](#grave)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`note`
+
+</td>
+<td>
+
+[`Note`](#note)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### setDeck()
+
+> **setDeck**(`deck`: [`Deck`](#deck)): [`Grave`](#grave)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getType()
+
+> **getType**(): `"deck"` \| `"note"` \| `"card"`
+
+#### setType()
+
+> **setType**(`type`: `"deck"` \| `"note"` \| `"card"`): [`Grave`](#grave)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`type`
+
+</td>
+<td>
+
+`"deck"` \| `"note"` \| `"card"`
 
 </td>
 </tr>

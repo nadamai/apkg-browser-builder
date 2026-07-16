@@ -1,7 +1,7 @@
 import * as FileSaver from 'file-saver';
 import { Database } from './service/database';
 import JSZip from 'jszip';
-import { Card, Collection, Note, ReviewLog } from './entity';
+import { Card, Collection, Grave, Note, ReviewLog } from './entity';
 import { Configuration, Deck, DeckConfiguration, Model } from './object';
 import { Entity } from './abstract';
 import { Media } from './builder';
@@ -11,7 +11,6 @@ import { ReviewCardConfig } from './object/review-card-config';
 import { LapseCardConfig } from './object/lapse-card-config';
 import { Field } from './object/field';
 import { CardTemplate } from './object/card-template';
-import { ModelRequirement, ModelRequirementType } from './type/model-requirement';
 
 /**
  * The main (`export default`) class used for generating `.apkg` packages.
@@ -22,6 +21,7 @@ class ApkgBuilder {
 
 	private media: Media[] = [];
 	private reviewLogs: ReviewLog[] = [];
+	private graves: Grave[] = [];
 
 	/**
 	 * @param collection The {@link Collection} to be exported.
@@ -62,7 +62,7 @@ class ApkgBuilder {
 			return [note];
 		});
 
-		return [this.collection, ...cards, ...notes, ...this.reviewLogs];
+		return [this.collection, ...cards, ...notes, ...this.reviewLogs, ...this.graves];
 	}
 
 	public getMedia(): Media[] {
@@ -129,6 +129,38 @@ class ApkgBuilder {
 		return this;
 	}
 
+	public getGraves(): Grave[] {
+		return this.graves;
+	}
+
+	/**
+	 * Adds a deletion marker, exported into the collection's `graves` table.
+	 *
+	 * @param grave A {@link Grave} to be added. Duplicates are skipped.
+	 */
+	public addGrave(grave: Grave): ApkgBuilder {
+		if (this.graves.indexOf(grave) > -1) {
+			return this;
+		}
+
+		this.graves.push(grave);
+
+		return this;
+	}
+
+	/**
+	 * @param grave A {@link Grave} to be removed.
+	 */
+	public removeGrave(grave: Grave): ApkgBuilder {
+		const index = this.graves.indexOf(grave);
+
+		if (index > -1) {
+			this.graves.splice(index, 1);
+		}
+
+		return this;
+	}
+
 	/**
 	 * Returns the generated `.apkg` package as a `Blob`.
 	 */
@@ -186,7 +218,6 @@ export {
 	Deck,
 	Card,
 	Note,
-	ReviewLog,
 	Model,
 	Field,
 	CardTemplate,
@@ -195,6 +226,8 @@ export {
 	NewCardConfig,
 	ReviewCardConfig,
 	LapseCardConfig,
+	ReviewLog,
+	Grave,
 	Media
 };
 
