@@ -1,6 +1,6 @@
 export type Field = {
 	font: string;
-	media: [];
+	media: string[];
 	name: string;
 	ord: number;
 	rtl: boolean;
