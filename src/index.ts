@@ -4,7 +4,7 @@ import JSZip from 'jszip';
 import { Card, Collection, Note } from './entity';
 import { Configuration, Deck, DeckConfiguration, Model } from './object';
 import { Entity } from './abstract';
-import { Media } from './service';
+import { Media } from './builder';
 import { ApkgBuilderConfig } from './type/apkg-builder-config';
 
 /**
@@ -128,6 +128,6 @@ class ApkgBuilder {
 
 export default ApkgBuilder;
 
-export { ApkgBuilder, Collection, Deck, Card, Note, Configuration, DeckConfiguration, Model };
+export { ApkgBuilder, Collection, Deck, Card, Note, Configuration, DeckConfiguration, Model, Media };
 
 export type { ApkgBuilderConfig };
