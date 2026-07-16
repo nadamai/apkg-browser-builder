@@ -4647,6 +4647,45 @@ The value of the attribute.
 
 ### DeckConfiguration
 
+A named group of study options shared by the [Deck](#deck)s it is assigned to: timers,
+audio playback and the NewCardConfig, ReviewCardConfig and
+LapseCardConfig scheduling settings.
+
+#### Constructor
+
+> **new DeckConfiguration**(`name?`: `string`): [`DeckConfiguration`](#deckconfiguration)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the configuration.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 #### getId()
 
 > **getId**(): `number`
@@ -4662,6 +4701,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4674,6 +4714,12 @@ The value of the attribute.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The configuration ID (by default the time in milliseconds of when the
+configuration was created).
 
 </td>
 </tr>
@@ -4695,6 +4741,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4707,6 +4754,11 @@ The value of the attribute.
 <td>
 
 `string`
+
+</td>
+<td>
+
+The name of the configuration.
 
 </td>
 </tr>
@@ -4728,6 +4780,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4740,6 +4793,12 @@ The value of the attribute.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the question audio is played automatically when the question
+is shown.
 
 </td>
 </tr>
@@ -4761,6 +4820,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4773,6 +4833,11 @@ The value of the attribute.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the configuration belongs to a dynamic (filtered) deck.
 
 </td>
 </tr>
@@ -4794,6 +4859,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4806,6 +4872,12 @@ The value of the attribute.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The maximum number of seconds a single answer can take: answers taking
+longer are recorded as this value.
 
 </td>
 </tr>
@@ -4827,6 +4899,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4839,6 +4912,11 @@ The value of the attribute.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The last modification time in seconds.
 
 </td>
 </tr>
@@ -4860,6 +4938,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4872,6 +4951,11 @@ The value of the attribute.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the question audio is replayed when the answer is shown.
 
 </td>
 </tr>
@@ -4893,6 +4977,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4905,6 +4990,12 @@ The value of the attribute.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the answer timer is shown during review. Stored as `1`/`0`,
+as Anki keeps this flag as an integer, unlike the other boolean options.
 
 </td>
 </tr>
@@ -4926,6 +5017,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4938,6 +5030,12 @@ The value of the attribute.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>
@@ -4959,6 +5057,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4971,6 +5070,12 @@ The value of the attribute.
 <td>
 
 `LapseCardConfig`
+
+</td>
+<td>
+
+The LapseCardConfig with the scheduling options for lapsed
+(forgotten) cards, serialized into the configuration.
 
 </td>
 </tr>
@@ -4992,6 +5097,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -5004,6 +5110,12 @@ The value of the attribute.
 <td>
 
 `NewCardConfig`
+
+</td>
+<td>
+
+The NewCardConfig with the scheduling options for new cards,
+serialized into the configuration.
 
 </td>
 </tr>
@@ -5025,6 +5137,7 @@ The value of the attribute.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -5037,6 +5150,12 @@ The value of the attribute.
 <td>
 
 `ReviewCardConfig`
+
+</td>
+<td>
+
+The ReviewCardConfig with the scheduling options for review cards,
+serialized into the configuration.
 
 </td>
 </tr>

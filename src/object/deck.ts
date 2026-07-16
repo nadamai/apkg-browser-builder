@@ -2,7 +2,7 @@ import { Object } from '../abstract';
 import { Card, Collection } from '../entity';
 import { Deck as DeckObject } from '../model';
 import { Generator } from '../service/generator';
-import { DeckConfiguration } from './deck-config';
+import { DeckConfiguration } from './deck-configuration';
 import { Model } from './model';
 
 /**
