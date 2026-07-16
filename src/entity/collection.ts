@@ -10,7 +10,7 @@ import { Configuration } from '../object/configuration';
 import { Generator } from '../service/generator';
 
 /**
- * The root Anki database entity containing decks, cards and all the other information.
+ * The root Anki database entity containing {@link Deck}s, {@link Card}s and all the other information.
  */
 export class Collection extends Entity<CollectionModel> {
 	protected table: string = 'col';

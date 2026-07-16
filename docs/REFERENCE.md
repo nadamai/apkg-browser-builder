@@ -390,7 +390,7 @@ The downloaded package filename, including extension — e.g. "my-deck.apkg".
 
 ### Collection
 
-The root Anki database entity containing decks, cards and all the other information.
+The root Anki database entity containing [Deck](#deck)s, [Card](#card)s and all the other information.
 
 #### getId()
 
