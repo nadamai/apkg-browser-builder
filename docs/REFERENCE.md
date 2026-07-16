@@ -3783,6 +3783,10 @@ Legacy version array. Unused by modern Anki.
 
 ### Configuration
 
+Anki client preferences stored in the collection — new-card scheduling, timeboxing,
+card browser appearance and the currently selected [Deck](#deck) and [Model](#model).
+All attributes are optional; Anki falls back to its defaults for absent ones.
+
 #### getCurrentDeck()
 
 > **getCurrentDeck**(): [`Deck`](#deck) \| `null`
@@ -3798,6 +3802,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -3810,6 +3815,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 [`Deck`](#deck)
+
+</td>
+<td>
+
+The currently selected [Deck](#deck), linked by ID.
 
 </td>
 </tr>
@@ -3831,6 +3841,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -3843,6 +3854,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 [`Deck`](#deck)[]
+
+</td>
+<td>
+
+The [Deck](#deck)s (linked by IDs) currently selected for study — typically
+the current deck and its subdecks.
 
 </td>
 </tr>
@@ -3860,6 +3877,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -3872,6 +3890,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 [`Deck`](#deck)
+
+</td>
+<td>
+
+A [Deck](#deck) to be added to the active ones. Duplicates are skipped.
 
 </td>
 </tr>
@@ -3889,6 +3912,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -3901,6 +3925,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 [`Deck`](#deck)
+
+</td>
+<td>
+
+A [Deck](#deck) to be removed from the active ones.
 
 </td>
 </tr>
@@ -3922,6 +3951,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -3934,6 +3964,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `"newCardsDistribute"` \| `"newCardsLast"` \| `"newCardsFirst"`
+
+</td>
+<td>
+
+How new cards are mixed with reviews: `newCardsDistribute` (spread among
+the reviews), `newCardsLast` or `newCardsFirst`.
 
 </td>
 </tr>
@@ -3955,6 +3991,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -3967,6 +4004,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The learn-ahead limit in seconds (e.g. `1200` = 20 minutes): when
+nothing else is due, cards in learning are shown up to this amount of time earlier.
 
 </td>
 </tr>
@@ -3988,6 +4031,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4000,6 +4044,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The timeboxing period in seconds (`0` = disabled): Anki shows the number
+of cards studied after each such period during a study session.
 
 </td>
 </tr>
@@ -4021,6 +4071,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4033,6 +4084,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the next review time is shown above the answer buttons.
 
 </td>
 </tr>
@@ -4054,6 +4110,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4066,6 +4123,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the remaining card counts are shown during review.
 
 </td>
 </tr>
@@ -4087,6 +4149,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4099,6 +4162,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 [`Model`](#model)
+
+</td>
+<td>
+
+The most recently used [Model](#model), linked by ID.
 
 </td>
 </tr>
@@ -4120,6 +4188,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4132,6 +4201,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The `due` position assigned to the next added new card (starts at `1`).
 
 </td>
 </tr>
@@ -4153,6 +4227,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4167,17 +4242,22 @@ Legacy version array. Unused by modern Anki.
 `string`
 
 </td>
+<td>
+
+The card browser column used for sorting, e.g. `noteFld` or `cardDue`.
+
+</td>
 </tr>
 </tbody>
 </table>
 
-#### getSortBackwrds()
+#### getSortBackwards()
 
-> **getSortBackwrds**(): `boolean` \| `null`
+> **getSortBackwards**(): `boolean` \| `null`
 
-#### setSortBackwrds()
+#### setSortBackwards()
 
-> **setSortBackwrds**(`sortBackwards`: `boolean`): [`Configuration`](#configuration)
+> **setSortBackwards**(`sortBackwards`: `boolean`): [`Configuration`](#configuration)
 
 ##### Parameters
 
@@ -4186,6 +4266,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4198,6 +4279,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether the card browser sorting order is reversed.
 
 </td>
 </tr>
@@ -4219,6 +4305,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4231,6 +4318,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether new cards are added to the currently selected deck (`true`) or
+to the deck the note's model is linked to (`false`).
 
 </td>
 </tr>
@@ -4252,6 +4345,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4264,6 +4358,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Whether learning cards with steps of a day or more are shown
+before reviews.
 
 </td>
 </tr>
@@ -4285,6 +4385,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4297,6 +4398,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `boolean`
+
+</td>
+<td>
+
+Legacy option for burying new sibling cards, superseded by per-deck
+options in modern Anki.
 
 </td>
 </tr>
@@ -4318,6 +4425,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4330,6 +4438,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The day the cards were last unburied, in days since the collection
+creation. Legacy scheduler bookkeeping.
 
 </td>
 </tr>
@@ -4351,6 +4465,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4363,6 +4478,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 (`"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`)[]
+
+</td>
+<td>
+
+The columns displayed in the card browser.
 
 </td>
 </tr>
@@ -4380,6 +4500,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4392,6 +4513,12 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`
+
+</td>
+<td>
+
+A column to be added to the ones displayed in the card browser.
+Duplicates are skipped.
 
 </td>
 </tr>
@@ -4409,6 +4536,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4423,6 +4551,11 @@ Legacy version array. Unused by modern Anki.
 `"answer"` \| `"template"` \| `"question"` \| `"deck"` \| `"noteFld"` \| `"noteCrt"` \| `"noteMod"` \| `"cardMod"` \| `"cardDue"` \| `"cardIvl"` \| `"cardEase"` \| `"cardReps"` \| `"cardLapses"` \| `"noteTags"` \| `"note"`
 
 </td>
+<td>
+
+A column to be removed from the ones displayed in the card browser.
+
+</td>
 </tr>
 </tbody>
 </table>
@@ -4431,6 +4564,8 @@ Legacy version array. Unused by modern Anki.
 
 > **setValue**(`attribute`: `string`, `value`: `any`): [`Configuration`](#configuration)
 
+Sets an arbitrary configuration attribute not covered by the typed setters.
+
 ##### Parameters
 
 <table>
@@ -4438,6 +4573,7 @@ Legacy version array. Unused by modern Anki.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -4452,6 +4588,11 @@ Legacy version array. Unused by modern Anki.
 `string`
 
 </td>
+<td>
+
+The name of the attribute as stored in the collection's `conf` JSON.
+
+</td>
 </tr>
 <tr>
 <td>
@@ -4462,6 +4603,11 @@ Legacy version array. Unused by modern Anki.
 <td>
 
 `any`
+
+</td>
+<td>
+
+The value of the attribute.
 
 </td>
 </tr>
