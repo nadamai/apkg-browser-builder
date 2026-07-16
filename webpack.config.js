@@ -41,6 +41,7 @@ module.exports = {
 	},
     output: {
 		filename: 'index.min.js',
+		library: 'ApkgBrowserBuilder',
         path: path.resolve(__dirname, 'dist'),
     },
 };

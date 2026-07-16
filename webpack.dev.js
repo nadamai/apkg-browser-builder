@@ -33,10 +33,10 @@ module.exports = {
 	},
 	output: {
 		filename: 'index.dev.js',
-		path: path.resolve(__dirname, 'dist'),
-		publicPath: '/',
 		library: 'ApkgBrowserBuilder',
 		libraryTarget: 'window',
+		path: path.resolve(__dirname, 'dist'),
+		publicPath: '/',
 	},
 	devServer: {
 		open: '/index.html',
