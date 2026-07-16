@@ -11,6 +11,7 @@ import { ReviewCardConfig } from './object/review-card-config';
 import { LapseCardConfig } from './object/lapse-card-config';
 import { Field } from './object/field';
 import { CardTemplate } from './object/card-template';
+import { ModelRequirement, ModelRequirementType } from './type/model-requirement';
 
 /**
  * The main (`export default`) class used for generating `.apkg` packages.
