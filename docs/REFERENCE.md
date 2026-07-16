@@ -3692,7 +3692,7 @@ synchronising. `-1` indicates changes that have not been synced yet.
 </td>
 <td>
 
-Legacy card-generation requirements as ModelRequirement tuples,
+Legacy card-generation requirements as `ModelRequirement` tuples,
 used by old Anki clients to decide which cards to generate. Modern Anki recomputes them
 and ignores this value.
 

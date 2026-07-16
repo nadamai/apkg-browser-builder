@@ -6,6 +6,7 @@
 	"excludeInternal": true,
 	"excludeReferences": true,
 	"excludeProtected": true,
+	"intentionallyNotExported": ["src/type/model-requirement.ts:ModelRequirement"],
 	"readme": "none",
 	"name": "APK Browser Builder",
 	"outputFileStrategy": "modules",

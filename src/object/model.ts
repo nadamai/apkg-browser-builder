@@ -330,7 +330,7 @@ export class Model extends Object<ModelObject> {
 	}
 
 	/**
-	 * @param requirements Legacy card-generation requirements as {@link ModelRequirement} tuples,
+	 * @param requirements Legacy card-generation requirements as `ModelRequirement` tuples,
 	 * used by old Anki clients to decide which cards to generate. Modern Anki recomputes them
 	 * and ignores this value.
 	 */
