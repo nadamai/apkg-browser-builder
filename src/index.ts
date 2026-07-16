@@ -75,16 +75,23 @@ class ApkgBuilder {
 	}
 
 	/**
-	 * Adds a media file to be used in the {@link Note} contents.
+	 * Adds a media file to be used in the {@link Note} contents. Adding a file under an
+	 * already used name replaces its contents.
 	 *
 	 * @param filename The unique name under which the file is stored in the package.
 	 * {@link Note} contents reference media by this exact name, e.g. `<img src="photo.jpg">`.
 	 * @param file The file as a `Blob`.
 	 */
 	public addMedia(filename: string, file: Blob): ApkgBuilder {
-		const index = this.media.length;
+		const existing = this.media.find((media: Media) => media.getFilename() === filename);
 
-		this.media[index] = new Media(filename, file);
+		if (existing) {
+			existing.setFile(file);
+
+			return this;
+		}
+
+		this.media.push(new Media(filename, file));
 
 		return this;
 	}
