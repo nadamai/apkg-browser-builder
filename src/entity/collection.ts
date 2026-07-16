@@ -37,6 +37,10 @@ export class Collection extends Entity<CollectionModel> {
 	protected deckConfigurations: DeckConfiguration[] = [];
 
 	public getEntity(): CollectionModel {
+		if (this.configuration) {
+			this.entity.conf = JSON.stringify(this.configuration.getObject());
+		}
+
 		this.updateEntityModels();
 		this.updateEntityDecks();
 		this.updateEntityDeckConfigurations();
