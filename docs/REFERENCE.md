@@ -2986,7 +2986,7 @@ Additional note data. Unused by Anki; kept for schema completeness.
 
 ### Model
 
-A note type: defines the [Field](#field)s, CardTemplates and styling used to
+A note type: defines the [Field](#field)s, [CardTemplate](#cardtemplate)s and styling used to
 generate [Card](#card)s from [Note](#note)s.
 
 #### Constructor
@@ -2994,7 +2994,7 @@ generate [Card](#card)s from [Note](#note)s.
 > **new Model**(`name?`: `string`, `fields?`: [`Field`](#field)[]): [`Model`](#model)
 
 Creates a model with the given [Field](#field)s (`Front` and `Back` by default) and a
-single CardTemplate generated from the first two of them: the first field
+single [CardTemplate](#cardtemplate) generated from the first two of them: the first field
 becomes the question, the second the answer.
 
 ##### Parameters
@@ -3276,11 +3276,11 @@ A [Field](#field) to be removed.
 
 #### getTemplates()
 
-> **getTemplates**(): `CardTemplate`[]
+> **getTemplates**(): [`CardTemplate`](#cardtemplate)[]
 
 #### setTemplates()
 
-> **setTemplates**(`templates`: `CardTemplate`[]): [`Model`](#model)
+> **setTemplates**(`templates`: [`CardTemplate`](#cardtemplate)[]): [`Model`](#model)
 
 ##### Parameters
 
@@ -3301,12 +3301,12 @@ A [Field](#field) to be removed.
 </td>
 <td>
 
-`CardTemplate`[]
+[`CardTemplate`](#cardtemplate)[]
 
 </td>
 <td>
 
-An array of CardTemplates replacing the current ones. Each
+An array of [CardTemplate](#cardtemplate)s replacing the current ones. Each
 template is added via `addTemplate`, so duplicates are skipped; template ordinals are
 assigned automatically from the array order.
 
@@ -3317,7 +3317,7 @@ assigned automatically from the array order.
 
 #### addTemplate()
 
-> **addTemplate**(`template`: `CardTemplate`): [`Model`](#model)
+> **addTemplate**(`template`: [`CardTemplate`](#cardtemplate)): [`Model`](#model)
 
 ##### Parameters
 
@@ -3338,12 +3338,12 @@ assigned automatically from the array order.
 </td>
 <td>
 
-`CardTemplate`
+[`CardTemplate`](#cardtemplate)
 
 </td>
 <td>
 
-A CardTemplate to be added and serialized into the model.
+A [CardTemplate](#cardtemplate) to be added and serialized into the model.
 
 </td>
 </tr>
@@ -3352,7 +3352,7 @@ A CardTemplate to be added and serialized into the model.
 
 #### removeTemplate()
 
-> **removeTemplate**(`template`: `CardTemplate`): [`Model`](#model)
+> **removeTemplate**(`template`: [`CardTemplate`](#cardtemplate)): [`Model`](#model)
 
 ##### Parameters
 
@@ -3373,12 +3373,12 @@ A CardTemplate to be added and serialized into the model.
 </td>
 <td>
 
-`CardTemplate`
+[`CardTemplate`](#cardtemplate)
 
 </td>
 <td>
 
-A CardTemplate to be removed.
+A [CardTemplate](#cardtemplate) to be removed.
 
 </td>
 </tr>
@@ -4094,6 +4094,364 @@ is added, instead of being cleared.
 <td>
 
 Legacy media list. Unused by Anki; kept for schema completeness.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+### CardTemplate
+
+A card template of a [Model](#model): defines how the question and answer sides of
+[Card](#card)s are rendered from the [Note](#note) fields. Each template of a model
+generates one card per note.
+
+#### Constructor
+
+> **new CardTemplate**(`name?`: `string`, `questionFormat?`: `string`, `answerFormat?`: `string`): [`CardTemplate`](#cardtemplate)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the template.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`questionFormat?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The question (front side) template of the card.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`answerFormat?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The answer (back side) template of the card.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getName()
+
+> **getName**(): `string`
+
+#### setName()
+
+> **setName**(`name`: `string`): [`CardTemplate`](#cardtemplate)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the template, e.g. `Card 1`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getAnswerFormat()
+
+> **getAnswerFormat**(): `string`
+
+#### setAnswerFormat()
+
+> **setAnswerFormat**(`format`: `string`): [`CardTemplate`](#cardtemplate)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`format`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The template of the answer (back) side, where `{{FrontSide}}` embeds the
+rendered question side and field names in double braces are replaced with the note's
+content, e.g. `{{FrontSide}}\n\n<hr id="answer">\n\n{{Back}}`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getBrowserAnswerFormat()
+
+> **getBrowserAnswerFormat**(): `string`
+
+#### setBrowserAnswerFormat()
+
+> **setBrowserAnswerFormat**(`format`: `string`): [`CardTemplate`](#cardtemplate)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`format`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+An optional alternative answer template used by Anki's card browser
+(empty = the regular one is used).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getQuestionFormat()
+
+> **getQuestionFormat**(): `string`
+
+#### setQuestionFormat()
+
+> **setQuestionFormat**(`format`: `string`): [`CardTemplate`](#cardtemplate)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`format`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The template of the question (front) side — field names in double braces
+are replaced with the note's content, e.g. `{{Front}}`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getBrowserQuestionFormat()
+
+> **getBrowserQuestionFormat**(): `string`
+
+#### setBrowserQuestionFormat()
+
+> **setBrowserQuestionFormat**(`format`: `string`): [`CardTemplate`](#cardtemplate)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`format`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+An optional alternative question template used by Anki's card browser
+(empty = the regular one is used).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getDeck()
+
+> **getDeck**(): [`Deck`](#deck) \| `null`
+
+#### setDeck()
+
+> **setDeck**(`deck`: [`Deck`](#deck) \| `null`): [`CardTemplate`](#cardtemplate)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`deck`
+
+</td>
+<td>
+
+[`Deck`](#deck) \| `null`
+
+</td>
+<td>
+
+A [Deck](#deck) override, linked by ID: cards generated from this template
+are placed in it instead of the note's deck, or `null` to remove the override.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getOrdinal()
+
+> **getOrdinal**(): `number`
+
+#### setOrdinal()
+
+> **setOrdinal**(`ordinal`: `number`): [`CardTemplate`](#cardtemplate)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`ordinal`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The position of the template within its model. Managed by the parent
+[Model](#model) — assigned automatically from the template order, so manually set values
+are overwritten.
 
 </td>
 </tr>
