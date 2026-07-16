@@ -9,6 +9,7 @@ import { ApkgBuilderConfig } from './type/apkg-builder-config';
 import { NewCardConfig } from './object/new-card-config';
 import { ReviewCardConfig } from './object/review-card-config';
 import { LapseCardConfig } from './object/lapse-card-config';
+import { Field } from './object/field';
 
 /**
  * The main (`export default`) class used for generating `.apkg` packages.
@@ -140,6 +141,7 @@ export {
 	Configuration,
 	DeckConfiguration,
 	Model,
+	Field,
 	NewCardConfig,
 	ReviewCardConfig,
 	LapseCardConfig,

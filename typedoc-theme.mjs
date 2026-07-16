@@ -19,6 +19,7 @@ const CLASS_ORDER = [
 	'Card',
 	'Note',
 	'Model',
+	'Field',
 	'Configuration',
 	'DeckConfiguration',
 	'NewCardConfig',

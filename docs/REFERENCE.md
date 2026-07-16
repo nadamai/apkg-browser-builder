@@ -2986,14 +2986,14 @@ Additional note data. Unused by Anki; kept for schema completeness.
 
 ### Model
 
-A note type: defines the Fields, CardTemplates and styling used to
+A note type: defines the [Field](#field)s, CardTemplates and styling used to
 generate [Card](#card)s from [Note](#note)s.
 
 #### Constructor
 
-> **new Model**(`name?`: `string`, `fields?`: `Field`[]): [`Model`](#model)
+> **new Model**(`name?`: `string`, `fields?`: [`Field`](#field)[]): [`Model`](#model)
 
-Creates a model with the given Fields (`Front` and `Back` by default) and a
+Creates a model with the given [Field](#field)s (`Front` and `Back` by default) and a
 single CardTemplate generated from the first two of them: the first field
 becomes the question, the second the answer.
 
@@ -3033,7 +3033,7 @@ The name of the model.
 </td>
 <td>
 
-`Field`[]
+[`Field`](#field)[]
 
 </td>
 <td>
@@ -3165,11 +3165,11 @@ added to by default.
 
 #### getFields()
 
-> **getFields**(): `Field`[]
+> **getFields**(): [`Field`](#field)[]
 
 #### setFields()
 
-> **setFields**(`fields`: `Field`[]): [`Model`](#model)
+> **setFields**(`fields`: [`Field`](#field)[]): [`Model`](#model)
 
 ##### Parameters
 
@@ -3190,12 +3190,12 @@ added to by default.
 </td>
 <td>
 
-`Field`[]
+[`Field`](#field)[]
 
 </td>
 <td>
 
-An array of Fields replacing the current ones. Each field is
+An array of [Field](#field)s replacing the current ones. Each field is
 added via `addField`, so duplicates are skipped; field ordinals are assigned
 automatically from the array order.
 
@@ -3206,7 +3206,7 @@ automatically from the array order.
 
 #### addField()
 
-> **addField**(`field`: `Field`): [`Model`](#model)
+> **addField**(`field`: [`Field`](#field)): [`Model`](#model)
 
 ##### Parameters
 
@@ -3227,12 +3227,12 @@ automatically from the array order.
 </td>
 <td>
 
-`Field`
+[`Field`](#field)
 
 </td>
 <td>
 
-A Field to be added and serialized into the model.
+A [Field](#field) to be added and serialized into the model.
 
 </td>
 </tr>
@@ -3241,7 +3241,7 @@ A Field to be added and serialized into the model.
 
 #### removeField()
 
-> **removeField**(`field`: `Field`): [`Model`](#model)
+> **removeField**(`field`: [`Field`](#field)): [`Model`](#model)
 
 ##### Parameters
 
@@ -3262,12 +3262,12 @@ A Field to be added and serialized into the model.
 </td>
 <td>
 
-`Field`
+[`Field`](#field)
 
 </td>
 <td>
 
-A Field to be removed.
+A [Field](#field) to be removed.
 
 </td>
 </tr>
@@ -3773,6 +3773,327 @@ Legacy cache of the tags of the last note added with this model. Unused by moder
 <td>
 
 Legacy version array. Unused by modern Anki.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+### Field
+
+A field definition of a [Model](#model) — a named slot for the [Note](#note) content,
+e.g. `Front` or `Back`.
+
+#### Constructor
+
+> **new Field**(`name`: `string`): [`Field`](#field)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the field, unique within the model. Card templates reference
+the field's content by this name, e.g. `{{Front}}`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getName()
+
+> **getName**(): `string`
+
+#### setName()
+
+> **setName**(`name`: `string`): [`Field`](#field)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The name of the field, unique within the model. Card templates reference
+the field's content by this name, e.g. `{{Front}}`.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getFont()
+
+> **getFont**(): `string`
+
+#### setFont()
+
+> **setFont**(`font`: `string`): [`Field`](#field)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`font`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The font used for the field in Anki's note editor. The appearance on cards
+is controlled by the model's CSS instead.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getOrdinal()
+
+> **getOrdinal**(): `number`
+
+#### setOrdinal()
+
+> **setOrdinal**(`ordinal`: `number`): [`Field`](#field)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`ordinal`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The position of the field within its model. Managed by the parent
+[Model](#model) — assigned automatically from the field order, so manually set values
+are overwritten.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getRightToLeft()
+
+> **getRightToLeft**(): `boolean`
+
+#### setRightToLeft()
+
+> **setRightToLeft**(`rtl`: `boolean`): [`Field`](#field)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`rtl`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Whether the field contains a right-to-left script.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getSize()
+
+> **getSize**(): `number`
+
+#### setSize()
+
+> **setSize**(`size`: `number`): [`Field`](#field)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`size`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The font size used for the field in Anki's note editor.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getSticky()
+
+> **getSticky**(): `boolean`
+
+#### setSticky()
+
+> **setSticky**(`sticky`: `boolean`): [`Field`](#field)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`sticky`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Whether the field's content is kept in Anki's `Add` dialog after a note
+is added, instead of being cleared.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getMedia()
+
+> **getMedia**(): `string`[]
+
+#### setMedia()
+
+> **setMedia**(`media`: `string`[]): [`Field`](#field)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`media`
+
+</td>
+<td>
+
+`string`[]
+
+</td>
+<td>
+
+Legacy media list. Unused by Anki; kept for schema completeness.
 
 </td>
 </tr>
