@@ -6724,6 +6724,10 @@ The fraction of the previous interval a lapsed card keeps, e.g.
 
 ### ReviewLog
 
+A single review history entry of a [Card](#card), stored in the collection's `revlog`
+table. Exported review history keeps Anki's statistics and scheduling intact after
+the package is imported.
+
 #### getId()
 
 > **getId**(): `number`
@@ -6739,6 +6743,7 @@ The fraction of the previous interval a lapsed card keeps, e.g.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -6751,6 +6756,12 @@ The fraction of the previous interval a lapsed card keeps, e.g.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The review log ID: the time in milliseconds of when the review happened
+(by default the time of the creation of this entry).
 
 </td>
 </tr>
@@ -6811,6 +6822,7 @@ The reviewed [Card](#card), linked by ID.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -6823,6 +6835,12 @@ The reviewed [Card](#card), linked by ID.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The update sequence number, used to find changes when
+synchronising. `-1` indicates changes that have not been synced yet.
 
 </td>
 </tr>
@@ -6844,6 +6862,7 @@ The reviewed [Card](#card), linked by ID.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -6856,6 +6875,13 @@ The reviewed [Card](#card), linked by ID.
 <td>
 
 `ReviewLogEaseKey`
+
+</td>
+<td>
+
+The button pressed to answer the card: `wrong`, `hard`, `ok` or `easy`.
+The value is serialized according to the log's type — `learn` and `relearn` entries
+use a three-button scale where `hard` falls back to `wrong`.
 
 </td>
 </tr>
@@ -6877,6 +6903,7 @@ The reviewed [Card](#card), linked by ID.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -6889,6 +6916,12 @@ The reviewed [Card](#card), linked by ID.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The interval of the card after the review. Positive values are days,
+negative values are seconds.
 
 </td>
 </tr>
@@ -6910,6 +6943,7 @@ The reviewed [Card](#card), linked by ID.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -6922,6 +6956,12 @@ The reviewed [Card](#card), linked by ID.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The interval of the card before the review. Positive values are days,
+negative values are seconds.
 
 </td>
 </tr>
@@ -6943,6 +6983,7 @@ The reviewed [Card](#card), linked by ID.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -6955,6 +6996,12 @@ The reviewed [Card](#card), linked by ID.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The ease factor of the card after the review, in permille (e.g. `2500`
+means 250%). `0` for cards in learning.
 
 </td>
 </tr>
@@ -6976,6 +7023,7 @@ The reviewed [Card](#card), linked by ID.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -6988,6 +7036,11 @@ The reviewed [Card](#card), linked by ID.
 <td>
 
 `number`
+
+</td>
+<td>
+
+The duration of the review in milliseconds (Anki records at most `60000`).
 
 </td>
 </tr>
@@ -7009,6 +7062,7 @@ The reviewed [Card](#card), linked by ID.
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -7021,6 +7075,12 @@ The reviewed [Card](#card), linked by ID.
 <td>
 
 `"manual"` \| `"review"` \| `"learn"` \| `"relearn"` \| `"filtered"` \| `"rescheduled"`
+
+</td>
+<td>
+
+The kind of the review: `learn`, `review`, `relearn`, `filtered`
+(reviewed in a filtered deck), `manual` or `rescheduled`.
 
 </td>
 </tr>
