@@ -10,6 +10,7 @@ import { NewCardConfig } from './object/new-card-config';
 import { ReviewCardConfig } from './object/review-card-config';
 import { LapseCardConfig } from './object/lapse-card-config';
 import { Field } from './object/field';
+import { CardTemplate } from './object/card-template';
 
 /**
  * The main (`export default`) class used for generating `.apkg` packages.
@@ -138,10 +139,11 @@ export {
 	Deck,
 	Card,
 	Note,
-	Configuration,
-	DeckConfiguration,
 	Model,
 	Field,
+	CardTemplate,
+	Configuration,
+	DeckConfiguration,
 	NewCardConfig,
 	ReviewCardConfig,
 	LapseCardConfig,
