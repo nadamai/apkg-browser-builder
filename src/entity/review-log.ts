@@ -1,5 +1,6 @@
-import { ReviewLog as ReviewLogModel, Card } from '../model';
+import { ReviewLog as ReviewLogModel } from '../model';
 import { Entity } from '../abstract';
+import { Card } from './card';
 import {
 	ReviewLogType,
 	ReviewLogTypeKey,
@@ -28,6 +29,16 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 		type: 0
 	};
 
+	protected card: Card | null = null;
+
+	public getEntity(): ReviewLogModel {
+		if (this.card) {
+			this.entity.cid = this.card.getId();
+		}
+
+		return this.entity;
+	}
+
 	public getId(): number {
 		return this.entity.id;
 	}
@@ -38,8 +49,16 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 		return this;
 	}
 
+	public getCard(): Card | null {
+		return this.card;
+	}
+
+	/**
+	 * @param card The reviewed {@link Card}, linked by ID.
+	 */
 	public setCard(card: Card): ReviewLog {
-		this.entity.cid = card.id;
+		this.entity.cid = card.getId();
+		this.card = card;
 
 		return this;
 	}

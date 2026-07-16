@@ -97,6 +97,10 @@ The [Collection](#collection) to be exported.
 </tbody>
 </table>
 
+#### getMedia()
+
+> **getMedia**(): [`Media`](#media)[]
+
 #### addMedia()
 
 > **addMedia**(`filename`: `string`, `file`: `Blob`): [`ApkgBuilder`](#apkgbuilder)
@@ -152,9 +156,116 @@ The file as a `Blob`.
 </tbody>
 </table>
 
-#### getMedia()
+#### removeMedia()
 
-> **getMedia**(): [`Media`](#media)[]
+> **removeMedia**(`media`: [`Media`](#media)): [`ApkgBuilder`](#apkgbuilder)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`media`
+
+</td>
+<td>
+
+[`Media`](#media)
+
+</td>
+<td>
+
+A [Media](#media) file to be removed from the package.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getReviewLogs()
+
+> **getReviewLogs**(): [`ReviewLog`](#reviewlog)[]
+
+#### addReviewLog()
+
+> **addReviewLog**(`reviewLog`: [`ReviewLog`](#reviewlog)): [`ApkgBuilder`](#apkgbuilder)
+
+Adds a review history entry, exported into the collection's `revlog` table.
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`reviewLog`
+
+</td>
+<td>
+
+[`ReviewLog`](#reviewlog)
+
+</td>
+<td>
+
+A [ReviewLog](#reviewlog) to be added. Duplicates are skipped.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### removeReviewLog()
+
+> **removeReviewLog**(`reviewLog`: [`ReviewLog`](#reviewlog)): [`ApkgBuilder`](#apkgbuilder)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`reviewLog`
+
+</td>
+<td>
+
+[`ReviewLog`](#reviewlog)
+
+</td>
+<td>
+
+A [ReviewLog](#reviewlog) to be removed.
+
+</td>
+</tr>
+</tbody>
+</table>
 
 #### build()
 
@@ -6603,6 +6714,313 @@ The minimum interval in days a card is given after a lapse.
 
 The fraction of the previous interval a lapsed card keeps, e.g.
 `0` = the interval is reset (Anki's "new interval" option).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+***
+
+### ReviewLog
+
+#### getId()
+
+> **getId**(): `number`
+
+#### setId()
+
+> **setId**(`id?`: `number`): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getCard()
+
+> **getCard**(): [`Card`](#card) \| `null`
+
+#### setCard()
+
+> **setCard**(`card`: [`Card`](#card)): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`card`
+
+</td>
+<td>
+
+[`Card`](#card)
+
+</td>
+<td>
+
+The reviewed [Card](#card), linked by ID.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getUpdateSequenceNumber()
+
+> **getUpdateSequenceNumber**(): `number`
+
+#### setUpdateSequenceNumber()
+
+> **setUpdateSequenceNumber**(`updateSequenceNumber`: `number`): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`updateSequenceNumber`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getEase()
+
+> **getEase**(): `ReviewLogEaseKey`
+
+#### setEase()
+
+> **setEase**(`ease`: `ReviewLogEaseKey`): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`ease`
+
+</td>
+<td>
+
+`ReviewLogEaseKey`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getInterval()
+
+> **getInterval**(): `number`
+
+#### setInterval()
+
+> **setInterval**(`interval`: `number`): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`interval`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getLastInterval()
+
+> **getLastInterval**(): `number`
+
+#### setLastInterval()
+
+> **setLastInterval**(`interval`: `number`): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`interval`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getFactor()
+
+> **getFactor**(): `number`
+
+#### setFactor()
+
+> **setFactor**(`factor`: `number`): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`factor`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getTime()
+
+> **getTime**(): `number`
+
+#### setTime()
+
+> **setTime**(`time`: `number`): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`time`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### getType()
+
+> **getType**(): `"manual"` \| `"review"` \| `"learn"` \| `"relearn"` \| `"filtered"` \| `"rescheduled"`
+
+#### setType()
+
+> **setType**(`type`: `"manual"` \| `"review"` \| `"learn"` \| `"relearn"` \| `"filtered"` \| `"rescheduled"`): [`ReviewLog`](#reviewlog)
+
+##### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`type`
+
+</td>
+<td>
+
+`"manual"` \| `"review"` \| `"learn"` \| `"relearn"` \| `"filtered"` \| `"rescheduled"`
 
 </td>
 </tr>

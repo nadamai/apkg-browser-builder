@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import ApkgBuilder, { Card, Collection, Configuration, Deck, DeckConfiguration, Model, Note } from '../src/index';
+import ApkgBuilder, { Card, Collection, Configuration, Deck, DeckConfiguration, Model, Note, ReviewLog } from '../src/index';
 import { loadDatabase, loadZip, queryColumn, queryRow } from './helpers';
 import { JSZipObject } from 'jszip';
 
@@ -165,6 +165,37 @@ describe('APKG Builder', () => {
 
 		expect(decks).toContain(deckA.getId());
 		expect(decks).toContain(deckB.getId());
+
+		db.close();
+	});
+
+	it('bundles collection with review history', async () => {
+		const collection = new Collection();
+
+		const deck = new Deck('European capitals');
+		const card = new Card('What is the capital of Poland?', 'Warsaw');
+
+		deck.addCard(card);
+		collection.addDeck(deck);
+
+		const addedLog = new ReviewLog();
+		const removedLog = new ReviewLog();
+
+		addedLog.setCard(card);
+		removedLog.setCard(card);
+
+		const apkg = new ApkgBuilder(collection);
+
+		apkg.addReviewLog(addedLog);
+		apkg.addReviewLog(removedLog);
+		apkg.removeReviewLog(removedLog);
+
+		const db = await loadDatabase(apkg);
+		const [id, cid] = queryRow(db, 'SELECT id, cid FROM revlog');
+
+		expect(queryColumn(db, 'SELECT id FROM revlog')).toHaveLength(1);
+		expect(id).toBe(addedLog.getId());
+		expect(cid).toBe(card.getId());
 
 		db.close();
 	});
