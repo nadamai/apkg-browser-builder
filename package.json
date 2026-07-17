@@ -25,7 +25,8 @@
     ".": {
       "types": "./dist/src/index.d.ts",
       "default": "./dist/index.min.js"
-    }
+    },
+    "./dist/*": "./dist/*"
   },
   "bugs": {
     "url": "https://github.com/nadamai/apkg-browser-builder/issues"

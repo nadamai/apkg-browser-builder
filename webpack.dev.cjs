@@ -30,6 +30,7 @@ module.exports = {
 	},
 	output: {
 		filename: 'index.dev.js',
+		assetModuleFilename: '[name][ext]',
 		library: 'ApkgBrowserBuilder',
 		libraryTarget: 'window',
 		path: path.resolve(__dirname, 'dist'),
