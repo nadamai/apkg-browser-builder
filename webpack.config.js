@@ -38,7 +38,11 @@ module.exports = {
 	},
     output: {
 		filename: 'index.min.js',
-		library: 'ApkgBrowserBuilder',
+		globalObject: 'this',
+		library: {
+			name: 'ApkgBrowserBuilder',
+			type: 'umd',
+		},
         path: path.resolve(__dirname, 'dist'),
     },
 };
