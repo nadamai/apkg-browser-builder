@@ -20,10 +20,6 @@ module.exports = {
 				type: 'asset/source',
 				use: [path.resolve(__dirname, 'webpack.sql-loader.js')],
 			},
-			{
-				loader: 'file-loader',
-				test: /\.wasm$/i,
-			},
 		],
 	},
 	resolve: {
