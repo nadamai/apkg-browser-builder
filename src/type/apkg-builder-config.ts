@@ -1,12 +1,10 @@
-import { SqlJsConfig } from 'sql.js';
-
 /**
  * Optional configuration of {@link ApkgBuilder}.
  */
 export type ApkgBuilderConfig = {
 	/**
 	 * Options forwarded to [`initSqlJs()`](https://sql.js.org/documentation/global.html#initSqlJs)
-	 * of sql.js, which loads the WebAssembly build of SQLite used to create the ANKI database when
+	 * of sql.js, which loads the WebAssembly build of SQLite used to create the Anki database when
 	 * {@link ApkgBuilder} `build` is called.
 	 *
 	 * By default, the `sql-wasm-browser.wasm` binary bundled with this package is used. Provide
@@ -20,6 +18,18 @@ export type ApkgBuilderConfig = {
 	 * 	}
 	 * });
 	 * ```
+	 *
+	 * You can also directly provide a `wasmBinary: ArrayBuffer` instead.
 	 */
-	sqljs: SqlJsConfig;
+	sqljs: {
+		/**
+		 * Returns the URL to load the sql.js `.wasm` binary from, given its filename.
+		 */
+		locateFile?: (filename: string) => string;
+
+		/**
+		 * The sql.js `.wasm` binary itself, skipping the loading step entirely.
+		 */
+		wasmBinary?: ArrayBuffer;
+	};
 };
