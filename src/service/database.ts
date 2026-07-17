@@ -11,10 +11,8 @@ export class Database {
 
 	public async init(): Promise<void> {
 		try {
-			const { default: SqlWasmUrl } = require('sql.js/dist/sql-wasm-browser.wasm');
-
 			const SQL: SqlJsStatic = await initSqlJs({
-				locateFile: () => SqlWasmUrl,
+				locateFile: () => new URL('sql.js/dist/sql-wasm-browser.wasm', import.meta.url).href,
 				...this.config
 			});
 
