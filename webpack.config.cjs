@@ -1,7 +1,9 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const config = {
+// ESM-only build — `import` consumers, Node and `<script type="module">` tags.
+// Assets resolve via import.meta.url, so the module also loads outside a browser.
+module.exports = {
     entry: './src/index.ts',
 	mode: 'production',
     module: {
@@ -16,7 +18,7 @@ const config = {
 			{
 				test: /\.sqlite$/i,
 				type: 'asset/source',
-				use: [path.resolve(__dirname, 'webpack.sql-loader.js')],
+				use: [path.resolve(__dirname, 'webpack.sql-loader.cjs')],
 			},
         ],
     },
@@ -36,39 +38,16 @@ const config = {
 			},
 		})],
 	},
+	experiments: {
+		outputModule: true,
+	},
 	output: {
 		filename: 'index.min.js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
-	}
+		library: {
+			type: 'module',
+		},
+		module: true,
+	},
 };
-
-module.exports = [
-	// UMD build — script tags (window.ApkgBrowserBuilder), AMD and CommonJS-in-browser.
-	{
-		...config,
-		output: {
-			...config.output,
-			globalObject: 'this',
-			library: {
-				name: 'ApkgBrowserBuilder',
-				type: 'umd',
-			},
-		},
-	},
-	// ESM build — `import` consumers and Node (assets resolve via import.meta.url,
-	// so loading the module outside a browser does not crash).
-	{
-		...config,
-		experiments: {
-			outputModule: true,
-		},
-		output: {
-			...config.output,
-			library: {
-				type: 'module',
-			},
-			module: true,
-		},
-	},
-];

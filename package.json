@@ -4,18 +4,29 @@
   "description": "npm package for creating .apkg anki files directly in a browser",
   "keywords": [
     "anki",
+    "anki2",
     "apkg",
-    "anki2"
+	"browser",
+	"flashcards",
+	"spaced-repetition",
+	"srs"
   ],
   "author": {
     "name": "Daniel Stasiak",
     "url": "https://digitibox.pl"
   },
+  "type": "module",
   "files": [
     "dist"
   ],
   "main": "dist/index.min.js",
   "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/index.min.js"
+    }
+  },
   "bugs": {
     "url": "https://github.com/nadamai/apkg-browser-builder/issues"
   },
@@ -27,10 +38,11 @@
   "scripts": {
     "build": "webpack",
     "dev": "concurrently --names \"webpack,typedoc\" \"npm:dev:serve\" \"npm:docs:watch\"",
-    "dev:serve": "webpack serve --config webpack.dev.js",
+    "dev:serve": "webpack serve --config webpack.dev.cjs",
     "docs": "typedoc --preserveWatchOutput --cleanOutputDir false",
     "docs:watch": "npm run docs -- --watch",
     "prepare": "husky",
+    "prepublishOnly": "npm test && npm run build",
     "prettier": "pretty-quick --staged --pattern \"{src,dev,tests}/**/*.ts\" --pattern \"typedoc-theme.mjs\"",
     "prettier:check": "prettier --check \"{src,dev,tests}/**/*.ts\" \"typedoc-theme.mjs\"",
     "test": "vitest run"
