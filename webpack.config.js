@@ -39,6 +39,7 @@ const config = {
 	output: {
 		filename: 'index.min.js',
 		path: path.resolve(__dirname, 'dist'),
+		clean: true,
 	}
 };
 
