@@ -1,7 +1,7 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
-module.exports = {
+const config = {
     entry: './src/index.ts',
 	mode: 'production',
     module: {
@@ -36,13 +36,38 @@ module.exports = {
 			},
 		})],
 	},
-    output: {
+	output: {
 		filename: 'index.min.js',
-		globalObject: 'this',
-		library: {
-			name: 'ApkgBrowserBuilder',
-			type: 'umd',
-		},
-        path: path.resolve(__dirname, 'dist'),
-    },
+		path: path.resolve(__dirname, 'dist'),
+	}
 };
+
+module.exports = [
+	// UMD build — script tags (window.ApkgBrowserBuilder), AMD and CommonJS-in-browser.
+	{
+		...config,
+		output: {
+			...config.output,
+			globalObject: 'this',
+			library: {
+				name: 'ApkgBrowserBuilder',
+				type: 'umd',
+			},
+		},
+	},
+	// ESM build — `import` consumers and Node (assets resolve via import.meta.url,
+	// so loading the module outside a browser does not crash).
+	{
+		...config,
+		experiments: {
+			outputModule: true,
+		},
+		output: {
+			...config.output,
+			library: {
+				type: 'module',
+			},
+			module: true,
+		},
+	},
+];
