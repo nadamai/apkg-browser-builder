@@ -1,5 +1,6 @@
 import initSqlJs, { Database as SqlJsDatabase, SqlJsConfig, SqlJsStatic } from 'sql.js';
 import { QueryBuilder } from './query-builder';
+import AnkiSchemaScript from '../anki.sqlite';
 
 export class Database {
 	private config?: SqlJsConfig;
@@ -16,10 +17,8 @@ export class Database {
 				...this.config
 			});
 
-			const AnkiSqliteSchemaScript = require('./../anki.sqlite');
-
 			this.db = new SQL.Database();
-			this.db.exec(AnkiSqliteSchemaScript);
+			this.db.exec(AnkiSchemaScript);
 		} catch (error) {
 			console.error('Error on initializing sql.js or setting up the database', error);
 
