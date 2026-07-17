@@ -16,6 +16,7 @@ module.exports = {
 			{
 				test: /\.sqlite$/i,
 				type: 'asset/source',
+				use: [path.resolve(__dirname, 'webpack.sql-loader.js')],
 			},
 			{
 				loader: 'file-loader',
