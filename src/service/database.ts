@@ -18,13 +18,10 @@ export class Database {
 				...this.config
 			});
 
-			const { default: AnkiSqliteSchemaScriptUrl } = require('./../anki.sqlite');
-
-			const response = await fetch(AnkiSqliteSchemaScriptUrl);
-			const script = await response.text();
+			const AnkiSqliteSchemaScript = require('./../anki.sqlite');
 
 			this.db = new SQL.Database();
-			this.db.exec(script);
+			this.db.exec(AnkiSqliteSchemaScript);
 		} catch (error) {
 			console.error('Error on initializing sql.js or setting up the database', error);
 

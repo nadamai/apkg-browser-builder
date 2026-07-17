@@ -14,8 +14,8 @@ module.exports = {
 				},
             },
 			{
-				loader: 'file-loader',
 				test: /\.sqlite$/i,
+				type: 'asset/source',
 			},
 			{
 				loader: 'file-loader',
