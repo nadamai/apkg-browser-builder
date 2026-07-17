@@ -7539,7 +7539,7 @@ The file contents as a `Blob`.
 
 ### ApkgBuilderConfig
 
-> **ApkgBuilderConfig** = \{ `sqljs`: `SqlJsConfig`; \}
+> **ApkgBuilderConfig** = \{ `sqljs`: \{ `locateFile?`: (`filename`: `string`) => `string`; `wasmBinary?`: `ArrayBuffer`; \}; \}
 
 Optional configuration of [ApkgBuilder](#apkgbuilder).
 
@@ -7562,13 +7562,13 @@ Optional configuration of [ApkgBuilder](#apkgbuilder).
 </td>
 <td>
 
-`SqlJsConfig`
+\{ `locateFile?`: (`filename`: `string`) => `string`; `wasmBinary?`: `ArrayBuffer`; \}
 
 </td>
 <td>
 
 Options forwarded to [`initSqlJs()`](https://sql.js.org/documentation/global.html#initSqlJs)
-of sql.js, which loads the WebAssembly build of SQLite used to create the ANKI database when
+of sql.js, which loads the WebAssembly build of SQLite used to create the Anki database when
 [ApkgBuilder](#apkgbuilder) `build` is called.
 
 By default, the `sql-wasm-browser.wasm` binary bundled with this package is used. Provide
@@ -7582,6 +7582,42 @@ const builder = new ApkgBuilder(collection, {
 	}
 });
 ```
+
+You can also directly provide a `wasmBinary: ArrayBuffer` instead.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`sqljs.locateFile?`
+
+</td>
+<td>
+
+(`filename`: `string`) => `string`
+
+</td>
+<td>
+
+Returns the URL to load the sql.js `.wasm` binary from, given its filename.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`sqljs.wasmBinary?`
+
+</td>
+<td>
+
+`ArrayBuffer`
+
+</td>
+<td>
+
+The sql.js `.wasm` binary itself, skipping the loading step entirely.
 
 </td>
 </tr>
