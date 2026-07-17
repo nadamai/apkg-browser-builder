@@ -2,7 +2,7 @@
 
 An npm package for building [Anki](https://apps.ankiweb.net) `.apkg` flashcard collections directly in a browser — no server or CLI needed.
 
-It ships a small ORM layer for the [Anki SQLite database](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure) that can be used to build an `.apkg` package and retrieve it as a blob or downloadable file. The package uses [sql.js](https://github.com/sql-js/sql.js) which needs the SQLite `.wasm` binary at runtime. While it comes bundled within the package by default, you can switch to any remote copy or CDN.
+It ships a small ORM layer for the [Anki SQLite database](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure) that can be used to build an `.apkg` package and retrieve it as a blob or downloadable file. The package uses [sql.js](https://github.com/sql-js/sql.js) which needs the SQLite `.wasm` binary at runtime. The binary ships with the package — see [Serving the `.wasm` binary](#serving-the-wasm-binary) for how it is resolved in each setup.
 
 ## Installation
 
@@ -31,6 +31,32 @@ await builder.save('my-deck.apkg');
 Everything revolves around a `Collection` object — the root Anki database entity used for constructing the `.apkg` file. You then build up a tree of decks, cards and other optional entities to hand the collection over to `ApkgBuilder`.
 
 The `save(filename: string)` builds the package and triggers a browser download. If you'd rather handle the file yourself, you can call `build()` instead, which returns the package as a `Blob`.
+
+### Using without a bundler
+
+The package ships as a standard ES module so it can be used with a `<script type="module">` tag — no build step needed. The SQLite `.wasm` binary is resolved next to the module file automatically:
+
+```html
+<script type="module">
+	import ApkgBuilder, { Card, Collection, Deck } from './vendor/apkg-browser-builder/dist/index.min.js';
+
+	// Build the collection and save the package…
+</script>
+```
+
+### Lazy loading
+
+The package can be loaded on demand with a dynamic `import()`, so none of its code — sql.js included — is downloaded or parsed until the user actually needs it. Bundlers split it into a separate chunk automatically:
+
+```ts
+async function onExportClick() {
+	const { default: ApkgBuilder, Collection, Deck, Card } = await import('apkg-browser-builder');
+
+	// Build the collection and save the package…
+}
+```
+
+The same works without a bundler by importing the module URL instead: `await import('./vendor/apkg-browser-builder/dist/index.min.js')`. Independently of this, the heaviest work — fetching and compiling the SQLite `.wasm` binary — always happens lazily, on the first `build()` call.
 
 To see more examples on how to build a package, please check the [`dev/examples`](dev/examples) files.
 

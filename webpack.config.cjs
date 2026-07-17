@@ -43,6 +43,7 @@ module.exports = {
 	},
 	output: {
 		filename: 'index.min.js',
+		assetModuleFilename: '[name][ext]',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 		library: {
