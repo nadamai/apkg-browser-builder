@@ -1,5 +1,8 @@
 # APKG Browser Builder ✨
 
+[![npm version](https://img.shields.io/npm/v/apkg-browser-builder)](https://www.npmjs.com/package/apkg-browser-builder)
+[![license](https://img.shields.io/npm/l/apkg-browser-builder)](./LICENSE)
+
 An npm package for building [Anki](https://apps.ankiweb.net) `.apkg` flashcard collections directly in a browser — no server or CLI needed.
 
 It ships a small ORM layer for the [Anki SQLite database](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure) that can be used to build an `.apkg` package and retrieve it as a blob or downloadable file. The package uses [sql.js](https://github.com/sql-js/sql.js) which needs the SQLite `.wasm` binary at runtime. The binary ships with the package and is resolved automatically.
@@ -38,9 +41,9 @@ The package ships as a standard ES module so it can be used with a `<script type
 
 ```html
 <script type="module">
-	import ApkgBuilder, { Card, Collection, Deck } from './vendor/apkg-browser-builder/dist/index.min.js';
+    import ApkgBuilder, { Card, Collection, Deck } from './vendor/apkg-browser-builder/dist/index.min.js';
 
-	// Build the collection and save the package…
+    // Build the collection and save the package…
 </script>
 ```
 
@@ -50,9 +53,9 @@ The package can be loaded on demand with a dynamic `import()`, so none of its co
 
 ```ts
 async function onExportClick() {
-	const { default: ApkgBuilder, Collection, Deck, Card } = await import('apkg-browser-builder');
+    const { default: ApkgBuilder, Collection, Deck, Card } = await import('apkg-browser-builder');
 
-	// Build the collection and save the package…
+    // Build the collection and save the package…
 }
 ```
 
