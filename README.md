@@ -2,7 +2,7 @@
 
 An npm package for building [Anki](https://apps.ankiweb.net) `.apkg` flashcard collections directly in a browser — no server or CLI needed.
 
-It ships a small ORM layer for the [Anki SQLite database](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure) that can be used to build an `.apkg` package and retrieve it as a blob or downloadable file. The package uses [sql.js](https://github.com/sql-js/sql.js) which needs the SQLite `.wasm` binary at runtime. The binary ships with the package — see [Serving the `.wasm` binary](#serving-the-wasm-binary) for how it is resolved in each setup.
+It ships a small ORM layer for the [Anki SQLite database](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure) that can be used to build an `.apkg` package and retrieve it as a blob or downloadable file. The package uses [sql.js](https://github.com/sql-js/sql.js) which needs the SQLite `.wasm` binary at runtime. The binary ships with the package and is resolved automatically.
 
 ## Installation
 
@@ -58,7 +58,7 @@ async function onExportClick() {
 
 The same works without a bundler by importing the module URL instead: `await import('./vendor/apkg-browser-builder/dist/index.min.js')`. Independently of this, the heaviest work — fetching and compiling the SQLite `.wasm` binary — always happens lazily, on the first `build()` call.
 
-To see more examples on how to build a package, please check the [`dev/examples`](dev/examples) files.
+To see more examples on how to build a package, please check the [`dev/examples`](https://github.com/nadamai/apkg-browser-builder/tree/main/dev/examples) files.
 
 ## Documentation
 
@@ -70,7 +70,7 @@ The library exposes an `ApkgBuilder` object together with the classes that mirro
       - `Card` — holds a `Note`,
         - `Note` — holds a `Model` (fields/tags for the card content).
 
-For the detailed documentation please refer to the [docs/REFERENCE.md](docs/REFERENCE.md). For any specific configuration please consult the original database structure which is the source of truth.
+For the detailed documentation please refer to the [docs/REFERENCE.md](https://github.com/nadamai/apkg-browser-builder/blob/main/docs/REFERENCE.md). For any specific configuration please consult the original database structure which is the source of truth.
 
 Every schema class exposes proper getters/setters on top of it. Setters return the instance so methods can be chained.
 
@@ -85,16 +85,16 @@ npm run dev          # local dev playground at localhost:3000 with typedoc watch
 npm test             # run the vitest suite
 ```
 
-The dev playground allows previewing and manually testing every example file under [`dev/examples`](dev/examples). A pre-commit hook runs a `tsgo` type check and `prettier` automatically.
+The dev playground allows previewing and manually testing every example file under [`dev/examples`](https://github.com/nadamai/apkg-browser-builder/tree/main/dev/examples). A pre-commit hook runs a `tsgo` type check and `prettier` automatically.
 
-Tests live in [`tests`](tests) and run with [Vitest](https://vitest.dev). Each test builds an `.apkg` package, unzips it and asserts against the actual zip and SQLite contents.
+Tests live in [`tests`](https://github.com/nadamai/apkg-browser-builder/tree/main/tests) and run with [Vitest](https://vitest.dev). Each test builds an `.apkg` package, unzips it and asserts against the actual zip and SQLite contents.
 
-The [`docs/REFERENCE.md`](docs/REFERENCE.md) documentation is automatically generated from the source code using the [TypeDoc](https://typedoc.org).
+The [`docs/REFERENCE.md`](https://github.com/nadamai/apkg-browser-builder/blob/main/docs/REFERENCE.md) documentation is automatically generated from the source code using the [TypeDoc](https://typedoc.org).
 
 When you add a custom feature or change a behavior, please add or update both:
 
-- a working example under [`dev/examples`](dev/examples), so it's testable in the dev playground,
-- a test under [`tests`](tests), so it's verified automatically by CI.
+- a working example under [`dev/examples`](https://github.com/nadamai/apkg-browser-builder/tree/main/dev/examples), so it's testable in the dev playground,
+- a test under [`tests`](https://github.com/nadamai/apkg-browser-builder/tree/main/tests), so it's verified automatically by CI.
 
 ## Support
 
