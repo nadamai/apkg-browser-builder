@@ -96,6 +96,10 @@ When you add a custom feature or change a behavior, please add or update both:
 - a working example under [`dev/examples`](https://github.com/nadamai/apkg-browser-builder/tree/main/dev/examples), so it's testable in the dev playground,
 - a test under [`tests`](https://github.com/nadamai/apkg-browser-builder/tree/main/tests), so it's verified automatically by CI.
 
+## License
+
+[MIT](https://github.com/nadamai/apkg-browser-builder/blob/main/LICENSE). The published bundle includes [sql.js](https://github.com/sql-js/sql.js) (MIT), [JSZip](https://github.com/Stuk/jszip) (MIT) and [FileSaver.js](https://github.com/eligrey/FileSaver.js) (MIT).
+
 ## Support
 
 If this package saved you some time, consider [buying me a coffee](https://buymeacoffee.com/nadamai)! ☕
