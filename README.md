@@ -98,7 +98,7 @@ When you add a custom feature or change a behavior, please add or update both:
 
 ## License
 
-[MIT](https://github.com/nadamai/apkg-browser-builder/blob/main/LICENSE). The published bundle includes [sql.js](https://github.com/sql-js/sql.js) (MIT), [JSZip](https://github.com/Stuk/jszip) (MIT) and [FileSaver.js](https://github.com/eligrey/FileSaver.js) (MIT).
+Licensed under the [MIT](https://github.com/nadamai/apkg-browser-builder/blob/main/LICENSE). The published bundle includes [sql.js](https://github.com/sql-js/sql.js) (MIT), [JSZip](https://github.com/Stuk/jszip) (MIT) and [FileSaver.js](https://github.com/eligrey/FileSaver.js) (MIT).
 
 ## Support
 
