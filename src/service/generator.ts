@@ -1,11 +1,12 @@
 const GUID_BASE91_TABLE = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&()*+,-./:;<=>?@[]^_`{|}~';
 
 export class Generator {
-	public static id(): number {
-		const min = 10 ** 11;
-		const max = 10 ** 12 - 1;
+	private static lastId: number = 0;
 
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+	public static id(): number {
+		Generator.lastId = Math.max(Date.now(), Generator.lastId + 1);
+
+		return Generator.lastId;
 	}
 
 	public static guid(): string {

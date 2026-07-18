@@ -53,7 +53,7 @@ export class Note extends Entity<NoteModel> {
 	 * @param id The note ID (by default the time in milliseconds of when the note was created).
 	 */
 	public setId(id?: number): Note {
-		this.entity.id = id ?? Date.now();
+		this.entity.id = id ?? Generator.id();
 
 		return this;
 	}

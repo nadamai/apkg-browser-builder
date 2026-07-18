@@ -70,7 +70,7 @@ export class Deck extends Object<DeckObject> {
 	 * @param id The deck ID (by default the time in milliseconds of when the deck was created).
 	 */
 	public setId(id?: number): Deck {
-		this.object.id = id ?? Date.now();
+		this.object.id = id ?? Generator.id();
 
 		return this;
 	}
