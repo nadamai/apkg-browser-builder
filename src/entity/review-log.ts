@@ -1,6 +1,7 @@
 import { ReviewLog as ReviewLogModel } from '../model';
 import { Entity } from '../abstract';
 import { Card } from './card';
+import { Generator } from '../service/generator';
 import {
 	ReviewLogType,
 	ReviewLogTypeKey,
@@ -18,18 +19,10 @@ import {
  * the package is imported.
  */
 export class ReviewLog extends Entity<ReviewLogModel> {
-	private static lastId: number = 0;
-
-	private static nextId(): number {
-		ReviewLog.lastId = Math.max(Date.now(), ReviewLog.lastId + 1);
-
-		return ReviewLog.lastId;
-	}
-
 	protected table: string = 'revlog';
 
 	protected entity: ReviewLogModel = {
-		id: ReviewLog.nextId(),
+		id: Generator.id(),
 		cid: 0,
 		usn: -1,
 		ease: ReviewLogEase.wrong,
@@ -62,7 +55,7 @@ export class ReviewLog extends Entity<ReviewLogModel> {
 	 * (by default the time of the creation of this entry, kept unique across entries).
 	 */
 	public setId(id?: number): ReviewLog {
-		this.entity.id = id ?? ReviewLog.nextId();
+		this.entity.id = id ?? Generator.id();
 
 		return this;
 	}

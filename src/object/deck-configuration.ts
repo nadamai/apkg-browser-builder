@@ -52,7 +52,7 @@ export class DeckConfiguration extends Object<DeckConfigurationObject> {
 	 * configuration was created).
 	 */
 	public setId(id?: number): DeckConfiguration {
-		this.object.id = id ?? Date.now();
+		this.object.id = id ?? Generator.id();
 
 		return this;
 	}

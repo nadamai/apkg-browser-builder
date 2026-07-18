@@ -69,7 +69,7 @@ export class Card extends Entity<CardModel> {
 	 * @param id The card ID (by default the time in milliseconds of when the card was created).
 	 */
 	public setId(id?: number): Card {
-		this.entity.id = id ?? Date.now();
+		this.entity.id = id ?? Generator.id();
 
 		return this;
 	}

@@ -85,7 +85,7 @@ export class Model extends Object<ModelObject> {
 	 * @param id The model ID (by default the time in milliseconds of when the model was created).
 	 */
 	public setId(id?: number): Model {
-		this.object.id = id ?? Date.now();
+		this.object.id = id ?? Generator.id();
 
 		return this;
 	}
