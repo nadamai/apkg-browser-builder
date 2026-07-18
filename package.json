@@ -6,10 +6,10 @@
     "anki",
     "anki2",
     "apkg",
-	"browser",
-	"flashcards",
-	"spaced-repetition",
-	"srs"
+    "browser",
+    "flashcards",
+    "spaced-repetition",
+    "srs"
   ],
   "author": {
     "name": "Daniel Stasiak",
@@ -49,11 +49,13 @@
     "test": "vitest run"
   },
   "devDependencies": {
+    "@types/copy-webpack-plugin": "^8.0.1",
     "@types/file-saver": "^2.0.7",
     "@types/node": "^26.1.1",
     "@types/sql.js": "^1.4.11",
     "@typescript/native-preview": "^7.0.0-dev.20260707.2",
     "concurrently": "^10.0.3",
+    "copy-webpack-plugin": "^14.0.0",
     "husky": "^9.1.4",
     "prettier": "^3.8.4",
     "pretty-quick": "^4.0.0",

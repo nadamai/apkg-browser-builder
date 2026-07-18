@@ -6,7 +6,14 @@ const EXAMPLES_DIR = path.join(__dirname, 'dev', 'examples');
 module.exports = {
 	entry: './src/index.ts',
 	mode: 'development',
+	devtool: 'source-map',
 	module: {
+		parser: {
+			javascript: {
+				url: false,
+				importMeta: false,
+			},
+		},
 		rules: [
 			{
 				loader: 'ts-loader',
@@ -25,12 +32,8 @@ module.exports = {
 	resolve: {
 		extensions: ['.ts', '.js'],
 	},
-	performance: {
-		assetFilter: (filename) => !filename.endsWith('.wasm'),
-	},
 	output: {
 		filename: 'index.dev.js',
-		assetModuleFilename: '[name][ext]',
 		library: 'ApkgBrowserBuilder',
 		libraryTarget: 'window',
 		path: path.resolve(__dirname, 'dist'),
@@ -42,6 +45,7 @@ module.exports = {
 		static: [
 			{ directory: path.join(__dirname, 'dev'), publicPath: '/' },
 			{ directory: path.join(__dirname, 'dist'), publicPath: '/dist' },
+			{ directory: path.join(__dirname, 'node_modules', 'sql.js', 'dist'), publicPath: '/' },
 			{ directory: path.join(__dirname, 'node_modules', 'typescript', 'lib'), publicPath: '/typescript' },
 		],
 		setupMiddlewares: (middlewares, server) => {
