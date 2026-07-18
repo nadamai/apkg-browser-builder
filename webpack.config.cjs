@@ -1,12 +1,17 @@
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-// ESM-only build — `import` consumers, Node and `<script type="module">` tags.
-// Assets resolve via import.meta.url, so the module also loads outside a browser.
 module.exports = {
     entry: './src/index.ts',
 	mode: 'production',
     module: {
+		parser: {
+			javascript: {
+				url: false,
+				importMeta: false,
+			},
+		},
         rules: [
             {
                 loader: 'ts-loader',
@@ -41,6 +46,11 @@ module.exports = {
 	experiments: {
 		outputModule: true,
 	},
+	plugins: [
+		new CopyPlugin({
+			patterns: [{ from: require.resolve('sql.js/dist/sql-wasm-browser.wasm') }],
+		}),
+	],
 	output: {
 		filename: 'index.min.js',
 		assetModuleFilename: '[name][ext]',

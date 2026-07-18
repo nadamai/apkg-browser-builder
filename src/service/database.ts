@@ -13,7 +13,7 @@ export class Database {
 	public async init(): Promise<void> {
 		try {
 			const SQL: SqlJsStatic = await initSqlJs({
-				locateFile: () => new URL('sql.js/dist/sql-wasm-browser.wasm', import.meta.url).href,
+				locateFile: () => new URL('./sql-wasm-browser.wasm', import.meta.url).href,
 				...this.config
 			});
 
