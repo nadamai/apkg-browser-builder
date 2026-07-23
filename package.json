@@ -1,6 +1,6 @@
 {
   "name": "apkg-browser-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm package for creating .apkg anki files directly in a browser",
   "keywords": [
     "anki",
