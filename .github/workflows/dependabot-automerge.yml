@@ -8,7 +8,7 @@ permissions:
 jobs:
   automerge:
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]' && startsWith(github.event.pull_request.title, 'build(deps-dev)')
+    if: github.actor == 'dependabot[bot]' && startsWith(github.event.pull_request.title, '(deps-dev)')
     steps:
       - name: Enable auto-merge
         run: gh pr merge --auto --merge "$PR_URL"
