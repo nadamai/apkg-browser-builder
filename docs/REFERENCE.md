@@ -1,4 +1,4 @@
-# APK Browser Builder v1.0.0
+# APK Browser Builder v1.0.2
 
 ## Classes
 
