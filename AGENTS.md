@@ -38,6 +38,7 @@ apkg-browser-builder/
 │                         #   resolve.alias entries in vitest.config.ts)
 ├── dev/                  # webpack-dev-server playground + numbered usage examples
 ├── docs/                 # Generated REFERENCE.md — never edit by hand
+├── patches/              # npm 12 native patches (`patchedDependencies`) for devDependencies
 ├── typedoc.json          # Docs config (zero-warning policy, intentionallyNotExported)
 ├── typedoc-theme.mjs     # Local TypeDoc theme (hides returns/hierarchy/inheritance
 │                         #   sections, member group headings; holds CLASS_ORDER)
@@ -131,3 +132,4 @@ Every entity/object class follows one uniform grammar. Deviating from it is a bu
 4. **Zero-value defaults that break Anki.** A `0` that "looks safe" can be catastrophic (`ivlFct: 0` freezes all intervals; `maxIvl: 0` caps them at zero days; empty `ints` crashes Anki's scheduler). New fields take Anki's stock default, not a zero placeholder.
 5. **Node leaking into the published bundle.** Tests run in Node only thanks to the `tests/shims/` aliases — that does not license Node APIs or environment checks in `src/`. Everything imported there ships to browsers through webpack; keep the three-dependency budget intact.
 6. **Webpack touching the wasm URL.** The `new URL('./sql-wasm-browser.wasm', import.meta.url)` literal in `Database.init()` must reach the output verbatim (see §3 Dependency Constraints). Symptoms of getting this wrong: consumers' bundlers stop copying the wasm, plain-Node `import` starts crashing on webpack's browser-only URL runtime or a local `file:///` path leaks into the artifact. Related: the dev config needs a non-eval `devtool` — eval-wrapped code parses as a classic script where `import.meta` is a SyntaxError.
+7. **The TypeDoc minimatch patch.** `package.json` `overrides` force TypeDoc onto minimatch 11 (security fix GHSA-g3hv-75wg-m249), which removed the `Minimatch.matchOne()` that TypeDoc 0.28.x calls; `patches/typedoc@<version>.patch` (npm 12 `npm patch`, lockfile v4) swaps it for `match(path, partial)`. Any TypeDoc bump makes npm 12 abort the install until you run `npm patch update typedoc --to <new-version>` (or `npm patch rm typedoc` plus dropping the override once TypeDoc supports minimatch 11 itself). npm < 12 silently skips the patch — harmless in CI, which never runs `npm run docs`.
